@@ -1,12 +1,16 @@
 import React from 'react';
 import { Component } from 'react';
+import { connect } from 'react-redux'
 
 class AllProducts extends Component {
-  render() {
-    <div>
 
-    </div>
+  render() {
+    return (
+      <div>
+        All Products
+      </div>
+    )
   }
 }
 
-export default HomepageVideoPlayer(mapStateToProps, null)(AllProducts)
+export default connect(null, null)(AllProducts)
