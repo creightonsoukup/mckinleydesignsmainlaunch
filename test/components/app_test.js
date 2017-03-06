@@ -8,7 +8,7 @@ describe('App' , () => {
     component = renderComponent(App);
   });
 
-  it('renders something', () => {
-    expect(component).to.exist;
+  it('shows a video player', () => {
+    expect(component.find('.video-player')).to.exist;
   });
 });
