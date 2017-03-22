@@ -230,7 +230,8 @@ class SingleCollection extends Component {
         )}
         </div>
       </Container>
-      <Footer/>
+      <Footer
+        show={this.state.products.length > 0}/>
       </div >
     )
   }

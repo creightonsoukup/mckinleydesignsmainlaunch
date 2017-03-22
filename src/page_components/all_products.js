@@ -151,9 +151,9 @@ class AllProducts extends Component {
           <ProductList products={this.state.sortedProducts.length === 0 ? this.state.products : this.state.sortedProducts}/>
         )}
         </div>
-
       </Container>
-      <Footer/>
+      <Footer
+      show={this.state.products.length > 0}/>
       </div>
     )
   }

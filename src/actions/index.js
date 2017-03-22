@@ -1,4 +1,5 @@
 import ShopifyBuy from 'shopify-buy';
+import axios from 'axios';
 
 var shopClient = ShopifyBuy.buildClient({
       accessToken: '08b1b1ba5897eb763e75565ee43650cd',
@@ -23,6 +24,22 @@ export const ALL_PRODUCTS_BY_TAGS = 'all_products_by_tags'
 export const ALL_PRODUCTS_ORDERED = 'all_products_ordered'
 export const ALL_PRODUCTS_BY_TYPE = 'all_products_by_type'
 export const COLLECTION_BY_TAGS = 'collection_by_tags'
+export const ADD_SUBSCRIBER = 'add_subscriber'
+
+const DATABASE_URL = 'http://localhost:3000'
+
+export function addSubscriber(name, email) {
+  const url = `${DATABASE_URL}/signup`
+  const request = axios.post(url, {
+    name: name,
+    email: email
+  })
+
+  return {
+    type: DATABASE_URL,
+    payload: request
+  }
+}
 
 export function fetchAllProducts() {
 
