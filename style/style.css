@@ -1,0 +1,16 @@
+.product-image {
+  width: 75%;
+}
+
+.banner {
+  width: 100%;
+}
+
+.banner img {
+  width: 100%;
+  display: block;
+}
+
+.container-fluid {
+  padding: 0;
+}

@@ -1,5 +1,5 @@
 import { renderComponent , expect } from '../test_helper';
-import HomepageVideoPlayer from '../../src/components/all_products'
+import HomepageVideoPlayer from '../../src/page_components/all_products'
 
 describe('HomepageVideoPlayer', () => {
   let component;
