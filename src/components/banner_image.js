@@ -7,7 +7,7 @@ const BannerImage = (props) => {
     <Row noGutters className="banner">
 
         <ImageLoader
-        src={`/src/images/banner_images/large/${props.collection}.png`}
+        src={`/src/images/banner_images/large/${props.fileName}.png`}
         >
         Image load failed!
         </ImageLoader>
