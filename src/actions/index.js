@@ -17,7 +17,7 @@ export const OCCIDENTALE_COLLECTION = 'occidentale_collection'
 export const EASTWOOD_COLLECTION = 'eastwood_collection'
 export const CAMEO_COLLECTION = 'cameo_collection'
 export const CHAINS = 'chains'
-export const PENDENTS = 'pendents'
+export const PENDANTS = 'pendants'
 export const CREATE_CART = 'create_cart';
 export const FETCH_ALL_COLLECTIONS = 'fetch_all_collections';
 export const ALL_PRODUCTS_BY_TAGS = 'all_products_by_tags'
@@ -111,12 +111,12 @@ const request = shopClient.fetchQueryProducts({collection_id: '419000772',sort_b
   }
 }
 
-export function fetchPendents() {
+export function fetchPendants() {
 
 const request = shopClient.fetchQueryProducts({collection_id: '421190340', sort_by: 'collection-default'})
 
   return {
-    type: PENDENTS,
+    type: PENDANTS,
     payload: request
   }
 }

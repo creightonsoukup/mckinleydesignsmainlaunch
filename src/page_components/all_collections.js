@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import Navigation from '../components/navbar'
-import BannerImage from '../components/banner_image'
-import Footer from '../components/footer'
+import { connect } from 'react-redux';
+import Navigation from '../components/navbar';
+import BannerImage from '../components/banner_image';
+import Footer from '../components/footer';
 
 const AllCollections = (props) => {
   return (
@@ -11,8 +12,13 @@ const AllCollections = (props) => {
       fileName={'collections'} />
       <Footer
       show={true}/>
+
     </div>
   )
 }
 
-export default AllCollections
+function mapStateToProps({collectionContent}) {
+  return {collectionContent}
+}
+
+export default connect(mapStateToProps)(AllCollections)
