@@ -3,22 +3,35 @@ import { connect } from 'react-redux';
 import Navigation from '../components/navbar';
 import BannerImage from '../components/banner_image';
 import Footer from '../components/footer';
+import { fetchCollectionContent } from '../actions/index'
 
-const AllCollections = (props) => {
-  return (
-    <div>
-      <Navigation/>
-      <BannerImage
-      fileName={'collections.png'} />
-      <Footer
-      show={true}/>
+class AllCollections extends Component {
 
-    </div>
-  )
+  componentWillMount() {
+    this.props.fetchCollectionContent()
+  }
+
+  render() {
+    if(this.props.collectionContent.length === 0) {
+      return <div></div>
+    }
+    return (
+      <div>
+        <Navigation/>
+        <BannerImage
+        fileName={'collections.png'} />
+        <CollectionList
+        collections={this.props.collectionContent}/>
+        <Footer
+        show={true}/>
+
+      </div>
+    )
+  }
 }
 
 function mapStateToProps({collectionContent}) {
   return {collectionContent}
 }
 
-export default connect(mapStateToProps)(AllCollections)
+export default connect(mapStateToProps, { fetchCollectionContent })(AllCollections)

@@ -8,7 +8,7 @@ const Footer = (props) => {
       return <div></div>
     }
     return (
-      <div>
+      <div className="footer">
         <EmailSignup />
         <FooterLinks />
       </div>

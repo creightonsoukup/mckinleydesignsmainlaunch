@@ -27,6 +27,7 @@ export const COLLECTION_BY_TAGS = 'collection_by_tags'
 export const ADD_SUBSCRIBER = 'add_subscriber'
 export const MADISON_FAVORITES = 'madison_favorites'
 export const FETCH_QUOTE = 'fetch_quote'
+export const FETCH_COLLECTION_CONTENT = 'fetch_collection_content'
 
 
 const DATABASE_URL = 'http://localhost:3000'
@@ -49,6 +50,16 @@ export function addSubscriber(name, email) {
     const request = axios.get(url)
     return {
       type: FETCH_QUOTE,
+      payload: request
+    }
+  }
+
+  export function fetchCollectionContent() {
+    const url = `${DATABASE_URL}/colection-content`
+    const request = axios.get(url)
+
+    return {
+      type: FETCH_COLLECTION_CONTENT,
       payload: request
     }
   }
