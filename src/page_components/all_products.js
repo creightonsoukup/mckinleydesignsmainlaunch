@@ -133,7 +133,7 @@ class AllProducts extends Component {
   }
 
   render() {
-    const video = 'https://res.cloudinary.com/deekcijv9/video/upload/v1490057497/loop_video.mov'
+    const video = 'https://res.cloudinary.com/madisonmckinley/video/upload/v1490312893/loop_video_n0thkq.mov'
     const search = _.debounce((value) => {this.searchProducts(value)}, 300)
     return (
       <div>

@@ -14,3 +14,14 @@
 .container-fluid {
   padding: 0;
 }
+
+.horizontal-slider {
+  width: 3000px;
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+}
+
+.horizontal-slider img {
+  height: 100%;
+}

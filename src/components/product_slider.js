@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import * as ScrollMajic from 'scrollmagic'
 import {
   Collapse,
   Navbar,
@@ -13,9 +14,9 @@ import {
   Button,
   Form,
 } from 'reactstrap';
-import Product from './product'
+import Product from './slider_product'
 
-export default class ProductList extends Component {
+export default class ProductSlider extends Component {
 
   constructor(props) {
     super(props);
@@ -38,9 +39,9 @@ export default class ProductList extends Component {
 
   render() {
     return (
-      <Row>
+      <div className='horizontal-slider'>
         {this.props.products.map(this.renderProducts)}
-      </Row>
+      </div>
     )
   }
 }
