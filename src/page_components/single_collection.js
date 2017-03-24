@@ -216,7 +216,7 @@ class SingleCollection extends Component {
       <div>
       <Navigation />
       <BannerImage
-        fileName={this.props.params.collection}/>
+        fileName={`${this.props.params.collection}.png`}/>
       <Container fluid>
         <FilterBar
         sortProducts={this.sortProducts}

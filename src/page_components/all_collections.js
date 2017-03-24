@@ -9,7 +9,7 @@ const AllCollections = (props) => {
     <div>
       <Navigation/>
       <BannerImage
-      fileName={'collections'} />
+      fileName={'collections.png'} />
       <Footer
       show={true}/>
 

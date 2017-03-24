@@ -1,7 +1,7 @@
 import { FETCH_ALL_COLLECTIONS, OCCIDENTALE_COLLECTION,
 STEERHEAD_RANCH_COLLECTION, COIN_COLLECTION, PERLINE_COLLECTION,
 EASTWOOD_COLLECTION, CAMEO_COLLECTION, GOLD_COLLECTION,
-WILD_COLLECTION, COLLECTION_BY_TAGS } from '../actions/index';
+WILD_COLLECTION, COLLECTION_BY_TAGS, MADISON_FAVORITES } from '../actions/index';
 
 const INITAL_STATE = []
 
@@ -26,6 +26,8 @@ export default function( state = INITAL_STATE, action) {
     case CAMEO_COLLECTION:
       return [ action.payload.data, ...state]
     case COLLECTION_BY_TAGS:
+      return [ action.payload.data, ...state]
+    case MADISON_FAVORITES:
       return [ action.payload.data, ...state]
     default:
       return state;

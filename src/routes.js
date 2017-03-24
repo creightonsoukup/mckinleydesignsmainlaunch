@@ -7,10 +7,11 @@ import SingleCollection from './page_components/single_collection'
 import AllCollections from './page_components/all_collections'
 import NotFound from './components/not_found'
 import Customize from './page_components/customize'
+import Homepage from './page_components/homepage'
 
 export default (
   <Route path='/' component={App}>
-    <IndexRoute component={AllProducts} />
+    <IndexRoute component={Homepage} />
     <Route path='/allproducts' component={AllProducts} />
     <Route path='/collections' component={AllCollections}/>
     <Route path='/collections/:collection' component={SingleCollection}/>

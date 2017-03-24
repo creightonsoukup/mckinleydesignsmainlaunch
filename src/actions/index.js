@@ -25,6 +25,9 @@ export const ALL_PRODUCTS_ORDERED = 'all_products_ordered'
 export const ALL_PRODUCTS_BY_TYPE = 'all_products_by_type'
 export const COLLECTION_BY_TAGS = 'collection_by_tags'
 export const ADD_SUBSCRIBER = 'add_subscriber'
+export const MADISON_FAVORITES = 'madison_favorites'
+export const FETCH_QUOTE = 'fetch_quote'
+
 
 const DATABASE_URL = 'http://localhost:3000'
 
@@ -34,12 +37,21 @@ export function addSubscriber(name, email) {
     name: name,
     email: email
   })
-
   return {
-    type: DATABASE_URL,
+    type: ADD_SUBSCRIBER,
     payload: request
   }
 }
+
+
+  export function fetchQuote() {
+    const url = `${DATABASE_URL}/quote`
+    const request = axios.get(url)
+    return {
+      type: FETCH_QUOTE,
+      payload: request
+    }
+  }
 
 export function fetchAllProducts() {
 
@@ -137,6 +149,16 @@ const request = shopClient.fetchQueryProducts({collection_id: '421190596',sort_b
 
   return {
     type: CHAINS,
+    payload: request
+  }
+}
+
+export function fetchMadisonFavorites() {
+
+const request = shopClient.fetchQueryProducts({collection_id: '425205124',sort_by: 'collection-default'})
+
+  return {
+    type: MADISON_FAVORITES,
     payload: request
   }
 }

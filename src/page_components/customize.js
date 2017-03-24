@@ -64,7 +64,7 @@ class Customize extends Component {
         { this.state.showBanner &&
           <div>
           <BannerImage
-            fileName={'customize'}/>
+            fileName={'customize.png'}/>
           </div>
         }
         { this.state.showSecondNav &&

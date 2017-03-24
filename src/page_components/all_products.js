@@ -138,7 +138,7 @@ class AllProducts extends Component {
     return (
       <div>
       <Navigation />
-      <VideoPlayer video={video}/>
+      <VideoPlayer loop={true} video={video}/>
       <Container>
         <FilterBar
         sortProducts={this.sortProducts}
