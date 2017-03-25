@@ -19,12 +19,12 @@ export default class CollectionList extends Component {
 
   constructor(props) {
     super(props);
-    this.renderProducts = this.renderProducts.bind(this)
+    this.renderCollections = this.renderCollections.bind(this)
   }
 
-  renderProducts(product) {
-    const index = this.props.products.indexOf(product)
-    const key = product.id
+  renderCollections(collection) {
+    const index = this.props.collections.indexOf(collection)
+    const key = collection.id
       return (
         <CollectionPanel
           key={key}
@@ -36,7 +36,7 @@ export default class CollectionList extends Component {
   render() {
     return (
       <Row>
-        {this.props.products.map(this.renderCollections)}
+        {this.props.collections[0].map(this.renderCollections)}
       </Row>
     )
   }

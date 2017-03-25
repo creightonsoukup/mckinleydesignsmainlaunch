@@ -1,57 +1,102 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+@import url("http://allfont.net/allfont.css?fonts=colonna-mt");
+@import url("https://fonts.googleapis.com/css?family=Hind");
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+@font-face {
+  font-family: 'lulo_cleanone';
+  src: url("luloclean/LuloCleanOne-webfont.eot");
+  src: url("luloclean/LuloCleanOne-webfont.eot?#iefix") format("embedded-opentype"), url("luloclean/LuloCleanOne-webfont.woff2") format("woff2"), url("luloclean/LuloCleanOne-webfont.woff") format("woff"), url("luloclean/LuloCleanOne-webfont.ttf") format("truetype"), url("luloclean/LuloCleanOne-webfont.svg#lulo_cleanone") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+body {
+  font: "Raleway", sans-serif; }
+
+.collection-panel {
+  font-family: "MyWebFonts", "lulo_cleanone", serif;
+  height: 50vw;
+  width: 50vw;
+  background-color: #F4EACE;
+  border: 3px solid white; }
+  .collection-panel .front {
+    text-align: center;
+    height: 50vw; }
+    .collection-panel .front h2 {
+      padding-top: 20vw; }
+
 .product-image {
-  width: 75%;
-}
+  width: 75%; }
 
 .banner {
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  max-height: 75%;
-}
+  max-height: 75%; }
 
 .open {
-  width: 100%;
-}
+  width: 100%; }
 
-.close{
-  width: 0%
-}
+.close {
+  width: 0%; }
 
 .banner img {
   height: auto;
   min-width: 100%;
-  max-height: 75%;
-}
+  max-height: 75%; }
 
 .container-fluid {
-  padding: 0;
-}
+  padding: 0; }
 
 .horizontal-slider {
   width: 3000px;
   height: 50%;
   display: flex;
-  flex-direction: row;
-}
+  flex-direction: row; }
 
 .horizontal-slider img {
-  height: 100%;
-}
+  height: 100%; }
 
 iframe {
   width: 100%;
-  height: 600px;
-}
+  height: 600px; }
 
 video {
-  width: 100%;
-}
+  width: 100%; }
 
 .quote {
-  background-image: url('./src/images/quote.jpg')
-}
-
+  background-image: url("./src/images/quote.jpg"); }
 
 .menu {
   z-index: 5000;
@@ -59,14 +104,14 @@ video {
   height: 100vh;
   position: fixed;
   top: 0;
-  left:0;
+  left: 0;
   background-color: lightgrey;
-  opacity: .90;
-}
+  opacity: .90; }
 
 .footer {
-  background-image: url('/src/images/footer.jpg');
+  background-image: url("/src/images/footer.jpg");
   background-repeat: no-repeat;
   background-position: center center;
-  height: 40vh;
-}
+  height: 40vh; }
+
+/*# sourceMappingURL=style.css.map */

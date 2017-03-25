@@ -55,7 +55,7 @@ export function addSubscriber(name, email) {
   }
 
   export function fetchCollectionContent() {
-    const url = `${DATABASE_URL}/colection-content`
+    const url = `${DATABASE_URL}/collection-content`
     const request = axios.get(url)
 
     return {

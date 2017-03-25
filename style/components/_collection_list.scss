@@ -1,0 +1,16 @@
+.collection-panel   {
+    font-family: $header-text;
+    height: 50vw;
+    width: 50vw;
+    background-color: $tan;
+    border: 3px solid white;
+
+    .front {
+      text-align: center;
+      height: 50vw;
+
+      h2 {
+        padding-top: 20vw;
+      }
+    }
+}
