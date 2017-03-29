@@ -13,8 +13,7 @@ class Quote extends Component {
       return <div></div>
     }
     return (
-      <div>
-
+      <div className='quote-content'>
         <h3>{this.props.quote[0].quote}</h3>
         <h4>{this.props.quote[0].author}</h4>
       </div>

@@ -1,0 +1,28 @@
+.slider-text {
+  font-family: $header-text;
+  color: $red-brown;
+  width: 100vw;
+
+  h2 {
+    font-size: 4vw;
+    text-align: center;
+    text-wrap: normal;
+    padding-top: 5vh;
+  }
+}
+
+.horizontal-slider {
+  overflow: scroll;
+  margin: 5vh;
+  height: 40vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  img {
+    height: auto;
+    width: 25vw;
+    margin-left: 3vw;
+    margin-right: 3vw;
+  }
+}

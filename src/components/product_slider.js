@@ -30,18 +30,24 @@ export default class ProductSlider extends Component {
     const index = this.props.products.indexOf(product)
     const key = product.id
       return (
-        <Product
-          key={key}
-          index={index}
-          product={product}/>
+          <Product
+            key={key}
+            index={index}
+            product={product}/>
       )
   }
 
   render() {
     return (
-      <div className='horizontal-slider'>
-        {this.props.products.map(this.renderProducts)}
+      <div>
+        <div className='slider-text'>
+          <h2>{"Madison's Favorites"}</h2>
+        </div>
+        <div className='horizontal-slider'>
+          {this.props.products.map(this.renderProducts)}
+        </div>
       </div>
+
     )
   }
 }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import SmallGallery from './small_gallery';
 import {
   Collapse,
@@ -16,13 +16,21 @@ import {
 } from 'reactstrap';
 
 class ProductQuickView extends Component {
+  static contextTypes = {
+    router: PropTypes.object
+  }
+
   constructor(props) {
     super(props);
 
     this.state = {
       product: this.props.product
     }
+    this.viewProduct = this.viewProduct.bind(this)
+  }
 
+  viewProduct () {
+    this.context.router.push(`/product/${this.state.product.attrs.product.attrs.handle}`)
   }
 
   render() {
@@ -39,6 +47,9 @@ class ProductQuickView extends Component {
               <div>{this.state.product.productTitle}</div>
               <div>{this.state.product.price}</div>
               <Button>Add To Cart</Button>
+              <Button
+              onClick={this.viewProduct}
+              >View Product</Button>
             </Col>
           </Row>
         ) : (
@@ -47,6 +58,9 @@ class ProductQuickView extends Component {
               <div>{this.state.product.productTitle}</div>
               <div>{this.state.product.price}</div>
               <Button>Add To Cart</Button>
+              <Button
+              onClick={this.viewProduct}
+              >View Product</Button>
             </Col>
             <Col xs="12" sm="12" md='6' lg="6" xl="6">
               <SmallGallery

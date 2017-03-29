@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Form, FormGroup, Input } from 'reactstrap'
+import { Row, Form, FormGroup, Col, Input } from 'reactstrap'
 
 class FilterBar extends Component {
   constructor(props) {
@@ -44,9 +44,10 @@ class FilterBar extends Component {
 
   render() {
     return (
-      <Row>
+      <Row className="filter-bar">
         <Form onSubmit={this.handleSubmit}>
-          <FormGroup>
+        <Row>
+          <Col xs='12' sm='12' md='4' lg='3' xl='3'>
             <Input
             type="select"
             name="type"
@@ -59,6 +60,8 @@ class FilterBar extends Component {
               <option value="PENDENT">Pendents</option>
               <option value="RING">Rings</option>
             </Input>
+            </Col>
+            <Col xs='12' sm='12' md='4' lg='3' xl='3'>
             <Input
             type="select"
             name="orderBy"
@@ -71,12 +74,15 @@ class FilterBar extends Component {
               <option value="title-ascending">Name Ascending</option>
               <option value="title-descending">Name Descending</option>
             </Input>
+            </Col>
+            <Col xs='12' sm='12' md='4' lg={{size: 3, offset: 3}} xl={{size: 3, offset: 3}}>
             <Input
             name="searchText"
             value={this.state.searchText}
             onChange={this.handleSearch}
             />
-          </FormGroup>
+            </Col>
+            </Row>
         </Form>
       </Row>
     )

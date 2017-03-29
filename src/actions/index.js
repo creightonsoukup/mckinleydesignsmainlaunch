@@ -7,7 +7,7 @@ var shopClient = ShopifyBuy.buildClient({
       domain: 'madison-mckinley-designs-pre-launch.myshopify.com'
     });
 
-export const FETCH_ALL_PRODUCTS = 'fetch_all_products';
+export const FETCH_ALL_PRODUCTS = 'fetch_all_products'
 export const PERLINE_COLLECTION = 'perline_collection'
 export const GOLD_COLLECTION = 'gold_collection'
 export const WILD_COLLECTION = 'wild_collection'
@@ -28,9 +28,19 @@ export const ADD_SUBSCRIBER = 'add_subscriber'
 export const MADISON_FAVORITES = 'madison_favorites'
 export const FETCH_QUOTE = 'fetch_quote'
 export const FETCH_COLLECTION_CONTENT = 'fetch_collection_content'
+export const FETCH_PRODUCT = 'fetch_product'
+export const ADD_TO_CART = 'add_to_cart'
 
 
 const DATABASE_URL = 'http://localhost:3000'
+
+export function fetchProduct(handle) {
+  const request = shopClient.fetchQueryProducts({handle: handle})
+  return {
+    type: FETCH_PRODUCT,
+    payload: request
+  }
+}
 
 export function addSubscriber(name, email) {
   const url = `${DATABASE_URL}/signup`
@@ -194,12 +204,27 @@ export function fetchAllCollections() {
   }
 }
 
-export function createCart() {
-
-  const request = shopClient.createCart()
-
+export function fetchCart() {
+  let request
+  if(localStorage.getItem('MckinleyCartId')) {
+    var cartId = localStorage.getItem('MckinleyCartId')
+     request = shopClient.fetchRecentCart(cartId)
+  } else {
+     request = shopClient.createCart()
+  }
   return {
     type: CREATE_CART,
+    payload: request
+  }
+}
+
+export function addToCart(variantObj, quantity, cart) {
+
+  console.log(cart)
+  const request = cart.createLineItemsFromVariants({variant: variantObj, quantity: quantity})
+
+  return {
+    type: ADD_TO_CART,
     payload: request
   }
 }

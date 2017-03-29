@@ -43,7 +43,6 @@ class SingleCollection extends Component {
 
   componentWillMount() {
     this.getProducts(this.props.params.collection)
-      // .then((data) => this.setState({products: data.payload}))
   }
 
   getProducts(collection) {
@@ -54,7 +53,7 @@ class SingleCollection extends Component {
               .then((data) => {
                   this.setState({
                     products: data.payload,
-                    bannerImage: ''
+                    collection: collection.split('-').join(" ")
                   })
                 })
         )
@@ -64,7 +63,7 @@ class SingleCollection extends Component {
               .then((data) => {
                   this.setState({
                     products: data.payload,
-                    bannerImage: ''
+                    collection: collection.split('-').join(" ")
                   })
                 })
         )
@@ -74,7 +73,7 @@ class SingleCollection extends Component {
               .then((data) => {
                   this.setState({
                     products: data.payload,
-                    bannerImage: ''
+                    collection: collection.split('-').join(" ")
                   })
                 })
         )
@@ -84,7 +83,7 @@ class SingleCollection extends Component {
               .then((data) => {
                   this.setState({
                     products: data.payload,
-                    bannerImage: ''
+                    collection: collection.split('-').join(" ")
                   })
                 })
         )
@@ -94,7 +93,7 @@ class SingleCollection extends Component {
               .then((data) => {
                   this.setState({
                     products: data.payload,
-                    bannerImage: ''
+                    collection: collection.split('-').join(" ")
                   })
                 })
         )
@@ -104,7 +103,7 @@ class SingleCollection extends Component {
               .then((data) => {
                   this.setState({
                     products: data.payload,
-                    bannerImage: ''
+                    collection: collection.split('-').join(" ")
                   })
                 })
         )
@@ -114,7 +113,7 @@ class SingleCollection extends Component {
               .then((data) => {
                   this.setState({
                     products: data.payload,
-                    bannerImage: ''
+                    collection: collection.split('-').join(" ")
                   })
                 })
         )
@@ -124,7 +123,7 @@ class SingleCollection extends Component {
               .then((data) => {
                   this.setState({
                     products: data.payload,
-                    bannerImage: ''
+                    collection: collection.split('-').join(" ")
                   })
                 })
         )
@@ -216,8 +215,9 @@ class SingleCollection extends Component {
       <div>
       <Navigation />
       <BannerImage
-        fileName={`${this.props.params.collection}.png`}/>
+        fileName={`${this.props.params.collection}.jpg`}/>
       <Container fluid>
+        <h1 className="collection-title">{this.state.collection.toUpperCase()}</h1>
         <FilterBar
         sortProducts={this.sortProducts}
         sortProductTypes={this.sortProductTypes}

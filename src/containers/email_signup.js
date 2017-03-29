@@ -38,7 +38,8 @@ class EmailSignup extends Component {
 
   render() {
     return (
-      <div>
+      <div className='email'>
+        <h2>STAY INFORMED AND JOIN OUR MAILING LIST</h2>
         <Form onSubmit={this.handleSubmit}>
           <Input
           name='name'

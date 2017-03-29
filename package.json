@@ -41,6 +41,7 @@
     "react-addons-transition-group": "^15.4.2",
     "react-dom": "^0.14.8",
     "react-imageloader": "^2.1.0",
+    "react-images": "^0.5.2",
     "react-redux": "^4.4.6",
     "react-router": "^2.8.1",
     "reactstrap": "^4.2.0",

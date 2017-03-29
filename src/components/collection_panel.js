@@ -32,6 +32,8 @@ class CollectionPanel extends Component {
     const handle = this.state.collection.name.split(' ').join('-').toLowerCase()
     return (
       <Col
+      onMouseEnter = { () => this.setState({hover: true})}
+      onMouseLeave = { () => this.setState({hover: false})}
       className="collection-panel" xs='12' sm='12' md='6' lg='6' xl='6'>
       {
         this.state.hover ? (
@@ -45,7 +47,8 @@ class CollectionPanel extends Component {
 
         ) : (
           <div className="front">
-            <h2>{this.state.collection.name}</h2>
+            <img className='panel-image panel-image-text' src={`https://s3-us-west-1.amazonaws.com/madison-mckinley/${handle}-text.png`}></img>
+            <img className="panel-image" src={`https://s3-us-west-1.amazonaws.com/madison-mckinley/${handle}-pic.jpg`}></img>
           </div>
 
         )

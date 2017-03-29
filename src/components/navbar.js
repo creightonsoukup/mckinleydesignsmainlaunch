@@ -34,19 +34,17 @@ class Navigation extends Component {
             toggleMenu={this.toggleMenu} />
           </div>
         }
-        <Navbar color="faded" light toggleable>
+        <Navbar  color="transparent" light toggleable>
           <NavbarToggler right onClick={this.toggle} />
-          <NavbarBrand href="/">reactstrap</NavbarBrand>
+          <NavbarBrand href="/">MADISON MCKINLEY</NavbarBrand>
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
                 <NavLink href="/allproducts">Shop</NavLink>
               </NavItem>
+          
               <NavItem>
-                <NavLink href="/lookbook">Lookbook</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink type='button' onClick={this.toggleMenu}>Menu</NavLink>
+                <NavLink onClick={this.toggleMenu}>Menu</NavLink>
               </NavItem>
             </Nav>
           </Collapse>

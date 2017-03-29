@@ -1,16 +1,30 @@
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .panel-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
 .collection-panel   {
-    font-family: $header-text;
-    height: 50vw;
-    width: 50vw;
-    background-color: $tan;
-    border: 3px solid white;
-
     .front {
-      text-align: center;
-      height: 50vw;
-
-      h2 {
-        padding-top: 20vw;
+      @include aspect-ratio(1,1);
+      img {
+        max-width: 400px;
+        max-height: 400px;
+        padding: 2vw;
+      }
+      .panel-image-text {
+        z-index: 9000;
       }
     }
 }

@@ -5,7 +5,7 @@ import BannerImage from '../components/banner_image';
 import Footer from '../components/footer';
 import { fetchCollectionContent } from '../actions/index'
 import CollectionList from '../components/collection_list'
-import VideoPlayer from '../components/video_player'
+import SlimVideoPlayer from '../components/slim_video_player'
 
 
 class AllCollections extends Component {
@@ -18,11 +18,11 @@ class AllCollections extends Component {
     if(this.props.collectionContent.length === 0) {
       return <div></div>
     }
-    const video = 'https://res.cloudinary.com/madisonmckinley/video/upload/v1490409608/collection_banner.mp4'
+    const video = 'https://res.cloudinary.com/madisonmckinley/video/upload/v1490494302/white-collection.mp4'
     return (
       <div className="all-collections">
         <Navigation/>
-        <VideoPlayer loop={true} video={video}/>
+        <SlimVideoPlayer loop={true} video={video}/>
         <CollectionList
         collections={this.props.collectionContent}/>
         <Footer

@@ -3,7 +3,7 @@ import React from 'react';
 import { Component } from 'react';
 import { connect } from 'react-redux'
 import async from 'async';
-import { fetchAllProducts , createCart,
+import { fetchAllProducts , fetchCart,
   searchAllProductsByTags } from '../actions/index'
 import {
   Collapse,
@@ -43,7 +43,7 @@ class AllProducts extends Component {
   }
 
   componentWillMount() {
-    this.props.createCart()
+    this.props.fetchCart()
     this.fetchProducts()
   }
 
@@ -163,4 +163,4 @@ function mapStateToProps({products}) {
  return { products }
 }
 
-export default connect(mapStateToProps, { fetchAllProducts, createCart, searchAllProductsByTags })(AllProducts)
+export default connect(mapStateToProps, { fetchAllProducts, fetchCart, searchAllProductsByTags })(AllProducts)
