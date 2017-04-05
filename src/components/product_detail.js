@@ -66,9 +66,9 @@ class ProductDetail extends Component  {
   render() {
     console.log(this.state)
     return (
-      <div>
+      <div className='product-info'>
         <h2>{this.props.name}</h2>
-        <p>{`$ ${this.state.price}.00`}</p>
+        <h3>{`$ ${this.state.price}.00`}</h3>
         { this.state.variants.length > 1 &&
           <Form>
             <Input value={this.state.variantId} onChange={this.handleChange} type='select' name='select'>
@@ -84,7 +84,7 @@ class ProductDetail extends Component  {
             </Input>
           </Form>
         }
-        {this.state.description}
+        <p>{this.state.description}</p>
         { this.state.available ? (
           <Button
           onClick={this.addToCart}

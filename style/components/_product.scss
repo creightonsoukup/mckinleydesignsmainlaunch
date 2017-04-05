@@ -1,0 +1,23 @@
+.quick-view {
+  font-family: $header-text;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-top: 20vh;
+  padding-bottom: 20vh;
+
+  button {
+    font-family: inherit;
+    max-width: 40vw;
+  }
+}
+
+.product-image {
+  width: 100%;
+}
+
+
+
+.product-list {
+  padding: 5vw;
+}

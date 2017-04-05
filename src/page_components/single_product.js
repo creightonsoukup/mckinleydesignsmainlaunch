@@ -4,8 +4,10 @@ import { fetchProduct, fetchCart, addToCart } from '../actions/index';
 import async from 'async';
 import ProductGallery from '../components/product_gallery'
 import ProductDetail from '../components/product_detail'
-import Navigation from '../components/navbar'
+import Navigation from '../components/navbar-scroll'
 import Footer from '../components/footer'
+import { Row, Col } from 'reactstrap';
+import ProductFooter from '../components/product-footer'
 
 class SingleProduct extends Component {
   static contextTypes = {
@@ -40,7 +42,8 @@ class SingleProduct extends Component {
   addToCart(variantObj, quantity) {
     this.props.addToCart(variantObj, quantity, this.state.cart)
       .then((data) => {
-        console.log(data)
+        localStorage.setItem('MckinleyCart', data.payload.id)
+        this.setState({cart: data.payload})
       })
   }
 
@@ -84,18 +87,26 @@ class SingleProduct extends Component {
     }
     console.log(this.state)
     return (
-
-      <div>
+      <div className='animated fadeInRight'>
         <Navigation />
-        <ProductGallery
-        regular={this.state.imagesReg}
-        gallery={this.state.imagesGallery}
-        thumbnails={this.state.imagesThumb}/>
-        <ProductDetail
-        name={this.state.product.title}
-        addToCart={this.addToCart}
-        description={this.state.product.description}
-        variants={this.state.product.variants} />
+        <Row className='single-product'>
+          <Col xs='12' sm='12' md='7' lg='7' xl='7'>
+            <ProductGallery
+            regular={this.state.imagesReg}
+            gallery={this.state.imagesGallery}
+            thumbnails={this.state.imagesThumb}/>
+          </Col>
+          <Col xs='12' sm='12' md='5' lg='5' xl='5'>
+            <ProductDetail
+              name={this.state.product.title}
+              addToCart={this.addToCart}
+              description={this.state.product.description}
+              variants={this.state.product.variants} />
+          </Col>
+          <Col xs='12' sm='12' md='12' lg='12' xl='12'>
+              <ProductFooter />
+          </Col>
+        </Row>
         <Footer
         show={true} />
       </div>

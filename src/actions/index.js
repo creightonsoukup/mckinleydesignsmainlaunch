@@ -30,6 +30,8 @@ export const FETCH_QUOTE = 'fetch_quote'
 export const FETCH_COLLECTION_CONTENT = 'fetch_collection_content'
 export const FETCH_PRODUCT = 'fetch_product'
 export const ADD_TO_CART = 'add_to_cart'
+export const UPDATE_CART = 'update_cart'
+export const DELETE_ITEM = 'delete_item'
 
 
 const DATABASE_URL = 'http://localhost:3000'
@@ -206,8 +208,8 @@ export function fetchAllCollections() {
 
 export function fetchCart() {
   let request
-  if(localStorage.getItem('MckinleyCartId')) {
-    var cartId = localStorage.getItem('MckinleyCartId')
+  if(localStorage.getItem('MckinleyCart')) {
+    var cartId = localStorage.getItem('MckinleyCart')
      request = shopClient.fetchRecentCart(cartId)
   } else {
      request = shopClient.createCart()
@@ -219,12 +221,28 @@ export function fetchCart() {
 }
 
 export function addToCart(variantObj, quantity, cart) {
-
-  console.log(cart)
   const request = cart.createLineItemsFromVariants({variant: variantObj, quantity: quantity})
 
   return {
     type: ADD_TO_CART,
+    payload: request
+  }
+}
+
+export function updateCart(quantity, id, cart) {
+  const request = cart.updateLineItem(id, parseInt(quantity))
+
+  return {
+    type: UPDATE_CART,
+    payload: request
+  }
+}
+
+export function deleteItem(id, cart) {
+  const request = cart.removeLineItem(id)
+
+  return {
+    type: DELETE_ITEM,
     payload: request
   }
 }

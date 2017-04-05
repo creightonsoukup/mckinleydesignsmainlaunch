@@ -38,14 +38,14 @@ class ProductQuickView extends Component {
     return (
       <div>
         {this.props.offset ? (
-          <Row>
+          <Row className="product-row">
             <Col xs="12" sm="12" md='6' lg="6" xl="6">
               <SmallGallery
               image={this.props.galleryImageSrc} />
             </Col>
-            <Col xs="12" sm="12" md='6' lg="6" xl="6">
-              <div>{this.state.product.productTitle}</div>
-              <div>{this.state.product.price}</div>
+            <Col xs="12" sm="12" md='6' lg="6" xl="6" className='quick-view'>
+              <h2>{this.state.product.productTitle}</h2>
+              <h2>{this.state.product.price}</h2>
               <Button>Add To Cart</Button>
               <Button
               onClick={this.viewProduct}
@@ -53,10 +53,10 @@ class ProductQuickView extends Component {
             </Col>
           </Row>
         ) : (
-          <Row>
-            <Col xs="12" sm="12" md='6' lg="6" xl="6">
-              <div>{this.state.product.productTitle}</div>
-              <div>{this.state.product.price}</div>
+          <Row className='product-row'>
+            <Col xs="12" sm="12" md='6' lg="6" xl="6" className='quick-view'>
+              <h2>{this.state.product.productTitle}</h2>
+              <h2>{this.state.product.price}</h2>
               <Button>Add To Cart</Button>
               <Button
               onClick={this.viewProduct}

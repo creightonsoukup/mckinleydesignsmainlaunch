@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import * as ScrollMajic from 'scrollmagic'
 import {
   Collapse,
   Navbar,
@@ -15,6 +14,7 @@ import {
   Form,
 } from 'reactstrap';
 import Product from './slider_product'
+import Waypoint from 'react-waypoint';
 
 export default class ProductSlider extends Component {
 

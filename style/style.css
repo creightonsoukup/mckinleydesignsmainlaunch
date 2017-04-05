@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway");
 @import url("http://allfont.net/allfont.css?fonts=colonna-mt");
-@import url("https://fonts.googleapis.com/css?family=Hind:bold");
+@import url("https://fonts.googleapis.com/css?family=Hind:600");
+@import url(../../node_modules/animate.css/animate.css);
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -57,40 +58,58 @@ body {
     right: 0;
     bottom: 0; }
   .collection-panel .front img {
-    max-width: 400px;
-    max-height: 400px;
-    padding: 2vw; }
-  .collection-panel .front .panel-image-text {
-    z-index: 9000; }
+    max-width: 100%;
+    max-height: 100%;
+    padding: 5vw; }
+  .collection-panel .front .panel-image-text-right {
+    z-index: 9000;
+    transition: transform 2s ease; }
+  .collection-panel .front .panel-image-text-left {
+    z-index: 9000;
+    transition: transform 2s ease; }
+  .collection-panel .front .panel-image-text-right:hover {
+    transform: rotate(30deg);
+    -webkit-transform: rotate(30deg); }
+  .collection-panel .front .panel-image-text-left:hover {
+    transform: rotate(-30deg);
+    -webkit-transform: rotate(-30deg); }
+  .collection-panel .front .collection-action {
+    min-height: 5vh; }
+
+.slim-video {
+  margin-top: 50px; }
 
 .homepage-loader video {
   position: fixed;
   top: 50%;
   left: 50%;
-  min-width: 100%;
-  min-height: 100%;
+  min-width: 100vw;
+  min-height: 100vh;
   width: auto;
   height: auto;
-  z-index: -100;
   -ms-transform: translateX(-50%) translateY(-50%);
   -moz-transform: translateX(-50%) translateY(-50%);
-  -webkit-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50vw) translateY(-50vh);
   transform: translateX(-50%) translateY(-50%);
   background-size: cover; }
 
-.navbar-light .navbar-brand, .navbar-light .navbar-toggler {
+.navbar-light .navbar-toggler {
   color: #F4EACE;
-  font-size: 3vw; }
+  font-size: 5vw; }
 
 .navbar-brand {
   font-family: "Colonna MT", arial;
-  letter-spacing: 4px; }
+  letter-spacing: 4px;
+  font-size: 4.5vw; }
+
+.navbar a.navbar-brand {
+  color: #F4EACE;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
 
 nav.navbar {
-  z-index: 100000;
+  z-index: 20000;
   background-color: transparent;
-  padding-top: 3vw;
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%; }
 
@@ -99,10 +118,10 @@ a.nav-link {
 
 .navbar-light .navbar-nav .nav-link {
   color: #F4EACE;
-  font-size: 1.5vw; }
+  font-size: 3vw; }
 
 .banner1 {
-  background: url("https://s3-us-west-1.amazonaws.com/madison-mckinley/banner-images/homepage1.jpg") no-repeat center center;
+  background: url("https://s3-us-west-1.amazonaws.com/madison-mckinley/banner-images/homepage1.jpg") center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -110,6 +129,7 @@ a.nav-link {
   min-width: 100%;
   position: relative;
   display: block;
+  transition: background 2s ease;
   box-shadow: inset 0px -2px 10px 0px rgba(0, 0, 0, 0.4); }
   .banner1 h2 {
     text-align: center;
@@ -126,6 +146,14 @@ a.nav-link {
     padding-top: 3vw;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); }
+
+.banner1-darken {
+  background: url("https://s3-us-west-1.amazonaws.com/madison-mckinley/banner-images/homepage1-dark.jpg") center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  transition: background 1s ease;
+  transition-delay: .25s; }
 
 .banner2 {
   background: url("https://s3-us-west-1.amazonaws.com/madison-mckinley/banner-images/homepage2.jpg") no-repeat center center;
@@ -167,15 +195,19 @@ a.nav-link {
   background-size: cover;
   min-height: 80vh;
   margin: 5vw;
-  box-shadow: 1px 1px 6px 0px rgba(0, 0, 0, 0.2), -1px -1px 6px 0px rgba(0, 0, 0, 0.2); }
+  box-shadow: 1px 1px 6px 0px rgba(0, 0, 0, 0.2), -1px -1px 6px 0px rgba(0, 0, 0, 0.2);
+  position: relative; }
   .banner3 .content {
     height: 50vh;
     width: 50vw;
     display: flex;
     flex-direction: column;
     text-align: center;
-    float: right;
-    transform: translateY(15%); }
+    padding-right: 3vw;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    position: absolute; }
     .banner3 .content h2 {
       text-align: center;
       font-family: "Hind", sans-serif;
@@ -333,68 +365,6 @@ video {
     margin-left: 3vw;
     margin-right: 3vw; }
 
-.footer {
-  background-color: #b89f83;
-  height: 50vh;
-  position: relative; }
-  .footer .links {
-    display: flex;
-    background-color: rgba(255, 255, 255, 0);
-    position: absolute;
-    width: 100vw;
-    bottom: 0;
-    font-family: "MyWebFonts", "lulo_cleanone", serif; }
-    .footer .links .social {
-      left: 0;
-      color: white;
-      font-size: 1.5vw;
-      padding: 3vh; }
-      .footer .links .social a {
-        color: white;
-        padding: 1vw; }
-      .footer .links .social i {
-        padding-right: 1vw; }
-    .footer .links .customer-links {
-      right: 0;
-      position: absolute;
-      padding: 3vh;
-      font-size: 1.5vw; }
-      .footer .links .customer-links a {
-        color: white;
-        padding: 1vw; }
-    .footer .links i {
-      font-size: 2.5vw; }
-  .footer .email {
-    margin: 5vw;
-    position: absolute;
-    top: 15%;
-    left: 0;
-    transform: translate(0, -15%);
-    font-family: "MyWebFonts", "lulo_cleanone", serif; }
-    .footer .email h2 {
-      color: white;
-      font-size: 2.5vw; }
-    .footer .email form {
-      padding-top: 2vh;
-      padding-bottom: 2vh; }
-      .footer .email form input {
-        margin-bottom: 2vh;
-        background-color: rgba(255, 255, 255, 0);
-        color: white;
-        font-family: "MyWebFonts", "lulo_cleanone", serif; }
-        .footer .email form input input::placeholder {
-          color: white; }
-      .footer .email form .form-control {
-        color: white;
-        border: 2px solid white;
-        border-radius: 0; }
-      .footer .email form button {
-        color: #B89F83;
-        font-family: "MyWebFonts", "lulo_cleanone", serif;
-        border-radius: 0;
-        border: none;
-        background-color: white; }
-
 .filter-bar {
   background-color: white;
   width: 100vw;
@@ -403,36 +373,20 @@ video {
     width: 100vw;
     margin: 5vw; }
     .filter-bar form select {
-      border: 1px solid #A33F23; }
+      border: 1px solid #A33F23;
+      font-family: "MyWebFonts", "lulo_cleanone", serif; }
     .filter-bar form .form-control {
       border-radius: 0rem; }
+    .filter-bar form input {
+      font-family: "MyWebFonts", "lulo_cleanone", serif; }
+
+select.form-control {
+  border-radius: 0rem; }
 
 .product-list {
   background-color: white;
   padding-bottom: 10vh;
   min-height: 100vh; }
-
-.product-image {
-  width: 75%; }
-
-select.form-control {
-  border-radius: 0rem; }
-
-.open {
-  width: 100%; }
-
-.close {
-  width: 0%; }
-
-.menu {
-  z-index: 5000;
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: lightgrey;
-  opacity: .90; }
 
 .collection-title {
   margin-top: 40vh;
@@ -441,6 +395,311 @@ select.form-control {
   color: white;
   font-size: 7vw;
   letter-spacing: 5px;
-  margin-bottom: 20vh; }
+  margin-bottom: 20vh;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
+
+.footer {
+  background-color: #b89f83;
+  min-height: 50vh; }
+  .footer .links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 40vh;
+    padding: 10vh;
+    font-family: "MyWebFonts", "lulo_cleanone", serif;
+    color: white;
+    font-size: 1.5vw; }
+    .footer .links a {
+      color: white; }
+    .footer .links .social {
+      display: flex;
+      flex-direction: row; }
+      .footer .links .social i {
+        font-size: 3vw; }
+      .footer .links .social a {
+        padding-left: 3vw; }
+      .footer .links .social :first-child {
+        padding-left: 0; }
+  .footer .email {
+    padding: 10vh;
+    font-family: "MyWebFonts", "lulo_cleanone", serif; }
+    .footer .email h2 {
+      color: white;
+      padding-bottom: 2vh;
+      font-size: 1.5vw;
+      line-height: 1.5; }
+    .footer .email form input {
+      margin-bottom: 2vh;
+      background-color: rgba(255, 255, 255, 0);
+      color: white;
+      font-family: "MyWebFonts", "lulo_cleanone", serif;
+      font-size: 1.5vw; }
+    .footer .email form .form-control {
+      color: white;
+      border: 2px solid white;
+      border-radius: 0; }
+    .footer .email form button {
+      color: #B89F83;
+      font-family: "MyWebFonts", "lulo_cleanone", serif;
+      border-radius: 0;
+      border: none;
+      background-color: white; }
+  .footer .footer-bar {
+    display: flex;
+    margin: 2vw;
+    flex-direction: row;
+    justify-content: flex-end;
+    color: white;
+    font-family: "MyWebFonts", "lulo_cleanone", serif; }
+    .footer .footer-bar .copyright {
+      color: white; }
+      .footer .footer-bar .copyright i {
+        padding-right: 1vw; }
+
+.quick-view {
+  font-family: "MyWebFonts", "lulo_cleanone", serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-top: 20vh;
+  padding-bottom: 20vh; }
+  .quick-view button {
+    font-family: inherit;
+    max-width: 40vw; }
+
+.product-image {
+  width: 100%; }
+
+.product-list {
+  padding: 5vw; }
+
+.scroll-nav nav {
+  z-index: 100000;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  width: 100%; }
+
+@media (min-width: 768px) {
+  .scroll-nav nav {
+    z-index: 100000;
+    background-color: #F4EACE;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.2); }
+  .scroll-nav .nav-items h1 {
+    font-family: "Colonna MT", arial;
+    font-size: 3.5vw;
+    color: #A33F23;
+    text-align: center;
+    padding: 15px; }
+  .scroll-nav .nav-items .nav-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    min-width: 225px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 2vw;
+    font-family: "MyWebFonts", "lulo_cleanone", serif;
+    padding: 1.5vw;
+    padding-top: 20px; }
+    .scroll-nav .nav-items .nav-links a {
+      color: #A33F23;
+      font-size: 2vw; }
+      .scroll-nav .nav-items .nav-links a i {
+        font-size: 2vw; }
+  .scroll-nav .nav-items .search {
+    left: 0;
+    top: 0;
+    padding: 1.5vw;
+    padding-top: 20px;
+    font-size: 2vw;
+    color: #A33F23;
+    position: absolute; } }
+.single-product {
+  padding-top: 70px;
+  min-height: 90vh; }
+  .single-product .product-gallery {
+    display: flex;
+    padding: 5vh;
+    flex-direction: row;
+    align-items: center;
+    min-height: 80vh; }
+    .single-product .product-gallery i {
+      font-size: 3vw;
+      padding: 2vw; }
+    .single-product .product-gallery img {
+      width: 40vw; }
+  .single-product .product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 80vh;
+    padding-top: 10vh;
+    padding-bottom: 5vh;
+    padding-right: 5vw;
+    font-family: "MyWebFonts", "lulo_cleanone", serif; }
+    .single-product .product-info form {
+      max-width: 150px; }
+    .single-product .product-info button {
+      max-width: 150px; }
+    .single-product .product-info p {
+      font-family: "Raleway", sans-serif;
+      line-height: 1.5; }
+  .single-product .product-footer {
+    min-height: 10vh;
+    background-color: grey;
+    bottom: 0; }
+
+.open {
+  width: 100%; }
+
+.close {
+  width: 0%; }
+
+.menu {
+  z-index: 30000;
+  width: 70vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  padding-top: 55px;
+  left: 15vw;
+  background-color: #B89F83;
+  box-shadow: -1px 0 3px 0px rgba(0, 0, 0, 0.3), 1px 0 3px 0 rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  font-family: "MyWebFonts", "lulo_cleanone", serif;
+  color: white;
+  font-size: 1.5vw; }
+  .menu a {
+    width: 100%;
+    padding-bottom: 2vh;
+    color: white;
+    font-family: "MyWebFonts", "lulo_cleanone", serif;
+    font-size: 1.5vw;
+    transition: all .3s ease-in-out;
+    text-decoration: none; }
+  .menu img {
+    height: auto;
+    max-width: 15vw;
+    padding-top: 5vh; }
+  .menu .social i {
+    font-size: 3vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    transition: all .3s ease-in-out; }
+  .menu .social i:hover {
+    font-size: 3.2vw; }
+  .menu a:hover {
+    font-size: 1.6vw; }
+  .menu .close-menu {
+    color: white;
+    font-family: "MyWebFonts", "lulo_cleanone", serif;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-bottom: 6vh; }
+    .menu .close-menu i {
+      color: white;
+      padding-right: 1vw; }
+    .menu .close-menu p {
+      font-family: "MyWebFonts", "lulo_cleanone", serif; }
+
+.menu-background {
+  width: 100vw;
+  height: 100vh;
+  z-index: 29999;
+  position: fixed;
+  background-color: rgba(229, 229, 229, 0.8);
+  top: 0;
+  left: 0; }
+
+.cart {
+  z-index: 10000;
+  width: 60vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #B89F83;
+  font-family: "Raleway", sans-serif;
+  box-shadow: -1px 0 5px 0px rgba(170, 170, 170, 0.5); }
+  .cart .cart-header {
+    display: flex;
+    margin-top: 10vh;
+    padding: 5vh;
+    justify-content: space-between;
+    width: 100%;
+    font-family: "MyWebFonts", "lulo_cleanone", serif;
+    padding-bottom: 3vh; }
+    .cart .cart-header h1 {
+      color: white;
+      font-size: 2vw;
+      padding: 2px; }
+    .cart .cart-header i {
+      color: white;
+      padding: 2px;
+      font-size: 2vw; }
+  .cart .cart-body {
+    background-color: white;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    min-height: 60vh;
+    overflow: scroll;
+    box-shadow: -1px -1px 5px 0px rgba(170, 170, 170, 0.5), 1px 1px 5px 0px rgba(170, 170, 170, 0.5); }
+    .cart .cart-body input {
+      width: 50px;
+      height: 30px; }
+    .cart .cart-body button {
+      border: 0; }
+    .cart .cart-body .lineItem-info {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding-top: 1vw;
+      padding-bottom: 1vw; }
+  .cart .empty-cart {
+    margin: 10vh;
+    font-family: "MyWebFonts", "lulo_cleanone", serif;
+    text-align: center;
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; }
+    .cart .empty-cart h2 {
+      font-size: 2vw;
+      color: white; }
+    .cart .empty-cart h3 {
+      font-size: 1.5vw;
+      color: white; }
+    .cart .empty-cart a {
+      text-decoration: none;
+      color: white; }
+
+.cart-background {
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  position: fixed;
+  background-color: rgba(170, 170, 170, 0.5);
+  top: 0;
+  left: 0; }
+
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-90%, 0, 0);
+    visibility: visible; }
+  to {
+    transform: translate3d(0, 0, 0); } }
+.slideInLeft {
+  animation-name: slideInLeft; }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,64 @@
+
+.scroll-nav {
+  nav {
+    z-index: 100000;
+    background-color:  white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .scroll-nav {
+    nav {
+      z-index: 100000;
+      background-color:  $tan;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height:60px;
+      box-shadow: 0px 1px 6px 0px rgba(0,0,0,0.2);
+    }
+    .nav-items {
+      h1 {
+        font-family: $logo-text;
+        font-size: 3.5vw;
+        color: $red-brown;
+        text-align: center;
+        padding: 15px;
+
+      }
+      .nav-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        min-width: 225px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 2vw;
+        font-family: $header-text;
+        padding: 1.5vw;
+        padding-top: 20px;
+        a {
+          color: $red-brown;
+          font-size: 2vw;
+          i {
+            font-size: 2vw;
+          }
+        }
+      }
+      .search {
+        left: 0;
+        top: 0;
+        padding: 1.5vw;
+        padding-top: 20px;
+        font-size: 2vw;
+        color: $red-brown;
+        position: absolute;
+      }
+    }
+
+  }
+}

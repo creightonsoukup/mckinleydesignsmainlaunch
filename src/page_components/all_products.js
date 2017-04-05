@@ -136,7 +136,7 @@ class AllProducts extends Component {
     const video = 'https://res.cloudinary.com/madisonmckinley/video/upload/v1490312893/loop_video_n0thkq.mov'
     const search = _.debounce((value) => {this.searchProducts(value)}, 300)
     return (
-      <div>
+      <div className='animated fadeIn'>
       <Navigation />
       <VideoPlayer loop={true} video={video}/>
       <Container>

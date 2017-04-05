@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Row, Col } from 'reactstrap';
 import Navigation from '../components/navbar'
@@ -11,18 +11,29 @@ import Quote from '../containers/quote'
 import _ from 'lodash';
 import HomepageLoader from '../components/homepage_loader'
 import HomepageMainBanner from '../components/homepage_main_banner'
+import NavbarScroll from '../components/navbar-scroll'
+import Waypoint from 'react-waypoint';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class Homepage extends Component {
+  static contextTypes = {
+    router: PropTypes.object
+  }
   constructor(props) {
     super(props)
 
     this.state = {
       favorites: [],
       playBrandVideo: false,
-      loadingScreen: true
+      loadingScreen: true,
+      scrollNav: false,
+      banner1ClassNames: ['banner1', 'parallax', 'banner', 'animated', 'fadeIn'],
+      navbarAnimation: 'fadeInDown'
     }
 
     this.playBrandVideo = this.playBrandVideo.bind(this)
+    this.navOnLeave = this.navOnLeave.bind(this)
+    this.navOnEnter = this.navOnEnter.bind(this)
   }
 
   componentWillMount() {
@@ -33,10 +44,38 @@ class Homepage extends Component {
   }
 
   playBrandVideo(e) {
-    console.log('j')
+
     e.preventDefault()
     if (e.shiftKey) {
       this.setState({playBrandVideo: true})
+    }
+  }
+
+  navOnLeave() {
+    if (this.state.banner1ClassNames.length === 6) {
+      this.setState({
+        scrollNav: true
+      })
+    } else {
+      this.setState({
+        banner1ClassNames: [ 'banner1-darken', ...this.state.banner1ClassNames],
+        scrollNav: true
+      })
+    }
+  }
+
+  navOnEnter() {
+    if (this.state.banner1ClassNames.length === 6) {
+      const classnames = this.state.banner1ClassNames.splice(1,5)
+      this.setState({
+        scrollNav: false,
+        banner1ClassNames: classnames
+      })
+
+    } else {
+      this.setState({
+        scrollNav: false
+      })
     }
   }
 
@@ -48,18 +87,28 @@ class Homepage extends Component {
     if(this.state.loadingScreen) {
     loader()
     return (
-        <div>
+        <div className='loader animated fadeIn'>
           <HomepageLoader video={horseVideo}/>
         </div>
     )
     }
-
     return (
-      <div className='homepage'>
-        <Navigation />
-        <div className='banner1 banner parallax parallax-1'>
+      <div className='homepage animated fadeIn'>
+        { this.state.scrollNav ? (
+          <NavbarScroll
+          animation={this.state.navbarAnimation}/>
+        ) : (
+          <Navigation/>
+        )}
+        <Waypoint
+        topOffset={'-20%'}
+        onEnter={this.navOnEnter}
+        onLeave={this.navOnLeave}/>
+        <div
+        onClick={() => {this.context.router.push('/shop/collections') }}
+        className={this.state.banner1ClassNames.join(' ')}>
           <h2>ITALIAN COWBOY COOL</h2>
-          <h4>SHOP NOW</h4>
+          <h4>SHOP NOW <i className="fa fa-arrow-right" aria-hidden="true"></i></h4>
         </div>
         <div className='content'>
         { this.state.favorites.length > 0 &&
@@ -74,6 +123,8 @@ class Homepage extends Component {
           <div className="homepage-video" onClick={() => this.setState({playBrandVideo: true})}>
             <div className="video-text" >
               <div className="text-block">
+                <Waypoint
+                onEnter={this.showVideoAnimation}/>
                 <h2>Love Your Freedom</h2>
                 <h2>Live Your Moment</h2>
                 <h2>Own Your Vision</h2>
@@ -97,12 +148,12 @@ class Homepage extends Component {
         </div>
         <div className="content">
         <div className="banner2">
-          <div className="content">
+          <div className="content" onClick={() => {this.context.router.push('/about')}}>
             <h2>DISCOVER <br/>OUR STORY</h2>
             <h3>LEARN MORE<i className="fa fa-arrow-right" aria-hidden="true"></i></h3>
           </div>
         </div>
-        <div className="banner3">
+        <div className="banner3" onClick={() => {this.context.router.push('/in-the-saddle')}}>
           <div className="content">
             <h2>MEANWHILE,<br/>IN THESADDLE</h2>
             <h3>STAY UP TO DATE WITH EVERYTHING MADKOOL</h3>

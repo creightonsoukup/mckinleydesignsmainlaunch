@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Navigation from '../components/navbar';
 import Footer from '../components/footer';
+import NavbarScroll from '../components/navbar-scroll'
 import BannerImage from '../components/banner_image';
 import FilterBar from '../components/filter_bar';
 import async from 'async';
@@ -212,8 +213,8 @@ class SingleCollection extends Component {
       const search = _.debounce((value) => {this.searchProducts(value)}, 300)
     console.log(this.state)
     return (
-      <div>
-      <Navigation />
+      <div className='animated fadeIn'>
+      <NavbarScroll />
       <BannerImage
         fileName={`${this.props.params.collection}.jpg`}/>
       <Container fluid>
@@ -229,9 +230,9 @@ class SingleCollection extends Component {
           <ProductList products={this.state.sortedProducts.length === 0 ? this.state.products : this.state.sortedProducts}/>
         )}
         </div>
+        <Footer
+          show={this.state.products.length > 0}/>
       </Container>
-      <Footer
-        show={this.state.products.length > 0}/>
       </div >
     )
   }

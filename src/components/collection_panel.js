@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router'
 
 import {
@@ -18,7 +18,9 @@ import {
 
 
 class CollectionPanel extends Component {
-
+  static contextTypes = {
+    router: PropTypes.object
+  };
   constructor(props) {
     super(props)
 
@@ -29,10 +31,11 @@ class CollectionPanel extends Component {
   }
 
   render() {
+    console.log(this.props)
     const handle = this.state.collection.name.split(' ').join('-').toLowerCase()
     return (
       <Col
-      onMouseEnter = { () => this.setState({hover: true})}
+      onMouseEnter = { () => this.setState({hover: false})}
       onMouseLeave = { () => this.setState({hover: false})}
       className="collection-panel" xs='12' sm='12' md='6' lg='6' xl='6'>
       {
@@ -46,9 +49,11 @@ class CollectionPanel extends Component {
           </div>
 
         ) : (
-          <div className="front">
-            <img className='panel-image panel-image-text' src={`https://s3-us-west-1.amazonaws.com/madison-mckinley/${handle}-text.png`}></img>
+          <div onClick={() => {this.context.router.push(`/shop/collections/${handle}`)}} className="front">
+            <img className={this.state.collection.id % 2 == 0 ? 'panel-image panel-image-text-left' : 'panel-image panel-image-text-right'} src={`https://s3-us-west-1.amazonaws.com/madison-mckinley/${handle}-text.png`}></img>
             <img className="panel-image" src={`https://s3-us-west-1.amazonaws.com/madison-mckinley/${handle}-pic.jpg`}></img>
+            <div className='collection-action'>
+            </div>
           </div>
 
         )

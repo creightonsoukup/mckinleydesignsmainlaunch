@@ -9,15 +9,17 @@ import NotFound from './components/not_found'
 import Customize from './page_components/customize'
 import SingleProduct from './page_components/single_product'
 import Homepage from './page_components/homepage'
+import Cart from './page_components/cart'
 
 export default (
   <Route path='/' component={App}>
     <IndexRoute component={Homepage} />
-    <Route path='/allproducts' component={AllProducts} />
-    <Route path='/collections' component={AllCollections}/>
-    <Route path='/collections/:collection' component={SingleCollection}/>
-    <Route path='/customize' component={Customize} />
+    <Route path='/shop/all-products' component={AllProducts} />
+    <Route path='/shop/collections' component={AllCollections}/>
+    <Route path='/shop/collections/:collection' component={SingleCollection}/>
+    <Route path='/create-your-own' component={Customize} />
     <Route path='/product/:handle' component={SingleProduct} />
+    <Route path='/cart' component={Cart} />
     <Route path='*' component={NotFound} />
   </Route>
 )

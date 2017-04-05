@@ -1,28 +1,30 @@
-.navbar-light .navbar-brand, .navbar-light .navbar-toggler {
+.navbar-light .navbar-toggler {
   color: $tan;
-  font-size: 3vw;
-}
+  font-size: 5vw;
 
+}
 .navbar-brand {
   font-family: $logo-text;
   letter-spacing: 4px;
+  font-size: 4.5vw;
 }
 
+.navbar a.navbar-brand {
+  color: $tan;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+}
 nav.navbar {
-  z-index: 100000;
+  z-index: 20000;
   background-color:  rgba(0,0,0,0);
-  padding-top: 3vw;
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
+  
 }
-
 a.nav-link {
   font-family: $header-text;
 }
-
 .navbar-light .navbar-nav .nav-link {
   color: $tan;
-  font-size: 1.5vw;
-
+  font-size: 3vw;
 }

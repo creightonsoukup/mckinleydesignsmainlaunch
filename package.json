@@ -29,6 +29,7 @@
     "webpack-dev-server": "^1.14.0"
   },
   "dependencies": {
+    "animate.css": "^3.5.2",
     "async": "^2.1.5",
     "axios": "^0.15.3",
     "babel-preset-stage-1": "^6.1.18",
@@ -44,11 +45,11 @@
     "react-images": "^0.5.2",
     "react-redux": "^4.4.6",
     "react-router": "^2.8.1",
+    "react-waypoint": "^5.2.1",
     "reactstrap": "^4.2.0",
     "redux": "^3.0.4",
     "redux-form": "^6.5.0",
     "redux-promise": "^0.5.3",
-    "scrollmagic": "^2.0.5",
     "shopify-buy": "^0.7.0"
   }
 }

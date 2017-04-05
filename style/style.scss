@@ -1,40 +1,31 @@
 @import 'reset';
 @import 'font';
 @import 'colors';
+@import '../../node_modules/animate.css/animate.css';
 @import './components/collection_list';
 @import './components/homepage_loader';
 @import './components/navbar';
 @import './components/banner_image';
 @import './components/homepage_video';
 @import './components/slider';
-@import './components/footer';
 @import './components/collection';
+@import './components/footer';
+@import './components/product';
+@import './components/scroll-nav';
+@import './components/single-product';
+@import './components/menu-cart';
 
-.open {
-  width: 100%;
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-90%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
 }
 
-.close{
-  width: 0%
-}
-
-.menu {
-  z-index: 5000;
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left:0;
-  background-color: lightgrey;
-  opacity: .90;
-}
-
-.collection-title {
-  margin-top: 40vh;
-  text-align: center;
-  font-family: $header-bold;
-  color: white;
-  font-size: 7vw;
-  letter-spacing: 5px;
-  margin-bottom: 20vh;
+.slideInLeft {
+  animation-name: slideInLeft;
 }
