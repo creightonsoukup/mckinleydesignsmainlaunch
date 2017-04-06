@@ -7,6 +7,16 @@
   font-family: $logo-text;
   letter-spacing: 4px;
   font-size: 4.5vw;
+  transition: font-size 1s ease;
+}
+
+.navbar-brand:hover {
+  font-size: 4.6vw;
+}
+
+.navbar a.navbar-brand:hover {
+  color: $tan;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
 }
 
 .navbar a.navbar-brand {
@@ -19,12 +29,16 @@ nav.navbar {
   position: absolute;
   top: 0;
   width: 100%;
-  
+
 }
-a.nav-link {
-  font-family: $header-text;
-}
+
 .navbar-light .navbar-nav .nav-link {
   color: $tan;
   font-size: 3vw;
+  transition: font-size 1s ease;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: $tan;
+  font-size: 3.1vw;
 }

@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { Row,  Navbar, Collapse, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap'
 import Menu from './menu';
+import Cart from '../page_components/cart'
 
 class Navigation extends Component {
   constructor(props) {
@@ -48,6 +49,12 @@ class Navigation extends Component {
           <div>
             <Menu
             toggleMenu={this.toggleMenu}
+            toggleCart={this.toggleCart} />
+          </div>
+        }
+        { this.state.cartOpen &&
+          <div>
+            <Cart
             toggleCart={this.toggleCart} />
           </div>
         }

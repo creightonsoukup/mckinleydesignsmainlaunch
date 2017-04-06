@@ -24,14 +24,10 @@ class SmallGallery extends Component {
   render() {
     return (
       <div>
-      <span><i
-      className="fa fa-angle-left" aria-hidden="true"></i></span>
         <img
         className="product-image"
         src={this.props.image} />
-      <span
-      onclick={this.props.onImageClick}>
-      <i className="fa fa-angle-right" aria-hidden="true"></i></span>
+
       </div>
     )
   }

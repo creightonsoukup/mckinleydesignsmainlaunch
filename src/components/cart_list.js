@@ -37,7 +37,7 @@ class CartList extends Component {
             {this.props.lineItems.map(this.renderCart)}
           </tbody>
         </Table>
-
+        
       </div>
     )
   }

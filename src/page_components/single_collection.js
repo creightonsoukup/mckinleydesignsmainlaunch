@@ -7,10 +7,11 @@ import BannerImage from '../components/banner_image';
 import FilterBar from '../components/filter_bar';
 import async from 'async';
 import ProductList from '../components/product_list'
+import CollectionHeader from '../components/collection_header'
 import { fetchPerlineCollection, getGoldCollection,
-  fetchWildCollection, fetchSteerheadRanchCollection,
-  fetchCoinCollection, fetchOccidentaleCollection,
-fetchCameoCollection, fetchEastwoodCollection, searchCollectionByTag } from '../actions/index'
+  fetchWildCollection, fetchSteerheadRanchCollection, fetchCart, addToCart,
+  fetchCoinCollection, fetchOccidentaleCollection, fetchCollectionContent,
+fetchCameoCollection, fetchEastwoodCollection, searchCollectionByTag } from '../actions/index';
 
 import {
   Collapse,
@@ -34,16 +35,40 @@ class SingleCollection extends Component {
     this.state = {
       products: [],
       sortedProducts: [],
-      collection: ''
+      collection: '',
+      collectionContent: '',
+      cart: null
     }
     //
     this.searchProducts = this.searchProducts.bind(this)
     this.sortProducts = this.sortProducts.bind(this)
     this.sortProductTypes = this.sortProductTypes.bind(this)
+    this.addToCart = this.addToCart.bind(this)
   }
 
   componentWillMount() {
     this.getProducts(this.props.params.collection)
+    this.props.fetchCollectionContent()
+      .then((data) => {
+        let collections = data.payload.data
+        collections.map((collection) => {
+          if(collection.name.toLowerCase() === this.props.params.collection.split('-').join(" ")) {
+            this.setState({collectionContent: collection})
+          }
+        })
+      })
+    this.props.fetchCart()
+      .then((data) => {
+        this.setState({cart: data.payload})
+      })
+  }
+
+  addToCart(variantObj, quantity) {
+    this.props.addToCart(variantObj, quantity, this.state.cart)
+      .then((data) => {
+        localStorage.setItem('MckinleyCart', data.payload.id)
+        this.setState({cart: data.payload})
+      })
   }
 
   getProducts(collection) {
@@ -211,7 +236,6 @@ class SingleCollection extends Component {
 
   render() {
       const search = _.debounce((value) => {this.searchProducts(value)}, 300)
-    console.log(this.state)
     return (
       <div className='animated fadeIn'>
       <NavbarScroll />
@@ -219,6 +243,8 @@ class SingleCollection extends Component {
         fileName={`${this.props.params.collection}.jpg`}/>
       <Container fluid>
         <h1 className="collection-title">{this.state.collection.toUpperCase()}</h1>
+        <CollectionHeader
+        collectionContent={this.state.collectionContent} />
         <FilterBar
         sortProducts={this.sortProducts}
         sortProductTypes={this.sortProductTypes}
@@ -227,7 +253,9 @@ class SingleCollection extends Component {
         {this.state.products.length === 0 ? (
           <div>Products Loading</div>
         ) : (
-          <ProductList products={this.state.sortedProducts.length === 0 ? this.state.products : this.state.sortedProducts}/>
+          <ProductList
+          addToCart={this.addToCart}
+          products={this.state.sortedProducts.length === 0 ? this.state.products : this.state.sortedProducts}/>
         )}
         </div>
         <Footer
@@ -238,11 +266,11 @@ class SingleCollection extends Component {
   }
 }
 
-function mapStateToProps({collection}) {
-  return {collection}
+function mapStateToProps({collection, collectionContent}) {
+  return {collection, collectionContent}
 }
 
 export default connect(mapStateToProps, {fetchPerlineCollection, getGoldCollection,
-  fetchWildCollection, fetchSteerheadRanchCollection,
-  fetchCoinCollection, fetchOccidentaleCollection, searchCollectionByTag,
+  fetchWildCollection, fetchSteerheadRanchCollection, fetchCollectionContent, addToCart,
+  fetchCoinCollection, fetchOccidentaleCollection, searchCollectionByTag, fetchCart,
 fetchCameoCollection, fetchEastwoodCollection})(SingleCollection)

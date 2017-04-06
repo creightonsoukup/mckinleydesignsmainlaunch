@@ -27,48 +27,29 @@ class ProductQuickView extends Component {
       product: this.props.product
     }
     this.viewProduct = this.viewProduct.bind(this)
+    this.addToCart = this.addToCart.bind(this)
   }
 
   viewProduct () {
     this.context.router.push(`/product/${this.state.product.attrs.product.attrs.handle}`)
   }
 
+  addToCart() {
+    this.props.addToCart(this.state.product, 1)
+  }
+
   render() {
     console.log(this.state.product)
     return (
-      <div>
-        {this.props.offset ? (
-          <Row className="product-row">
-            <Col xs="12" sm="12" md='6' lg="6" xl="6">
+          <div>
               <SmallGallery
               image={this.props.galleryImageSrc} />
-            </Col>
-            <Col xs="12" sm="12" md='6' lg="6" xl="6" className='quick-view'>
-              <h2>{this.state.product.productTitle}</h2>
-              <h2>{this.state.product.price}</h2>
-              <Button>Add To Cart</Button>
-              <Button
-              onClick={this.viewProduct}
-              >View Product</Button>
-            </Col>
-          </Row>
-        ) : (
-          <Row className='product-row'>
-            <Col xs="12" sm="12" md='6' lg="6" xl="6" className='quick-view'>
-              <h2>{this.state.product.productTitle}</h2>
-              <h2>{this.state.product.price}</h2>
-              <Button>Add To Cart</Button>
-              <Button
-              onClick={this.viewProduct}
-              >View Product</Button>
-            </Col>
-            <Col xs="12" sm="12" md='6' lg="6" xl="6">
-              <SmallGallery
-              image={this.props.galleryImageSrc} />
-            </Col>
-          </Row>
-        )}
-      </div>
+              <div className="product-quick-info">
+               <h2 onClick={this.viewProduct}>{this.state.product.productTitle}</h2>
+               <h2>{this.state.product.price}</h2>
+              <div className='add-to-cart-btn' onClick={this.addToCart}>Add To Cart</div>
+              </div>
+          </div>
     )
   }
 }

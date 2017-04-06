@@ -100,7 +100,15 @@ body {
 .navbar-brand {
   font-family: "Colonna MT", arial;
   letter-spacing: 4px;
-  font-size: 4.5vw; }
+  font-size: 4.5vw;
+  transition: font-size 1s ease; }
+
+.navbar-brand:hover {
+  font-size: 4.6vw; }
+
+.navbar a.navbar-brand:hover {
+  color: #F4EACE;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
 
 .navbar a.navbar-brand {
   color: #F4EACE;
@@ -113,12 +121,14 @@ nav.navbar {
   top: 0;
   width: 100%; }
 
-a.nav-link {
-  font-family: "MyWebFonts", "lulo_cleanone", serif; }
-
 .navbar-light .navbar-nav .nav-link {
   color: #F4EACE;
-  font-size: 3vw; }
+  font-size: 3vw;
+  transition: font-size 1s ease; }
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #F4EACE;
+  font-size: 3.1vw; }
 
 .banner1 {
   background: url("https://s3-us-west-1.amazonaws.com/madison-mckinley/banner-images/homepage1.jpg") center;
@@ -354,7 +364,7 @@ video {
 .horizontal-slider {
   overflow: scroll;
   margin: 5vh;
-  height: 40vh;
+  min-height: 55vh;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -362,16 +372,46 @@ video {
   .horizontal-slider img {
     height: auto;
     width: 25vw;
-    margin-left: 3vw;
-    margin-right: 3vw; }
+    margin: 3vw;
+    transition: width 1s ease, margin 1s ease; }
+  .horizontal-slider .slider-product-info {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s ease;
+    text-align: center;
+    font-family: "MyWebFonts", "lulo_cleanone", serif; }
+    .horizontal-slider .slider-product-info h1 {
+      color: #B89F83;
+      font-size: 1.2vw;
+      padding-bottom: 10px; }
+    .horizontal-slider .slider-product-info .slider-button {
+      padding: 7px;
+      border: 2px solid #B89F83;
+      font-size: 1vw;
+      color: #B89F83;
+      width: 50%;
+      margin: auto;
+      margin-bottom: 10px; }
+    .horizontal-slider .slider-product-info .slider-button:hover {
+      color: white;
+      background-color: #B89F83; }
+
+.slider:hover .slider-product-info {
+  visibility: visible;
+  opacity: 1; }
+.slider:hover a {
+  text-decoration: none; }
+.slider:hover img {
+  width: 28vw;
+  margin: 1vw; }
 
 .filter-bar {
   background-color: white;
-  width: 100vw;
-  box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.2); }
+  width: 100vw; }
   .filter-bar form {
     width: 100vw;
-    margin: 5vw; }
+    margin: 5vw;
+    margin-top: 0; }
     .filter-bar form select {
       border: 1px solid #A33F23;
       font-family: "MyWebFonts", "lulo_cleanone", serif; }
@@ -397,6 +437,51 @@ select.form-control {
   letter-spacing: 5px;
   margin-bottom: 20vh;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
+
+.collection-header {
+  background-color: white;
+  box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.2);
+  width: 100vw;
+  padding: 5vw;
+  padding-top: 3vw;
+  text-align: center;
+  font-family: "MyWebFonts", "lulo_cleanone", serif; }
+  .collection-header h2 {
+    color: #A33F23;
+    padding-bottom: 20px;
+    font-size: 3vw;
+    margin: auto; }
+  .collection-header h3 {
+    font-size: 1.5vw;
+    line-height: 2; }
+
+.product-quick-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "MyWebFonts", "lulo_cleanone", serif;
+  height: 100px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 1s ease; }
+  .product-quick-info h2 {
+    color: black;
+    font-size: 16px; }
+  .product-quick-info .add-to-cart-btn {
+    padding: 7px;
+    border: 2px solid #B89F83;
+    color: #B89F83;
+    transition: background 1s ease;
+    font-size: 16px; }
+  .product-quick-info .add-to-cart-btn:hover {
+    border: 2px solid #B89F83;
+    color: white;
+    background: #B89F83; }
+
+.product:hover .product-quick-info {
+  visibility: visible;
+  opacity: 1; }
 
 .footer {
   background-color: #b89f83;
@@ -496,6 +581,8 @@ select.form-control {
     color: #A33F23;
     text-align: center;
     padding: 15px; }
+  .scroll-nav .nav-items a {
+    text-decoration: none; }
   .scroll-nav .nav-items .nav-links {
     display: flex;
     flex-direction: row;
@@ -623,7 +710,7 @@ select.form-control {
   left: 0; }
 
 .cart {
-  z-index: 10000;
+  z-index: 30000;
   width: 60vw;
   height: 100vh;
   position: fixed;
@@ -653,6 +740,7 @@ select.form-control {
     margin-left: 5vw;
     margin-right: 5vw;
     min-height: 60vh;
+    max-height: 60vh;
     overflow: scroll;
     box-shadow: -1px -1px 5px 0px rgba(170, 170, 170, 0.5), 1px 1px 5px 0px rgba(170, 170, 170, 0.5); }
     .cart .cart-body input {
@@ -663,9 +751,13 @@ select.form-control {
     .cart .cart-body .lineItem-info {
       height: 100%;
       display: flex;
-      flex-direction: column;
-      padding-top: 1vw;
-      padding-bottom: 1vw; }
+      flex-direction: column; }
+      .cart .cart-body .lineItem-info h2 {
+        padding-top: 1vh;
+        padding-bottom: 1vh; }
+      .cart .cart-body .lineItem-info h3 {
+        padding-top: 1vh;
+        padding-bottom: 1vh; }
   .cart .empty-cart {
     margin: 10vh;
     font-family: "MyWebFonts", "lulo_cleanone", serif;
@@ -687,11 +779,47 @@ select.form-control {
 .cart-background {
   width: 100vw;
   height: 100vh;
-  z-index: 9999;
+  z-index: 29000;
   position: fixed;
   background-color: rgba(170, 170, 170, 0.5);
   top: 0;
   left: 0; }
+
+.button-trans {
+  background: transparent;
+  border: 2px solid white;
+  padding: 10px;
+  font-family: "MyWebFonts", "lulo_cleanone", serif;
+  color: white;
+  font-size: 1.5vw;
+  max-height: 40px; }
+
+.button-trans:hover {
+  background: white;
+  color: #B89F83; }
+
+.cart-footer {
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-top: 5vh;
+  display: flex;
+  justify-content: space-between; }
+  .cart-footer .subtotal h3 {
+    color: white;
+    font-family: "MyWebFonts", "lulo_cleanone", serif;
+    padding: 10px;
+    font-size: 1.5vw;
+    text-align: right; }
+
+.all-products .header {
+  width: 100%;
+  font-size: 4vw;
+  padding: 5vh;
+  font-family: "MyWebFonts", "lulo_cleanone", serif;
+  text-align: center; }
+  .all-products .header h1 {
+    margin: auto;
+    color: #A33F23; }
 
 @keyframes slideInLeft {
   from {

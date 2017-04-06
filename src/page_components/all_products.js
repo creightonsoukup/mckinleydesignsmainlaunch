@@ -23,8 +23,10 @@ import {
 import ProductList from '../components/product_list'
 import FilterBar from '../components/filter_bar'
 import Navigation from '../components/navbar'
+import NavbarScroll from '../components/navbar-scroll'
 import VideoPlayer from '../components/video_player'
 import Footer from '../components/footer'
+import BannerImage from '../components/banner_image'
 
 
 class AllProducts extends Component {
@@ -136,10 +138,14 @@ class AllProducts extends Component {
     const video = 'https://res.cloudinary.com/madisonmckinley/video/upload/v1490312893/loop_video_n0thkq.mov'
     const search = _.debounce((value) => {this.searchProducts(value)}, 300)
     return (
-      <div className='animated fadeIn'>
-      <Navigation />
-      <VideoPlayer loop={true} video={video}/>
-      <Container>
+      <div className=' all-products animated fadeIn'>
+      <NavbarScroll />
+      <VideoPlayer
+      video={video} loop={true}/>
+      <div className='header'>
+        <h1>Shop All Products</h1>
+      </div>
+      <Container fluid>
         <FilterBar
         sortProducts={this.sortProducts}
         sortProductTypes={this.sortProductTypes}

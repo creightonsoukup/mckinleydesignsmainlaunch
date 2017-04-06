@@ -14,7 +14,7 @@
 .horizontal-slider {
   overflow: scroll;
   margin: 5vh;
-  height: 40vh;
+  min-height: 55vh;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -22,7 +22,46 @@
   img {
     height: auto;
     width: 25vw;
-    margin-left: 3vw;
-    margin-right: 3vw;
+    margin: 3vw;
+    transition: width 1s ease, margin 1s ease;
+  }
+  .slider-product-info {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s ease;
+    text-align: center;
+    font-family: $header-text;
+    h1 {
+      color: $brown;
+      font-size: 1.2vw;
+      padding-bottom: 10px;
+    }
+    .slider-button {
+      padding: 7px;
+      border: 2px solid $brown;
+      font-size: 1vw;
+      color: $brown;
+      width: 50%;
+      margin: auto;
+      margin-bottom: 10px;
+    }
+    .slider-button:hover {
+      color: white;
+      background-color: $brown;
+    }
+  }
+}
+
+.slider:hover {
+  .slider-product-info {
+    visibility: visible;
+    opacity: 1;
+  }
+  a {
+    text-decoration: none;
+  }
+  img {
+    width: 28vw;
+    margin: 1vw;
   }
 }

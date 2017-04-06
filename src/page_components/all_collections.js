@@ -10,7 +10,7 @@ import NavbarScroll from '../components/navbar-scroll'
 
 
 class AllCollections extends Component {
-  
+
   componentWillMount() {
     this.props.fetchCollectionContent()
   }
@@ -20,6 +20,7 @@ class AllCollections extends Component {
       return <div></div>
     }
     const video = 'https://res.cloudinary.com/madisonmckinley/video/upload/v1490494302/white-collection.mp4'
+    console.log(this.props.collectionContent)
     return (
       <div className="all-collections animated fadeIn">
         <div >

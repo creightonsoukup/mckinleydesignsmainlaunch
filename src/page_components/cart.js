@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { fetchCart, updateCart, deleteItem } from '../actions/index'
 import CartList from '../components/cart_list'
@@ -7,6 +7,9 @@ import { Link } from 'react-router'
 import { Row,Col } from 'reactstrap';
 
 class Cart extends Component {
+  static contextTypes = {
+    router: PropTypes.object
+  }
   constructor(props) {
     super(props);
 
@@ -15,6 +18,7 @@ class Cart extends Component {
     }
     this.updateCart = this.updateCart.bind(this)
     this.deleteItem = this.deleteItem.bind(this)
+    this.checkout = this.checkout.bind(this)
   }
 
   componentWillMount() {
@@ -36,6 +40,11 @@ class Cart extends Component {
       .then((data) => {
         this.setState({cart: data.payload})
       })
+  }
+
+  checkout() {
+    this.props.toggleCart()
+    this.context.router.push('http://google.com')
   }
 
   render() {
@@ -66,7 +75,9 @@ class Cart extends Component {
             lineItems={this.state.cart.lineItems}/>
           </div>
         )}
-
+        <CartFooter
+        checkout={this.checkout}
+        cart={this.state.cart}/>
       </div>
       </div>
     )

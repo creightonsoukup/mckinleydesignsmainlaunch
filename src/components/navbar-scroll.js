@@ -68,7 +68,7 @@ class NavbarScroll extends Component {
             <div className="search">
               <Link><i className="fa fa-search" aria-hidden="true"></i></Link>
             </div>
-            <Link>
+            <Link to='/'>
               <h1>MADISON MCKINLEY</h1>
             </Link>
             <div className='nav-links'>

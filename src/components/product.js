@@ -40,6 +40,7 @@ class Product extends Component {
       onClick={() => this.setState({galleryImageIdx: nextIdx })}>
         { images.length === this.state.product.images.length  &&
           <ProductQuickView
+            addToCart={this.props.addToCart}
             product={product}
             galleryImageSrc={images[this.state.galleryImageIdx].src}
             offset={offset === '0'}/>
@@ -57,21 +58,12 @@ class Product extends Component {
     const width = this.state.selected ? '12' : '6'
     const mouseEnter = _.debounce(() => {this.setState({selected: true})}, 1000)
     return (
-    <Col xs='12' sm='12' md={width} lg={width}
-      onMouseEnter={mouseEnter}
-      onMouseLeave={() => this.setState({selected: false})}>
-      { selected ? (
-        this.renderSelectedProduct(selectedVariant, sortedImages)
-      ) : (
-        <div>
-          { images.length > 0 &&
-            <img
-            className="product-image"
-            src={mainImage.src}/>
-          }
-        </div>
-      )}
-    </Col>
+    <div xs='12' sm='12' md={width} lg={width}
+    className='product'
+      onMouseEnter={mouseEnter}>
+
+        {this.renderSelectedProduct(selectedVariant, sortedImages)}
+    </div>
     )
   }
 }

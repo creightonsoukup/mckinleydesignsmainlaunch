@@ -85,7 +85,7 @@
 
 
 .cart {
-  z-index: 10000;
+  z-index: 30000;
   width: 60vw;
   height: 100vh;
   position: fixed;
@@ -118,6 +118,7 @@
     margin-left: 5vw;
     margin-right: 5vw;
     min-height: 60vh;
+    max-height: 60vh;
     overflow: scroll;
     box-shadow: -1px -1px 5px 0px rgba(170,170,170,.5), 1px 1px 5px 0px rgba(170,170,170,.5);
     input {
@@ -131,8 +132,14 @@
       height: 100%;
       display: flex;
       flex-direction: column;
-      padding-top: 1vw;
-      padding-bottom: 1vw;
+      h2  {
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+      }
+      h3 {
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+      }
     }
   }
   .empty-cart {
@@ -161,9 +168,41 @@
 .cart-background {
   width: 100vw;
   height: 100vh;
-  z-index: 9999;
+  z-index: 29000;
   position: fixed;
   background-color: rgba(170, 170, 170, .5);
   top: 0;
   left: 0;
+}
+
+.button-trans {
+  background: rgba(0,0,0,0);
+  border: 2px solid white;
+  padding: 10px;
+  font-family: $header-text;
+  color: white;
+  font-size: 1.5vw;
+  max-height: 40px;
+}
+
+.button-trans:hover {
+  background: white;
+  color: $brown;
+}
+
+.cart-footer {
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-top: 5vh;
+  display: flex;
+  justify-content: space-between;
+  .subtotal {
+    h3 {
+      color: white;
+      font-family: $header-text;
+      padding: 10px;
+      font-size: 1.5vw;
+      text-align: right;
+    }
+  }
 }

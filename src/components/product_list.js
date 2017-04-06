@@ -29,10 +29,13 @@ export default class ProductList extends Component {
     const index = this.props.products.indexOf(product)
     const key = product.id
       return (
+        <Col sm='12' md='6' lg='6' xl='6'>
         <Product
+          addToCart={this.props.addToCart}
           key={key}
           index={index}
           product={product}/>
+        </Col>
       )
   }
 

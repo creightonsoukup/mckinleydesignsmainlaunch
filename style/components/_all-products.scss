@@ -1,0 +1,13 @@
+.all-products {
+  .header {
+    width: 100%;
+    font-size: 4vw;
+    padding: 5vh;
+    font-family: $header-text;
+    text-align: center;
+    h1 {
+      margin: auto;
+      color: $red-brown;
+    }
+  }
+}

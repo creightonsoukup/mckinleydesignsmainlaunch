@@ -25,6 +25,7 @@ const Menu = ({toggleMenu, toggleCart}) => {
           <br/>
           <Link onClick={toggleCart}>Cart</Link>
           <Link to='/contact'>Contact Us</Link>
+          <Link to='/'><img src='https://s3-us-west-1.amazonaws.com/madison-mckinley/Anvil.png'/></Link>
           <div className="social">
             <Link href="https://www.pinterest.com/madkooldesigns"><i className="fa fa-pinterest-box" aria-hidden="true"></i></Link>
             <Link href="https://www.pinterest.com/madkooldesigns"><i className="fa fa-twitter-box" aria-hidden="true"></i></Link>
@@ -32,7 +33,6 @@ const Menu = ({toggleMenu, toggleCart}) => {
             <Link href="https://www.instagram.com/madisonmckinleydesigns"><i className="fa fa-instagram" aria-hidden="true"></i></Link>
             <Link href="https://www.instagram.com/madisonmckinleydesigns"><i className="fa fa-linkedin-box" aria-hidden="true"></i></Link>
           </div>
-          <Link to='/'><img src='https://s3-us-west-1.amazonaws.com/madison-mckinley/Anvil.png'/></Link>
         </div>
       </div>
     )

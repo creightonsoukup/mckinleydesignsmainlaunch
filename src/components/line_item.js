@@ -43,7 +43,7 @@ class LineItem extends Component {
     return (
       <tr>
         <td>
-          <img src={this.props.lineItem.imageVariants[2].src}/>
+          <img src={this.props.lineItem.imageVariants[3].src}/>
         </td>
         <td>
           <div className='lineItem-info'>

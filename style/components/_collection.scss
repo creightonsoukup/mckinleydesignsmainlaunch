@@ -1,10 +1,10 @@
 .filter-bar {
   background-color: white;
   width: 100vw;
-  box-shadow: 0px 1px 6px 0px rgba(0,0,0,0.2);
   form {
     width: 100vw;
     margin: 5vw;
+    margin-top: 0;
     select {
       border: 1px solid $red-brown;
       font-family: $header-text;
@@ -38,4 +38,61 @@ select.form-control {
   letter-spacing: 5px;
   margin-bottom: 20vh;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.collection-header {
+  background-color: white;
+  box-shadow: 0px 1px 6px 0px rgba(0,0,0,0.2);
+  width: 100vw;
+  padding: 5vw;
+  padding-top: 3vw;
+  text-align: center;
+  font-family: $header-text;
+  h2 {
+    color: $red-brown;
+    padding-bottom: 20px;
+    font-size: 3vw;
+    margin: auto;
+  }
+  h3 {
+    font-size: 1.5vw;
+    line-height: 2;
+  }
+}
+
+
+.product-quick-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-family: $header-text;
+  height: 100px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 1s ease;
+  h2 {
+    color: black;
+    font-size: 16px;
+  }
+  .add-to-cart-btn {
+    padding: 7px;
+    border: 2px solid $brown;
+    color: $brown;
+    transition: background 1s ease;
+    font-size: 16px;
+  }
+  .add-to-cart-btn:hover {
+    border: 2px solid $brown;
+    color: white;
+    background: $brown;
+
+  }
+}
+
+.product:hover {
+  .product-quick-info {
+    visibility: visible;
+    opacity: 1;
+  }
 }
