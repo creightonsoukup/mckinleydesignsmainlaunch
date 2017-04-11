@@ -153,7 +153,7 @@ class AllProducts extends Component {
     return (
       <div className='all-products animated fadeIn'>
       { this.state.scrollNav ? (
-        <NavbarScrollsas/>
+        <NavbarScroll/>
       ) : (
         <Navigation/>
       )}

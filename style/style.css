@@ -1,6 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Raleway");
-@import url("http://allfont.net/allfont.css?fonts=colonna-mt");
-@import url("https://fonts.googleapis.com/css?family=Hind:600");
 @import url(../../node_modules/animate.css/animate.css);
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
@@ -35,12 +32,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-@font-face {
-  font-family: 'lulo_cleanone';
-  src: url("luloclean/LuloCleanOne-webfont.eot");
-  src: url("luloclean/LuloCleanOne-webfont.eot?#iefix") format("embedded-opentype"), url("luloclean/LuloCleanOne-webfont.woff2") format("woff2"), url("luloclean/LuloCleanOne-webfont.woff") format("woff"), url("luloclean/LuloCleanOne-webfont.ttf") format("truetype"), url("luloclean/LuloCleanOne-webfont.svg#lulo_cleanone") format("svg");
-  font-weight: normal;
-  font-style: normal; }
 body {
   font: "Raleway", sans-serif; }
 
@@ -259,7 +250,7 @@ nav.navbar {
   top: 50%;
   text-align: center;
   left: 50%;
-  font-family: "MyWebFonts", "lulo_cleanone", serif;
+  font-family: "Lulo Clean", "lulo_cleanone", serif;
   transform: translate(-50%, -50%); }
   .quote-content h3 {
     color: white;
@@ -322,7 +313,7 @@ video {
       padding-top: 20px;
       height: 40%; }
       .homepage-video .video-text .text-block h2 {
-        font-family: "MyWebFonts", "lulo_cleanone", serif;
+        font-family: "Lulo Clean", "lulo_cleanone", serif;
         color: white;
         text-align: right;
         font-size: 3.5vw;
@@ -330,7 +321,7 @@ video {
     .homepage-video .video-text .text-block-2 h2 {
       text-align: center;
       padding-bottom: 20px;
-      font-family: "MyWebFonts", "lulo_cleanone", serif;
+      font-family: "Lulo Clean", "lulo_cleanone", serif;
       color: #A33F23;
       opacity: .8;
       font-size: 8vw;
@@ -342,19 +333,19 @@ video {
       padding-bottom: 20px; }
       .homepage-video .video-text .video-action h2 {
         color: white;
-        font-family: "MyWebFonts", "lulo_cleanone", serif;
+        font-family: "Lulo Clean", "lulo_cleanone", serif;
         font-size: 2vw;
         text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
       .homepage-video .video-text .video-action span {
         border: 2px solid #B89F83;
         border-radius: 25px;
         font-size: 1.5vw;
-        font-family: "MyWebFonts", "lulo_cleanone", serif;
+        font-family: "Lulo Clean", "lulo_cleanone", serif;
         color: white;
         padding: 10px; }
 
 .slider-text {
-  font-family: "MyWebFonts", "lulo_cleanone", serif;
+  font-family: "Lulo Clean", "lulo_cleanone", serif;
   color: #A33F23;
   width: 100vw; }
   .slider-text h2 {
@@ -381,7 +372,7 @@ video {
     opacity: 0;
     transition: opacity 1s ease;
     text-align: center;
-    font-family: "MyWebFonts", "lulo_cleanone", serif; }
+    font-family: "Lulo Clean", "lulo_cleanone", serif; }
     .horizontal-slider .slider-product-info h1 {
       color: #B89F83;
       font-size: 1.2vw;
@@ -416,11 +407,11 @@ video {
     margin-top: 0; }
     .filter-bar form select {
       border: 1px solid #A33F23;
-      font-family: "MyWebFonts", "lulo_cleanone", serif; }
+      font-family: "Lulo Clean", "lulo_cleanone", serif; }
     .filter-bar form .form-control {
       border-radius: 0rem; }
     .filter-bar form input {
-      font-family: "MyWebFonts", "lulo_cleanone", serif; }
+      font-family: "Lulo Clean", "lulo_cleanone", serif; }
 
 select.form-control {
   border-radius: 0rem; }
@@ -447,7 +438,7 @@ select.form-control {
   padding: 5vw;
   padding-top: 3vw;
   text-align: center;
-  font-family: "MyWebFonts", "lulo_cleanone", serif; }
+  font-family: "Lulo Clean", "lulo_cleanone", serif; }
   .collection-header h2 {
     color: #A33F23;
     padding-bottom: 20px;
@@ -462,7 +453,7 @@ select.form-control {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  font-family: "MyWebFonts", "lulo_cleanone", serif;
+  font-family: "Lulo Clean", "lulo_cleanone", serif;
   height: 100px;
   transition: opacity 1s ease; }
   .product-quick-info h2 {
@@ -508,7 +499,7 @@ select.form-control {
     justify-content: space-around;
     min-height: 40vh;
     padding: 10vh;
-    font-family: "MyWebFonts", "lulo_cleanone", serif;
+    font-family: "Lulo Clean", "lulo_cleanone", serif;
     color: white;
     font-size: 1.5vw; }
     .footer .links a {
@@ -524,7 +515,7 @@ select.form-control {
         padding-left: 0; }
   .footer .email {
     padding: 10vh;
-    font-family: "MyWebFonts", "lulo_cleanone", serif; }
+    font-family: "Lulo Clean", "lulo_cleanone", serif; }
     .footer .email h2 {
       color: white;
       padding-bottom: 2vh;
@@ -534,7 +525,7 @@ select.form-control {
       margin-bottom: 2vh;
       background-color: rgba(255, 255, 255, 0);
       color: white;
-      font-family: "MyWebFonts", "lulo_cleanone", serif;
+      font-family: "Lulo Clean", "lulo_cleanone", serif;
       font-size: 1.5vw; }
     .footer .email form .form-control {
       color: white;
@@ -542,7 +533,7 @@ select.form-control {
       border-radius: 0; }
     .footer .email form button {
       color: #B89F83;
-      font-family: "MyWebFonts", "lulo_cleanone", serif;
+      font-family: "Lulo Clean", "lulo_cleanone", serif;
       border-radius: 0;
       border: none;
       background-color: white; }
@@ -552,14 +543,14 @@ select.form-control {
     flex-direction: row;
     justify-content: flex-end;
     color: white;
-    font-family: "MyWebFonts", "lulo_cleanone", serif; }
+    font-family: "Lulo Clean", "lulo_cleanone", serif; }
     .footer .footer-bar .copyright {
       color: white; }
       .footer .footer-bar .copyright i {
         padding-right: 1vw; }
 
 .quick-view {
-  font-family: "MyWebFonts", "lulo_cleanone", serif;
+  font-family: "Lulo Clean", "lulo_cleanone", serif;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -611,7 +602,7 @@ select.form-control {
     right: 0;
     top: 0;
     font-size: 2vw;
-    font-family: "MyWebFonts", "lulo_cleanone", serif;
+    font-family: "Lulo Clean", "lulo_cleanone", serif;
     padding: 1.5vw;
     padding-top: 20px; }
     .scroll-nav .nav-items .nav-links a {
@@ -627,7 +618,7 @@ select.form-control {
     left: 0;
     top: 0;
     font-size: 16px;
-    font-family: "MyWebFonts", "lulo_cleanone", serif;
+    font-family: "Lulo Clean", "lulo_cleanone", serif;
     padding: 1.5vw;
     padding-top: 20px; }
     .scroll-nav .nav-items .nav-links-left a {
@@ -674,7 +665,7 @@ select.form-control {
     padding-top: 10vh;
     padding-bottom: 5vh;
     padding-right: 5vw;
-    font-family: "MyWebFonts", "lulo_cleanone", serif; }
+    font-family: "Lulo Clean", "lulo_cleanone", serif; }
     .single-product .product-info form {
       max-width: 150px; }
     .single-product .product-info .add-to-cart-btn {
@@ -716,14 +707,14 @@ select.form-control {
   flex-direction: column;
   text-align: center;
   justify-content: center;
-  font-family: "MyWebFonts", "lulo_cleanone", serif;
+  font-family: "Lulo Clean", "lulo_cleanone", serif;
   color: white;
   font-size: 1.5vw; }
   .menu a {
     width: 100%;
     padding-bottom: 2vh;
     color: white;
-    font-family: "MyWebFonts", "lulo_cleanone", serif;
+    font-family: "Lulo Clean", "lulo_cleanone", serif;
     font-size: 1.5vw;
     transition: all .3s ease-in-out;
     text-decoration: none; }
@@ -742,7 +733,7 @@ select.form-control {
     font-size: 1.6vw; }
   .menu .close-menu {
     color: white;
-    font-family: "MyWebFonts", "lulo_cleanone", serif;
+    font-family: "Lulo Clean", "lulo_cleanone", serif;
     display: flex;
     width: 100%;
     justify-content: center;
@@ -751,7 +742,7 @@ select.form-control {
       color: white;
       padding-right: 1vw; }
     .menu .close-menu p {
-      font-family: "MyWebFonts", "lulo_cleanone", serif; }
+      font-family: "Lulo Clean", "lulo_cleanone", serif; }
 
 .menu-background {
   width: 100vw;
@@ -778,7 +769,7 @@ select.form-control {
     padding: 5vh;
     justify-content: space-between;
     width: 100%;
-    font-family: "MyWebFonts", "lulo_cleanone", serif;
+    font-family: "Lulo Clean", "lulo_cleanone", serif;
     padding-bottom: 3vh; }
     .cart .cart-header h1 {
       color: white;
@@ -813,7 +804,7 @@ select.form-control {
         padding-bottom: 1vh; }
   .cart .empty-cart {
     margin: 10vh;
-    font-family: "MyWebFonts", "lulo_cleanone", serif;
+    font-family: "Lulo Clean", "lulo_cleanone", serif;
     text-align: center;
     min-height: 30vh;
     display: flex;
@@ -842,7 +833,7 @@ select.form-control {
   background: transparent;
   border: 2px solid white;
   padding: 10px;
-  font-family: "MyWebFonts", "lulo_cleanone", serif;
+  font-family: "Lulo Clean", "lulo_cleanone", serif;
   color: white;
   font-size: 1.5vw;
   max-height: 40px; }
@@ -859,7 +850,7 @@ select.form-control {
   justify-content: space-between; }
   .cart-footer .subtotal h3 {
     color: white;
-    font-family: "MyWebFonts", "lulo_cleanone", serif;
+    font-family: "Lulo Clean", "lulo_cleanone", serif;
     padding: 10px;
     font-size: 1.5vw;
     text-align: right; }
@@ -868,7 +859,7 @@ select.form-control {
   width: 100%;
   font-size: 4vw;
   padding: 5vh;
-  font-family: "MyWebFonts", "lulo_cleanone", serif;
+  font-family: "Lulo Clean", "lulo_cleanone", serif;
   text-align: center; }
   .all-products .header h1 {
     margin: auto;
@@ -884,7 +875,7 @@ select.form-control {
     flex-direction: column;
     justify-content: space-around;
     padding: 5vh;
-    font-family: "MyWebFonts", "lulo_cleanone", serif;
+    font-family: "Lulo Clean", "lulo_cleanone", serif;
     line-height: 1.5;
     font-size: 1.5vw; }
     .customize .customize-intro .text h3 {
@@ -894,7 +885,7 @@ select.form-control {
     flex-direction: column;
     align-content: center;
     justify-content: center;
-    font-family: "MyWebFonts", "lulo_cleanone", serif; }
+    font-family: "Lulo Clean", "lulo_cleanone", serif; }
     .customize .customize-intro .button div {
       border: 2px solid #B89F83;
       padding: 7px;
@@ -907,7 +898,7 @@ select.form-control {
       background-color: #B89F83;
       color: white; }
 .customize .slider-text {
-  font-family: "MyWebFonts", "lulo_cleanone", serif;
+  font-family: "Lulo Clean", "lulo_cleanone", serif;
   color: #A33F23;
   width: 100vw; }
   .customize .slider-text h2 {
@@ -931,7 +922,7 @@ select.form-control {
     margin: 3vw; }
   .customize .cust-slider .slider-product-info {
     text-align: center;
-    font-family: "MyWebFonts", "lulo_cleanone", serif; }
+    font-family: "Lulo Clean", "lulo_cleanone", serif; }
     .customize .cust-slider .slider-product-info h1 {
       color: #B89F83;
       font-size: 1.2vw;
@@ -970,7 +961,7 @@ select.form-control {
   .customize-nav .custom-nav-btn {
     margin: 0 auto;
     padding: 7px;
-    font-family: "MyWebFonts", "lulo_cleanone", serif;
+    font-family: "Lulo Clean", "lulo_cleanone", serif;
     color: #B89F83;
     font-size: 2vw; }
   .customize-nav .btn-selected {
@@ -980,7 +971,7 @@ select.form-control {
   background-color: white;
   width: 100vw;
   min-height: 40vh;
-  font-family: "MyWebFonts", "lulo_cleanone", serif;
+  font-family: "Lulo Clean", "lulo_cleanone", serif;
   text-align: center;
   padding-top: 5vh; }
   .special-order .special-order-info h4 {
@@ -996,7 +987,7 @@ select.form-control {
   background-color: white;
   width: 100vw;
   min-height: 40vh;
-  font-family: "MyWebFonts", "lulo_cleanone", serif;
+  font-family: "Lulo Clean", "lulo_cleanone", serif;
   text-align: center;
   padding-top: 5vh; }
   .charity .charity-info h4 {
@@ -1020,7 +1011,7 @@ select.form-control {
 .team .member {
   padding: 5vh; }
   .team .member .content {
-    font-family: "MyWebFonts", "lulo_cleanone", serif;
+    font-family: "Lulo Clean", "lulo_cleanone", serif;
     font-size: 1vw;
     line-height: 1.5; }
     .team .member .content h2 {
@@ -1034,7 +1025,7 @@ select.form-control {
   background-size: cover;
   height: 100vh;
   padding-top: 20vh;
-  font-family: "MyWebFonts", "lulo_cleanone", serif; }
+  font-family: "Lulo Clean", "lulo_cleanone", serif; }
   .contact h1 {
     color: white;
     font-size: 3vw;
