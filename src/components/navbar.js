@@ -58,7 +58,7 @@ class Navigation extends Component {
             toggleCart={this.toggleCart} />
           </div>
         }
-        <Navbar  color="transparent" light toggleable>
+        <Navbar className='animated fadeIn' color="transparent" light toggleable>
           <NavbarToggler right onClick={this.toggle} />
           <NavbarBrand href="/">MADISON MCKINLEY</NavbarBrand>
           <Collapse isOpen={this.state.isOpen} navbar>

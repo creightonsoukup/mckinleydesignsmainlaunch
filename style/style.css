@@ -120,6 +120,8 @@ nav.navbar {
   position: absolute;
   top: 0;
   width: 100%; }
+  nav.navbar i {
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
 
 .navbar-light .navbar-nav .nav-link {
   color: #F4EACE;
@@ -172,7 +174,7 @@ nav.navbar {
   background-size: cover;
   min-height: 80vh;
   margin: 5vw;
-  box-shadow: 1px 1px 6px 0px rgba(0, 0, 0, 0.2), -1px -1px 6px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 2px 0px rgba(170, 170, 170, 0.4), -1px -1px 2px 0px rgba(170, 170, 170, 0.4);
   position: relative; }
   .banner2 .content {
     width: 40vw;
@@ -205,7 +207,7 @@ nav.navbar {
   background-size: cover;
   min-height: 80vh;
   margin: 5vw;
-  box-shadow: 1px 1px 6px 0px rgba(0, 0, 0, 0.2), -1px -1px 6px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 2px 0px rgba(170, 170, 170, 0.4), -1px -1px 2px 0px rgba(170, 170, 170, 0.4);
   position: relative; }
   .banner3 .content {
     height: 50vh;
@@ -462,24 +464,38 @@ select.form-control {
   align-items: center;
   font-family: "MyWebFonts", "lulo_cleanone", serif;
   height: 100px;
-  visibility: hidden;
-  opacity: 0;
   transition: opacity 1s ease; }
   .product-quick-info h2 {
     color: black;
-    font-size: 16px; }
+    font-size: 12px; }
   .product-quick-info .add-to-cart-btn {
-    padding: 7px;
-    border: 2px solid #B89F83;
+    padding: 5px;
+    border: 1px solid #B89F83;
     color: #B89F83;
     transition: background 1s ease;
-    font-size: 16px; }
+    font-size: 12px;
+    visibility: collapse;
+    opacity: 0;
+    transition: opacity 2s ease; }
   .product-quick-info .add-to-cart-btn:hover {
-    border: 2px solid #B89F83;
+    border: 1px solid #B89F83;
     color: white;
     background: #B89F83; }
 
-.product:hover .product-quick-info {
+.small-gallery {
+  display: flex;
+  align-items: center; }
+  .small-gallery i {
+    font-size: 2vw;
+    visibility: hidden;
+    opacity: 0;
+    padding: 10px;
+    transition: opacity 2s ease; }
+
+.product:hover .add-to-cart-btn {
+  visibility: visible;
+  opacity: 1; }
+.product:hover i {
   visibility: visible;
   opacity: 1; }
 
@@ -556,6 +572,9 @@ select.form-control {
 .product-image {
   width: 100%; }
 
+.product {
+  margin-bottom: 7vh; }
+
 .product-list {
   padding: 5vw; }
 
@@ -600,6 +619,23 @@ select.form-control {
       font-size: 2vw; }
       .scroll-nav .nav-items .nav-links a i {
         font-size: 2vw; }
+  .scroll-nav .nav-items .nav-links-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 16px;
+    font-family: "MyWebFonts", "lulo_cleanone", serif;
+    padding: 1.5vw;
+    padding-top: 20px; }
+    .scroll-nav .nav-items .nav-links-left a {
+      color: #A33F23;
+      font-size: 16px;
+      padding-right: 3vw; }
+      .scroll-nav .nav-items .nav-links-left a i {
+        font-size: 2vw; }
   .scroll-nav .nav-items .search {
     left: 0;
     top: 0;
@@ -614,14 +650,22 @@ select.form-control {
   .single-product .product-gallery {
     display: flex;
     padding: 5vh;
+    padding-bottom: 0;
     flex-direction: row;
     align-items: center;
-    min-height: 80vh; }
+    min-height: 70vh; }
     .single-product .product-gallery i {
       font-size: 3vw;
-      padding: 2vw; }
+      padding: 2vw;
+      color: #B89F83; }
     .single-product .product-gallery img {
       width: 40vw; }
+  .single-product .thumbnails {
+    display: flex;
+    justify-content: center; }
+    .single-product .thumbnails img {
+      padding-left: 1vw;
+      padding-right: 1vw; }
   .single-product .product-info {
     display: flex;
     flex-direction: column;
@@ -633,15 +677,24 @@ select.form-control {
     font-family: "MyWebFonts", "lulo_cleanone", serif; }
     .single-product .product-info form {
       max-width: 150px; }
-    .single-product .product-info button {
-      max-width: 150px; }
+    .single-product .product-info .add-to-cart-btn {
+      padding: 7px;
+      border: 2px solid #B89F83;
+      color: #B89F83;
+      transition: background 1s ease, color 1s ease;
+      font-size: 12px;
+      text-align: center;
+      width: 200px; }
+    .single-product .product-info .add-to-cart-btn:hover {
+      border: 2px solid #B89F83;
+      color: white;
+      background: #B89F83; }
     .single-product .product-info p {
       font-family: "Raleway", sans-serif;
       line-height: 1.5; }
-  .single-product .product-footer {
-    min-height: 10vh;
-    background-color: grey;
-    bottom: 0; }
+
+.product-footer {
+  visibility: hidden; }
 
 .open {
   width: 100%; }
@@ -820,6 +873,192 @@ select.form-control {
   .all-products .header h1 {
     margin: auto;
     color: #A33F23; }
+
+.customize .collection-title {
+  margin-bottom: 10vh; }
+.customize .customize-intro {
+  background-color: white;
+  min-height: 40vh; }
+  .customize .customize-intro .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 5vh;
+    font-family: "MyWebFonts", "lulo_cleanone", serif;
+    line-height: 1.5;
+    font-size: 1.5vw; }
+    .customize .customize-intro .text h3 {
+      color: #B89F83; }
+  .customize .customize-intro .button {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    font-family: "MyWebFonts", "lulo_cleanone", serif; }
+    .customize .customize-intro .button div {
+      border: 2px solid #B89F83;
+      padding: 7px;
+      width: 200px;
+      font-size: 2vw;
+      text-align: center;
+      line-height: 1.5;
+      color: #B89F83; }
+    .customize .customize-intro .button div:hover {
+      background-color: #B89F83;
+      color: white; }
+.customize .slider-text {
+  font-family: "MyWebFonts", "lulo_cleanone", serif;
+  color: #A33F23;
+  width: 100vw; }
+  .customize .slider-text h2 {
+    font-size: 4vw;
+    text-align: center;
+    text-wrap: normal;
+    padding-top: 5vh; }
+.customize .cust-slider {
+  overflow: scroll;
+  margin: 5vh;
+  min-height: 55vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center; }
+  .customize .cust-slider .slider-product {
+    margin: 5px; }
+  .customize .cust-slider img {
+    height: auto;
+    width: 25vw;
+    margin: 3vw; }
+  .customize .cust-slider .slider-product-info {
+    text-align: center;
+    font-family: "MyWebFonts", "lulo_cleanone", serif; }
+    .customize .cust-slider .slider-product-info h1 {
+      color: #B89F83;
+      font-size: 1.2vw;
+      padding-bottom: 10px; }
+    .customize .cust-slider .slider-product-info input {
+      visibility: collapse;
+      opacity: 0; }
+    .customize .cust-slider .slider-product-info .slider-button {
+      padding: 7px;
+      border: 2px solid #B89F83;
+      font-size: 1vw;
+      color: #B89F83;
+      width: 50%;
+      margin: auto;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      opacity: 1;
+      visibility: visible; }
+    .customize .cust-slider .slider-product-info .slider-button:hover {
+      color: white;
+      background: #B89F83; }
+  .customize .cust-slider .slider-selected {
+    border: 2px solid #B89F83; }
+    .customize .cust-slider .slider-selected .slider-button {
+      visibility: collapse;
+      opacity: 0;
+      transition: opacity 2s ease; }
+    .customize .cust-slider .slider-selected input {
+      visibility: visible;
+      opacity: 1;
+      transition: opacity 2s ease; }
+
+.customize-nav {
+  margin-top: 15vh;
+  text-align: center; }
+  .customize-nav .custom-nav-btn {
+    margin: 0 auto;
+    padding: 7px;
+    font-family: "MyWebFonts", "lulo_cleanone", serif;
+    color: #B89F83;
+    font-size: 2vw; }
+  .customize-nav .btn-selected {
+    border-bottom: 2px solid #B89F83; }
+
+.special-order .special-order-info {
+  background-color: white;
+  width: 100vw;
+  min-height: 40vh;
+  font-family: "MyWebFonts", "lulo_cleanone", serif;
+  text-align: center;
+  padding-top: 5vh; }
+  .special-order .special-order-info h4 {
+    line-height: 2;
+    font-size: 1vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-bottom: 3vh; }
+.special-order h1 {
+  margin-bottom: 10vh; }
+
+.charity .charity-info {
+  background-color: white;
+  width: 100vw;
+  min-height: 40vh;
+  font-family: "MyWebFonts", "lulo_cleanone", serif;
+  text-align: center;
+  padding-top: 5vh; }
+  .charity .charity-info h4 {
+    line-height: 2;
+    font-size: 1vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-bottom: 3vh; }
+.charity h1 {
+  margin-bottom: 10vh;
+  margin-top: 50vh; }
+
+.team h1 {
+  font-size: 5vw;
+  margin-top: 50vh;
+  margin-bottom: 10vh; }
+.team img {
+  width: 30vw; }
+.team .team-list {
+  background-color: white; }
+.team .member {
+  padding: 5vh; }
+  .team .member .content {
+    font-family: "MyWebFonts", "lulo_cleanone", serif;
+    font-size: 1vw;
+    line-height: 1.5; }
+    .team .member .content h2 {
+      font-size: 2vw; }
+    .team .member .content h3 {
+      padding-bottom: 1vh; }
+
+.contact {
+  background: url("https://s3-us-west-1.amazonaws.com/madison-mckinley/banner-images/contact.jpg") center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  padding-top: 20vh;
+  font-family: "MyWebFonts", "lulo_cleanone", serif; }
+  .contact h1 {
+    color: white;
+    font-size: 3vw;
+    padding: 2vw; }
+  .contact .contact-form {
+    width: 45vw;
+    padding: 2vw;
+    min-height: 50vh; }
+    .contact .contact-form form {
+      height: 50vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around; }
+
+.about {
+  width: 100%;
+  height: 3000px;
+  background: url("https://s3-us-west-1.amazonaws.com/madison-mckinley/about.png") center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 45px; }
+
+.about-background {
+  background-color: #F9F4DC; }
 
 @keyframes slideInLeft {
   from {

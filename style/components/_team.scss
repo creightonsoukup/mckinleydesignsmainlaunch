@@ -1,0 +1,27 @@
+.team {
+  h1 {
+    font-size: 5vw;
+    margin-top: 50vh;
+    margin-bottom: 10vh;
+  }
+  img {
+    width: 30vw;
+  }
+  .team-list {
+    background-color: white;
+  }
+  .member {
+    padding: 5vh;
+    .content {
+      font-family: $header-text;
+      font-size: 1vw;
+      line-height: 1.5;
+      h2 {
+        font-size: 2vw;
+      }
+      h3 {
+        padding-bottom: 1vh;
+      }
+    }
+  }
+}

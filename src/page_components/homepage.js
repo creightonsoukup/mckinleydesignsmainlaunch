@@ -80,9 +80,8 @@ class Homepage extends Component {
   }
 
   render() {
-    const horseVideo = 'https://res.cloudinary.com/madisonmckinley/video/upload/fl_advanced_resize/v1490481031/homepage-loader.mp4'
-    const otherHorseVideo ='https://res.cloudinary.com/madisonmckinley/video/upload/fl_advanced_resize/v1490329828/horse-video.mov'
-    const placeholderVideo = 'https://res.cloudinary.com/madisonmckinley/video/upload/v1490312893/loop_video_n0thkq.mov'
+    const horseVideo = 'https://s3-us-west-1.amazonaws.com/madison-mckinley/homepage-loader.mp4'
+    const placeholderVideo = 'https://s3-us-west-1.amazonaws.com/madison-mckinley/loop_video.mov'
     const loader = _.debounce(() => {this.setState({loadingScreen: false})}, 2500)
     if(this.state.loadingScreen) {
     loader()
@@ -148,14 +147,14 @@ class Homepage extends Component {
         </div>
         <div className="content">
         <div className="banner2">
-          <div className="content" onClick={() => {this.context.router.push('/about')}}>
+          <div className="content" onClick={() => {this.context.router.push('/about-the-brand')}}>
             <h2>DISCOVER <br/>OUR STORY</h2>
             <h3>LEARN MORE<i className="fa fa-arrow-right" aria-hidden="true"></i></h3>
           </div>
         </div>
         <div className="banner3" onClick={() => {this.context.router.push('/in-the-saddle')}}>
           <div className="content">
-            <h2>MEANWHILE,<br/>IN THESADDLE</h2>
+            <h2>MEANWHILE,<br/>IN THE SADDLE</h2>
             <h3>STAY UP TO DATE WITH EVERYTHING MADKOOL</h3>
             <h4>FOLLOW US ON THE BLOG<i className="fa fa-arrow-right" aria-hidden="true"></i></h4>
           </div>

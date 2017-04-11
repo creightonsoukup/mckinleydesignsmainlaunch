@@ -5,9 +5,9 @@ const FooterLinks = () => {
   return (
     <div className='footer-bar'>
       <div className="copyright">
-        <span><i className="fa fa-copyright" aria-hidden="true"></i>Madison Mckinley Designs</span>
+        <span><i className="fa fa-copyright" aria-hidden="true"></i>Madison Mckinley</span>
       </div>
-  
+
 
     </div>
   )

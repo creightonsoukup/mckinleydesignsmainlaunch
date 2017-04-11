@@ -8,6 +8,7 @@ import pendantReducer from './reducer_pendants'
 import quoteReducer from './reducer_quote'
 import collectionContentReducer from './reducer_collection_content'
 import productReducer from './reducer_product'
+import teamReducer from './reducer_team'
 
 const rootReducer = combineReducers({
   collection: collectionReducer,
@@ -17,7 +18,8 @@ const rootReducer = combineReducers({
   pendants: pendantReducer,
   quote: quoteReducer,
   collectionContent: collectionContentReducer,
-  product: productReducer
+  product: productReducer,
+  team: teamReducer
 });
 
 export default rootReducer;

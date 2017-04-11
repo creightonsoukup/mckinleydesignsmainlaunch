@@ -65,14 +65,15 @@ class NavbarScroll extends Component {
           </div>
         }
         <nav className={`nav-items animated ${this.props.animation}`}>
-            <div className="search">
-              <Link><i className="fa fa-search" aria-hidden="true"></i></Link>
+            <div className="nav-links-left">
+              <Link to='/shop/all-products'>Shop</Link>
+              <Link to='/about-the-brand'>About</Link>
             </div>
             <Link to='/'>
               <h1>MADISON MCKINLEY</h1>
             </Link>
             <div className='nav-links'>
-              <Link to='/shop/all-products'>Shop</Link>
+              <Link><i className="fa fa-search" aria-hidden="true"></i></Link>
               <Link>
                 <i onClick={this.toggleCart} className="fa fa-shopping-cart" aria-hidden="true"></i>
               </Link>

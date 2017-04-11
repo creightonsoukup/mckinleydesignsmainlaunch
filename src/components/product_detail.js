@@ -84,11 +84,11 @@ class ProductDetail extends Component  {
             </Input>
           </Form>
         }
-        <p>{this.state.description}</p>
+        <p>Details: <br/> {this.state.description}</p>
         { this.state.available ? (
-          <Button
+          <div className='add-to-cart-btn'
           onClick={this.addToCart}
-          >Add To Cart</Button>
+          >Add To Cart</div>
         ) : (
           <Button>Out of Stock</Button>
         )}

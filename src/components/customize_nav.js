@@ -3,30 +3,34 @@ import { Button, Col, Row } from 'reactstrap'
 const CustomizeNav = (props, event) => {
 
   return (
-    <div>
+    <div className='customize-nav'>
       <Row>
-        <Col xs='12' sm='12' md='3' lg='3' xl='3'>
-          <Button
-          onClick={props.lastPage}
-          >Back</Button>
-        </Col>
-        <Col>
-          <Button
+        <Col xs='12' sm='12' md='4' lg='4' xl='4'>
+          <div className='custom-nav-btn'
           value={'pendants'}
           onClick={props.showPendants}
-          >Choose Pendant</Button>
+          >Choose Pendant</div>
+          { props.pendants &&
+            <div className='btn-selected'></div>
+          }
         </Col>
-        <Col>
-          <Button
+        <Col xs='12' sm='12' md='4' lg='4' xl='4'>
+          <div className='custom-nav-btn'
             value={'chains'}
             onClick={props.showChains}
-          >Choose Chain</Button>
+          >Choose Chain</div>
+          { props.chains &&
+            <div className='btn-selected'></div>
+          }
         </Col>
-        <Col>
-          <Button
+        <Col xs='12' sm='12' md='4' lg='4' xl='4'>
+          <div className='custom-nav-btn'
             value={'summary'}
             onClick={props.showSummary}
-          >Summary</Button>
+          >Summary</div>
+          { props.summary &&
+            <div className='btn-selected'></div>
+          }
         </Col>
       </Row>
     </div>

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import {
   Collapse,
   Navbar,
@@ -16,6 +16,9 @@ import {
 
 
 class SmallGallery extends Component {
+  static contextTypes = {
+    router: PropTypes.object
+  }
   constructor(props) {
     super(props)
 
@@ -23,11 +26,14 @@ class SmallGallery extends Component {
 
   render() {
     return (
-      <div>
+      <div className='small-gallery'>
         <img
+        onClick={() => {this.context.router.push(`/product/${this.props.handle}`)}}
         className="product-image"
         src={this.props.image} />
-
+        <i
+        onClick={() => {this.props.changeImage()}}
+        className="fa fa-angle-right"></i>
       </div>
     )
   }

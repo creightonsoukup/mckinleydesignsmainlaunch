@@ -30,18 +30,24 @@ class Product extends Component {
   }
 
 
+  changeImage() {
+
+  }
+
+
   renderSelectedProduct(selectedVariant, sortedImages) {
     const product = selectedVariant
     const images = sortedImages
     const offset = this.props.index % 2 === 0 ? '0' : '6'
     const nextIdx = images.length - 1 === this.state.galleryImageIdx ? 0 : parseInt(this.state.galleryImageIdx) + 1
+    const changeImage = () => {this.setState({galleryImageIdx: nextIdx })}
     return (
-      <div
-      onClick={() => this.setState({galleryImageIdx: nextIdx })}>
+      <div>
         { images.length === this.state.product.images.length  &&
           <ProductQuickView
             addToCart={this.props.addToCart}
             product={product}
+            changeImage={changeImage}
             galleryImageSrc={images[this.state.galleryImageIdx].src}
             offset={offset === '0'}/>
         }
@@ -61,7 +67,6 @@ class Product extends Component {
     <div xs='12' sm='12' md={width} lg={width}
     className='product'
       onMouseEnter={mouseEnter}>
-
         {this.renderSelectedProduct(selectedVariant, sortedImages)}
     </div>
     )

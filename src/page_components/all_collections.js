@@ -19,7 +19,7 @@ class AllCollections extends Component {
     if(this.props.collectionContent.length === 0) {
       return <div></div>
     }
-    const video = 'https://res.cloudinary.com/madisonmckinley/video/upload/v1490494302/white-collection.mp4'
+    const video = 'https://s3-us-west-1.amazonaws.com/madison-mckinley/collection.mp4'
     console.log(this.props.collectionContent)
     return (
       <div className="all-collections animated fadeIn">

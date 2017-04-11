@@ -30,11 +30,9 @@ export default class ProductSlider extends Component {
   renderProducts(product) {
     const index = this.props.products.indexOf(product)
     const key = product.id
-    console.log(product)
       return (
-        <div className='slider'>
+        <div key={key} className='slider'>
           <Product
-            key={key}
             index={index}
             product={product}/>
           <div className='slider-product-info'>

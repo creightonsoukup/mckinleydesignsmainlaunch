@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import CustomizeLoader from '../components/customize_loader'
+import CustomizeStart from '../components/customize-start'
 import { fetchChains, fetchPendants } from '../actions/index'
 import Navigation from '../components/navbar';
+import NavbarScroll from '../components/navbar-scroll'
 import BannerImage from '../components/banner_image'
 import Footer from '../components/footer'
 import CustomizeNav from '../components/customize_nav'
-import ProductSlider from '../components/product_slider'
-import { Row } from 'reactstrap'
+import CustomizeSelect from '../components/customize-select-piece'
+import { Row, Container } from 'reactstrap'
+import async from 'async';
+import update from 'react-addons-update';
+import CustomizeSummary from '../components/customize-summary'
 
 class Customize extends Component {
   constructor(props) {
@@ -16,17 +20,19 @@ class Customize extends Component {
     this.state= {
       chains: [],
       pendants: [],
-      showLoader: true,
-      showBanner: true,
+      start: true,
       showPendants: false,
       showChains: false,
       showSummary: false,
-      showSecondNav: false,
+      selectedProducts: []
     }
 
-    this.startButtonClick = this.startButtonClick.bind(this)
     this.showPendants = this.showPendants.bind(this)
     this.showChains = this.showChains.bind(this)
+    this.showSummary = this.showSummary.bind(this)
+    this.selectProduct = this.selectProduct.bind(this)
+    this.deselectProduct = this.deselectProduct.bind(this)
+
   }
 
 
@@ -41,69 +47,110 @@ class Customize extends Component {
       })
   }
 
-  startButtonClick() {
-    console.log('hi')
-    this.setState({showLoader: false, showBanner:false, showPendants: true, showSecondNav: true})
-  }
-
   showPendants() {
-    this.setState({showPendants: true, showChains: false})
-  }
-  showChains() {
-    this.setState({showPendants: false, showChains: true})
+    this.setState({
+      showPendants: true,
+      showChains: false,
+      start: false,
+      showSummary: false
+    })
   }
 
-  show(component) {
-    console.log(component)
+  showChains() {
+    this.setState({
+      showPendants: false,
+      showChains: true,
+      start: false,
+      showSummary: false
+    })
   }
+
+  showSummary() {
+    this.setState({
+      showPendants: false,
+      showChains: false,
+      start: false,
+      showSummary: true
+    })
+  }
+
+  selectProduct(newProduct) {
+    if (this.state.selectedProducts.length === 0) {
+      this.setState({selectedProducts: [newProduct]})
+      return
+    }
+    this.setState({selectedProducts: [newProduct, ...this.state.selectedProducts]})
+  }
+
+  deselectProduct(product) {
+      let index = this.state.selectedProducts.indexOf(product)
+      this.setState({
+        selectedProducts: update(this.state.selectedProducts, {$splice: [[index,1]]})
+      })
+  }
+
   render() {
     console.log(this.state)
     return (
-      <div>
-        <Navigation/>
-        { this.state.showBanner &&
-          <div>
-          <BannerImage
-            fileName={'customize.png'}/>
-          </div>
-        }
-        { this.state.showSecondNav &&
-          <div>
-            <CustomizeNav
-            showPendants={this.showPendants}
-            showChains={this.showChains} />
-          </div>
-
-        }
-        { this.state.showLoader &&
-          <div>
-          <CustomizeLoader
-          startButtonClick={this.startButtonClick}/>
-          </div>
+      <div className='customize animated fadeIn'>
+        { this.state.start &&
+          <div className='start'>
+            <Navigation/>
+            <CustomizeStart
+            start={this.showPendants}/>
+            </div>
         }
         { this.state.showPendants &&
-          <div>
-            <ProductSlider
-            products={this.state.pendants} />
-          </div>
+            <div className='animated fadeInRight'>
+              <NavbarScroll />
+              <CustomizeNav
+              showPendants={this.showPendants}
+              showSummary={this.showSummary}
+              showChains={this.showChains}
+              pendants={true}
+              chains={false}
+              summary={false} />
+              <CustomizeSelect
+              select={this.selectProduct}
+              deselect={this.deselectProduct}
+              products={this.state.pendants}
+              selected={this.state.selectedProducts} />
+            </div>
         }
         { this.state.showChains &&
-          <div>
-            <ProductSlider
+          <div className='animated fadeInRight'>
+            <NavbarScroll />
+            <CustomizeNav
+            showPendants={this.showPendants}
+            showChains={this.showChains}
+            showSummary={this.showSummary}
+            pendants={false}
+            chains={true}
+            summary={false} />
+            <CustomizeSelect
+            select={this.selectProduct}
+            deselect={this.deselectProduct}
+            selected={this.state.selectedProducts}
             products={this.state.chains} />
           </div>
         }
         { this.state.showSummary &&
-          <div>
-            summary
 
+          <div className='animated slideInRight'>
+            <NavbarScroll />
+            <CustomizeNav
+            showPendants={this.showPendants}
+            showChains={this.showChains}
+            showSummary={this.showSummary}
+            selected={this.state.selectedProducts}
+            pendants={false}
+            chains={false}
+            summary={true} />
+            <CustomizeSummary
+            removeProduct={this.deselectProduct}
+            products={this.state.selectedProducts} />
           </div>
-
         }
-
-
-         <Footer
-         show={true}/>
       </div>
     )
   }

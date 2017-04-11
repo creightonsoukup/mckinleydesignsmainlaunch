@@ -68,30 +68,47 @@ select.form-control {
   align-items: center;
   font-family: $header-text;
   height: 100px;
-  visibility: hidden;
-  opacity: 0;
   transition: opacity 1s ease;
   h2 {
     color: black;
-    font-size: 16px;
+    font-size: 12px;
   }
   .add-to-cart-btn {
-    padding: 7px;
-    border: 2px solid $brown;
+    padding: 5px;
+    border: 1px solid $brown;
     color: $brown;
     transition: background 1s ease;
-    font-size: 16px;
+    font-size: 12px;
+    visibility: collapse;
+    opacity: 0;
+    transition: opacity 2s ease;
   }
   .add-to-cart-btn:hover {
-    border: 2px solid $brown;
+    border: 1px solid $brown;
     color: white;
     background: $brown;
 
   }
 }
 
+.small-gallery {
+  display: flex;
+  align-items: center;
+  i {
+    font-size: 2vw;
+    visibility: hidden;
+    opacity: 0;
+    padding: 10px;
+    transition: opacity 2s ease;
+  }
+}
+
 .product:hover {
-  .product-quick-info {
+  .add-to-cart-btn {
+    visibility: visible;
+    opacity: 1;
+  }
+  i {
     visibility: visible;
     opacity: 1;
   }

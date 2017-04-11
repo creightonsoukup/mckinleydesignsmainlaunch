@@ -27,6 +27,7 @@ import NavbarScroll from '../components/navbar-scroll'
 import VideoPlayer from '../components/video_player'
 import Footer from '../components/footer'
 import BannerImage from '../components/banner_image'
+import Waypoint from 'react-waypoint';
 
 
 class AllProducts extends Component {
@@ -36,17 +37,29 @@ class AllProducts extends Component {
     this.state = {
       products: [],
       sortedProducts: [],
-      productsFromVideo: []
+      productsFromVideo: [],
+      scrollNav: false
     }
 
     this.searchProducts = this.searchProducts.bind(this)
     this.sortProducts = this.sortProducts.bind(this)
     this.sortProductTypes = this.sortProductTypes.bind(this)
+    this.navOnLeave = this.navOnLeave.bind(this)
+    this.navOnEnter = this.navOnEnter.bind(this)
   }
 
   componentWillMount() {
     this.props.fetchCart()
     this.fetchProducts()
+  }
+
+  navOnLeave() {
+    this.setState({scrollNav: true})
+
+  }
+
+  navOnEnter() {
+    this.setState({scrollNav: false})
   }
 
   fetchProducts() {
@@ -135,11 +148,19 @@ class AllProducts extends Component {
   }
 
   render() {
-    const video = 'https://res.cloudinary.com/madisonmckinley/video/upload/v1490312893/loop_video_n0thkq.mov'
+    const video = 'https://s3-us-west-1.amazonaws.com/madison-mckinley/product-video.mp4'
     const search = _.debounce((value) => {this.searchProducts(value)}, 300)
     return (
-      <div className=' all-products animated fadeIn'>
-      <NavbarScroll />
+      <div className='all-products animated fadeIn'>
+      { this.state.scrollNav ? (
+        <NavbarScroll/>
+      ) : (
+        <Navigation/>
+      )}
+      <Waypoint
+      topOffset={'-20%'}
+      onEnter={this.navOnEnter}
+      onLeave={this.navOnLeave}/>
       <VideoPlayer
       video={video} loop={true}/>
       <div className='header'>

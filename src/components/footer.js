@@ -23,7 +23,8 @@ const Footer = (props) => {
             <Link href="https://www.instagram.com/madisonmckinleydesigns"><i className="fa fa-linkedin-box" aria-hidden="true"></i></Link>
           </div>
           <Link to='/customer-care'>Customer Care</Link>
-          <Link to="/policies">Policies</Link>
+          <Link to="/privacy">Privacy Policies</Link>
+          <Link to="/terms">Terms of Use</Link>
           <Link to="/contact">Contact</Link>
         </Col>
         <Col xs='12' sm='12' md='12' lg='12' xl='12'>

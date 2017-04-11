@@ -43,10 +43,12 @@ class ProductQuickView extends Component {
     return (
           <div>
               <SmallGallery
+              changeImage={this.props.changeImage}
+              handle={this.state.product.attrs.product.attrs.handle}
               image={this.props.galleryImageSrc} />
               <div className="product-quick-info">
                <h2 onClick={this.viewProduct}>{this.state.product.productTitle}</h2>
-               <h2>{this.state.product.price}</h2>
+               <h2>{`$ ${this.state.product.price}`}</h2>
               <div className='add-to-cart-btn' onClick={this.addToCart}>Add To Cart</div>
               </div>
           </div>

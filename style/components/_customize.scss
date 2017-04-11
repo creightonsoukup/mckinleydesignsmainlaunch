@@ -1,0 +1,130 @@
+.customize {
+  .collection-title {
+    margin-bottom: 10vh;
+  }
+  .customize-intro {
+    background-color: white;
+    min-height: 40vh;
+    .text {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding: 5vh;
+      font-family: $header-text;
+      line-height: 1.5;
+      font-size: 1.5vw;
+      h3 {
+        color: $brown;
+      }
+    }
+    .button {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      justify-content: center;
+      font-family: $header-text;
+      div {
+        border: 2px solid $brown;
+        padding: 7px;
+        width: 200px;
+        font-size: 2vw;
+        text-align: center;
+        line-height: 1.5;
+        color: $brown;
+      }
+      div:hover {
+        background-color: $brown;
+        color: white;
+      }
+    }
+  }
+  .slider-text {
+    font-family: $header-text;
+    color: $red-brown;
+    width: 100vw;
+
+    h2 {
+      font-size: 4vw;
+      text-align: center;
+      text-wrap: normal;
+      padding-top: 5vh;
+    }
+  }
+
+  .cust-slider {
+    overflow: scroll;
+    margin: 5vh;
+    min-height: 55vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    .slider-product {
+      margin: 5px;
+    }
+    img {
+      height: auto;
+      width: 25vw;
+      margin: 3vw;
+    }
+    .slider-product-info {
+      text-align: center;
+      font-family: $header-text;
+      h1 {
+        color: $brown;
+        font-size: 1.2vw;
+        padding-bottom: 10px;
+      }
+      input {
+        visibility: collapse;
+        opacity: 0;
+      }
+      .slider-button {
+        padding: 7px;
+        border: 2px solid $brown;
+        font-size: 1vw;
+        color: $brown;
+        width: 50%;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        opacity: 1;
+        visibility: visible;
+      }
+      .slider-button:hover {
+        color: white;
+        background:$brown;
+      }
+    }
+    .slider-selected {
+      border: 2px solid $brown;
+      .slider-button {
+        visibility: collapse;
+        opacity: 0;
+        transition: opacity 2s ease;
+      }
+      input {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity 2s ease;
+      }
+    }
+  }
+
+
+}
+
+.customize-nav {
+  margin-top: 15vh;
+  text-align: center;
+  .custom-nav-btn {
+    margin: 0 auto;
+    padding: 7px;
+    font-family: $header-text;
+    color: $brown;
+    font-size: 2vw;
+  }
+  .btn-selected {
+    border-bottom: 2px solid $brown;
+  }
+}

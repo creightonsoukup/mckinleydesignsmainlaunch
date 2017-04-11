@@ -55,7 +55,7 @@ class ProductGallery extends Component {
   renderTumbnails(thumbnail) {
     const idx = this.state.thumbnails.indexOf(thumbnail)
     return (
-      <img className='thumbnails'
+      <img
       onClick={this.changePhotobyThumbnail}
       name={idx}
       key={idx} src={thumbnail} />
@@ -87,7 +87,7 @@ class ProductGallery extends Component {
           onClick = {this.changePhotoRight}
           className="fa fa-angle-right" aria-hidden="true"></i>
         </div>
-        <div>
+        <div className='thumbnails'>
           {this.state.thumbnails.map(this.renderTumbnails)}
         </div>
       </div>

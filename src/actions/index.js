@@ -32,6 +32,8 @@ export const FETCH_PRODUCT = 'fetch_product'
 export const ADD_TO_CART = 'add_to_cart'
 export const UPDATE_CART = 'update_cart'
 export const DELETE_ITEM = 'delete_item'
+export const TEAM = 'team'
+export const CONATACT_REQUEST = 'contact_request'
 
 
 const DATABASE_URL = 'http://localhost:3000'
@@ -40,6 +42,16 @@ export function fetchProduct(handle) {
   const request = shopClient.fetchQueryProducts({handle: handle})
   return {
     type: FETCH_PRODUCT,
+    payload: request
+  }
+}
+
+export function fetchTeam() {
+  const url = `${DATABASE_URL}/team`
+  const request = axios.get(url)
+
+  return {
+    type: TEAM,
     payload: request
   }
 }
@@ -56,6 +68,19 @@ export function addSubscriber(name, email) {
   }
 }
 
+export function addContactRequest(name, email) {
+  const url = `${DATABASE_URL}/contact`
+  const request = axios.post(url, {
+    name: name,
+    email: email,
+    subject:subject,
+    body: body
+  })
+  return {
+    type: CONTACT_REQUEST,
+    payload: request
+  }
+}
 
   export function fetchQuote() {
     const url = `${DATABASE_URL}/quote`

@@ -48,7 +48,7 @@ class LineItem extends Component {
         <td>
           <div className='lineItem-info'>
             <h2>{this.props.lineItem.title}</h2>
-            <h3>{this.props.lineItem.price}</h3>
+            <h3>{`$ ${this.props.lineItem.price}`}</h3>
             <h3>{this.props.lineItem.variant_title}</h3>
           </div>
         </td>
