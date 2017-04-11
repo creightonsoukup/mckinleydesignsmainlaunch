@@ -36,7 +36,7 @@ export const TEAM = 'team'
 export const CONATACT_REQUEST = 'contact_request'
 
 
-const DATABASE_URL = 'http://localhost:3000'
+const DATABASE_URL = 'https://shrouded-reaches-99139.herokuapp.com'
 
 export function fetchProduct(handle) {
   const request = shopClient.fetchQueryProducts({handle: handle})
