@@ -14,6 +14,8 @@ import HomepageMainBanner from '../components/homepage_main_banner'
 import NavbarScroll from '../components/navbar-scroll'
 import Waypoint from 'react-waypoint';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import 'whatwg-fetch';
+
 
 class Homepage extends Component {
   static contextTypes = {

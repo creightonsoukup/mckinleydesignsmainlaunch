@@ -1,5 +1,6 @@
 import ShopifyBuy from 'shopify-buy';
 import axios from 'axios';
+import 'whatwg-fetch';
 
 var shopClient = ShopifyBuy.buildClient({
       accessToken: '08b1b1ba5897eb763e75565ee43650cd',
