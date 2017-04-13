@@ -104,7 +104,7 @@ export function addContactRequest(name, email) {
 
 export function fetchAllProducts() {
 
-  const request = shopClient.fetchQueryProducts({limit: '300'})
+  const request = shopClient.fetchQueryProducts({collection_id: '418952068', sort_by: 'collection-default', limit: '300'})
 
   return {
     type: FETCH_ALL_PRODUCTS,

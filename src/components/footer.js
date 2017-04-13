@@ -11,10 +11,10 @@ const Footer = (props) => {
     }
     return (
       <Row className="footer">
-        <Col xs='12' sm='12' md='12' lg='6' xl='6'>
+        <Col xs='12' sm='12' md='6' lg='6' xl='6'>
         <EmailSignup />
         </Col>
-        <Col className='links' xs='12' sm='12' md='12' lg='6' xl='6'>
+        <Col className='links' xs='12' sm='12' md='6' lg='6' xl='6'>
           <div className="social">
             <Link href="https://www.pinterest.com/madkooldesigns"><i className="fa fa-pinterest-box" aria-hidden="true"></i></Link>
             <Link href="https://www.pinterest.com/madkooldesigns"><i className="fa fa-twitter-box" aria-hidden="true"></i></Link>

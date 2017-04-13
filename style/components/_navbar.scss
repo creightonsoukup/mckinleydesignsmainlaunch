@@ -1,47 +1,78 @@
-.navbar-light .navbar-toggler {
-  color: $tan;
-  font-size: 5vw;
-
-}
-.navbar-brand {
-  font-family: $logo-text;
-  letter-spacing: 4px;
-  font-size: 4.5vw;
-  transition: font-size 1s ease;
-}
-
-.navbar-brand:hover {
-  font-size: 4.6vw;
-}
-
-.navbar a.navbar-brand:hover {
-  color: $tan;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
-}
-
-.navbar a.navbar-brand {
-  color: $tan;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
-}
-nav.navbar {
-  z-index: 20000;
-  background-color:  rgba(0,0,0,0);
+.fixed-nav {
+  display: flex;
+  width: 100vw;
+  justify-content: space-between;
   position: absolute;
   top: 0;
-  width: 100%;
-  i {
+  background-color:  rgba(0,0,0,0);
+  font-family: $logo-text;
+  letter-spacing: 1px;
+  font-size: 8vw;
+  transition: font-size 1s ease;
+  h1 {
+    color: $tan;
+    padding: 15px;
+    font-family: $logo-text;
+    letter-spacing: 1px;
+    transition: font-size 1s ease;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
   }
-
+  a:hover {
+    text-decoration: none;
+    color: $tan;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  }
+  .bars {
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+    font-size: 30px;
+    transition: font-size 1s ease;
+    color: $tan;
+    padding: 15px;
+    padding-left: 0;
+  }
 }
 
-.navbar-light .navbar-nav .nav-link {
-  color: $tan;
-  font-size: 3vw;
-  transition: font-size 1s ease;
-}
 
-.navbar-light .navbar-nav .nav-link:hover {
-  color: $tan;
-  font-size: 3.1vw;
+
+
+
+@media (min-width: 768px) {
+  .fixed-nav {
+    display: flex;
+    width: 100vw;
+    justify-content: space-between;
+    position: absolute;
+    background-color:  rgba(0,0,0,0);
+    font-family: $logo-text;
+    letter-spacing: 4px;
+    font-size: 20px;
+    transition: font-size 1s ease;
+    h1 {
+      color: $tan;
+      padding: 20px;
+      font-family: $logo-text;
+      letter-spacing: 4px;
+      font-size: 5vw;
+      transition: font-size 1s ease;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+    }
+    h1:hover {
+      font-size: 5.1vw;
+    }
+    a:hover {
+      text-decoration: none;
+      color: $tan;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+    }
+    .bars {
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+      font-size: 3vw;
+      transition: font-size 1s ease;
+      color: $tan;
+      padding: 25px;
+    }
+    .bars:hover {
+      font-size: 3.1vw;
+    }
+  }
 }

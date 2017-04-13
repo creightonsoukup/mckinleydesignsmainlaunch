@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import { Row,  Navbar, Collapse, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap'
 import Menu from './menu';
 import Cart from '../page_components/cart'
+import { Link } from 'react-router';
 
 class Navigation extends Component {
   constructor(props) {
@@ -42,7 +43,6 @@ class Navigation extends Component {
     this.setState({cartOpen: !this.state.cartOpen})
   }
   render() {
-    console.log(this.state)
     return (
       <div>
         { this.state.menuOpen &&
@@ -58,17 +58,10 @@ class Navigation extends Component {
             toggleCart={this.toggleCart} />
           </div>
         }
-        <Navbar className='animated fadeIn' color="transparent" light toggleable>
-          <NavbarToggler right onClick={this.toggle} />
-          <NavbarBrand href="/">MADISON MCKINLEY</NavbarBrand>
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink onClick={this.toggleMenu}><i className="fa fa-bars" aria-hidden="true"></i></NavLink>
-              </NavItem>
-            </Nav>
-          </Collapse>
-        </Navbar>
+        <div className='fixed-nav'>
+          <Link to="/"><h1>MADISON MCKINLEY</h1></Link>
+          <div className='bars' onClick={this.toggleMenu}><i className="fa fa-bars" aria-hidden="true"></i></div>
+        </div>
       </div>
     )
   }

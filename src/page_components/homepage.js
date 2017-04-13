@@ -27,7 +27,7 @@ class Homepage extends Component {
     this.state = {
       favorites: [],
       playBrandVideo: false,
-      loadingScreen: true,
+      loadingScreen: false,
       scrollNav: false,
       banner1ClassNames: ['banner1', 'parallax', 'banner', 'animated', 'fadeIn'],
       navbarAnimation: 'fadeInDown'
@@ -134,7 +134,7 @@ class Homepage extends Component {
                 <h2>Brand Video</h2>
               </div>
               <div className="video-action">
-                <h2>Press</h2><span>SPACEBAR</span><h2>To Play</h2>
+                <h2>Click to Play</h2>
               </div>
 
             </div>

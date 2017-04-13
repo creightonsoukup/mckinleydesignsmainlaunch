@@ -12,6 +12,6 @@ const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
-    <Router history={browserHistory} routes={routes} />
+    <Router onUpdate={() => window.scrollTo(0, 0)} history={browserHistory} routes={routes} />
   </Provider>
   , document.querySelector('.app'));

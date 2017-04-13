@@ -54,9 +54,13 @@ class ProductDetail extends Component  {
   renderDescription() {
     const regex = /(<([^>]+)>)/ig
     ,   body = this.props.description
-    ,   result = body.replace(regex, "");
+    ,   result = body.replace(regex, '');
     this.setState({description: result})
     console.log(result);
+  }
+
+  renderHTML() {
+    return {__html: this.props.description}
   }
 
   addToCart() {
@@ -69,11 +73,12 @@ class ProductDetail extends Component  {
       <div className='product-info'>
         <h2>{this.props.name}</h2>
         <h3>{`$ ${this.state.price}.00`}</h3>
-        { this.state.variants.length > 1 &&
+        { this.state.variants.length > 1 ? (
           <Form>
             <Input value={this.state.variantId} onChange={this.handleChange} type='select' name='select'>
               {this.state.variants.map(this.renderOptions)}
             </Input>
+            <h3>Quantity: </h3>
             <Input value={this.state.quantity} onChange={this.changeQuantity} type='select' name='select'>
               <option>1</option>
               <option>2</option>
@@ -83,8 +88,25 @@ class ProductDetail extends Component  {
               <option>6</option>
             </Input>
           </Form>
-        }
-        <p>Details: <br/> {this.state.description}</p>
+        ) : (
+          <Form>
+            <h3>Size: {this.state.selectedVariant.title}</h3><br/>
+            <h3>Quantity: </h3>
+            <Input value={this.state.quantity} onChange={this.changeQuantity} type='select' name='select'>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+            </Input>
+          </Form>
+        )}
+
+        <div>
+              <p>Details:</p>
+              {<div dangerouslySetInnerHTML={this.renderHTML()}/>}
+        </div>
         { this.state.available ? (
           <div className='add-to-cart-btn'
           onClick={this.addToCart}

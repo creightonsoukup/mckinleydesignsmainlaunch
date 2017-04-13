@@ -14,7 +14,7 @@ import {
   Button,
   Form,
 } from 'reactstrap';
-import Product from './slider_product'
+import Product from './product'
 import Waypoint from 'react-waypoint';
 
 export default class ProductSlider extends Component {
@@ -31,16 +31,11 @@ export default class ProductSlider extends Component {
     const index = this.props.products.indexOf(product)
     const key = product.id
       return (
-        <div key={key} className='slider'>
+        <div  className='slider'>
           <Product
             index={index}
+            key={key}
             product={product}/>
-          <div className='slider-product-info'>
-            <h1>{product.title}</h1>
-            <Link to={`/product/${product.attrs.handle}`}><div className='slider-button'>
-              View Product
-            </div></Link>
-          </div>
         </div>
       )
   }

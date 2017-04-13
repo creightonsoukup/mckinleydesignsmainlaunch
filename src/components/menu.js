@@ -10,21 +10,26 @@ const Menu = ({toggleMenu, toggleCart}) => {
         <div className='menu animated slideInDown'>
           <div  className='close-menu'>
             <i onClick={toggleMenu} className="fa fa-times" aria-hidden="true"></i>
-            <p onClick={toggleMenu} >CLOSE</p>
+      
           </div>
-          <Link to='/shop/collections'>Shop Collections</Link>
-          <Link to='/shop/all-products'>Shop All Products</Link>
+          <h2>Shop</h2>
+          <Row className='shop'>
+            <Col xs='12' sm='12' md='6' lg='6' xl='6'><Link to='/shop/collections'> Collections</Link></Col>
+            <Col xs='12' sm='12' md='6' lg='6' xl='6'> <Link to='/shop/all-products'>Products</Link></Col>
+            <Col xs='12' sm='12' md='6' lg='6' xl='6'><Link to='/create-your-own'>Create Your Own</Link></Col>
+            <Col xs='12' sm='12' md='6' lg='6' xl='6'> <Link to='/special-order'>Special Order</Link></Col>
+          </Row>
           <br/>
-          <Link to='/create-your-own'>Create Your Own Pendant</Link>
-          <Link to='/special-order'>Special Order</Link>
+          <h2>The Brand</h2>
+          <Row className='shop'>
+            <Col xs='12' sm='12' md='6' lg='6' xl='6'><Link to='/about-the-brand'>About</Link></Col>
+            <Col xs='12' sm='12' md='6' lg='6' xl='6'><Link to='/charity'>Charity</Link></Col>
+            <Col xs='12' sm='12' md='6' lg='6' xl='6'><Link to='/meet-the-team'>Meet The Team</Link></Col>
+            <Col xs='12' sm='12' md='6' lg='6' xl='6'><Link to='/in-the-saddle'>In The Saddle</Link></Col>
+          </Row>
           <br/>
-          <Link to='/in-the-saddle'>In The Saddle</Link>
-          <Link to='/about-the-brand'>About The Brand</Link>
-          <Link to='/meet-the-team'>Meet The Team</Link>
-          <Link to='/charity'>Charity</Link>
-          <br/>
-          <Link onClick={toggleCart}>Cart</Link>
-          <Link to='/contact'>Contact Us</Link>
+          <Link onClick={toggleCart}><i className="fa fa-shopping-cart" aria-hidden="true"></i></Link>
+          <Link to='/contact'>Contact</Link>
           <Link to='/'><img src='https://s3-us-west-1.amazonaws.com/madison-mckinley/Anvil.png'/></Link>
           <div className="social">
             <Link href="https://www.pinterest.com/madkooldesigns"><i className="fa fa-pinterest-box" aria-hidden="true"></i></Link>

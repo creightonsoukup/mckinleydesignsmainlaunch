@@ -33,7 +33,7 @@ table {
   border-spacing: 0; }
 
 body {
-  font: "Raleway", sans-serif; }
+  font: "Open Sans", sans-serif; }
 
 .collection-panel .front {
   position: relative; }
@@ -84,45 +84,69 @@ body {
   transform: translateX(-50%) translateY(-50%);
   background-size: cover; }
 
-.navbar-light .navbar-toggler {
-  color: #F4EACE;
-  font-size: 5vw; }
-
-.navbar-brand {
-  font-family: "Colonna MT", arial;
-  letter-spacing: 4px;
-  font-size: 4.5vw;
-  transition: font-size 1s ease; }
-
-.navbar-brand:hover {
-  font-size: 4.6vw; }
-
-.navbar a.navbar-brand:hover {
-  color: #F4EACE;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
-
-.navbar a.navbar-brand {
-  color: #F4EACE;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
-
-nav.navbar {
-  z-index: 20000;
-  background-color: transparent;
+.fixed-nav {
+  display: flex;
+  width: 100vw;
+  justify-content: space-between;
   position: absolute;
   top: 0;
-  width: 100%; }
-  nav.navbar i {
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
-
-.navbar-light .navbar-nav .nav-link {
-  color: #F4EACE;
-  font-size: 3vw;
+  background-color: transparent;
+  font-family: "Colonna MT", arial;
+  letter-spacing: 1px;
+  font-size: 8vw;
   transition: font-size 1s ease; }
+  .fixed-nav h1 {
+    color: #F4EACE;
+    padding: 15px;
+    font-family: "Colonna MT", arial;
+    letter-spacing: 1px;
+    transition: font-size 1s ease;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
+  .fixed-nav a:hover {
+    text-decoration: none;
+    color: #F4EACE;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
+  .fixed-nav .bars {
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+    font-size: 30px;
+    transition: font-size 1s ease;
+    color: #F4EACE;
+    padding: 15px;
+    padding-left: 0; }
 
-.navbar-light .navbar-nav .nav-link:hover {
-  color: #F4EACE;
-  font-size: 3.1vw; }
-
+@media (min-width: 768px) {
+  .fixed-nav {
+    display: flex;
+    width: 100vw;
+    justify-content: space-between;
+    position: absolute;
+    background-color: transparent;
+    font-family: "Colonna MT", arial;
+    letter-spacing: 4px;
+    font-size: 20px;
+    transition: font-size 1s ease; }
+    .fixed-nav h1 {
+      color: #F4EACE;
+      padding: 20px;
+      font-family: "Colonna MT", arial;
+      letter-spacing: 4px;
+      font-size: 5vw;
+      transition: font-size 1s ease;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
+    .fixed-nav h1:hover {
+      font-size: 5.1vw; }
+    .fixed-nav a:hover {
+      text-decoration: none;
+      color: #F4EACE;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
+    .fixed-nav .bars {
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+      font-size: 3vw;
+      transition: font-size 1s ease;
+      color: #F4EACE;
+      padding: 25px; }
+    .fixed-nav .bars:hover {
+      font-size: 3.1vw; } }
 .banner1 {
   background: url("https://s3-us-west-1.amazonaws.com/madison-mckinley/banner-images/homepage1.jpg") center;
   -webkit-background-size: cover;
@@ -137,15 +161,15 @@ nav.navbar {
   .banner1 h2 {
     text-align: center;
     font-family: "Hind", sans-serif;
-    font-size: 6vw;
+    font-size: 15vw;
     color: white;
-    padding-top: 40vw;
+    padding-top: 50vh;
     letter-spacing: 4px;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
   .banner1 h4 {
     text-align: center;
     font-family: "Hind", sans-serif;
-    font-size: 4vw;
+    font-size: 8vw;
     padding-top: 3vw;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); }
@@ -163,13 +187,14 @@ nav.navbar {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
-  min-height: 80vh;
-  margin: 5vw;
+  min-height: 50vh;
   box-shadow: 1px 1px 2px 0px rgba(170, 170, 170, 0.4), -1px -1px 2px 0px rgba(170, 170, 170, 0.4);
-  position: relative; }
+  position: relative;
+  border-bottom: 5px solid #B89F83;
+  border-top: 5px solid #B89F83; }
   .banner2 .content {
     width: 40vw;
-    height: 35vh;
+    height: 20vh;
     text-align: left;
     padding-left: 5vw;
     display: flex;
@@ -180,12 +205,12 @@ nav.navbar {
     position: absolute; }
     .banner2 .content h2 {
       font-family: "Hind", sans-serif;
-      font-size: 6vw;
+      font-size: 8vw;
       color: #A33F23;
       text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
     .banner2 .content h3 {
       font-family: "Hind", sans-serif;
-      font-size: 2.5vw;
+      font-size: 4vw;
       color: white;
       text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
     .banner2 .content i {
@@ -196,38 +221,31 @@ nav.navbar {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
-  min-height: 80vh;
-  margin: 5vw;
+  min-height: 50vh;
   box-shadow: 1px 1px 2px 0px rgba(170, 170, 170, 0.4), -1px -1px 2px 0px rgba(170, 170, 170, 0.4);
   position: relative; }
   .banner3 .content {
     height: 50vh;
-    width: 50vw;
+    width: 75vw;
     display: flex;
     flex-direction: column;
-    text-align: center;
-    padding-right: 3vw;
-    right: 0;
-    top: 50%;
-    transform: translate(0, -50%);
+    padding-left: 5vw;
+    top: 25%;
     position: absolute; }
     .banner3 .content h2 {
-      text-align: center;
       font-family: "Hind", sans-serif;
-      font-size: 6vw;
+      font-size: 8vw;
       color: #A33F23;
       text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
     .banner3 .content h3 {
-      text-align: center;
       font-family: "Hind", sans-serif;
-      font-size: 3vw;
+      font-size: 5vw;
       padding-top: 3vw;
       color: white;
       text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
     .banner3 .content h4 {
-      text-align: center;
       font-family: "Hind", sans-serif;
-      font-size: 2.5vw;
+      font-size: 4vw;
       padding-top: 3vw;
       color: white;
       text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
@@ -239,7 +257,7 @@ nav.navbar {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
-  min-height: 70vh;
+  min-height: 50vh;
   opacity: .8;
   position: relative;
   box-shadow: inset 0px 1px 6px 0px rgba(0, 0, 0, 0.2), inset 0px -1px 6px 0px rgba(0, 0, 0, 0.2); }
@@ -254,13 +272,13 @@ nav.navbar {
   transform: translate(-50%, -50%); }
   .quote-content h3 {
     color: white;
-    font-size: 2vw;
+    font-size: 14px;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
-    line-height: 2; }
+    line-height: 1.5; }
   .quote-content h4 {
     padding-top: 5%;
     color: white;
-    font-size: 1.5vw;
+    font-size: 12px;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8); }
 
 .banner.parallax {
@@ -281,21 +299,180 @@ nav.navbar {
     height: 100vh;
     overflow: hidden; }
 
+@media (min-width: 768px) {
+  .banner1 {
+    background: url("https://s3-us-west-1.amazonaws.com/madison-mckinley/banner-images/homepage1.jpg") center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    min-height: 100vh;
+    min-width: 100%;
+    position: relative;
+    display: block;
+    transition: background 2s ease;
+    box-shadow: inset 0px -2px 10px 0px rgba(0, 0, 0, 0.4); }
+    .banner1 h2 {
+      text-align: center;
+      font-family: "Hind", sans-serif;
+      font-size: 6vw;
+      color: white;
+      padding-top: 40vw;
+      letter-spacing: 4px;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
+    .banner1 h4 {
+      text-align: center;
+      font-family: "Hind", sans-serif;
+      font-size: 4vw;
+      padding-top: 3vw;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); }
+
+  .banner1-darken {
+    background: url("https://s3-us-west-1.amazonaws.com/madison-mckinley/banner-images/homepage1-dark.jpg") center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    transition: background 1s ease;
+    transition-delay: .25s; }
+
+  .banner2 {
+    background: url("https://s3-us-west-1.amazonaws.com/madison-mckinley/banner-images/homepage2.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    min-height: 80vh;
+    margin: 5vw;
+    box-shadow: 1px 1px 2px 0px rgba(170, 170, 170, 0.4), -1px -1px 2px 0px rgba(170, 170, 170, 0.4);
+    position: relative;
+    border: none; }
+    .banner2 .content {
+      width: 40vw;
+      height: 35vh;
+      text-align: left;
+      padding-left: 5vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      top: 50%;
+      transform: translate(0, -50%);
+      position: absolute; }
+      .banner2 .content h2 {
+        font-family: "Hind", sans-serif;
+        font-size: 6vw;
+        color: #A33F23;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
+      .banner2 .content h3 {
+        font-family: "Hind", sans-serif;
+        font-size: 2.5vw;
+        color: white;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
+      .banner2 .content i {
+        padding-left: 10px; }
+
+  .banner3 {
+    background: url("https://s3-us-west-1.amazonaws.com/madison-mckinley/banner-images/homepage4.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    min-height: 80vh;
+    margin: 5vw;
+    box-shadow: 1px 1px 2px 0px rgba(170, 170, 170, 0.4), -1px -1px 2px 0px rgba(170, 170, 170, 0.4);
+    position: relative; }
+    .banner3 .content {
+      height: 50vh;
+      width: 50vw;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      padding-right: 3vw;
+      right: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+      position: absolute; }
+      .banner3 .content h2 {
+        text-align: center;
+        font-family: "Hind", sans-serif;
+        font-size: 6vw;
+        color: #A33F23;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
+      .banner3 .content h3 {
+        text-align: center;
+        font-family: "Hind", sans-serif;
+        font-size: 3vw;
+        padding-top: 3vw;
+        color: white;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
+      .banner3 .content h4 {
+        text-align: center;
+        font-family: "Hind", sans-serif;
+        font-size: 2.5vw;
+        padding-top: 3vw;
+        color: white;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
+      .banner3 .content i {
+        padding-left: 10px; }
+
+  .quote {
+    background: url("https://s3-us-west-1.amazonaws.com/madison-mckinley/banner-images/quote.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    min-height: 70vh;
+    opacity: .8;
+    position: relative;
+    box-shadow: inset 0px 1px 6px 0px rgba(0, 0, 0, 0.2), inset 0px -1px 6px 0px rgba(0, 0, 0, 0.2); }
+
+  .quote-content {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    left: 50%;
+    font-family: "Lulo Clean", "lulo_cleanone", serif;
+    transform: translate(-50%, -50%); }
+    .quote-content h3 {
+      color: white;
+      font-size: 2vw;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+      line-height: 2; }
+    .quote-content h4 {
+      padding-top: 5%;
+      color: white;
+      font-size: 1.5vw;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8); }
+
+  .banner.parallax {
+    background-attachment: fixed;
+    z-index: -1000; }
+
+  .banner-component {
+    z-index: -1000;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    width: 100vw;
+    box-shadow: inset 0px -2px 10px 0px rgba(0, 0, 0, 0.4); }
+    .banner-component .banner-image {
+      display: block;
+      margin: auto;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden; } }
 iframe {
   width: 100%;
   height: 600px; }
 
 video {
   width: 100%;
-  transform: translateY(1px); }
+  height: 100%;
+  border-bottom: 5px solid #B89F83; }
 
 .homepage-video {
-  margin: 5vw;
-  margin-top: 5vh;
-  margin-bottom: 5vh;
   position: relative;
   box-shadow: 1px 1px 6px 0px rgba(0, 0, 0, 0.2), -1px -1px 6px 0px rgba(0, 0, 0, 0.2); }
   .homepage-video .video-text {
+    visibility: hidden;
     top: 0;
     left: 0;
     background-color: rgba(184, 159, 131, 0.5);
@@ -344,6 +521,71 @@ video {
         color: white;
         padding: 10px; }
 
+@media (min-width: 768px) {
+  iframe {
+    width: 100%;
+    height: 600px; }
+
+  video {
+    width: 100%;
+    transform: translateY(1px);
+    border: none; }
+
+  .homepage-video {
+    margin: 5vw;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    position: relative;
+    box-shadow: 1px 1px 6px 0px rgba(0, 0, 0, 0.2), -1px -1px 6px 0px rgba(0, 0, 0, 0.2); }
+    .homepage-video .video-text {
+      top: 0;
+      visibility: visible;
+      left: 0;
+      background-color: rgba(184, 159, 131, 0.5);
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      z-index: 4000;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
+      .homepage-video .video-text .text-block {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        padding-top: 20px;
+        height: 40%; }
+        .homepage-video .video-text .text-block h2 {
+          font-family: "Lulo Clean", "lulo_cleanone", serif;
+          color: white;
+          text-align: right;
+          font-size: 3.5vw;
+          text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
+      .homepage-video .video-text .text-block-2 h2 {
+        text-align: center;
+        padding-bottom: 20px;
+        font-family: "Lulo Clean", "lulo_cleanone", serif;
+        color: #A33F23;
+        opacity: .8;
+        font-size: 8vw;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
+      .homepage-video .video-text .video-action {
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        padding-bottom: 20px; }
+        .homepage-video .video-text .video-action h2 {
+          color: white;
+          font-family: "Lulo Clean", "lulo_cleanone", serif;
+          font-size: 2vw;
+          text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
+        .homepage-video .video-text .video-action span {
+          border: 2px solid #B89F83;
+          border-radius: 25px;
+          font-size: 1.5vw;
+          font-family: "Lulo Clean", "lulo_cleanone", serif;
+          color: white;
+          padding: 10px; } }
 .slider-text {
   font-family: "Lulo Clean", "lulo_cleanone", serif;
   color: #A33F23;
@@ -357,46 +599,16 @@ video {
 .horizontal-slider {
   overflow: scroll;
   margin: 5vh;
-  min-height: 55vh;
+  margin-bottom: 0;
+  min-height: 45vh;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center; }
-  .horizontal-slider img {
-    height: auto;
-    width: 25vw;
-    margin: 3vw;
-    transition: width 1s ease, margin 1s ease; }
-  .horizontal-slider .slider-product-info {
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 1s ease;
-    text-align: center;
-    font-family: "Lulo Clean", "lulo_cleanone", serif; }
-    .horizontal-slider .slider-product-info h1 {
-      color: #B89F83;
-      font-size: 1.2vw;
-      padding-bottom: 10px; }
-    .horizontal-slider .slider-product-info .slider-button {
-      padding: 7px;
-      border: 2px solid #B89F83;
-      font-size: 1vw;
-      color: #B89F83;
-      width: 50%;
-      margin: auto;
-      margin-bottom: 10px; }
-    .horizontal-slider .slider-product-info .slider-button:hover {
-      color: white;
-      background-color: #B89F83; }
 
-.slider:hover .slider-product-info {
-  visibility: visible;
-  opacity: 1; }
-.slider:hover a {
-  text-decoration: none; }
-.slider:hover img {
-  width: 28vw;
-  margin: 1vw; }
+.slider {
+  margin: 20px;
+  margin-bottom: 0; }
 
 .filter-bar {
   background-color: white;
@@ -454,13 +666,16 @@ select.form-control {
   justify-content: space-around;
   align-items: center;
   font-family: "Lulo Clean", "lulo_cleanone", serif;
-  height: 100px;
+  height: 120px;
   transition: opacity 1s ease; }
   .product-quick-info h2 {
-    color: black;
-    font-size: 12px; }
+    color: #B89F83;
+    font-size: 12px;
+    text-align: center;
+    line-height: 1.5; }
   .product-quick-info .add-to-cart-btn {
-    padding: 5px;
+    padding: 6px;
+    padding-top: 9px;
     border: 1px solid #B89F83;
     color: #B89F83;
     transition: background 1s ease;
@@ -476,19 +691,21 @@ select.form-control {
 .small-gallery {
   display: flex;
   align-items: center; }
-  .small-gallery i {
+  .small-gallery .arrow {
     font-size: 2vw;
     visibility: hidden;
     opacity: 0;
-    padding: 10px;
-    transition: opacity 2s ease; }
+    padding: 15px;
+    transition: opacity 2s ease;
+    color: #B89F83; }
 
 .product:hover .add-to-cart-btn {
   visibility: visible;
   opacity: 1; }
-.product:hover i {
+.product:hover .arrow {
   visibility: visible;
-  opacity: 1; }
+  opacity: 1;
+  padding-right: 10px; }
 
 .footer {
   background-color: #b89f83;
@@ -497,29 +714,32 @@ select.form-control {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    min-height: 40vh;
-    padding: 10vh;
+    min-height: 20vh;
+    padding: 25px;
+    padding-top: 10px;
     font-family: "Lulo Clean", "lulo_cleanone", serif;
     color: white;
-    font-size: 1.5vw; }
+    font-size: 4vw; }
     .footer .links a {
-      color: white; }
+      color: white;
+      padding: 5px; }
     .footer .links .social {
       display: flex;
-      flex-direction: row; }
+      flex-direction: row;
+      justify-content: space-around;
+      min-width: 100%; }
       .footer .links .social i {
-        font-size: 3vw; }
+        font-size: 8vw; }
       .footer .links .social a {
-        padding-left: 3vw; }
-      .footer .links .social :first-child {
-        padding-left: 0; }
+        padding: 5vw; }
   .footer .email {
-    padding: 10vh;
+    padding: 10px;
+    padding-top: 20px;
     font-family: "Lulo Clean", "lulo_cleanone", serif; }
     .footer .email h2 {
       color: white;
       padding-bottom: 2vh;
-      font-size: 1.5vw;
+      font-size: 4vw;
       line-height: 1.5; }
     .footer .email form input {
       margin-bottom: 2vh;
@@ -543,12 +763,77 @@ select.form-control {
     flex-direction: row;
     justify-content: flex-end;
     color: white;
-    font-family: "Lulo Clean", "lulo_cleanone", serif; }
+    font-family: "Lulo Clean", "lulo_cleanone", serif;
+    font-size: 3vw; }
     .footer .footer-bar .copyright {
       color: white; }
       .footer .footer-bar .copyright i {
         padding-right: 1vw; }
 
+@media (min-width: 768px) {
+  .footer {
+    background-color: #b89f83;
+    min-height: 50vh; }
+    .footer .links {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      min-height: 40vh;
+      padding: 10vh;
+      padding-top: 9vh;
+      font-family: "Lulo Clean", "lulo_cleanone", serif;
+      color: white;
+      font-size: 1.5vw; }
+      .footer .links a {
+        color: white; }
+      .footer .links .social {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start; }
+        .footer .links .social i {
+          font-size: 3vw;
+          padding: 2vw;
+          padding-top: 0; }
+        .footer .links .social a {
+          padding: 0; }
+        .footer .links .social :first-child {
+          padding-left: 0; }
+    .footer .email {
+      padding: 10vh;
+      font-family: "Lulo Clean", "lulo_cleanone", serif; }
+      .footer .email h2 {
+        color: white;
+        padding-bottom: 2vh;
+        font-size: 1.5vw;
+        line-height: 1.5; }
+      .footer .email form input {
+        margin-bottom: 2vh;
+        background-color: rgba(255, 255, 255, 0);
+        color: white;
+        font-family: "Lulo Clean", "lulo_cleanone", serif;
+        font-size: 1.5vw; }
+      .footer .email form .form-control {
+        color: white;
+        border: 2px solid white;
+        border-radius: 0; }
+      .footer .email form button {
+        color: #B89F83;
+        font-family: "Lulo Clean", "lulo_cleanone", serif;
+        border-radius: 0;
+        border: none;
+        background-color: white; }
+    .footer .footer-bar {
+      display: flex;
+      margin: 1vw;
+      flex-direction: row;
+      justify-content: flex-end;
+      color: white;
+      font-family: "Lulo Clean", "lulo_cleanone", serif;
+      font-size: 1vw; }
+      .footer .footer-bar .copyright {
+        color: white; }
+        .footer .footer-bar .copyright i {
+          padding-right: 1vw; } }
 .quick-view {
   font-family: "Lulo Clean", "lulo_cleanone", serif;
   display: flex;
@@ -561,7 +846,7 @@ select.form-control {
     max-width: 40vw; }
 
 .product-image {
-  width: 100%; }
+  width: 90%; }
 
 .product {
   margin-bottom: 7vh; }
@@ -574,7 +859,33 @@ select.form-control {
   background-color: white;
   position: fixed;
   top: 0;
-  width: 100%; }
+  width: 100%;
+  background-color: #F4EACE;
+  box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.2);
+  height: 55px; }
+.scroll-nav .nav-links-left {
+  visibility: collapse; }
+.scroll-nav .nav-links {
+  visibility: collapse; }
+.scroll-nav .mobile {
+  visibility: visible; }
+.scroll-nav .bars {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 15px;
+  font-size: 30px; }
+.scroll-nav h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #A33F23;
+  padding: 15px;
+  font-size: 8vw;
+  font-family: "Colonna MT", arial;
+  letter-spacing: 1px;
+  transition: font-size 1s ease;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); }
 
 @media (min-width: 768px) {
   .scroll-nav nav {
@@ -585,15 +896,19 @@ select.form-control {
     width: 100%;
     height: 60px;
     box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.2); }
+  .scroll-nav .mobile {
+    visibility: collapse; }
   .scroll-nav .nav-items h1 {
     font-family: "Colonna MT", arial;
     font-size: 3.5vw;
     color: #A33F23;
     text-align: center;
-    padding: 15px; }
+    padding: 15px;
+    position: relative; }
   .scroll-nav .nav-items a {
     text-decoration: none; }
   .scroll-nav .nav-items .nav-links {
+    visibility: visible;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -615,29 +930,22 @@ select.form-control {
     flex-direction: row;
     justify-content: space-around;
     position: absolute;
+    visibility: visible;
     left: 0;
     top: 0;
     font-size: 16px;
     font-family: "Lulo Clean", "lulo_cleanone", serif;
     padding: 1.5vw;
-    padding-top: 20px; }
+    padding-top: 25px; }
     .scroll-nav .nav-items .nav-links-left a {
       color: #A33F23;
       font-size: 16px;
       padding-right: 3vw; }
       .scroll-nav .nav-items .nav-links-left a i {
-        font-size: 2vw; }
-  .scroll-nav .nav-items .search {
-    left: 0;
-    top: 0;
-    padding: 1.5vw;
-    padding-top: 20px;
-    font-size: 2vw;
-    color: #A33F23;
-    position: absolute; } }
+        font-size: 2vw; } }
 .single-product {
   padding-top: 70px;
-  min-height: 90vh; }
+  min-height: 100vh; }
   .single-product .product-gallery {
     display: flex;
     padding: 5vh;
@@ -650,7 +958,7 @@ select.form-control {
       padding: 2vw;
       color: #B89F83; }
     .single-product .product-gallery img {
-      width: 40vw; }
+      width: 35vw; }
   .single-product .thumbnails {
     display: flex;
     justify-content: center; }
@@ -661,15 +969,21 @@ select.form-control {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 80vh;
-    padding-top: 10vh;
+    min-height: 90vh;
+    padding-top: 5vh;
     padding-bottom: 5vh;
     padding-right: 5vw;
     font-family: "Lulo Clean", "lulo_cleanone", serif; }
     .single-product .product-info form {
-      max-width: 150px; }
+      max-width: 150px;
+      font-size: 12px; }
+      .single-product .product-info form h3 {
+        margin-bottom: 10px; }
+    .single-product .product-info h3 {
+      font-size: 12px; }
     .single-product .product-info .add-to-cart-btn {
       padding: 7px;
+      padding-top: 9px;
       border: 2px solid #B89F83;
       color: #B89F83;
       transition: background 1s ease, color 1s ease;
@@ -681,11 +995,14 @@ select.form-control {
       color: white;
       background: #B89F83; }
     .single-product .product-info p {
-      font-family: "Raleway", sans-serif;
-      line-height: 1.5; }
+      font-family: "Lulo Clean", "lulo_cleanone", serif;
+      line-height: 1.5;
+      font-size: 12px;
+      display: block;
+      padding-bottom: 10px; }
 
 .product-footer {
-  visibility: hidden; }
+  visibility: collapse; }
 
 .open {
   width: 100%; }
@@ -710,9 +1027,24 @@ select.form-control {
   font-family: "Lulo Clean", "lulo_cleanone", serif;
   color: white;
   font-size: 1.5vw; }
+  .menu h2 {
+    font-size: 2vw;
+    color: white; }
+  .menu .close-menu {
+    position: absolute;
+    left: 45%;
+    top: 5%; }
+  .menu .shop {
+    padding-left: 10vw;
+    padding-right: 10vw;
+    padding-top: 20px; }
+    .menu .shop div {
+      padding-bottom: 20px; }
+  .menu i {
+    font-size: 3vw; }
   .menu a {
     width: 100%;
-    padding-bottom: 2vh;
+    padding-bottom: 3vh;
     color: white;
     font-family: "Lulo Clean", "lulo_cleanone", serif;
     font-size: 1.5vw;
@@ -761,7 +1093,7 @@ select.form-control {
   top: 0;
   right: 0;
   background-color: #B89F83;
-  font-family: "Raleway", sans-serif;
+  font-family: "Open Sans", sans-serif;
   box-shadow: -1px 0 5px 0px rgba(170, 170, 170, 0.5); }
   .cart .cart-header {
     display: flex;
@@ -858,7 +1190,7 @@ select.form-control {
 .all-products .header {
   width: 100%;
   font-size: 4vw;
-  padding: 5vh;
+  padding: 40vh;
   font-family: "Lulo Clean", "lulo_cleanone", serif;
   text-align: center; }
   .all-products .header h1 {
@@ -1051,13 +1383,7 @@ select.form-control {
 .about-background {
   background-color: #F9F4DC; }
 
-@keyframes slideInLeft {
-  from {
-    transform: translate3d(-90%, 0, 0);
-    visibility: visible; }
-  to {
-    transform: translate3d(0, 0, 0); } }
-.slideInLeft {
-  animation-name: slideInLeft; }
+body {
+  cursor: default; }
 
 /*# sourceMappingURL=style.css.map */

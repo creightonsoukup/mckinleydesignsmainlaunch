@@ -31,9 +31,9 @@ class SmallGallery extends Component {
         onClick={() => {this.context.router.push(`/product/${this.props.handle}`)}}
         className="product-image"
         src={this.props.image} />
-        <i
-        onClick={() => {this.props.changeImage()}}
-        className="fa fa-angle-right"></i>
+        <div onClick={() => {this.props.changeImage()}} className='arrow'>
+        <i className="fa fa-angle-right"></i>
+        </div>
       </div>
     )
   }

@@ -39,7 +39,6 @@ class ProductQuickView extends Component {
   }
 
   render() {
-    console.log(this.state.product)
     return (
           <div>
               <SmallGallery

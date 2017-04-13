@@ -5,35 +5,37 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    min-height: 40vh;
-    padding: 10vh;
+    min-height: 20vh;
+    padding: 25px;
+    padding-top: 10px;
     font-family: $header-text;
     color: white;
-    font-size: 1.5vw;
+    font-size: 4vw;
     a {
       color: white;
+      padding: 5px;
     }
     .social {
       display: flex;
       flex-direction: row;
+      justify-content: space-around;
+      min-width: 100%;
       i {
-        font-size: 3vw;
+        font-size: 8vw;
       }
       a {
-        padding-left: 3vw;
-      }
-      :first-child {
-        padding-left: 0;
+        padding: 5vw;
       }
     }
   }
   .email {
-    padding: 10vh;
+    padding: 10px;
+    padding-top: 20px;
     font-family: $header-text;
     h2 {
       color: white;
       padding-bottom: 2vh;
-      font-size: 1.5vw;
+      font-size: 4vw;
       line-height: 1.5;
     }
     form {
@@ -67,6 +69,7 @@
     justify-content: flex-end;
     color: white;
     font-family: $header-text;
+    font-size: 3vw;
     .copyright {
       color: white;
       i {
@@ -74,4 +77,90 @@
       }
     }
   }
+}
+
+@media (min-width: 768px) {
+  .footer {
+    background-color: rgba(184, 159, 131, 1);
+    min-height: 50vh;
+    .links {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      min-height: 40vh;
+      padding: 10vh;
+      padding-top: 9vh;
+      font-family: $header-text;
+      color: white;
+      font-size: 1.5vw;
+      a {
+        color: white;
+      }
+      .social {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        i {
+          font-size: 3vw;
+          padding: 2vw;
+          padding-top: 0;
+        }
+        a {
+          padding: 0;
+        }
+        :first-child {
+          padding-left: 0;
+        }
+      }
+    }
+    .email {
+      padding: 10vh;
+      font-family: $header-text;
+      h2 {
+        color: white;
+        padding-bottom: 2vh;
+        font-size: 1.5vw;
+        line-height: 1.5;
+      }
+      form {
+        input {
+          margin-bottom: 2vh;
+          background-color: rgba(255, 255, 255, 0);
+          color: white;
+          font-family: $header-text;
+          font-size: 1.5vw;
+        }
+        .form-control {
+          color: white;
+          border: 2px solid white;
+          border-radius: 0;
+        }
+
+        button {
+          color: $brown;
+          font-family: $header-text;
+          border-radius: 0;
+          border: none;
+          background-color: rgba(255, 255, 255, 1);
+        }
+      }
+
+    }
+    .footer-bar {
+      display: flex;
+      margin: 1vw;
+      flex-direction: row;
+      justify-content: flex-end;
+      color: white;
+      font-family: $header-text;
+      font-size: 1vw;
+      .copyright {
+        color: white;
+        i {
+          padding-right: 1vw;
+        }
+      }
+    }
+  }
+
 }

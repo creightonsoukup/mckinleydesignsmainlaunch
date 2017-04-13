@@ -23,9 +23,29 @@
   font-family: $header-text;
   color: white;
   font-size: 1.5vw;
+  h2 {
+    font-size: 2vw;
+    color: white;
+  }
+  .close-menu {
+    position: absolute;
+    left: 45%;
+    top: 5%;
+  }
+  .shop {
+    padding-left: 10vw;
+    padding-right: 10vw;
+    padding-top: 20px;
+    div {
+      padding-bottom: 20px;
+    }
+  }
+  i {
+    font-size: 3vw;
+  }
   a {
     width: 100%;
-    padding-bottom: 2vh;
+    padding-bottom: 3vh;
     color: white;
     font-family: $header-text;
     font-size: 1.5vw;

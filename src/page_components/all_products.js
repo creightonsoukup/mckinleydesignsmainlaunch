@@ -3,7 +3,7 @@ import React from 'react';
 import { Component } from 'react';
 import { connect } from 'react-redux'
 import async from 'async';
-import { fetchAllProducts , fetchCart,
+import { fetchAllProducts , fetchCart, addToCart,
   searchAllProductsByTags } from '../actions/index'
 import {
   Collapse,
@@ -38,7 +38,8 @@ class AllProducts extends Component {
       products: [],
       sortedProducts: [],
       productsFromVideo: [],
-      scrollNav: false
+      scrollNav: false,
+      cart: null
     }
 
     this.searchProducts = this.searchProducts.bind(this)
@@ -46,10 +47,14 @@ class AllProducts extends Component {
     this.sortProductTypes = this.sortProductTypes.bind(this)
     this.navOnLeave = this.navOnLeave.bind(this)
     this.navOnEnter = this.navOnEnter.bind(this)
+    this.addToCart = this.addToCart.bind(this)
   }
 
   componentWillMount() {
     this.props.fetchCart()
+      .then((data) => {
+        this.setState({cart: data.payload})
+      })
     this.fetchProducts()
   }
 
@@ -147,6 +152,14 @@ class AllProducts extends Component {
     this.setState({sortedProducts: sortedProducts})
   }
 
+  addToCart(variantObj, quantity) {
+    this.props.addToCart(variantObj, quantity, this.state.cart)
+      .then((data) => {
+        localStorage.setItem('MckinleyCart', data.payload.id)
+        this.setState({cart: data.payload})
+      })
+  }
+
   render() {
     const video = 'https://s3-us-west-1.amazonaws.com/madison-mckinley/product-video.mp4'
     const search = _.debounce((value) => {this.searchProducts(value)}, 300)
@@ -161,12 +174,14 @@ class AllProducts extends Component {
       topOffset={'-20%'}
       onEnter={this.navOnEnter}
       onLeave={this.navOnLeave}/>
+      <div className='banner-component'>
       <VideoPlayer
       video={video} loop={true}/>
+      </div>
+      <Container fluid>
       <div className='header'>
         <h1>Shop All Products</h1>
       </div>
-      <Container fluid>
         <FilterBar
         sortProducts={this.sortProducts}
         sortProductTypes={this.sortProductTypes}
@@ -175,7 +190,9 @@ class AllProducts extends Component {
         {this.state.products.length === 0 ? (
           <div>Products Loading</div>
         ) : (
-          <ProductList products={this.state.sortedProducts.length === 0 ? this.state.products : this.state.sortedProducts}/>
+          <ProductList
+          addToCart={this.addToCart}
+          products={this.state.sortedProducts.length === 0 ? this.state.products : this.state.sortedProducts}/>
         )}
         </div>
       </Container>
@@ -190,4 +207,4 @@ function mapStateToProps({products}) {
  return { products }
 }
 
-export default connect(mapStateToProps, { fetchAllProducts, fetchCart, searchAllProductsByTags })(AllProducts)
+export default connect(mapStateToProps, { fetchAllProducts, addToCart, fetchCart, searchAllProductsByTags })(AllProducts)

@@ -4,8 +4,7 @@ const VideoPlayer = ({video, loop, playVideo}) => {
 
   return (
     <div>
-      <video
-      className='animated fadeInDown' muted loop={loop} autoPlay={"autoplay"}>
+      <video muted loop={loop} autoPlay={"autoplay"}>
         <source src={video} type="video/mp4"/>
         Your broswer doesnt support video tag
       </video>

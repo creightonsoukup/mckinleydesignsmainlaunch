@@ -27,6 +27,7 @@ import {
   Button,
   Form,
 } from 'reactstrap';
+import Waypoint from 'react-waypoint';
 
 
 class SingleCollection extends Component {
@@ -37,13 +38,16 @@ class SingleCollection extends Component {
       sortedProducts: [],
       collection: '',
       collectionContent: '',
-      cart: null
+      cart: null,
+      scrollNav: false
     }
     //
     this.searchProducts = this.searchProducts.bind(this)
     this.sortProducts = this.sortProducts.bind(this)
     this.sortProductTypes = this.sortProductTypes.bind(this)
     this.addToCart = this.addToCart.bind(this)
+    this.navOnLeave = this.navOnLeave.bind(this)
+    this.navOnEnter = this.navOnEnter.bind(this)
   }
 
   componentWillMount() {
@@ -61,6 +65,15 @@ class SingleCollection extends Component {
       .then((data) => {
         this.setState({cart: data.payload})
       })
+  }
+
+  navOnLeave() {
+    this.setState({scrollNav: true})
+
+  }
+
+  navOnEnter() {
+    this.setState({scrollNav: false})
   }
 
   addToCart(variantObj, quantity) {
@@ -237,8 +250,15 @@ class SingleCollection extends Component {
   render() {
       const search = _.debounce((value) => {this.searchProducts(value)}, 300)
     return (
-      <div className='animated fadeIn'>
-      <NavbarScroll />
+    <div className='animated fadeIn'>
+    { this.state.scrollNav ? (
+      <NavbarScroll/>
+    ) : (
+      <Navigation/>
+    )}
+    <Waypoint
+    onEnter={this.navOnEnter}
+    onLeave={this.navOnLeave}/>
       <BannerImage
         fileName={`${this.props.params.collection}.jpg`}/>
       <Container fluid>
@@ -261,7 +281,7 @@ class SingleCollection extends Component {
         <Footer
           show={this.state.products.length > 0}/>
       </Container>
-      </div >
+    </div >
     )
   }
 }

@@ -22,18 +22,6 @@
 @import './components/contact';
 @import './components/about';
 
-
-@keyframes slideInLeft {
-  from {
-    transform: translate3d(-90%, 0, 0);
-    visibility: visible;
-  }
-
-  to {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-.slideInLeft {
-  animation-name: slideInLeft;
+body {
+  cursor: default;
 }

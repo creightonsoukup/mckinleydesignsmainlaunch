@@ -90,13 +90,13 @@ class SingleProduct extends Component {
       <div className='animated fadeInRight'>
         <Navigation />
         <Row className='single-product'>
-          <Col xs='12' sm='12' md='7' lg='7' xl='7'>
+          <Col xs='12' sm='12' md='6' lg='6' xl='6'>
             <ProductGallery
             regular={this.state.imagesReg}
             gallery={this.state.imagesGallery}
             thumbnails={this.state.imagesThumb}/>
           </Col>
-          <Col xs='12' sm='12' md='5' lg='5' xl='5'>
+          <Col xs='12' sm='12' md='6' lg='6' xl='6'>
             <ProductDetail
               name={this.state.product.title}
               addToCart={this.addToCart}
