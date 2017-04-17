@@ -133,6 +133,7 @@
 .summary  {
   font-family: $body-text;
   margin: 5vw;
+  letter-spacing: 2px;
   margin-bottom: 0;
   .lineItem-info {
     height: 100%;
@@ -148,6 +149,11 @@
     }
     button {
       border: none;
+    }
+    form {
+      .form-control {
+       width: 150px;
+      }
     }
   }
 }

@@ -1087,13 +1087,14 @@ select.form-control {
 
 .cart {
   z-index: 30000;
-  width: 60vw;
+  width: 70vw;
   height: 100vh;
   position: fixed;
   top: 0;
   right: 0;
   background-color: #B89F83;
   font-family: "Open Sans", sans-serif;
+  letter-spacing: 2px;
   box-shadow: -1px 0 5px 0px rgba(170, 170, 170, 0.5); }
   .cart .cart-header {
     display: flex;
@@ -1165,6 +1166,7 @@ select.form-control {
   background: transparent;
   border: 2px solid white;
   padding: 10px;
+  padding-top: 12px;
   font-family: "Lulo Clean", "lulo_cleanone", serif;
   color: white;
   font-size: 1.5vw;
@@ -1184,6 +1186,7 @@ select.form-control {
     color: white;
     font-family: "Lulo Clean", "lulo_cleanone", serif;
     padding: 10px;
+    padding-top: 12px;
     font-size: 1.5vw;
     text-align: right; }
 
@@ -1303,6 +1306,7 @@ select.form-control {
 .summary {
   font-family: "Open Sans", sans-serif;
   margin: 5vw;
+  letter-spacing: 2px;
   margin-bottom: 0; }
   .summary .lineItem-info {
     height: 100%;
@@ -1316,6 +1320,8 @@ select.form-control {
       padding-bottom: 1vh; }
     .summary .lineItem-info button {
       border: none; }
+    .summary .lineItem-info form .form-control {
+      width: 150px; }
 
 .summary-footer {
   display: flex;

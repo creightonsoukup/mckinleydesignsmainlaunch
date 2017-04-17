@@ -13,7 +13,6 @@ const CartFooter = ({cart, checkout}) => {
         Checkout
       </div>
       <div className='subtotal'>
-        <h3>Subtotal: </h3>
         <h3>{`$${cart.subtotal}`}</h3>
       </div>
     </div>

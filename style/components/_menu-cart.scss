@@ -106,13 +106,14 @@
 
 .cart {
   z-index: 30000;
-  width: 60vw;
+  width: 70vw;
   height: 100vh;
   position: fixed;
   top: 0;
   right:0;
   background-color: $brown;
   font-family: $body-text;
+  letter-spacing: 2px;
   box-shadow: -1px 0 5px 0px rgba(170,170,170,.5);
   .cart-header {
     display: flex;
@@ -199,6 +200,7 @@
   background: rgba(0,0,0,0);
   border: 2px solid white;
   padding: 10px;
+  padding-top: 12px;
   font-family: $header-text;
   color: white;
   font-size: 1.5vw;
@@ -221,6 +223,7 @@
       color: white;
       font-family: $header-text;
       padding: 10px;
+      padding-top: 12px;
       font-size: 1.5vw;
       text-align: right;
     }

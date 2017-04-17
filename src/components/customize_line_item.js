@@ -55,6 +55,7 @@ class CustomizeLineItem extends Component {
           <Form onSubmit={this.handleSubmit}>
             <Input
             name='quantity'
+            placeholder={1}
             type='number'
             value={this.state.quantity}
             onChange={this.handleChange}
