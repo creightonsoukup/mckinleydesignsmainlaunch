@@ -50,7 +50,7 @@ export default class CustomizeSelect extends Component {
 
   render() {
     return (
-      <div>
+      <Col xs='12' sm='12' md='6' lg='4' xl='4'>
         { this.state.selected ? (
           <div className='slider-product slider-selected'>
             <div  onClick={this.deselectProduct}>
@@ -85,7 +85,7 @@ export default class CustomizeSelect extends Component {
             </div>
           </div>
         )}
-      </div>
+      </Col>
 
     )
   }

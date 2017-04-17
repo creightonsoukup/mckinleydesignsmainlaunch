@@ -20,17 +20,17 @@
     .button {
       display: flex;
       flex-direction: column;
-      align-content: center;
+      align-items: center;
       justify-content: center;
       font-family: $header-text;
       div {
         border: 2px solid $brown;
-        padding: 7px;
-        width: 200px;
+        padding: 30px;
         font-size: 2vw;
-        text-align: center;
+        max-width: 300px;
         line-height: 1.5;
         color: $brown;
+        text-align: center;
       }
       div:hover {
         background-color: $brown;
@@ -52,12 +52,10 @@
   }
 
   .cust-slider {
-    overflow: scroll;
     margin: 5vh;
     min-height: 55vh;
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
     align-items: center;
     .slider-product {
       margin: 5px;
@@ -65,7 +63,7 @@
     img {
       height: auto;
       width: 25vw;
-      margin: 3vw;
+      margin: 2vw;
     }
     .slider-product-info {
       text-align: center;
@@ -116,15 +114,47 @@
 
 .customize-nav {
   margin-top: 15vh;
+  margin-right: 5vw;
+  margin-left: 5vw;
   text-align: center;
   .custom-nav-btn {
     margin: 0 auto;
     padding: 7px;
+    padding-bottom: 15px;
     font-family: $header-text;
     color: $brown;
-    font-size: 2vw;
+    font-size: 14px;
   }
   .btn-selected {
     border-bottom: 2px solid $brown;
   }
+}
+
+.summary  {
+  font-family: $body-text;
+  margin: 5vw;
+  margin-bottom: 0;
+  .lineItem-info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    h2  {
+      padding-top: 1vh;
+      padding-bottom: 1vh;
+    }
+    h3 {
+      padding-top: 1vh;
+      padding-bottom: 1vh;
+    }
+    button {
+      border: none;
+    }
+  }
+}
+.summary-footer {
+  display: flex;
+  width: 100vw;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 5vw;
 }

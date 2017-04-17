@@ -7,7 +7,7 @@ const CustomizeSummary = (props) => {
   let lineItems = []
   props.products.map((product) => {lineItems.push(product.selectedVariant)})
   return (
-    <div>
+    <div className='summary'>
       <CustomizeSummaryList
       lineItems={lineItems} />
     </div>

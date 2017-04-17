@@ -46,9 +46,9 @@ export default class CustomizeSelect extends Component {
   render() {
     return (
       <div>
-        <div className='cust-slider'>
+        <Row className='cust-slider'>
           {this.props.products.map(this.renderProducts)}
-        </div>
+        </Row>
       </div>
 
     )

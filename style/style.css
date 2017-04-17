@@ -1215,17 +1215,17 @@ select.form-control {
   .customize .customize-intro .button {
     display: flex;
     flex-direction: column;
-    align-content: center;
+    align-items: center;
     justify-content: center;
     font-family: "Lulo Clean", "lulo_cleanone", serif; }
     .customize .customize-intro .button div {
       border: 2px solid #B89F83;
-      padding: 7px;
-      width: 200px;
+      padding: 30px;
       font-size: 2vw;
-      text-align: center;
+      max-width: 300px;
       line-height: 1.5;
-      color: #B89F83; }
+      color: #B89F83;
+      text-align: center; }
     .customize .customize-intro .button div:hover {
       background-color: #B89F83;
       color: white; }
@@ -1239,19 +1239,17 @@ select.form-control {
     text-wrap: normal;
     padding-top: 5vh; }
 .customize .cust-slider {
-  overflow: scroll;
   margin: 5vh;
   min-height: 55vh;
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
   align-items: center; }
   .customize .cust-slider .slider-product {
     margin: 5px; }
   .customize .cust-slider img {
     height: auto;
     width: 25vw;
-    margin: 3vw; }
+    margin: 2vw; }
   .customize .cust-slider .slider-product-info {
     text-align: center;
     font-family: "Lulo Clean", "lulo_cleanone", serif; }
@@ -1289,15 +1287,42 @@ select.form-control {
 
 .customize-nav {
   margin-top: 15vh;
+  margin-right: 5vw;
+  margin-left: 5vw;
   text-align: center; }
   .customize-nav .custom-nav-btn {
     margin: 0 auto;
     padding: 7px;
+    padding-bottom: 15px;
     font-family: "Lulo Clean", "lulo_cleanone", serif;
     color: #B89F83;
-    font-size: 2vw; }
+    font-size: 14px; }
   .customize-nav .btn-selected {
     border-bottom: 2px solid #B89F83; }
+
+.summary {
+  font-family: "Open Sans", sans-serif;
+  margin: 5vw;
+  margin-bottom: 0; }
+  .summary .lineItem-info {
+    height: 100%;
+    display: flex;
+    flex-direction: column; }
+    .summary .lineItem-info h2 {
+      padding-top: 1vh;
+      padding-bottom: 1vh; }
+    .summary .lineItem-info h3 {
+      padding-top: 1vh;
+      padding-bottom: 1vh; }
+    .summary .lineItem-info button {
+      border: none; }
+
+.summary-footer {
+  display: flex;
+  width: 100vw;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 5vw; }
 
 .special-order .special-order-info {
   background-color: white;

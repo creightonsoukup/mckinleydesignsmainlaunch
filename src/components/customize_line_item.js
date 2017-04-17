@@ -6,7 +6,7 @@ class CustomizeLineItem extends Component {
     super(props);
 
     this.state = {
-      quantity: '',
+      quantity: 1,
       updateButton: false,
       price: false
     }
@@ -21,7 +21,6 @@ class CustomizeLineItem extends Component {
 
   handleSubmit(event) {
     event.preventDefault()
-    this.props.updateCart(this.state.quantity, this.props.lineItem.id)
     this.setState({updateButton: false})
   }
 
@@ -74,7 +73,7 @@ class CustomizeLineItem extends Component {
             {this.state.price ? (
               <h3>{`$ ${this.state.totalPrice}.00`}</h3>
             ) : (
-              <h3>{`$ ${this.props.lineItem.line_price}`}</h3>
+              <h3>{`$ ${this.props.lineItem.price}`}</h3>
             )}
           </div>
         </td>

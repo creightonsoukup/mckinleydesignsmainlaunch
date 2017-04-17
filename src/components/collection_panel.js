@@ -34,7 +34,7 @@ class CollectionPanel extends Component {
     console.log(this.props)
     const handle = this.state.collection.name.split(' ').join('-').toLowerCase()
     return (
-      <Col
+      <Col xs='12' sm='12' md='6' lg='6' xl='6'
       onMouseEnter = { () => this.setState({hover: false})}
       onMouseLeave = { () => this.setState({hover: false})}
       className="collection-panel" xs='12' sm='12' md='6' lg='6' xl='6'>

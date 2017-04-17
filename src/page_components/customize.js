@@ -92,7 +92,7 @@ class Customize extends Component {
   render() {
     console.log(this.state)
     return (
-      <div className='customize animated fadeIn'>
+      <div className='customize'>
         { this.state.start &&
           <div className='start'>
             <Navigation/>
@@ -101,7 +101,7 @@ class Customize extends Component {
             </div>
         }
         { this.state.showPendants &&
-            <div className='animated fadeInRight'>
+            <div>
               <NavbarScroll />
               <CustomizeNav
               showPendants={this.showPendants}
@@ -118,7 +118,7 @@ class Customize extends Component {
             </div>
         }
         { this.state.showChains &&
-          <div className='animated fadeInRight'>
+          <div>
             <NavbarScroll />
             <CustomizeNav
             showPendants={this.showPendants}
@@ -136,7 +136,7 @@ class Customize extends Component {
         }
         { this.state.showSummary &&
 
-          <div className='animated slideInRight'>
+          <div>
             <NavbarScroll />
             <CustomizeNav
             showPendants={this.showPendants}
@@ -149,6 +149,10 @@ class Customize extends Component {
             <CustomizeSummary
             removeProduct={this.deselectProduct}
             products={this.state.selectedProducts} />
+            <div className='summary-footer'>
+              <h1>Price</h1>
+              <div>Add To Cart</div>
+            </div>
           </div>
         }
       </div>
