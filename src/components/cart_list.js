@@ -22,6 +22,9 @@ class CartList extends Component {
 
 
   render() {
+    if (!this.props.cart.lineItems) {
+      return <div></div>
+    }
     return (
       <div>
         <Table responsive>
@@ -34,10 +37,10 @@ class CartList extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.props.lineItems.map(this.renderCart)}
+            {this.props.cart.lineItems.map(this.renderCart)}
           </tbody>
         </Table>
-        
+
       </div>
     )
   }

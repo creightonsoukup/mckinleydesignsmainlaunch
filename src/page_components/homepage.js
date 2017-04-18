@@ -5,7 +5,7 @@ import Navigation from '../components/navbar'
 import VideoPlayer from '../components/video_player'
 import ProductSlider from '../components/product_slider'
 import BannerImage from '../components/banner_image'
-import { fetchMadisonFavorites } from '../actions/index'
+import { fetchMadisonFavorites, addToCart, fetchCart } from '../actions/index'
 import Footer from '../components/footer'
 import Quote from '../containers/quote'
 import _ from 'lodash';
@@ -30,18 +30,26 @@ class Homepage extends Component {
       loadingScreen: false,
       scrollNav: false,
       banner1ClassNames: ['banner1', 'parallax', 'banner', 'animated', 'fadeIn'],
-      navbarAnimation: 'fadeInDown'
+      cart: null,
+      cartOpen: false,
+      cartLineItems: null
     }
 
     this.playBrandVideo = this.playBrandVideo.bind(this)
     this.navOnLeave = this.navOnLeave.bind(this)
     this.navOnEnter = this.navOnEnter.bind(this)
+    this.addToCart = this.addToCart.bind(this)
   }
 
   componentWillMount() {
     this.props.fetchMadisonFavorites()
       .then((data) => {
         this.setState({favorites: data.payload})
+      })
+    this.props.fetchCart()
+      .then((data) => {
+        console.log(data)
+        this.setState({cart: data.payload, cartLineItems: data.payload.lineItemCount})
       })
   }
 
@@ -81,7 +89,17 @@ class Homepage extends Component {
     }
   }
 
+  addToCart(product, quantity) {
+    console.log(product, quantity, this.state.cart);
+    this.props.addToCart(product, quantity, this.state.cart)
+      .then((data) => {
+        console.log(data)
+        this.setState({cart: data.payload, cartLineItems: data.payload.lineItemCount,  cartOpen: true, scrollNav: true})
+      })
+  }
+
   render() {
+    console.log(this.state)
     const horseVideo = 'https://s3-us-west-1.amazonaws.com/madison-mckinley/homepage-loader.mp4'
     const placeholderVideo = 'https://s3-us-west-1.amazonaws.com/madison-mckinley/loop_video.mov'
     const loader = _.debounce(() => {this.setState({loadingScreen: false})}, 2500)
@@ -97,7 +115,9 @@ class Homepage extends Component {
       <div className='homepage animated fadeIn'>
         { this.state.scrollNav ? (
           <NavbarScroll
-          animation={this.state.navbarAnimation}/>
+          lineItemCount={this.state.cartLineItems}
+          cartOpen={this.state.cartOpen}
+          cartData={this.state.cart}/>
         ) : (
           <Navigation/>
         )}
@@ -114,6 +134,7 @@ class Homepage extends Component {
         <div className='content'>
         { this.state.favorites.length > 0 &&
           <ProductSlider
+          addToCart={this.addToCart}
           products={this.state.favorites} />
         }
         {this.state.playBrandVideo ? (
@@ -169,8 +190,8 @@ class Homepage extends Component {
   }
 }
 
-function mapStateToProps({collection}) {
-  return {collection}
+function mapStateToProps({collection, cart}) {
+  return {collection, cart}
 }
 
-export default connect(mapStateToProps, { fetchMadisonFavorites })(Homepage)
+export default connect(mapStateToProps, { fetchMadisonFavorites, addToCart, fetchCart })(Homepage)

@@ -27,11 +27,14 @@ class NavbarScroll extends Component {
   }
 
   componentWillMount() {
-    this.props.fetchCart()
-      .then((data) => {
-        this.setState({cart: data.payload, lineItemCount: data.payload.lineItemCount})
-      })
+    this.setState({cart: this.props.cartData, lineItemCount: this.props.lineItemCount})
   }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({cart: nextProps.cartData, lineItemCount: nextProps.lineItemCount, cartOpen: nextProps.cartOpen })
+  }
+
+
 
   toggle() {
     this.setState({
@@ -57,9 +60,6 @@ class NavbarScroll extends Component {
     this.setState({cartOpen: !this.state.cartOpen})
   }
 
-  componentWillUnmount() {
-    this.setState({animation: 'fadeOutUp'})
-  }
   render() {
     console.log(this.state)
     return (
@@ -75,6 +75,7 @@ class NavbarScroll extends Component {
         { this.state.cartOpen &&
           <div>
             <Cart
+            cartData={this.state.cart}
             toggleCart={this.toggleCart} />
           </div>
         }

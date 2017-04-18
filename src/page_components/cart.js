@@ -22,11 +22,11 @@ class Cart extends Component {
   }
 
   componentWillMount() {
-    this.props.fetchCart()
-      .then((data) => {
-        this.setState({cart: data.payload})
-      })
+    this.setState({cart: this.props.cartData})
   }
+
+
+
 
   updateCart(quantity, id) {
     this.props.updateCart(quantity, id, this.state.cart)
@@ -48,10 +48,11 @@ class Cart extends Component {
   }
 
   render() {
-    console.log(this.state)
+
     if(this.state.cart === null) {
       return <div></div>
     }
+    console.log(this.props)
     return (
       <div>
       <div className='cart-background animated fadeIn'></div>
