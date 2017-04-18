@@ -61,7 +61,7 @@ class FilterBar extends Component {
             name="type"
             value={this.state.type}
             onChange={this.sortProductTypes}>
-              <option value="default">Type <i className="fa fa-angle-down"></i></option>
+              <option value="default">Type</option>
               <option value="BRACELET">Bracelets</option>
               <option value="EARRINGS">Earrings</option>
               <option value="NECKLACE">Necklaces</option>
@@ -75,7 +75,7 @@ class FilterBar extends Component {
             name="orderBy"
             value={this.state.orderBy}
             onChange={this.sortProducts}>
-              <option value="default">Order By<i className="fa fa-angle-down"></i></option>
+              <option value="default">Order By</option>
               <option value="best-selling">Best Selling</option>
               <option value="price-ascending">Price Ascending</option>
               <option value="price-descending">Price Descending</option>
