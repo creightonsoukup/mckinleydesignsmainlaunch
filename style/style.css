@@ -883,9 +883,9 @@ select.form-control {
   padding: 15px;
   font-size: 8vw;
   font-family: "Colonna MT", arial;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   transition: font-size 1s ease;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); }
+  text-shadow: 1px 1px 3px rgba(170, 170, 170, 0.6); }
 
 @media (min-width: 768px) {
   .scroll-nav nav {
@@ -904,6 +904,7 @@ select.form-control {
     color: #A33F23;
     text-align: center;
     padding: 15px;
+    letter-spacing: 3px;
     position: relative; }
   .scroll-nav .nav-items a {
     text-decoration: none; }
