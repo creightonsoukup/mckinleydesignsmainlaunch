@@ -316,7 +316,7 @@ body {
       font-family: "Hind", sans-serif;
       font-size: 6vw;
       color: white;
-      padding-top: 40vw;
+      padding-top: 35vw;
       letter-spacing: 4px;
       text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
     .banner1 h4 {
@@ -326,6 +326,10 @@ body {
       padding-top: 3vw;
       color: white;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); }
+    .banner1 .arrow {
+      bottom: 0;
+      right: 48%;
+      position: absolute; }
 
   .banner1-darken {
     background: url("https://s3-us-west-1.amazonaws.com/madison-mckinley/banner-images/homepage1-dark.jpg") center;

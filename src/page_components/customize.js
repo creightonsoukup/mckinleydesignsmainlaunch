@@ -34,7 +34,7 @@ class Customize extends Component {
     this.showChains = this.showChains.bind(this)
     this.showSummary = this.showSummary.bind(this)
     this.selectProduct = this.selectProduct.bind(this)
-    this.deselectProduct = this.deselectProduct.bind(this
+    this.deselectProduct = this.deselectProduct.bind(this)
     this.addToCart = this.addToCart.bind(this)
 
   }

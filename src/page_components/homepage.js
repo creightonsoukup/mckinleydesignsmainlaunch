@@ -128,6 +128,7 @@ class Homepage extends Component {
         className={this.state.banner1ClassNames.join(' ')}>
           <h2>ITALIAN COWBOY COOL</h2>
           <h4>SHOP NOW <i className="fa fa-arrow-right" aria-hidden="true"></i></h4>
+          <h4 className='arrow'><i className="fa fa-angle-down"></i></h4>
         </div>
         <div className='content'>
         { this.state.favorites.length > 0 &&
