@@ -45,15 +45,23 @@ class FilterBar extends Component {
   render() {
     return (
       <Row className="filter-bar">
+        <Row className='filter-header'>
+
+        </Row>
         <Form onSubmit={this.handleSubmit}>
         <Row>
+          <Col xs='12' sm='12' md='12' lg='12' xl='12'>
+            <div className="filter-header">
+              <h1>Filter</h1><i className="fa fa-angle-down"></i>
+            </div>
+          </Col>
           <Col xs='12' sm='12' md='4' lg='3' xl='3'>
             <Input
             type="select"
             name="type"
             value={this.state.type}
             onChange={this.sortProductTypes}>
-              <option value="">Type</option>
+              <option value="default">Type <i className="fa fa-angle-down"></i></option>
               <option value="BRACELET">Bracelets</option>
               <option value="EARRINGS">Earrings</option>
               <option value="NECKLACE">Necklaces</option>
@@ -67,7 +75,7 @@ class FilterBar extends Component {
             name="orderBy"
             value={this.state.orderBy}
             onChange={this.sortProducts}>
-              <option value="default">Order By</option>
+              <option value="default">Order By<i className="fa fa-angle-down"></i></option>
               <option value="best-selling">Best Selling</option>
               <option value="price-ascending">Price Ascending</option>
               <option value="price-descending">Price Descending</option>
@@ -78,6 +86,7 @@ class FilterBar extends Component {
             <Col xs='12' sm='12' md='4' lg={{size: 3, offset: 3}} xl={{size: 3, offset: 3}}>
             <Input
             name="searchText"
+            placeholder={'Search'}
             value={this.state.searchText}
             onChange={this.handleSearch}
             />

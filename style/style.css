@@ -616,18 +616,39 @@ video {
 
 .filter-bar {
   background-color: white;
-  width: 100vw; }
+  width: 100vw;
+  padding-top: 5vh; }
   .filter-bar form {
     width: 100vw;
     margin: 5vw;
     margin-top: 0; }
-    .filter-bar form select {
-      border: 1px solid #A33F23;
-      font-family: "Lulo Clean", "lulo_cleanone", serif; }
     .filter-bar form .form-control {
       border-radius: 0rem; }
     .filter-bar form input {
-      font-family: "Lulo Clean", "lulo_cleanone", serif; }
+      font-family: "Lulo Clean", "lulo_cleanone", serif;
+      width: 200px;
+      overflow: hidden;
+      box-shadow: none;
+      background-image: none;
+      padding: 5px 8px;
+      background: transparent;
+      -webkit-appearance: none;
+      color: #B89F83; }
+    .filter-bar form select {
+      border: 2px solid #B89F83;
+      font-family: "Lulo Clean", "lulo_cleanone", serif;
+      width: 200px;
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: none;
+      background-image: none;
+      padding: 5px 8px;
+      background: transparent;
+      -webkit-appearance: none;
+      color: #B89F83;
+      font-size: 12px; }
+    .filter-bar form select:focus {
+      outline: none; }
 
 select.form-control {
   border-radius: 0rem; }
@@ -1198,7 +1219,7 @@ select.form-control {
 .all-products .header {
   width: 100%;
   font-size: 4vw;
-  padding: 40vh;
+  padding: 35vh;
   font-family: "Lulo Clean", "lulo_cleanone", serif;
   text-align: center; }
   .all-products .header h1 {

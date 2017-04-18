@@ -1,20 +1,45 @@
 .filter-bar {
   background-color: white;
   width: 100vw;
+  padding-top: 5vh;
+  .filter-header {
+    
+  }
   form {
     width: 100vw;
     margin: 5vw;
     margin-top: 0;
-    select {
-      border: 1px solid $red-brown;
-      font-family: $header-text;
-
-    }
     .form-control {
       border-radius: 0rem;
     }
     input {
       font-family: $header-text;
+      width: 200px;
+      overflow: hidden;
+      box-shadow: none;
+      background-image: none;
+      padding: 5px 8px;
+      background: transparent;
+      -webkit-appearance: none;
+      color: $brown;
+    }
+    select {
+      border: 2px solid $brown;
+      font-family: $header-text;
+      width: 200px;
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: none;
+      background-image: none;
+      padding: 5px 8px;
+      background: transparent;
+      -webkit-appearance: none;
+      color: $brown;
+      font-size: 12px;
+
+    }
+    select:focus {
+      outline: none;
     }
   }
 }
