@@ -35,6 +35,7 @@ export const UPDATE_CART = 'update_cart'
 export const DELETE_ITEM = 'delete_item'
 export const TEAM = 'team'
 export const CONATACT_REQUEST = 'contact_request'
+export const FETCH_BLOG_POSTS = 'fetch_blog_posts'
 
 
 const DATABASE_URL = 'https://shrouded-reaches-99139.herokuapp.com'
@@ -43,6 +44,16 @@ export function fetchProduct(handle) {
   const request = shopClient.fetchQueryProducts({handle: handle})
   return {
     type: FETCH_PRODUCT,
+    payload: request
+  }
+}
+
+export function fetchBlogPosts() {
+  const url = `${DATABASE_URL}/blog`
+  const request = axios.get(url)
+
+  return {
+    type: FETCH_BLOG_POSTS,
     payload: request
   }
 }

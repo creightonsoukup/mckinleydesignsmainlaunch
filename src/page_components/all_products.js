@@ -39,7 +39,9 @@ class AllProducts extends Component {
       sortedProducts: [],
       productsFromVideo: [],
       scrollNav: false,
-      cart: null
+      cart: null,
+      cartOpen: false,
+      cartLineItems: null
     }
 
     this.searchProducts = this.searchProducts.bind(this)
@@ -53,7 +55,7 @@ class AllProducts extends Component {
   componentWillMount() {
     this.props.fetchCart()
       .then((data) => {
-        this.setState({cart: data.payload})
+        this.setState({cart: data.payload, cartLineItems: data.payload.lineItemCount})
       })
     this.fetchProducts()
   }
@@ -156,7 +158,7 @@ class AllProducts extends Component {
     this.props.addToCart(variantObj, quantity, this.state.cart)
       .then((data) => {
         localStorage.setItem('MckinleyCart', data.payload.id)
-        this.setState({cart: data.payload})
+        this.setState({cart: data.payload, cartLineItems: data.payload.lineItemCount, cartOpen: true, scrollNav: true})
       })
   }
 
@@ -166,7 +168,10 @@ class AllProducts extends Component {
     return (
       <div className='all-products animated fadeIn'>
       { this.state.scrollNav ? (
-        <NavbarScroll/>
+        <NavbarScroll
+        lineItemCount={this.state.cartLineItems}
+        cartOpen={this.state.cartOpen}
+        cartData={this.state.cart}/>
       ) : (
         <Navigation/>
       )}

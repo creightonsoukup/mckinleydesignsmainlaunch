@@ -48,7 +48,6 @@ class Homepage extends Component {
       })
     this.props.fetchCart()
       .then((data) => {
-        console.log(data)
         this.setState({cart: data.payload, cartLineItems: data.payload.lineItemCount})
       })
   }
@@ -90,10 +89,9 @@ class Homepage extends Component {
   }
 
   addToCart(product, quantity) {
-    console.log(product, quantity, this.state.cart);
     this.props.addToCart(product, quantity, this.state.cart)
       .then((data) => {
-        console.log(data)
+        localStorage.setItem('MckinleyCart', data.payload.id)
         this.setState({cart: data.payload, cartLineItems: data.payload.lineItemCount,  cartOpen: true, scrollNav: true})
       })
   }

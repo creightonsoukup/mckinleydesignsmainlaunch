@@ -39,7 +39,8 @@ class SingleCollection extends Component {
       collection: '',
       collectionContent: '',
       cart: null,
-      scrollNav: false
+      scrollNav: false,
+      cartLineItems: null
     }
     //
     this.searchProducts = this.searchProducts.bind(this)
@@ -63,7 +64,7 @@ class SingleCollection extends Component {
       })
     this.props.fetchCart()
       .then((data) => {
-        this.setState({cart: data.payload})
+        this.setState({cart: data.payload, cartLineItems: data.payload.lineItemCount})
       })
   }
 
@@ -80,7 +81,7 @@ class SingleCollection extends Component {
     this.props.addToCart(variantObj, quantity, this.state.cart)
       .then((data) => {
         localStorage.setItem('MckinleyCart', data.payload.id)
-        this.setState({cart: data.payload})
+        this.setState({cart: data.payload, cartLineItems: data.payload.lineItemCount, cartOpen: true, scrollNav: true})
       })
   }
 
@@ -252,7 +253,10 @@ class SingleCollection extends Component {
     return (
     <div className='animated fadeIn'>
     { this.state.scrollNav ? (
-      <NavbarScroll/>
+      <NavbarScroll
+      lineItemCount={this.state.cartLineItems}
+      cartOpen={this.state.cartOpen}
+      cartData={this.state.cart}/>
     ) : (
       <Navigation/>
     )}

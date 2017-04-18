@@ -18,7 +18,9 @@ class SingleProduct extends Component {
 
     this.state = {
       product: null,
-      cart: null
+      cart: null,
+      cartOpen: false,
+      cartLineItems: null
     }
     this.getThumbnails = this.getThumbnails.bind(this)
     this.addToCart = this.addToCart.bind(this)
@@ -27,7 +29,7 @@ class SingleProduct extends Component {
   componentWillMount() {
     this.props.fetchCart()
       .then((data) => {
-        this.setState({cart: data.payload})
+        this.setState({cart: data.payload, cartLineItems: data.payload.lineItemCount})
       })
     this.props.fetchProduct(this.props.params.handle)
       .then((data) => {
@@ -43,7 +45,7 @@ class SingleProduct extends Component {
     this.props.addToCart(variantObj, quantity, this.state.cart)
       .then((data) => {
         localStorage.setItem('MckinleyCart', data.payload.id)
-        this.setState({cart: data.payload})
+        this.setState({cart: data.payload, cartLineItems: data.payload.lineItemCount, cartOpen: true, scrollNav: true })
       })
   }
 
@@ -88,7 +90,10 @@ class SingleProduct extends Component {
     console.log(this.state)
     return (
       <div className='animated fadeInRight'>
-        <Navigation />
+        <Navigation
+        lineItemCount={this.state.cartLineItems}
+        cartOpen={this.state.cartOpen}
+        cartData={this.state.cart} />
         <Row className='single-product'>
           <Col xs='12' sm='12' md='6' lg='6' xl='6'>
             <ProductGallery

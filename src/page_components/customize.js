@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CustomizeStart from '../components/customize-start'
-import { fetchChains, fetchPendants } from '../actions/index'
+import { fetchChains, fetchPendants, fetchCart } from '../actions/index'
 import Navigation from '../components/navbar';
 import NavbarScroll from '../components/navbar-scroll'
 import BannerImage from '../components/banner_image'
@@ -24,14 +24,18 @@ class Customize extends Component {
       showPendants: false,
       showChains: false,
       showSummary: false,
-      selectedProducts: []
+      selectedProducts: [],
+      cart: null,
+      cartOpen: false,
+      cartLineItems: null
     }
 
     this.showPendants = this.showPendants.bind(this)
     this.showChains = this.showChains.bind(this)
     this.showSummary = this.showSummary.bind(this)
     this.selectProduct = this.selectProduct.bind(this)
-    this.deselectProduct = this.deselectProduct.bind(this)
+    this.deselectProduct = this.deselectProduct.bind(this
+    this.addToCart = this.addToCart.bind(this)
 
   }
 
@@ -45,6 +49,11 @@ class Customize extends Component {
       .then((data) => {
         this.setState({pendants: data.payload})
       })
+    this.props.fetchCart()
+      .then((data) => {
+        this.setState({cart: data.payload, cartLineItems: data.payload.lineItemCount})
+      })
+
   }
 
   showPendants() {
@@ -89,6 +98,18 @@ class Customize extends Component {
       })
   }
 
+  addToCart(products) {
+    products.map((product) => {
+      return (
+        this.props.addToCart(product.product, product.quantity, this.state.cart)
+          .then((data) => {
+            localStorage.setItem('MckinleyCart', data.payload.id)
+            this.setState({cart: data.payload, cartLineItems: data.payload.lineItemCount,  cartOpen: true, scrollNav: true})
+          })
+      )
+    })
+  }
+
   render() {
     console.log(this.state)
     return (
@@ -102,7 +123,10 @@ class Customize extends Component {
         }
         { this.state.showPendants &&
             <div>
-              <NavbarScroll />
+              <NavbarScroll
+              lineItemCount={this.state.cartLineItems}
+              cartOpen={this.state.cartOpen}
+              cartData={this.state.cart}/>
               <CustomizeNav
               showPendants={this.showPendants}
               showSummary={this.showSummary}
@@ -119,7 +143,10 @@ class Customize extends Component {
         }
         { this.state.showChains &&
           <div>
-            <NavbarScroll />
+            <NavbarScroll
+            lineItemCount={this.state.cartLineItems}
+            cartOpen={this.state.cartOpen}
+            cartData={this.state.cart}/>
             <CustomizeNav
             showPendants={this.showPendants}
             showChains={this.showChains}
@@ -137,7 +164,10 @@ class Customize extends Component {
         { this.state.showSummary &&
 
           <div>
-            <NavbarScroll />
+            <NavbarScroll
+            lineItemCount={this.state.cartLineItems}
+            cartOpen={this.state.cartOpen}
+            cartData={this.state.cart}/>
             <CustomizeNav
             showPendants={this.showPendants}
             showChains={this.showChains}
@@ -151,7 +181,7 @@ class Customize extends Component {
             products={this.state.selectedProducts} />
             <div className='summary-footer'>
               <h1>Price</h1>
-              <div>Add To Cart</div>
+              <div onClick={this.addToCart}>Add To Cart</div>
             </div>
           </div>
         }
@@ -164,4 +194,4 @@ function mapStateToProps({chains, pendants}) {
   return ({chains, pendants})
 }
 
-export default connect(mapStateToProps, {fetchPendants, fetchChains})(Customize)
+export default connect(mapStateToProps, {fetchPendants, fetchChains, fetchCart})(Customize)
