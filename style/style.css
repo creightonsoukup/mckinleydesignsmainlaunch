@@ -997,7 +997,7 @@ select.form-control {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    min-width: 225px;
+    min-width: 120px;
     position: absolute;
     right: 0;
     top: 0;
@@ -1013,6 +1013,8 @@ select.form-control {
       font-size: 2vw; }
       .scroll-nav .nav-items .nav-links a i {
         font-size: 2vw; }
+    .scroll-nav .nav-items .nav-links .fa-bars {
+      padding-top: 2px; }
   .scroll-nav .nav-items .nav-links-left {
     display: flex;
     flex-direction: row;
@@ -1294,20 +1296,33 @@ select.form-control {
     padding-top: 35px; }
 
 .customize .collection-title {
-  margin-bottom: 10vh; }
+  margin-bottom: 20vh; }
+.customize .select-header {
+  margin-top: 100px;
+  font-family: "Lulo Clean", "lulo_cleanone", serif;
+  line-height: 2;
+  font-size: 16px;
+  color: #B89F83;
+  text-align: center;
+  padding-left: 20vw;
+  padding-right: 20vw; }
 .customize .customize-intro {
   background-color: white;
-  min-height: 40vh; }
+  min-height: 30vh; }
   .customize .customize-intro .text {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: center;
     padding: 5vh;
+    padding-right: 15vw;
+    padding-left: 15vw;
     font-family: "Lulo Clean", "lulo_cleanone", serif;
-    line-height: 1.5;
-    font-size: 1.5vw; }
+    line-height: 2;
+    font-size: 20px; }
     .customize .customize-intro .text h3 {
-      color: #B89F83; }
+      color: #B89F83;
+      text-align: center; }
   .customize .customize-intro .button {
     display: flex;
     flex-direction: column;
@@ -1316,8 +1331,8 @@ select.form-control {
     font-family: "Lulo Clean", "lulo_cleanone", serif; }
     .customize .customize-intro .button div {
       border: 2px solid #B89F83;
-      padding: 30px;
-      font-size: 2vw;
+      padding: 20px;
+      font-size: 14px;
       max-width: 300px;
       line-height: 1.5;
       color: #B89F83;
@@ -1382,7 +1397,7 @@ select.form-control {
       transition: opacity 2s ease; }
 
 .customize-nav {
-  margin-top: 15vh;
+  margin-top: 5vh;
   margin-right: 5vw;
   margin-left: 5vw;
   text-align: center; }

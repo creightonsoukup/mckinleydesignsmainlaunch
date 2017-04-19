@@ -111,7 +111,11 @@ class Customize extends Component {
   }
 
   render() {
-    console.log(this.state)
+    let pendentText = 'Pick from any of our handmade pendants and add one (or more..the more the merrier in our opinion).'
+    let chainText = 'Chain lengths come in 18, 24, 28, and 32 inches.'
+    let reviewText = 'Review your creation, then add to your shopping cart'
+
+
     return (
       <div className='customize'>
         { this.state.start &&
@@ -127,6 +131,7 @@ class Customize extends Component {
               lineItemCount={this.state.cartLineItems}
               cartOpen={this.state.cartOpen}
               cartData={this.state.cart}/>
+              <h2 className='select-header'>{pendentText}</h2>
               <CustomizeNav
               showPendants={this.showPendants}
               showSummary={this.showSummary}
@@ -147,6 +152,7 @@ class Customize extends Component {
             lineItemCount={this.state.cartLineItems}
             cartOpen={this.state.cartOpen}
             cartData={this.state.cart}/>
+            <h2 className='select-header'>{chainText}</h2>
             <CustomizeNav
             showPendants={this.showPendants}
             showChains={this.showChains}
@@ -168,6 +174,7 @@ class Customize extends Component {
             lineItemCount={this.state.cartLineItems}
             cartOpen={this.state.cartOpen}
             cartData={this.state.cart}/>
+            <h2 className='select-header'>{reviewText}</h2>
             <CustomizeNav
             showPendants={this.showPendants}
             showChains={this.showChains}

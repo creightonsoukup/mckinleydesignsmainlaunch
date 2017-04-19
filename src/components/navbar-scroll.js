@@ -93,7 +93,6 @@ class NavbarScroll extends Component {
                 <Link className='bars'><i onClick={this.toggleMenu} className="fa fa-bars" aria-hidden="true"></i></Link>
               </div>
               <div className='nav-links'>
-                <Link><i className="fa fa-search" aria-hidden="true"></i></Link>
                 <Link>
                   <i onClick={this.toggleCart} className="fa fa-shopping-cart" aria-hidden="true"></i><h6>{this.state.lineItemCount}</h6>
                 </Link>

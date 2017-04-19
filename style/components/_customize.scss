@@ -1,20 +1,35 @@
 .customize {
   .collection-title {
-    margin-bottom: 10vh;
+    margin-bottom: 20vh;
+  }
+
+  .select-header {
+    margin-top: 100px;
+    font-family: $header-text;
+    line-height: 2;
+    font-size: 16px;
+    color: $brown;
+    text-align: center;
+    padding-left: 20vw;
+    padding-right: 20vw;
   }
   .customize-intro {
     background-color: white;
-    min-height: 40vh;
+    min-height: 30vh;
     .text {
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
+      align-items: center;
+      justify-content: center;
       padding: 5vh;
+      padding-right: 15vw;
+      padding-left: 15vw;
       font-family: $header-text;
-      line-height: 1.5;
-      font-size: 1.5vw;
+      line-height: 2;
+      font-size: 20px;
       h3 {
         color: $brown;
+        text-align: center;
       }
     }
     .button {
@@ -25,8 +40,8 @@
       font-family: $header-text;
       div {
         border: 2px solid $brown;
-        padding: 30px;
-        font-size: 2vw;
+        padding: 20px;
+        font-size: 14px;
         max-width: 300px;
         line-height: 1.5;
         color: $brown;
@@ -113,7 +128,7 @@
 }
 
 .customize-nav {
-  margin-top: 15vh;
+  margin-top: 5vh;
   margin-right: 5vw;
   margin-left: 5vw;
   text-align: center;

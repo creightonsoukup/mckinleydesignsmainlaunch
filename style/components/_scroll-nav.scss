@@ -72,7 +72,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        min-width: 225px;
+        min-width: 120px;
         position: absolute;
         right: 0;
         top: 0;
@@ -90,6 +90,9 @@
           i {
             font-size: 2vw;
           }
+        }
+        .fa-bars {
+          padding-top: 2px;
         }
       }
       .nav-links-left {
