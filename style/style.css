@@ -761,7 +761,8 @@ select.form-control {
 
 .footer {
   background-color: #b89f83;
-  min-height: 50vh; }
+  min-height: 50vh;
+  position: relative; }
   .footer .links {
     display: flex;
     flex-direction: column;
@@ -1381,6 +1382,8 @@ select.form-control {
       border: none; }
     .summary .lineItem-info form .form-control {
       width: 150px; }
+      .summary .lineItem-info form .form-control input {
+        border: 2px solid #B89F83; }
 
 .summary-footer {
   display: flex;

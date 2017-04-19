@@ -153,6 +153,9 @@
     form {
       .form-control {
        width: 150px;
+       input {
+         border: 2px solid $brown;
+       }
       }
     }
   }

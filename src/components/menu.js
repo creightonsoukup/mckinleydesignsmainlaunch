@@ -15,7 +15,7 @@ const Menu = ({toggleMenu, toggleCart, lineItemCount}) => {
           <h2>Shop</h2>
           <Row className='shop'>
             <Col xs='12' sm='12' md='6' lg='6' xl='6'><Link to='/shop/collections'> Collections</Link></Col>
-            <Col xs='12' sm='12' md='6' lg='6' xl='6'> <Link to='/shop/all-products'>Products</Link></Col>
+            <Col xs='12' sm='12' md='6' lg='6' xl='6'> <Link to='/shop/all-products'>Jewelry</Link></Col>
             <Col xs='12' sm='12' md='6' lg='6' xl='6'><Link to='/create-your-own'>Create Your Own</Link></Col>
             <Col xs='12' sm='12' md='6' lg='6' xl='6'> <Link to='/special-order'>Special Order</Link></Col>
           </Row>

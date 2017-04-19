@@ -142,8 +142,8 @@ class AllProducts extends Component {
   }
 
   sortProductTypes(type) {
-
-    const products = this.state.sortedProducts.length === 0 ? this.state.products : this.state.sortedProducts
+    console.log(type)
+    const products =  this.state.products
     let sortedProducts = []
     async.map(products,
     function(product) {
@@ -164,7 +164,7 @@ class AllProducts extends Component {
 
   render() {
     const video = 'https://s3-us-west-1.amazonaws.com/madison-mckinley/product-video.mp4'
-    const search = _.debounce((value) => {this.searchProducts(value)}, 300)
+    const search = _.debounce((value) => {this.searchProducts(value)}, 500)
     return (
       <div className='all-products animated fadeIn'>
       { this.state.scrollNav ? (
@@ -188,6 +188,7 @@ class AllProducts extends Component {
         <h1>Shop All Products</h1>
       </div>
         <FilterBar
+        showSearchBar={true}
         sortProducts={this.sortProducts}
         sortProductTypes={this.sortProductTypes}
         searchProducts={search} />

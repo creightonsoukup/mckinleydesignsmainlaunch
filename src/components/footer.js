@@ -6,6 +6,7 @@ import FooterLinks from './footer_links'
 import EmailSignup from '../containers/email_signup'
 
 const Footer = (props) => {
+    const logo = 'https://s3-us-west-1.amazonaws.com/madison-mckinley/ANVIL-LOGO.png'
     if(!props.show) {
       return <div></div>
     }
@@ -30,6 +31,9 @@ const Footer = (props) => {
         <Col xs='12' sm='12' md='12' lg='12' xl='12'>
             <FooterLinks />
         </Col>
+        <div className="logo">
+          <img src={logo} />
+        </div>
       </Row>
     )
  }

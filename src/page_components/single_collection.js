@@ -11,7 +11,7 @@ import CollectionHeader from '../components/collection_header'
 import { fetchPerlineCollection, getGoldCollection,
   fetchWildCollection, fetchSteerheadRanchCollection, fetchCart, addToCart,
   fetchCoinCollection, fetchOccidentaleCollection, fetchCollectionContent,
-fetchCameoCollection, fetchEastwoodCollection, searchCollectionByTag } from '../actions/index';
+fetchCameoCollection, fetchEastwoodCollection, searchCollectionByTags } from '../actions/index';
 
 import {
   Collapse,
@@ -40,7 +40,8 @@ class SingleCollection extends Component {
       collectionContent: '',
       cart: null,
       scrollNav: false,
-      cartLineItems: null
+      cartLineItems: null,
+      viewSortedProducts: false
     }
     //
     this.searchProducts = this.searchProducts.bind(this)
@@ -94,6 +95,7 @@ class SingleCollection extends Component {
                   this.setState({
                     products: data.payload,
                     collection: collection.split('-').join(" ")
+
                   })
                 })
         )
@@ -113,7 +115,8 @@ class SingleCollection extends Component {
               .then((data) => {
                   this.setState({
                     products: data.payload,
-                    collection: collection.split('-').join(" ")
+                    collection: collection.split('-').join(" "),
+                    viewSortedProducts: false
                   })
                 })
         )
@@ -172,14 +175,17 @@ class SingleCollection extends Component {
 
   searchProducts(value) {
     var termArray = value.split(" ")
+    if (termArray.length === 0) {
+      return
+    }
     this.props.searchCollectionByTags(termArray)
-      .then((data) => this.setState({products: data.payload}))
+      .then((data) => this.setState({sortedProducts: data.payload, viewSortedProducts: true}))
   }
 
   sortPriceAscending() {
     const products = this.state.sortedProducts.length === 0 ? this.state.products : this.state.sortedProducts
     const sortedProducts = products.sort((a ,b) => a.attrs.variants[0].price - b.attrs.variants[0].price)
-    sortedProducts.length === products.length && this.setState({sortProducts: sortedProducts})
+    sortedProducts.length === products.length && this.setState({sortProducts: sortedProducts, viewSortedProducts: true})
   }
 
   sortPriceDescending() {
@@ -221,6 +227,7 @@ class SingleCollection extends Component {
   }
 
   sortProducts(sortBy) {
+    this.setState({viewSortedProducts: true})
     switch (sortBy)  {
       case 'price-ascending':
         return this.sortPriceAscending()
@@ -231,13 +238,16 @@ class SingleCollection extends Component {
       case 'title-descending':
         return this.sortTitleDescending()
       case 'default':
-        return this.fetchProducts()
+        return this.setState({viewSortedProducts: false})
       }
     }
 
   sortProductTypes(type) {
-
-      const products = this.state.sortedProducts.length === 0 ? this.state.products : this.state.sortedProducts
+      if (type === 'default') {
+        this.setState({viewSortedProducts: false})
+        return
+      }
+      const products =  this.state.products
       let sortedProducts = []
       async.map(products,
         function(product) {
@@ -245,10 +255,15 @@ class SingleCollection extends Component {
             sortedProducts.push(product)
           }
         })
-      this.setState({sortedProducts: sortedProducts})
+      if (sortedProducts.length === 0) {
+        this.setState({sortedProducts: [], viewSortedProducts: true})
+        return
+      }
+      this.setState({sortedProducts: sortedProducts, viewSortedProducts: true})
   }
 
   render() {
+    console.log(this.state)
       const search = _.debounce((value) => {this.searchProducts(value)}, 300)
     return (
     <div className='animated fadeIn'>
@@ -258,7 +273,10 @@ class SingleCollection extends Component {
       cartOpen={this.state.cartOpen}
       cartData={this.state.cart}/>
     ) : (
-      <Navigation/>
+      <Navigation
+      lineItemCount={this.state.cartLineItems}
+      cartOpen={this.state.cartOpen}
+      cartData={this.state.cart}/>
     )}
     <Waypoint
     onEnter={this.navOnEnter}
@@ -270,6 +288,7 @@ class SingleCollection extends Component {
         <CollectionHeader
         collectionContent={this.state.collectionContent} />
         <FilterBar
+        showSearchBar={false}
         sortProducts={this.sortProducts}
         sortProductTypes={this.sortProductTypes}
         searchProducts={search} />
@@ -279,7 +298,7 @@ class SingleCollection extends Component {
         ) : (
           <ProductList
           addToCart={this.addToCart}
-          products={this.state.sortedProducts.length === 0 ? this.state.products : this.state.sortedProducts}/>
+          products={this.state.viewSortedProducts ? this.state.sortedProducts : this.state.products}/>
         )}
         </div>
         <Footer
@@ -296,5 +315,5 @@ function mapStateToProps({collection, collectionContent}) {
 
 export default connect(mapStateToProps, {fetchPerlineCollection, getGoldCollection,
   fetchWildCollection, fetchSteerheadRanchCollection, fetchCollectionContent, addToCart,
-  fetchCoinCollection, fetchOccidentaleCollection, searchCollectionByTag, fetchCart,
+  fetchCoinCollection, fetchOccidentaleCollection, searchCollectionByTags, fetchCart,
 fetchCameoCollection, fetchEastwoodCollection})(SingleCollection)

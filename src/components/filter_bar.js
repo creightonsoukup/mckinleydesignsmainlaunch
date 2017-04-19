@@ -82,12 +82,14 @@ class FilterBar extends Component {
               </Input>
               </Col>
               <Col xs='12' sm='12' md='4' lg={{size: 3, offset: 3}} xl={{size: 3, offset: 3}}>
-              <Input
-              name="searchText"
-              placeholder={'Search'}
-              value={this.state.searchText}
-              onChange={this.handleSearch}
-              />
+              { this.props.showSearhBar &&
+                <Input
+                name="searchText"
+                placeholder={'Search'}
+                value={this.state.searchText}
+                onChange={this.handleSearch}
+                />
+              }
               </Col>
               </Row>
           </Form>
