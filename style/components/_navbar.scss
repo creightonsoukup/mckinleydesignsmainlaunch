@@ -17,10 +17,16 @@
     transition: font-size 1s ease;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
   }
+  h1:hover {
+    text-decoration: none;
+  }
   a:hover {
     text-decoration: none;
     color: $tan;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  }
+  a:active {
+    text-decoration: none;
   }
   .bars {
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
@@ -58,11 +64,15 @@
     }
     h1:hover {
       font-size: 5.1vw;
+      text-decoration: none;
     }
     a:hover {
       text-decoration: none;
       color: $tan;
       text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+    }
+    a:active {
+      text-decoration: none;
     }
     .bars {
       text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);

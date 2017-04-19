@@ -102,10 +102,14 @@ body {
     letter-spacing: 1px;
     transition: font-size 1s ease;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
+  .fixed-nav h1:hover {
+    text-decoration: none; }
   .fixed-nav a:hover {
     text-decoration: none;
     color: #F4EACE;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
+  .fixed-nav a:active {
+    text-decoration: none; }
   .fixed-nav .bars {
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
     font-size: 30px;
@@ -134,11 +138,14 @@ body {
       transition: font-size 1s ease;
       text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
     .fixed-nav h1:hover {
-      font-size: 5.1vw; }
+      font-size: 5.1vw;
+      text-decoration: none; }
     .fixed-nav a:hover {
       text-decoration: none;
       color: #F4EACE;
       text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
+    .fixed-nav a:active {
+      text-decoration: none; }
     .fixed-nav .bars {
       text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
       font-size: 3vw;
@@ -293,10 +300,10 @@ body {
   width: 100vw;
   box-shadow: inset 0px -2px 10px 0px rgba(0, 0, 0, 0.4); }
   .banner-component .banner-image {
-    display: block;
+    display: inline-block;
     margin: auto;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     overflow: hidden; }
 
 @media (min-width: 768px) {
@@ -316,7 +323,7 @@ body {
       font-family: "Hind", sans-serif;
       font-size: 6vw;
       color: white;
-      padding-top: 35vw;
+      padding-top: 300px;
       letter-spacing: 4px;
       text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
     .banner1 h4 {
@@ -451,18 +458,41 @@ body {
 
   .banner-component {
     z-index: -1000;
-    height: 100vh;
+    height: auto;
+    width: 100vw;
+    height: 100%;
     position: fixed;
     top: 0;
+    left: 0;
     overflow: hidden;
-    width: 100vw;
     box-shadow: inset 0px -2px 10px 0px rgba(0, 0, 0, 0.4); }
     .banner-component .banner-image {
       display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      bottom: auto;
+      right: auto;
       margin: auto;
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden; } }
+      transform: translateX(-50%) translateY(-50%);
+      min-width: 100vw;
+      max-width: 100vw;
+      height: auto;
+      width: auto; }
+    .banner-component video {
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      bottom: auto;
+      right: auto;
+      margin: auto;
+      transform: translateX(-50%) translateY(-50%);
+      min-width: 100%;
+      min-height: 100%;
+      max-width: none;
+      height: auto;
+      width: auto; } }
 iframe {
   width: 100%;
   height: 600px; }
@@ -616,7 +646,6 @@ video {
 
 .filter-bar {
   background-color: white;
-  width: 100vw;
   padding-top: 5vh; }
   .filter-bar .filter-header {
     display: flex;
@@ -800,6 +829,8 @@ select.form-control {
       color: white;
       font-family: "Lulo Clean", "lulo_cleanone", serif;
       font-size: 1.5vw; }
+    .footer .email form input::placeholder {
+      color: white; }
     .footer .email form .form-control {
       color: white;
       border: 2px solid white;
@@ -1251,9 +1282,8 @@ select.form-control {
     text-align: right; }
 
 .all-products .header {
-  width: 100%;
   font-size: 4vw;
-  padding: 35vh;
+  margin: 35vh;
   font-family: "Lulo Clean", "lulo_cleanone", serif;
   text-align: center; }
   .all-products .header h1 {

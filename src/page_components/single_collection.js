@@ -140,7 +140,7 @@ class SingleCollection extends Component {
                   })
                 })
         )
-      case 'steerhead-ranch_collection':
+      case 'steerhead-ranch-collection':
         return (
            this.props.fetchSteerheadRanchCollection()
               .then((data) => {
@@ -302,6 +302,7 @@ class SingleCollection extends Component {
         )}
         </div>
         <Footer
+          homepage={true}
           show={this.state.products.length > 0}/>
       </Container>
     </div >

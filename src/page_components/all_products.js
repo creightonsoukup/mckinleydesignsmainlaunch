@@ -179,9 +179,9 @@ class AllProducts extends Component {
       topOffset={'-20%'}
       onEnter={this.navOnEnter}
       onLeave={this.navOnLeave}/>
-      <div className='banner-component'>
-      <VideoPlayer
-      video={video} loop={true}/>
+      <div className='banner-component animated fadeInDown'>
+        <VideoPlayer
+        video={video} loop={true}/>
       </div>
       <Container fluid>
       <div className='header'>

@@ -184,9 +184,10 @@ class Homepage extends Component {
             <h4>FOLLOW US ON THE BLOG<i className="fa fa-arrow-right" aria-hidden="true"></i></h4>
           </div>
         </div>
-        <Footer
-        show={true} />
         </div>
+        <Footer
+        homepage={true}
+        show={true} />
       </div>
     )
   }
