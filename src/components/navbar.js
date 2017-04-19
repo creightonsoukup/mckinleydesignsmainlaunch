@@ -11,12 +11,22 @@ class Navigation extends Component {
     this.state = {
       isOpen: false,
       menuOpen: false,
-      cartOpen: false
+      cartOpen: false,
+      cart: null,
+      lineItemCount: null
     }
 
     this.toggle = this.toggle.bind(this)
     this.toggleMenu = this.toggleMenu.bind(this)
     this.toggleCart = this.toggleCart.bind(this)
+  }
+
+  componentWillMount() {
+    this.setState({cart: this.props.cartData, lineItemCount: this.props.lineItemCount})
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({cart: nextProps.cartData, lineItemCount: nextProps.lineItemCount, cartOpen: nextProps.cartOpen })
   }
 
   toggle() {
@@ -48,6 +58,7 @@ class Navigation extends Component {
         { this.state.menuOpen &&
           <div>
             <Menu
+            lineItemCount={this.state.lineItemCount}
             toggleMenu={this.toggleMenu}
             toggleCart={this.toggleCart} />
           </div>

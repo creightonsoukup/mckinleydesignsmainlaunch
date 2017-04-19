@@ -68,6 +68,7 @@ class NavbarScroll extends Component {
         { this.state.menuOpen &&
           <div>
             <Menu
+            lineItemCount={this.state.lineItemCount}
             toggleCart={this.toggleCart}
             toggleMenu={this.toggleMenu} />
           </div>
@@ -94,7 +95,7 @@ class NavbarScroll extends Component {
               <div className='nav-links'>
                 <Link><i className="fa fa-search" aria-hidden="true"></i></Link>
                 <Link>
-                  <i onClick={this.toggleCart} className="fa fa-shopping-cart" aria-hidden="true"></i>{this.state.lineItemCount}
+                  <i onClick={this.toggleCart} className="fa fa-shopping-cart" aria-hidden="true"></i><h6>{this.state.lineItemCount}</h6>
                 </Link>
                 <Link><i onClick={this.toggleMenu} className="fa fa-bars" aria-hidden="true"></i></Link>
               </div>

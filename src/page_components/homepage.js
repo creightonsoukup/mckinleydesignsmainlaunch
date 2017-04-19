@@ -117,7 +117,10 @@ class Homepage extends Component {
           cartOpen={this.state.cartOpen}
           cartData={this.state.cart}/>
         ) : (
-          <Navigation/>
+          <Navigation
+          lineItemCount={this.state.cartLineItems}
+          cartOpen={this.state.cartOpen}
+          cartData={this.state.cart}/>
         )}
         <Waypoint
         topOffset={'-20%'}

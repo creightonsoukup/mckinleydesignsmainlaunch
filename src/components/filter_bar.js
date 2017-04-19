@@ -9,7 +9,8 @@ class FilterBar extends Component {
       tags: [],
       searchText: null,
       type: null,
-      orderBy: null
+      orderBy: null,
+      showFilters: false
     }
 
     this.handleSearch = this.handleSearch.bind(this)
@@ -45,53 +46,60 @@ class FilterBar extends Component {
   render() {
     return (
       <Row className="filter-bar">
-        <Row className='filter-header'>
-
-        </Row>
-        <Form onSubmit={this.handleSubmit}>
-        <Row>
+        { this.state.showFilters ? (
+          <Form onSubmit={this.handleSubmit}>
+          <Row>
+            <Col xs='12' sm='12' md='12' lg='12' xl='12'>
+              <div className="filter-header" onClick={() => {this.setState({showFilters: !this.state.showFilters})}}>
+                <h1>Filter</h1><i className="fa fa-angle-up"></i>
+              </div>
+            </Col>
+            <Col xs='12' sm='12' md='4' lg='3' xl='3'>
+              <Input
+              type="select"
+              name="type"
+              value={this.state.type}
+              onChange={this.sortProductTypes}>
+                <option value="default">Type</option>
+                <option value="BRACELET">Bracelets</option>
+                <option value="EARRINGS">Earrings</option>
+                <option value="NECKLACE">Necklaces</option>
+                <option value="PENDENT">Pendents</option>
+                <option value="RING">Rings</option>
+              </Input>
+              </Col>
+              <Col xs='12' sm='12' md='4' lg='3' xl='3'>
+              <Input
+              type="select"
+              name="orderBy"
+              value={this.state.orderBy}
+              onChange={this.sortProducts}>
+                <option value="default">Order By</option>
+                <option value="price-ascending">Price Ascending</option>
+                <option value="price-descending">Price Descending</option>
+                <option value="title-ascending">Name Ascending</option>
+                <option value="title-descending">Name Descending</option>
+              </Input>
+              </Col>
+              <Col xs='12' sm='12' md='4' lg={{size: 3, offset: 3}} xl={{size: 3, offset: 3}}>
+              <Input
+              name="searchText"
+              placeholder={'Search'}
+              value={this.state.searchText}
+              onChange={this.handleSearch}
+              />
+              </Col>
+              </Row>
+          </Form>
+        ) : (
+          <Row>
           <Col xs='12' sm='12' md='12' lg='12' xl='12'>
-            <div className="filter-header">
+            <div className="filter-header-close" onClick={() => {this.setState({showFilters: !this.state.showFilters})}}>
               <h1>Filter</h1><i className="fa fa-angle-down"></i>
             </div>
           </Col>
-          <Col xs='12' sm='12' md='4' lg='3' xl='3'>
-            <Input
-            type="select"
-            name="type"
-            value={this.state.type}
-            onChange={this.sortProductTypes}>
-              <option value="default">Type</option>
-              <option value="BRACELET">Bracelets</option>
-              <option value="EARRINGS">Earrings</option>
-              <option value="NECKLACE">Necklaces</option>
-              <option value="PENDENT">Pendents</option>
-              <option value="RING">Rings</option>
-            </Input>
-            </Col>
-            <Col xs='12' sm='12' md='4' lg='3' xl='3'>
-            <Input
-            type="select"
-            name="orderBy"
-            value={this.state.orderBy}
-            onChange={this.sortProducts}>
-              <option value="default">Order By</option>
-              <option value="price-ascending">Price Ascending</option>
-              <option value="price-descending">Price Descending</option>
-              <option value="title-ascending">Name Ascending</option>
-              <option value="title-descending">Name Descending</option>
-            </Input>
-            </Col>
-            <Col xs='12' sm='12' md='4' lg={{size: 3, offset: 3}} xl={{size: 3, offset: 3}}>
-            <Input
-            name="searchText"
-            placeholder={'Search'}
-            value={this.state.searchText}
-            onChange={this.handleSearch}
-            />
-            </Col>
-            </Row>
-        </Form>
+          </Row>
+        )}
       </Row>
     )
   }

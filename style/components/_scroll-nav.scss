@@ -80,6 +80,10 @@
         font-family: $header-text;
         padding: 1.5vw;
         padding-top: 20px;
+        h6 {
+          display: inline-block;
+          font-size: 11px;
+        }
         a {
           color: $red-brown;
           font-size: 2vw;

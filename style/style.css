@@ -618,6 +618,27 @@ video {
   background-color: white;
   width: 100vw;
   padding-top: 5vh; }
+  .filter-bar .filter-header {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    padding-top: 12px;
+    font-family: "Lulo Clean", "lulo_cleanone", serif;
+    color: #B89F83; }
+    .filter-bar .filter-header i {
+      padding-left: 5px;
+      padding-right: 5px; }
+  .filter-bar .filter-header-close {
+    width: 100vw;
+    padding: 10px;
+    padding-top: 12px;
+    font-family: "Lulo Clean", "lulo_cleanone", serif;
+    color: #B89F83;
+    display: flex;
+    justify-content: center; }
+    .filter-bar .filter-header-close i {
+      padding-left: 5px;
+      padding-right: 5px; }
   .filter-bar form {
     width: 100vw;
     margin: 5vw;
@@ -629,10 +650,16 @@ video {
       width: 200px;
       overflow: hidden;
       box-shadow: none;
+      border: 2px solid #B89F83;
+      font-size: 12px;
+      color: #B89F83;
       background-image: none;
       padding: 5px 8px;
       background: transparent;
       -webkit-appearance: none;
+      color: #B89F83;
+      height: 38px; }
+    .filter-bar form input::placeholder {
       color: #B89F83; }
     .filter-bar form select {
       border: 2px solid #B89F83;
@@ -946,6 +973,9 @@ select.form-control {
     font-family: "Lulo Clean", "lulo_cleanone", serif;
     padding: 1.5vw;
     padding-top: 20px; }
+    .scroll-nav .nav-items .nav-links h6 {
+      display: inline-block;
+      font-size: 11px; }
     .scroll-nav .nav-items .nav-links a {
       color: #A33F23;
       font-size: 2vw; }
@@ -1060,6 +1090,9 @@ select.form-control {
     position: absolute;
     left: 45%;
     top: 5%; }
+  .menu h6 {
+    display: inline-block;
+    font-size: 11px; }
   .menu .shop {
     padding-left: 10vw;
     padding-right: 10vw;
