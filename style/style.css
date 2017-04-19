@@ -1428,7 +1428,6 @@ select.form-control {
       justify-content: space-around; }
 
 .about {
-  margin-top: 45px;
   min-height: 1666px;
   max-width: 100%;
   margin: 0 auto;
@@ -1438,7 +1437,69 @@ select.form-control {
   background-repeat: no-repeat; }
 
 .about-background {
-  background-color: #F9F4DC; }
+  background-color: #F9F4DC;
+  top: 0;
+  position: absolute; }
+  .about-background iframe {
+    width: 100%;
+    height: 600px; }
+  .about-background video {
+    width: 100%;
+    transform: translateY(1px);
+    border: none; }
+  .about-background .homepage-video {
+    margin: 5vw;
+    margin-top: 15vh;
+    margin-bottom: 5vh;
+    position: relative;
+    box-shadow: 1px 1px 6px 0px rgba(0, 0, 0, 0.2), -1px -1px 6px 0px rgba(0, 0, 0, 0.2); }
+    .about-background .homepage-video .video-text {
+      top: 0;
+      visibility: visible;
+      left: 0;
+      background-color: rgba(184, 159, 131, 0.5);
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      z-index: 4000;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
+      .about-background .homepage-video .video-text .text-block-2 h2 {
+        text-align: center;
+        padding-bottom: 20px;
+        padding-top: 200px;
+        font-family: "Lulo Clean", "lulo_cleanone", serif;
+        color: #A33F23;
+        opacity: .8;
+        font-size: 8vw;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
+      .about-background .homepage-video .video-text .video-action {
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        padding-bottom: 20px; }
+        .about-background .homepage-video .video-text .video-action h2 {
+          color: white;
+          font-family: "Lulo Clean", "lulo_cleanone", serif;
+          font-size: 2vw;
+          text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
+        .about-background .homepage-video .video-text .video-action span {
+          border: 2px solid #B89F83;
+          border-radius: 25px;
+          font-size: 1.5vw;
+          font-family: "Lulo Clean", "lulo_cleanone", serif;
+          color: white;
+          padding: 10px; }
+
+.logo {
+  width: 100vw;
+  padding-top: 50px; }
+  .logo img {
+    height: auto;
+    display: block;
+    margin: auto;
+    max-width: 90vw; }
 
 @media (min-width: 576px) {
   .about {

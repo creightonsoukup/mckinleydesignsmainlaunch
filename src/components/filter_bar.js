@@ -76,7 +76,6 @@ class FilterBar extends Component {
             value={this.state.orderBy}
             onChange={this.sortProducts}>
               <option value="default">Order By</option>
-              <option value="best-selling">Best Selling</option>
               <option value="price-ascending">Price Ascending</option>
               <option value="price-descending">Price Descending</option>
               <option value="title-ascending">Name Ascending</option>
