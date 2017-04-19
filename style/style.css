@@ -1283,12 +1283,15 @@ select.form-control {
 
 .all-products .header {
   font-size: 4vw;
-  margin: 35vh;
+  margin-top: 80vh;
   font-family: "Lulo Clean", "lulo_cleanone", serif;
-  text-align: center; }
+  text-align: center;
+  background-color: white; }
   .all-products .header h1 {
     margin: auto;
-    color: #A33F23; }
+    color: #A33F23;
+    background-color: white;
+    padding-top: 35px; }
 
 .customize .collection-title {
   margin-bottom: 10vh; }

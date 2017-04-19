@@ -184,9 +184,9 @@ class AllProducts extends Component {
         video={video} loop={true}/>
       </div>
       <Container fluid>
-      <div className='header'>
-        <h1>Shop All Products</h1>
-      </div>
+      <Row className='header'>
+        <h1>Shop Jewelry</h1>
+      </Row>
         <FilterBar
         showSearchBar={true}
         sortProducts={this.sortProducts}

@@ -1,12 +1,15 @@
 .all-products {
   .header {
     font-size: 4vw;
-    margin: 35vh;
+    margin-top: 80vh;
     font-family: $header-text;
     text-align: center;
+    background-color: white;
     h1 {
       margin: auto;
       color: $red-brown;
+      background-color: white;
+      padding-top: 35px;
     }
   }
 }
