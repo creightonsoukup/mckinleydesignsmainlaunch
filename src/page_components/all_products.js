@@ -166,7 +166,7 @@ class AllProducts extends Component {
     const search = _.debounce((value) => {this.searchProducts(value)}, 500)
     return (
       <div className='all-products animated fadeIn'>
-      { this.state.scrollNav ? (
+      { window.innerWidth < 576 || this.state.scrollNav ? (
         <NavbarScroll
         lineItemCount={this.state.cartLineItems}
         cartOpen={this.state.cartOpen}

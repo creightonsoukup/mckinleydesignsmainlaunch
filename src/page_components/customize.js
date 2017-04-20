@@ -145,7 +145,17 @@ class Customize extends Component {
       <div className='customize'>
         { this.state.start &&
           <div className='start'>
-            <Navigation/>
+          { window.innerWidth < 576 || this.state.scrollNav ? (
+            <NavbarScroll
+            lineItemCount={this.state.cartLineItems}
+            cartOpen={this.state.cartOpen}
+            cartData={this.state.cart}/>
+          ) : (
+            <Navigation
+            lineItemCount={this.state.cartLineItems}
+            cartOpen={this.state.cartOpen}
+            cartData={this.state.cart}/>
+          )}
             <CustomizeStart
             start={this.showPendants}/>
             </div>

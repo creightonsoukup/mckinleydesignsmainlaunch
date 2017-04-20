@@ -6,8 +6,8 @@ const Terms = () => {
   return (
     <div>
       <NavbarScroll />
-      <div className='customer-care'>
-
+      <div className='terms'>
+        
       </div>
       <Footer
       show={true} />

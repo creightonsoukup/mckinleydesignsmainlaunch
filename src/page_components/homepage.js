@@ -110,7 +110,7 @@ class Homepage extends Component {
     }
     return (
       <div className='homepage animated fadeIn'>
-        { this.state.scrollNav ? (
+        { window.innerWidth < 576 || this.state.scrollNav ? (
           <NavbarScroll
           lineItemCount={this.state.cartLineItems}
           cartOpen={this.state.cartOpen}

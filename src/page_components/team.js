@@ -6,6 +6,7 @@ import Navbar from '../components/navbar'
 import TeamList from '../components/team-list'
 import {fetchTeam} from '../actions/index'
 import { connect } from 'react-redux'
+import NavbarScroll from '../components/navbar-scroll';
 
 class Team extends Component {
 
@@ -18,7 +19,11 @@ class Team extends Component {
     }
     return (
       <div className='team'>
-      <Navbar/>
+      { window.innerWidth < 576  ? (
+        <NavbarScroll/>
+      ) : (
+        <Navbar/>
+      )}
       <BannerImage
           fileName={'team.jpg'}/>
       <Container fluid >

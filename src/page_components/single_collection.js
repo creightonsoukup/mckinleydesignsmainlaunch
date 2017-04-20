@@ -266,7 +266,7 @@ class SingleCollection extends Component {
       const search = _.debounce((value) => {this.searchProducts(value)}, 300)
     return (
     <div className='animated fadeIn'>
-    { this.state.scrollNav ? (
+    { window.innerWidth < 576 || this.state.scrollNav ? (
       <NavbarScroll
       lineItemCount={this.state.cartLineItems}
       cartOpen={this.state.cartOpen}
