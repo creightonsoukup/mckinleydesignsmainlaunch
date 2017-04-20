@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CustomizeStart from '../components/customize-start'
-import { fetchChains, fetchPendants, fetchCart } from '../actions/index'
+import { fetchChains, fetchPendants, fetchCart, addToCart } from '../actions/index'
 import Navigation from '../components/navbar';
 import NavbarScroll from '../components/navbar-scroll'
 import BannerImage from '../components/banner_image'
@@ -36,7 +36,7 @@ class Customize extends Component {
     this.selectProduct = this.selectProduct.bind(this)
     this.deselectProduct = this.deselectProduct.bind(this)
     this.addToCart = this.addToCart.bind(this)
-
+    this.renderPrice = this.renderPrice.bind(this)
   }
 
 
@@ -63,6 +63,21 @@ class Customize extends Component {
       start: false,
       showSummary: false
     })
+  }
+
+  renderPrice() {
+    console.log('hi')
+    let selectedProducts = this.state.selectedProducts
+    let price = 0
+    if (selectedProducts.length > 0) {
+      for (var i = 0; i < selectedProducts.length; i++) {
+        price += parseInt(selectedProducts[i].price)
+        console.log(price)
+      }
+    }
+    return (
+      <h3>{`$ ${price}.00`}</h3>
+    )
   }
 
   showChains() {
@@ -98,23 +113,15 @@ class Customize extends Component {
       })
   }
 
-  addToCart(products) {
-    products.map((product) => {
-      return (
-        this.props.addToCart(product.product, product.quantity, this.state.cart)
-          .then((data) => {
-            localStorage.setItem('MckinleyCart', data.payload.id)
-            this.setState({cart: data.payload, cartLineItems: data.payload.lineItemCount,  cartOpen: true, scrollNav: true})
-          })
-      )
-    })
+  addToCart() {
+
   }
 
   render() {
     let pendentText = 'Pick from any of our handmade pendants and add one (or more..the more the merrier in our opinion).'
     let chainText = 'Chain lengths come in 18, 24, 28, and 32 inches.'
     let reviewText = 'Review your creation, then add to your shopping cart'
-
+    let price = this.renderPrice()
 
     return (
       <div className='customize'>
@@ -186,11 +193,10 @@ class Customize extends Component {
             chains={false}
             summary={true} />
             <CustomizeSummary
-            removeProduct={this.deselectProduct}
             products={this.state.selectedProducts} />
             <div className='summary-footer'>
-              <h1>Price</h1>
-              <div onClick={this.addToCart}>Add To Cart</div>
+              <h3>Total: {price}</h3>
+              <div className='custom-add' onClick={this.addToCart}>Add To Cart</div>
             </div>
           </div>
         }
@@ -203,4 +209,4 @@ function mapStateToProps({chains, pendants}) {
   return ({chains, pendants})
 }
 
-export default connect(mapStateToProps, {fetchPendants, fetchChains, fetchCart})(Customize)
+export default connect(mapStateToProps, {fetchPendants, addToCart, fetchChains, fetchCart})(Customize)

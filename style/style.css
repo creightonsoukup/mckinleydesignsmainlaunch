@@ -1470,8 +1470,21 @@ select.form-control {
 .summary {
   font-family: "Open Sans", sans-serif;
   margin: 5vw;
+  color: #B89F83;
+  border: 1px solid #B89F83;
+  padding: 25px;
   letter-spacing: 2px;
   margin-bottom: 0; }
+  .summary th {
+    border: none;
+    font-size: 20px; }
+  .summary thead th {
+    border-bottom: 1px solid #B89F83; }
+  .summary tbody {
+    font-size: 16px;
+    border: none; }
+  .summary td {
+    border: none; }
   .summary .lineItem-info {
     height: 100%;
     display: flex;
@@ -1482,19 +1495,32 @@ select.form-control {
     .summary .lineItem-info h3 {
       padding-top: 1vh;
       padding-bottom: 1vh; }
-    .summary .lineItem-info button {
-      border: none; }
-    .summary .lineItem-info form .form-control {
-      width: 150px; }
-      .summary .lineItem-info form .form-control input {
-        border: 2px solid #B89F83; }
 
 .summary-footer {
   display: flex;
   width: 100vw;
   flex-direction: row;
   justify-content: flex-end;
-  padding: 5vw; }
+  padding: 20px;
+  font-family: "Lulo Clean", "lulo_cleanone", serif;
+  padding-right: 5vw; }
+  .summary-footer h3 {
+    color: #B89F83;
+    font-size: 18px;
+    padding: 10px;
+    padding-right: 50px;
+    padding-top: 12px; }
+  .summary-footer .custom-add {
+    background: transparent;
+    border: 2px solid #B89F83;
+    color: #B89F83;
+    font-size: 14px;
+    max-height: 40px;
+    font-size: 18px;
+    padding: 10px; }
+  .summary-footer .custom-add:hover {
+    background: #B89F83;
+    color: white; }
 
 .special-order .special-order-info {
   background-color: white;

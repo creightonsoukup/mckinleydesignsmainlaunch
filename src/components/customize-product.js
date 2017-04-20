@@ -22,10 +22,13 @@ export default class CustomizeSelect extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      product: null,
       selected: false,
+      selectedVariant: null,
       quantity: 1,
       price: null,
       variantIdx: 0,
+      variants: null
     }
     this.selectProduct = this.selectProduct.bind(this)
     this.deselectProduct = this.deselectProduct.bind(this)
@@ -37,25 +40,34 @@ export default class CustomizeSelect extends Component {
 
   componentWillMount() {
     this.props.selected.map(this.checkIfSelceted)
-    this.setState({price: this.props.product.selectedVariant.price})
+    this.setState({
+      price: parseInt(this.props.product.selectedVariant.price),
+      product: this.props.product,
+      selectedVariant: this.props.variants[0],
+      variants: this.props.variants
+    })
   }
 
   selectProduct() {
     this.setState({selected: true})
-    this.props.selectProduct(this.props.product)
+    this.props.selectProduct({
+      product: this.state.selectedVariant,
+      quantity: this.state.quantity,
+      price: this.state.price
+    })
   }
 
   deselectProduct() {
     this.setState({selected: false})
-    this.props.deselectProduct(this.props.product)
+    this.props.deselectProduct(this.props.selectedVariant)
   }
 
   renderOptions(variant) {
-    console.log(variant)
+    console.log(this.state.variants.indexOf(variant))
     return (
       <option
-      key={this.props.product.variants.indexOf(variant)}
-      value={this.props.product.variants.indexOf(variant)}
+      key={variant.id}
+      value={this.state.variants.indexOf(variant)}
       >{variant.title}</option>
     )
   }
@@ -77,6 +89,7 @@ export default class CustomizeSelect extends Component {
 
   handleChange(event) {
     const idx = parseInt(event.target.value)
+    console.log(idx)
     this.setState({
       variantIdx: idx,
       selectedVariant: this.state.variants[idx],
@@ -85,6 +98,7 @@ export default class CustomizeSelect extends Component {
   }
 
   render() {
+    console.log(this.state)
     console.log(this.props)
     return (
       <Col xs='12' sm='12' md='6' lg='4' xl='4'>
@@ -97,14 +111,14 @@ export default class CustomizeSelect extends Component {
             </div>
             <div className='slider-product-info'>
               <h1>{this.props.product.title}</h1>
-              <h2>{`$ ${this.props.product.variants[0].price}`}</h2>
+              <h2>{`$ ${this.state.price}.00`}</h2>
               <div className='select-options'>
                 <Form>
                   { this.props.showVariants &&
                     <div className='variants'>
                       <h3>{this.props.product.selectedVariant.attrs.variant.option_values[0].name}: </h3>
                       <Input value={this.state.variantId} onChange={this.handleChange} type='select' name='select'>
-                        {this.props.product.variants.map(this.renderOptions)}
+                        {this.state.variants.map(this.renderOptions)}
                       </Input>
                     </div>
                   }
@@ -137,14 +151,14 @@ export default class CustomizeSelect extends Component {
             </div>
             <div className='slider-product-info'>
               <h1>{this.props.product.title}</h1>
-              <h2>{`$ ${this.props.product.variants[0].price}`}</h2>
+              <h2>{`$ ${this.state.price}.00`}</h2>
               <div className='select-options'>
                 <Form>
                   { this.props.showVariants &&
                     <div className='variants'>
                       <h3>{this.props.product.selectedVariant.attrs.variant.option_values[0].name}: </h3>
                       <Input value={this.state.variantId} onChange={this.handleChange} type='select' name='select'>
-                        {this.props.product.variants.map(this.renderOptions)}
+                        {this.state.variants.map(this.renderOptions)}
                       </Input>
                     </div>
                   }

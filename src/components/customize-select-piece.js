@@ -39,6 +39,7 @@ export default class CustomizeSelect extends Component {
         selectProduct={this.props.select}
         deselectProduct={this.props.deselect}
         product={product}
+        variants={product.variants}
         selected={this.props.selected}
         index={index} />
       )

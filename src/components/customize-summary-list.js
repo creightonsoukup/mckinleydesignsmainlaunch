@@ -10,12 +10,12 @@ class CustomizeSummaryList extends Component {
   }
 
   renderCart(lineItem) {
-    const key = lineItem.id
+    const key = lineItem.product.id
     return (
       <CustomizeLineItem
-      deleteItem={this.props.deleteItem}
-      updateCart={this.props.updateCart}
-      lineItem={lineItem}
+      quantity={lineItem.quantity}
+      product={lineItem.product}
+      price={lineItem.price}
       key={key}/>
     )
   }
@@ -34,7 +34,7 @@ class CustomizeSummaryList extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.props.lineItems.map(this.renderCart)}
+            {this.props.products.map(this.renderCart)}
           </tbody>
         </Table>
 

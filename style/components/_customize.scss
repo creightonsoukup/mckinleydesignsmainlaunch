@@ -186,8 +186,25 @@
 .summary  {
   font-family: $body-text;
   margin: 5vw;
+  color: $brown;
+  border: 1px solid $brown;
+  padding: 25px;
   letter-spacing: 2px;
   margin-bottom: 0;
+  th {
+    border: none;
+    font-size: 20px;
+  }
+  thead th {
+    border-bottom: 1px solid $brown;
+  }
+  tbody {
+    font-size: 16px;
+    border: none;
+  }
+  td {
+    border: none;
+  }
   .lineItem-info {
     height: 100%;
     display: flex;
@@ -200,17 +217,6 @@
       padding-top: 1vh;
       padding-bottom: 1vh;
     }
-    button {
-      border: none;
-    }
-    form {
-      .form-control {
-       width: 150px;
-       input {
-         border: 2px solid $brown;
-       }
-      }
-    }
   }
 }
 .summary-footer {
@@ -218,5 +224,27 @@
   width: 100vw;
   flex-direction: row;
   justify-content: flex-end;
-  padding: 5vw;
+  padding: 20px;
+  font-family: $header-text;
+  padding-right: 5vw;
+  h3 {
+    color: $brown;
+    font-size: 18px;
+    padding: 10px;
+    padding-right: 50px;
+    padding-top: 12px;
+  }
+  .custom-add {
+    background: rgba(0,0,0,0);
+    border: 2px solid $brown;
+    color: $brown;
+    font-size: 14px;
+    max-height: 40px;
+    font-size: 18px;
+    padding: 10px;
+  }
+  .custom-add:hover {
+    background: $brown;
+    color: white;
+  }
 }
