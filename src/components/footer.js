@@ -25,7 +25,6 @@ const Footer = (props) => {
               <Link href="https://www.instagram.com/madisonmckinleydesigns"><i className="fa fa-instagram" aria-hidden="true"></i></Link>
               <Link href="https://www.instagram.com/madisonmckinleydesigns"><i className="fa fa-linkedin-box" aria-hidden="true"></i></Link>
             </div>
-            <Link to='/customer-care'>Customer Care</Link>
             <Link to="/privacy">Privacy Policies</Link>
             <Link to="/terms">Terms of Use</Link>
             <Link to="/contact">Contact</Link>
@@ -50,7 +49,6 @@ const Footer = (props) => {
               <Link href="https://www.instagram.com/madisonmckinleydesigns"><i className="fa fa-instagram" aria-hidden="true"></i></Link>
               <Link href="https://www.instagram.com/madisonmckinleydesigns"><i className="fa fa-linkedin-box" aria-hidden="true"></i></Link>
             </div>
-            <Link to='/customer-care'>Customer Care</Link>
             <Link to="/privacy">Privacy Policies</Link>
             <Link to="/terms">Terms of Use</Link>
             <Link to="/contact">Contact</Link>
