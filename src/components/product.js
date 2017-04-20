@@ -58,11 +58,9 @@ class Product extends Component {
     const sortedImages = this.state.product.images.sort((a ,b) => a.position - b.position)
     const selected = this.state.selected
     const width = this.state.selected ? '12' : '6'
-    const mouseEnter = _.debounce(() => {this.setState({selected: true})}, 1000)
     return (
     <div xs='12' sm='12' md={width} lg={width}
-    className='product'
-      onMouseEnter={mouseEnter}>
+    className='product'>
         {this.renderSelectedProduct(selectedVariant, sortedImages)}
     </div>
     )

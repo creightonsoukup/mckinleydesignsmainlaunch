@@ -127,7 +127,7 @@ class Homepage extends Component {
         onLeave={this.navOnLeave}/>
         <div
         onClick={() => {this.context.router.push('/shop/collections') }}
-        className={this.state.banner1ClassNames.join(' ')}>
+        className={screen.width < 576 ? 'banner1' : this.state.banner1ClassNames.join(' ')}>
           <h2>ITALIAN COWBOY COOL</h2>
           <h4>SHOP NOW <i className="fa fa-arrow-right" aria-hidden="true"></i></h4>
           <h4 className='arrow'><i className="fa fa-angle-down"></i></h4>
