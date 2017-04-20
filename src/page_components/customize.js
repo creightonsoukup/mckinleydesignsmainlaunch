@@ -140,6 +140,7 @@ class Customize extends Component {
               chains={false}
               summary={false} />
               <CustomizeSelect
+              showVariants={false}
               select={this.selectProduct}
               deselect={this.deselectProduct}
               products={this.state.pendants}
@@ -162,6 +163,7 @@ class Customize extends Component {
             summary={false} />
             <CustomizeSelect
             select={this.selectProduct}
+            showVariants={true}
             deselect={this.deselectProduct}
             selected={this.state.selectedProducts}
             products={this.state.chains} />

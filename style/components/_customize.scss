@@ -87,11 +87,55 @@
         color: $brown;
         font-size: 1.2vw;
         padding-bottom: 10px;
+        line-height: 2;
       }
-      input {
-        visibility: collapse;
-        opacity: 0;
+      h2 {
+        color: $brown;
+        font-size: 12px;
+        padding-bottom: 20px;
       }
+      select.form-control {
+        margin-bottom: 10px;
+        border: 2px solid $brown;
+        font-family: $header-text;
+        width: 100px;
+        border-radius: 3px;
+        overflow: hidden;
+        box-shadow: none;
+        background-image: none;
+        padding: 5px 8px;
+        background: transparent;
+        -webkit-appearance: none;
+        color: $brown;
+        font-size: 12px;
+        select:focus {
+          outline: none;
+          }
+        }
+        .quantity {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding-left: 50px;
+          padding-right: 50px;
+          h3 {
+            font-size: 12px;
+            padding-right: 20px;
+            color: $brown;
+          }
+        }
+        .variants {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding-left: 50px;
+          padding-right: 50px;
+          h3 {
+            color: $brown;
+            font-size: 12px;
+            padding-right: 20px;
+          }
+        }
       .slider-button {
         padding: 7px;
         border: 2px solid $brown;
@@ -112,14 +156,8 @@
     .slider-selected {
       border: 2px solid $brown;
       .slider-button {
-        visibility: collapse;
-        opacity: 0;
-        transition: opacity 2s ease;
-      }
-      input {
-        visibility: visible;
-        opacity: 1;
-        transition: opacity 2s ease;
+        color: white;
+        background: $brown;
       }
     }
   }

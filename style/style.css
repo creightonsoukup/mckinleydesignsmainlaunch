@@ -1390,10 +1390,48 @@ select.form-control {
     .customize .cust-slider .slider-product-info h1 {
       color: #B89F83;
       font-size: 1.2vw;
-      padding-bottom: 10px; }
-    .customize .cust-slider .slider-product-info input {
-      visibility: collapse;
-      opacity: 0; }
+      padding-bottom: 10px;
+      line-height: 2; }
+    .customize .cust-slider .slider-product-info h2 {
+      color: #B89F83;
+      font-size: 12px;
+      padding-bottom: 20px; }
+    .customize .cust-slider .slider-product-info select.form-control {
+      margin-bottom: 10px;
+      border: 2px solid #B89F83;
+      font-family: "Lulo Clean", "lulo_cleanone", serif;
+      width: 100px;
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: none;
+      background-image: none;
+      padding: 5px 8px;
+      background: transparent;
+      -webkit-appearance: none;
+      color: #B89F83;
+      font-size: 12px; }
+      .customize .cust-slider .slider-product-info select.form-control select:focus {
+        outline: none; }
+    .customize .cust-slider .slider-product-info .quantity {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 50px;
+      padding-right: 50px; }
+      .customize .cust-slider .slider-product-info .quantity h3 {
+        font-size: 12px;
+        padding-right: 20px;
+        color: #B89F83; }
+    .customize .cust-slider .slider-product-info .variants {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 50px;
+      padding-right: 50px; }
+      .customize .cust-slider .slider-product-info .variants h3 {
+        color: #B89F83;
+        font-size: 12px;
+        padding-right: 20px; }
     .customize .cust-slider .slider-product-info .slider-button {
       padding: 7px;
       border: 2px solid #B89F83;
@@ -1411,13 +1449,8 @@ select.form-control {
   .customize .cust-slider .slider-selected {
     border: 2px solid #B89F83; }
     .customize .cust-slider .slider-selected .slider-button {
-      visibility: collapse;
-      opacity: 0;
-      transition: opacity 2s ease; }
-    .customize .cust-slider .slider-selected input {
-      visibility: visible;
-      opacity: 1;
-      transition: opacity 2s ease; }
+      color: white;
+      background: #B89F83; }
 
 .customize-nav {
   margin-top: 5vh;

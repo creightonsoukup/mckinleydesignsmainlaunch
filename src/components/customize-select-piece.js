@@ -35,6 +35,7 @@ export default class CustomizeSelect extends Component {
       return (
         <CustomizeProduct
         key={key}
+        showVariants={this.props.showVariants}
         selectProduct={this.props.select}
         deselectProduct={this.props.deselect}
         product={product}
