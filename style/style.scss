@@ -25,3 +25,9 @@
 body {
   cursor: default;
 }
+
+@media handheld {
+    video::-webkit-media-controls {
+        display: none;
+    }
+}

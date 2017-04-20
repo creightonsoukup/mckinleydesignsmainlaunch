@@ -1705,4 +1705,8 @@ select.form-control {
 body {
   cursor: default; }
 
+@media handheld {
+  video::-webkit-media-controls {
+    display: none; } }
+
 /*# sourceMappingURL=style.css.map */
