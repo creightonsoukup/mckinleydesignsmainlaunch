@@ -631,7 +631,7 @@ video {
     padding-top: 5vh; }
 
 .horizontal-slider {
-  overflow: scroll;
+  overflow: auto;
   margin: 5vh;
   margin-bottom: 0;
   min-height: 45vh;
@@ -639,6 +639,8 @@ video {
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center; }
+  .horizontal-slider img {
+    width: 250px; }
 
 .slider {
   margin: 20px;

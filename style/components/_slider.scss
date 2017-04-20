@@ -12,7 +12,7 @@
 }
 
 .horizontal-slider {
-  overflow: scroll;
+  overflow: auto;
   margin: 5vh;
   margin-bottom: 0;
   min-height: 45vh;
@@ -20,6 +20,9 @@
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
+  img {
+    width: 250px;
+  }
 }
 
 .slider {
