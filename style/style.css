@@ -641,6 +641,8 @@ video {
   align-items: center; }
   .horizontal-slider img {
     width: 250px; }
+  .horizontal-slider .product-quick-info {
+    margin-right: 35px; }
 
 .slider {
   margin: 20px;
@@ -1066,6 +1068,9 @@ select.form-control {
     padding-bottom: 5vh;
     padding-right: 5vw;
     font-family: "Lulo Clean", "lulo_cleanone", serif; }
+    .single-product .product-info h2 {
+      font-size: 20px;
+      color: #B89F83; }
     .single-product .product-info form {
       max-width: 150px;
       font-size: 12px; }
