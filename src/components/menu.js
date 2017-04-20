@@ -3,7 +3,6 @@ import { Button, Row, Col } from 'reactstrap'
 import { Link } from 'react-router';
 
 const Menu = ({toggleMenu, toggleCart, lineItemCount}) => {
-    console.log(lineItemCount)
     return (
       <div>
         <div onClick={toggleMenu} className=' animated fadeIn menu-background'></div>

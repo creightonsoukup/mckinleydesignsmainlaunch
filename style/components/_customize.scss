@@ -191,6 +191,15 @@
   padding: 25px;
   letter-spacing: 2px;
   margin-bottom: 0;
+  h1 {
+    font-family: $header-text;
+    line-height: 2;
+    font-size: 16px;
+    color: $brown;
+    text-align: center;
+    padding-left: 20vw;
+    padding-right: 20vw;
+  }
   th {
     border: none;
     font-size: 20px;

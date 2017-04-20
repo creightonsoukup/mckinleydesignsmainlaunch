@@ -1475,6 +1475,14 @@ select.form-control {
   padding: 25px;
   letter-spacing: 2px;
   margin-bottom: 0; }
+  .summary h1 {
+    font-family: "Lulo Clean", "lulo_cleanone", serif;
+    line-height: 2;
+    font-size: 16px;
+    color: #B89F83;
+    text-align: center;
+    padding-left: 20vw;
+    padding-right: 20vw; }
   .summary th {
     border: none;
     font-size: 20px; }

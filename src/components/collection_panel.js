@@ -31,7 +31,6 @@ class CollectionPanel extends Component {
   }
 
   render() {
-    console.log(this.props)
     const handle = this.state.collection.name.split(' ').join('-').toLowerCase()
     return (
       <Col xs='12' sm='12' md='6' lg='6' xl='6'

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Button, Col, Row } from 'reactstrap';
 
 const CustomizeLoader = (props) => {
-  console.log(props)
   return (
     <Row className='customize-intro'>
       <Col xs="12" s='12' md='8' lg='8' xl='8' className='text'>

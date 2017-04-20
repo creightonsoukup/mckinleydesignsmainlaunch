@@ -56,7 +56,6 @@ class ProductDetail extends Component  {
     ,   body = this.props.description
     ,   result = body.replace(regex, '');
     this.setState({description: result})
-    console.log(result);
   }
 
   renderHTML() {
@@ -68,7 +67,6 @@ class ProductDetail extends Component  {
   }
 
   render() {
-    console.log(this.state)
     return (
       <div className='product-info'>
         <h2>{this.props.name}</h2>

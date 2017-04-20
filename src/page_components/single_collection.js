@@ -263,7 +263,6 @@ class SingleCollection extends Component {
   }
 
   render() {
-    console.log(this.state)
       const search = _.debounce((value) => {this.searchProducts(value)}, 300)
     return (
     <div className='animated fadeIn'>

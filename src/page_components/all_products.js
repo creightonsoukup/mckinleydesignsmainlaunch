@@ -142,7 +142,6 @@ class AllProducts extends Component {
   }
 
   sortProductTypes(type) {
-    console.log(type)
     const products =  this.state.products
     let sortedProducts = []
     async.map(products,

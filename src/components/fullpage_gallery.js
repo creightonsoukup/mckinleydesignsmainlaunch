@@ -31,7 +31,6 @@ class FullpageGallery extends Component {
 		});
 	}
 	gotoNext () {
-    console.log('hi')
 		this.setState({
 			currentImage: this.state.currentImage + 1,
 		});
@@ -47,7 +46,6 @@ class FullpageGallery extends Component {
 	}
 
   render() {
-    console.log(this.state)
     return (
       <div>
       <Lightbox

@@ -41,7 +41,7 @@ export default class CustomizeSelect extends Component {
         product={product}
         variants={product.variants}
         selected={this.props.selected}
-        index={index} />
+        />
       )
   }
 

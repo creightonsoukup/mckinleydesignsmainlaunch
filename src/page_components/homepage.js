@@ -97,7 +97,6 @@ class Homepage extends Component {
   }
 
   render() {
-    console.log(this.state)
     const horseVideo = 'https://s3-us-west-1.amazonaws.com/madison-mckinley/homepage-loader.mp4'
     const placeholderVideo = 'https://s3-us-west-1.amazonaws.com/madison-mckinley/loop_video.mov'
     const loader = _.debounce(() => {this.setState({loadingScreen: false})}, 2500)

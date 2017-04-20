@@ -2,9 +2,7 @@ import React from 'react'
 import { Row, Col } from 'reactstrap'
 
 const TeamMember = (props) => {
-  console.log(props)
   const handle = props.member.name.toLowerCase().split(' ').join('+')
-  console.log(handle)
   return (
     <Row className='member'>
       <Col sm='12' md='6' lg='6' xl='6'>

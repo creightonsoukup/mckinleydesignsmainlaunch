@@ -1,6 +1,7 @@
 import ShopifyBuy from 'shopify-buy';
 import axios from 'axios';
 import 'whatwg-fetch';
+import async from 'async';
 
 var shopClient = ShopifyBuy.buildClient({
       accessToken: '08b1b1ba5897eb763e75565ee43650cd',
@@ -36,6 +37,7 @@ export const DELETE_ITEM = 'delete_item'
 export const TEAM = 'team'
 export const CONATACT_REQUEST = 'contact_request'
 export const FETCH_BLOG_POSTS = 'fetch_blog_posts'
+export const ADD_PRODUCTS_TO_CART = 'add_products_to_cart'
 
 
 const DATABASE_URL = 'https://shrouded-reaches-99139.herokuapp.com'
@@ -262,6 +264,24 @@ export function addToCart(variantObj, quantity, cart) {
 
   return {
     type: ADD_TO_CART,
+    payload: request
+  }
+}
+
+export function addProductsToCart(newItems, cart) {
+  const items = newItems
+  async.map(newItems, function(item) {
+    const request = cart.createLineItemsFromVariants({variant: item.variant, quantity: item.quantity})
+  })
+  let request
+  if(localStorage.getItem('MckinleyCart')) {
+    var cartId = localStorage.getItem('MckinleyCart')
+     request = shopClient.fetchRecentCart(cartId)
+  } else {
+     request = shopClient.createCart()
+  }
+  return {
+    type: ADD_PRODUCTS_TO_CART,
     payload: request
   }
 }

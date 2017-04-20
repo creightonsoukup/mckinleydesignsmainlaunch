@@ -32,14 +32,14 @@ export default class CustomizeSelect extends Component {
     }
     this.selectProduct = this.selectProduct.bind(this)
     this.deselectProduct = this.deselectProduct.bind(this)
-    this.checkIfSelceted = this.checkIfSelceted.bind(this)
+    this.checkIfSelected = this.checkIfSelected.bind(this)
     this.renderOptions = this.renderOptions.bind(this)
     this.changeQuantity = this.changeQuantity.bind(this)
     this.handleChange = this.handleChange.bind(this)
   }
 
   componentWillMount() {
-    this.props.selected.map(this.checkIfSelceted)
+    this.props.selected.map(this.checkIfSelected)
     this.setState({
       price: parseInt(this.props.product.selectedVariant.price),
       product: this.props.product,
@@ -59,11 +59,10 @@ export default class CustomizeSelect extends Component {
 
   deselectProduct() {
     this.setState({selected: false})
-    this.props.deselectProduct(this.props.selectedVariant)
+    this.props.deselectProduct(this.state.selectedVariant)
   }
 
   renderOptions(variant) {
-    console.log(this.state.variants.indexOf(variant))
     return (
       <option
       key={variant.id}
@@ -72,8 +71,8 @@ export default class CustomizeSelect extends Component {
     )
   }
 
-  checkIfSelceted(product) {
-    if (this.props.product === product) {
+  checkIfSelected(product) {
+    if (this.props.product.title === product.product.productTitle) {
       this.setState({selected: true})
     }
     return
@@ -89,7 +88,6 @@ export default class CustomizeSelect extends Component {
 
   handleChange(event) {
     const idx = parseInt(event.target.value)
-    console.log(idx)
     this.setState({
       variantIdx: idx,
       selectedVariant: this.state.variants[idx],
@@ -98,8 +96,6 @@ export default class CustomizeSelect extends Component {
   }
 
   render() {
-    console.log(this.state)
-    console.log(this.props)
     return (
       <Col xs='12' sm='12' md='6' lg='4' xl='4'>
         { this.state.selected ? (

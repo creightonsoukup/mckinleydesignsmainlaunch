@@ -34,7 +34,6 @@ class AllCollections extends Component {
       return <div></div>
     }
     const video = 'https://s3-us-west-1.amazonaws.com/madison-mckinley/collection.mp4'
-    console.log(this.props.collectionContent)
     return (
       <div className="all-collections animated fadeIn">
         <div >

@@ -61,7 +61,6 @@ class NavbarScroll extends Component {
   }
 
   render() {
-    console.log(this.state)
     return (
 
       <div className='scroll-nav'>

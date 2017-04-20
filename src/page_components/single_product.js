@@ -87,7 +87,6 @@ class SingleProduct extends Component {
     if(!this.state.imagesReg) {
       return <div></div>
     }
-    console.log(this.state)
     return (
       <div className='animated fadeInRight'>
         <Navigation

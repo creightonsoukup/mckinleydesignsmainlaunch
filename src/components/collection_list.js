@@ -34,7 +34,6 @@ export default class CollectionList extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <Row>
         {this.props.collections[0].map(this.renderCollections)}

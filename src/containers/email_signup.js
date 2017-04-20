@@ -22,7 +22,6 @@ class EmailSignup extends Component {
     event.preventDefault()
     this.props.addSubscriber(this.state.name, this.state.email)
       .then((data) => {
-        console.log(data)
         this.setState({email: '', name: ''})
       })
   }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CustomizeStart from '../components/customize-start'
-import { fetchChains, fetchPendants, fetchCart, addToCart } from '../actions/index'
+import { fetchChains, fetchPendants, fetchCart, addProductsToCart } from '../actions/index'
 import Navigation from '../components/navbar';
 import NavbarScroll from '../components/navbar-scroll'
 import BannerImage from '../components/banner_image'
@@ -66,17 +66,15 @@ class Customize extends Component {
   }
 
   renderPrice() {
-    console.log('hi')
     let selectedProducts = this.state.selectedProducts
     let price = 0
     if (selectedProducts.length > 0) {
       for (var i = 0; i < selectedProducts.length; i++) {
         price += parseInt(selectedProducts[i].price)
-        console.log(price)
       }
     }
     return (
-      <h3>{`$ ${price}.00`}</h3>
+      <span>{`$ ${price}.00`}</span>
     )
   }
 
@@ -106,15 +104,35 @@ class Customize extends Component {
     this.setState({selectedProducts: [newProduct, ...this.state.selectedProducts]})
   }
 
-  deselectProduct(product) {
-      let index = this.state.selectedProducts.indexOf(product)
+  deselectProduct(productDelete) {
+      let selectedProducts = this.state.selectedProducts
+      let newProducts = []
+      async.map(selectedProducts, function(product) {
+        if (product.product.id !== productDelete.id) {
+          newProducts.push(product)
+        }
+      })
       this.setState({
-        selectedProducts: update(this.state.selectedProducts, {$splice: [[index,1]]})
+        selectedProducts: newProducts
       })
   }
 
   addToCart() {
-
+    let items = []
+    async.map(this.state.selectedProducts, (product) => {
+      items.push({variant: product.product, quantity: product.quantity})
+    })
+    this.props.addProductsToCart(items, this.state.cart)
+    .then((data) => {
+      localStorage.setItem('MckinleyCart', data.payload.id)
+      this.setState({
+        cart: data.payload,
+        cartLineItems: data.payload.lineItemCount,
+        cartOpen: true,
+        scrollNav: true,
+        selectedProducts: []
+      })
+    })
   }
 
   render() {
@@ -209,4 +227,4 @@ function mapStateToProps({chains, pendants}) {
   return ({chains, pendants})
 }
 
-export default connect(mapStateToProps, {fetchPendants, addToCart, fetchChains, fetchCart})(Customize)
+export default connect(mapStateToProps, {fetchPendants, addProductsToCart, fetchChains, fetchCart})(Customize)

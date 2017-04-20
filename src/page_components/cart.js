@@ -48,7 +48,6 @@ class Cart extends Component {
     if(this.state.cart === null) {
       return <div></div>
     }
-    console.log(this.props)
     return (
       <div>
       <div className='cart-background animated fadeIn'></div>
