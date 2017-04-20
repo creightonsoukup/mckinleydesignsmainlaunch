@@ -987,7 +987,7 @@ select.form-control {
     font-size: 3.5vw;
     color: #A33F23;
     text-align: center;
-    padding: 15px;
+    padding: 12px;
     letter-spacing: 5px;
     position: relative; }
   .scroll-nav .nav-items a {
@@ -1013,8 +1013,8 @@ select.form-control {
       font-size: 2vw; }
       .scroll-nav .nav-items .nav-links a i {
         font-size: 2vw; }
-    .scroll-nav .nav-items .nav-links .fa-bars {
-      padding-top: 2px; }
+    .scroll-nav .nav-items .nav-links .fa-shopping-cart {
+      padding-bottom: 3px; }
   .scroll-nav .nav-items .nav-links-left {
     display: flex;
     flex-direction: row;

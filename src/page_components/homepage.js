@@ -27,7 +27,7 @@ class Homepage extends Component {
     this.state = {
       favorites: [],
       playBrandVideo: false,
-      loadingScreen: false,
+      loadingScreen: true,
       scrollNav: false,
       banner1ClassNames: ['banner1', 'parallax', 'banner', 'animated', 'fadeIn'],
       cart: null,
