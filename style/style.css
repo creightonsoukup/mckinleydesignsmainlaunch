@@ -1070,7 +1070,23 @@ select.form-control {
       max-width: 150px;
       font-size: 12px; }
       .single-product .product-info form h3 {
-        margin-bottom: 10px; }
+        padding-bottom: 10px; }
+      .single-product .product-info form select.form-control {
+        margin-bottom: 10px;
+        border: 2px solid #B89F83;
+        font-family: "Lulo Clean", "lulo_cleanone", serif;
+        width: 150px;
+        border-radius: 3px;
+        overflow: hidden;
+        box-shadow: none;
+        background-image: none;
+        padding: 5px 8px;
+        background: transparent;
+        -webkit-appearance: none;
+        color: #B89F83;
+        font-size: 12px; }
+        .single-product .product-info form select.form-control select:focus {
+          outline: none; }
     .single-product .product-info h3 {
       font-size: 12px; }
     .single-product .product-info .add-to-cart-btn {

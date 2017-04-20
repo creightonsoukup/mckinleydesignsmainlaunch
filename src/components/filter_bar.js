@@ -75,14 +75,14 @@ class FilterBar extends Component {
               value={this.state.orderBy}
               onChange={this.sortProducts}>
                 <option value="default">Order By</option>
-                <option value="price-ascending">Price Ascending</option>
-                <option value="price-descending">Price Descending</option>
-                <option value="title-ascending">Name Ascending</option>
-                <option value="title-descending">Name Descending</option>
+                <option value="price-descending">Price High-Low</option>
+                <option value="price-ascending">Price Low-High</option>
+                <option value="title-ascending">Name A-Z</option>
+                <option value="title-descending">Name Z-A</option>
               </Input>
               </Col>
               <Col xs='12' sm='12' md='4' lg={{size: 3, offset: 3}} xl={{size: 3, offset: 3}}>
-              { this.props.showSearhBar &&
+              { this.props.showSearchBar &&
                 <Input
                 name="searchText"
                 placeholder={'Search'}

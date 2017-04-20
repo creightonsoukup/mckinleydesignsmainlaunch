@@ -18,15 +18,16 @@ class Cart extends Component {
     }
     this.updateCart = this.updateCart.bind(this)
     this.deleteItem = this.deleteItem.bind(this)
-    this.checkout = this.checkout.bind(this)
+    this.keepShopping = this.keepShopping.bind(this)
   }
 
   componentWillMount() {
     this.setState({cart: this.props.cartData})
   }
 
-
-
+  keepShopping() {
+    this.context.router.push('/shop/all-products')
+  }
 
   updateCart(quantity, id) {
     this.props.updateCart(quantity, id, this.state.cart)
@@ -40,11 +41,6 @@ class Cart extends Component {
       .then((data) => {
         this.setState({cart: data.payload})
       })
-  }
-
-  checkout() {
-    this.props.toggleCart()
-    this.context.router.push('http://google.com')
   }
 
   render() {
@@ -77,7 +73,8 @@ class Cart extends Component {
           </div>
         )}
         <CartFooter
-        checkout={this.checkout}
+        keepShopping={this.keepShopping}
+        checkout={this.state.cart.checkoutUrl}
         cart={this.state.cart}/>
       </div>
       </div>

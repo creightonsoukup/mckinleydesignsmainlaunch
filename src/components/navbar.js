@@ -12,7 +12,7 @@ class Navigation extends Component {
       isOpen: false,
       menuOpen: false,
       cartOpen: false,
-      cart: null,
+      cartData: null,
       lineItemCount: null
     }
 
@@ -66,6 +66,8 @@ class Navigation extends Component {
         { this.state.cartOpen &&
           <div>
             <Cart
+            cartData={this.state.cart}
+            lineItemCount={this.state.lineItemCount}
             toggleCart={this.toggleCart} />
           </div>
         }

@@ -75,6 +75,7 @@ class ProductDetail extends Component  {
         <h3>{`$ ${this.state.price}.00`}</h3>
         { this.state.variants.length > 1 ? (
           <Form>
+            <h3>{this.state.selectedVariant.attrs.variant.option_values[0].name}: </h3>
             <Input value={this.state.variantId} onChange={this.handleChange} type='select' name='select'>
               {this.state.variants.map(this.renderOptions)}
             </Input>
