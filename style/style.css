@@ -1708,5 +1708,46 @@ body {
 @media handheld {
   video::-webkit-media-controls {
     display: none; } }
+.terms {
+  font-family: "Open Sans", sans-serif;
+  padding: 200px;
+  display: flex;
+  flex-direction: column;
+  line-height: 2; }
+  .terms h1 {
+    font-size: 20px;
+    color: #A33F23;
+    padding-bottom: 30px;
+    font-family: "Lulo Clean", "lulo_cleanone", serif; }
+  .terms h2 {
+    font-size: 16px;
+    color: #B89F83;
+    padding-bottom: 20px;
+    font-family: "Lulo Clean", "lulo_cleanone", serif; }
+  .terms p {
+    font-size: 12px;
+    color: black;
+    padding-bottom: 10px; }
+
+.privacy {
+  font-family: "Open Sans", sans-serif;
+  padding: 200px;
+  display: flex;
+  flex-direction: column;
+  line-height: 2; }
+  .privacy h1 {
+    font-size: 20px;
+    color: #A33F23;
+    padding-bottom: 30px;
+    font-family: "Lulo Clean", "lulo_cleanone", serif; }
+  .privacy h2 {
+    font-size: 16px;
+    color: #B89F83;
+    padding-bottom: 20px;
+    font-family: "Lulo Clean", "lulo_cleanone", serif; }
+  .privacy p {
+    font-size: 12px;
+    color: black;
+    padding-bottom: 10px; }
 
 /*# sourceMappingURL=style.css.map */
