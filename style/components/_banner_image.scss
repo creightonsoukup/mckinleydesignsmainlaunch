@@ -4,7 +4,6 @@
   -moz-background-size: cover;
   background-size: cover;
   min-height: 100vh;
-  min-width: 100vw;
   position: relative;
   display: block;
   transition: background 2s ease;
@@ -130,6 +129,7 @@
   -moz-background-size: cover;
   background-size: cover;
   min-height: 50vh;
+  width: 100vw;
   opacity: .8;
   position: relative;
   box-shadow: inset 0px 1px 6px 0px rgba(0,0,0,0.2), inset 0px -1px 6px 0px rgba(0,0,0,0.2);

@@ -178,20 +178,22 @@ class AllProducts extends Component {
       topOffset={'-20%'}
       onEnter={this.navOnEnter}
       onLeave={this.navOnLeave}/>
-      <div className='banner-component animated fadeInDown'>
+      <Row noGutters className='banner-component animated fadeInDown'>
         <VideoPlayer
         video={video} loop={true}/>
-      </div>
-      <Container fluid>
-      <Row className='header'>
+      </Row>
+      <Row noGutters className='header'>
         <h1>Shop Jewelry</h1>
       </Row>
-        <FilterBar
+      <Row noGutters>
+      <FilterBar
         showSearchBar={true}
         sortProducts={this.sortProducts}
         sortProductTypes={this.sortProductTypes}
         searchProducts={search} />
-        <div>
+      </Row>
+
+      <Row noGutters>
         {this.state.products.length === 0 ? (
           <div>Products Loading</div>
         ) : (
@@ -199,9 +201,9 @@ class AllProducts extends Component {
           addToCart={this.addToCart}
           products={this.state.sortedProducts.length === 0 ? this.state.products : this.state.sortedProducts}/>
         )}
-        </div>
-      </Container>
+      </Row>
       <Footer
+      homepage={true}
       show={this.state.products.length > 0}/>
       </div>
     )

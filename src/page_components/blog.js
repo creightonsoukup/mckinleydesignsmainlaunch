@@ -27,14 +27,15 @@ class Blog extends Component {
     return (
       <div>
         <NavbarScroll/>
-        <div className='blog-banner'>
-        </div>
-        <Row className='blog-frame'>
+        <Row  noGutters className='blog-banner'>
+        </Row>
+        <Row noGutters className='blog-frame'>
           <iframe className="blog" src="https://in-the-saddle.squarespace.com/" width='100%' frameBorder="0" scrolling="no" height='200%' >
             <p>Please use a different browser to view blog. Sorry for the inconvenience!</p>
           </iframe>
         </Row>
         <Footer
+        homepage={false}
         show={true}/>
       </div>
     )

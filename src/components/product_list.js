@@ -41,7 +41,7 @@ export default class ProductList extends Component {
 
   render() {
     return (
-      <Row className='product-list'>
+      <Row noGutters className='product-list'>
         {this.props.products.map(this.renderProducts)}
       </Row>
     )

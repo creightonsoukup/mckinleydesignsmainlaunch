@@ -45,7 +45,7 @@ class FilterBar extends Component {
 
   render() {
     return (
-      <Row className="filter-bar">
+      <div className="filter-bar">
         { this.state.showFilters ? (
           <Form onSubmit={this.handleSubmit}>
           <Row>
@@ -102,7 +102,7 @@ class FilterBar extends Component {
           </Col>
           </Row>
         )}
-      </Row>
+      </div>
     )
   }
 }

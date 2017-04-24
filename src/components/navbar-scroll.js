@@ -63,7 +63,7 @@ class NavbarScroll extends Component {
   render() {
     return (
 
-      <div className='scroll-nav'>
+      <Row noGutters className='scroll-nav'>
         { this.state.menuOpen &&
           <div>
             <Menu
@@ -98,7 +98,7 @@ class NavbarScroll extends Component {
                 <Link><i onClick={this.toggleMenu} className="fa fa-bars" aria-hidden="true"></i></Link>
               </div>
         </nav>
-      </div>
+      </Row>
 
 
     )

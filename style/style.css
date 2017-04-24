@@ -121,7 +121,6 @@ body {
 @media (min-width: 768px) {
   .fixed-nav {
     display: flex;
-    width: 100vw;
     justify-content: space-between;
     position: absolute;
     background-color: transparent;
@@ -160,7 +159,6 @@ body {
   -moz-background-size: cover;
   background-size: cover;
   min-height: 100vh;
-  min-width: 100vw;
   position: relative;
   display: block;
   transition: background 2s ease;
@@ -265,6 +263,7 @@ body {
   -moz-background-size: cover;
   background-size: cover;
   min-height: 50vh;
+  width: 100vw;
   opacity: .8;
   position: relative;
   box-shadow: inset 0px 1px 6px 0px rgba(0, 0, 0, 0.2), inset 0px -1px 6px 0px rgba(0, 0, 0, 0.2); }
@@ -980,7 +979,6 @@ select.form-control {
     background-color: #F4EACE;
     position: fixed;
     top: 0;
-    width: 100%;
     height: 60px;
     box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.2); }
   .scroll-nav .mobile {
@@ -1006,7 +1004,6 @@ select.form-control {
     top: 0;
     font-size: 2vw;
     font-family: "Lulo Clean", "lulo_cleanone", serif;
-    padding: 1.5vw;
     padding-top: 20px; }
     .scroll-nav .nav-items .nav-links h6 {
       display: inline-block;
@@ -1305,17 +1302,19 @@ select.form-control {
     font-size: 1.5vw;
     text-align: right; }
 
-.all-products .header {
-  font-size: 4vw;
-  margin-top: 80vh;
-  font-family: "Lulo Clean", "lulo_cleanone", serif;
-  text-align: center;
+.all-products {
   background-color: white; }
-  .all-products .header h1 {
-    margin: auto;
-    color: #A33F23;
-    background-color: white;
-    padding-top: 35px; }
+  .all-products .header {
+    font-size: 4vw;
+    margin-top: 80vh;
+    font-family: "Lulo Clean", "lulo_cleanone", serif;
+    text-align: center;
+    background-color: white; }
+    .all-products .header h1 {
+      margin: auto;
+      color: #A33F23;
+      background-color: white;
+      padding-top: 35px; }
 
 .customize .collection-title {
   margin-bottom: 20vh; }

@@ -37,7 +37,7 @@ const Footer = (props) => {
       )
     } else {
       return (
-        <Row className="footer">
+        <Row noGutters className="footer">
           <Col xs='12' sm='12' md='6' lg='6' xl='6'>
           <EmailSignup />
           </Col>

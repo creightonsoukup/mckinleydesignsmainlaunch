@@ -71,10 +71,10 @@ class Navigation extends Component {
             toggleCart={this.toggleCart} />
           </div>
         }
-        <div className='fixed-nav'>
+        <Row noGutters className='fixed-nav'>
           <Link to="/"><h1>MADISON MCKINLEY</h1></Link>
           <div className='bars' onClick={this.toggleMenu}><i className="fa fa-bars" aria-hidden="true"></i></div>
-        </div>
+        </Row>
       </div>
     )
   }

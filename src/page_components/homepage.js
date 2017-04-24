@@ -125,13 +125,14 @@ class Homepage extends Component {
         topOffset={'-20%'}
         onEnter={this.navOnEnter}
         onLeave={this.navOnLeave}/>
-        <div
+        <Row
+        noGutters
         onClick={() => {this.context.router.push('/shop/collections') }}
         className={screen.width < 576 ? 'banner1' : this.state.banner1ClassNames.join(' ')}>
           <h2>ITALIAN COWBOY COOL</h2>
           <h4>SHOP NOW <i className="fa fa-arrow-right" aria-hidden="true"></i></h4>
           <h4 className='arrow'><i className="fa fa-angle-down"></i></h4>
-        </div>
+        </Row>
         <div className='content'>
         { this.state.favorites.length > 0 &&
           <ProductSlider
@@ -139,11 +140,11 @@ class Homepage extends Component {
           products={this.state.favorites} />
         }
         {this.state.playBrandVideo ? (
-          <div>
+          <Row noGutters>
             <iframe src="https://player.vimeo.com/video/209853714?autoplay=1&loop=1&autopause=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-          </div>
+          </Row>
         ) : (
-          <div className="homepage-video" onClick={() => this.setState({playBrandVideo: true})}>
+          <Row noGutters className="homepage-video" onClick={() => this.setState({playBrandVideo: true})}>
             <div className="video-text" >
               <div className="text-block">
                 <Waypoint
@@ -163,29 +164,29 @@ class Homepage extends Component {
             <div>
               <VideoPlayer loop={true} video={placeholderVideo} playVideo={this.playBrandVideo}/>
             </div>
-          </div>
+          </Row>
         )}
         </div>
         <div className='quote banner parallax parallax-2'>
           <Quote />
         </div>
         <div className="content">
-        <div className="banner2">
+        <Row noGutters className="banner2">
           <div className="content" onClick={() => {this.context.router.push('/about-the-brand')}}>
             <h2>DISCOVER <br/>OUR STORY</h2>
             <h3>LEARN MORE<i className="fa fa-arrow-right" aria-hidden="true"></i></h3>
           </div>
-        </div>
-        <div className="banner3" onClick={() => {this.context.router.push('/in-the-saddle')}}>
+        </Row>
+        <Row noGutters className="banner3" onClick={() => {this.context.router.push('/in-the-saddle')}}>
           <div className="content">
             <h2>MEANWHILE,<br/>IN THE SADDLE</h2>
             <h3>STAY UP TO DATE WITH EVERYTHING MADKOOL</h3>
             <h4>FOLLOW US ON THE BLOG<i className="fa fa-arrow-right" aria-hidden="true"></i></h4>
           </div>
-        </div>
+        </Row>
         </div>
         <Footer
-        homepage={true}
+        homepage={false}
         show={true} />
       </div>
     )
