@@ -5,31 +5,37 @@ import BannerImage from '../components/banner_image';
 import Footer from '../components/footer';
 import { fetchBlogPosts } from '../actions/index'
 import CollectionList from '../components/collection_list'
-import SlimVideoPlayer from '../components/slim_video_player'
 import NavbarScroll from '../components/navbar-scroll'
+import { Row } from 'reactstrap';
+import _$ from 'jquery';
 
 
 class Blog extends Component {
 
-  componentWillMount() {
-    this.props.fetchCollectionContent()
+  constructor(props) {
+    super(props);
+
+    this.resizeFrame = this.resizeFrame.bind(this)
   }
 
+  resizeFrame() {
+
+  }
+
+
   render() {
-    if(this.props.collectionContent.length === 0) {
-      return <div></div>
-    }
-    const video = 'https://s3-us-west-1.amazonaws.com/madison-mckinley/collection.mp4'
     return (
-      <div className="all-collections animated fadeIn">
-        <div >
+      <div>
         <NavbarScroll/>
-        <SlimVideoPlayer loop={true} video={video}/>
-        <CollectionList
-        collections={this.props.collectionContent}/>
+        <div className='blog-banner'>
+        </div>
+        <Row className='blog-frame'>
+          <iframe className="blog" src="https://in-the-saddle.squarespace.com/" width='100%' frameBorder="0" scrolling="no" height='200%' >
+            <p>Please use a different browser to view blog. Sorry for the inconvenience!</p>
+          </iframe>
+        </Row>
         <Footer
         show={true}/>
-        </div>
       </div>
     )
   }

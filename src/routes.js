@@ -18,6 +18,7 @@ import Privacy from './page_components/privacy'
 import Terms from './page_components/terms'
 import Contact from './page_components/contact'
 import About from './page_components/about'
+import Blog from './page_components/blog'
 
 export default (
   <Route path='/' component={App}>
@@ -36,6 +37,7 @@ export default (
     <Route path='/terms' component={Terms} />
     <Route path='/contact' component={Contact} />
     <Route path='/about-the-brand' component={About}/>
+    <Route path='/in-the-saddle' component={Blog} />
     <Route path='*' component={NotFound} />
   </Route>
 )

@@ -81,3 +81,22 @@ body {
     padding-bottom: 10px;
   }
 }
+
+.blog-banner {
+  width: 100vw;
+  height: 60vh;
+  margin-top: 30px;
+  background: url('https://s3-us-west-1.amazonaws.com/madison-mckinley/banner-images/blog.png') center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: 100;
+}
+
+.blog-frame {
+  min-height: 200vh;
+  iframe {
+    height: 200vh;
+    margin-top: 40vh;
+  }
+}
