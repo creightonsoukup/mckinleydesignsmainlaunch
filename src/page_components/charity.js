@@ -15,9 +15,10 @@ class Charity extends Component {
       <Container fluid >
         <h1 className="collection-title">{('Charity').toUpperCase()}</h1>
         <CharityInfo />
-        <Footer
-        show={true}/>
       </Container>
+      <Footer
+      homepage={false}
+      show={true}/>
       </div>
     )
   }

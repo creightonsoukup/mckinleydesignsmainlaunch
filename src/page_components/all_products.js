@@ -172,7 +172,10 @@ class AllProducts extends Component {
         cartOpen={this.state.cartOpen}
         cartData={this.state.cart}/>
       ) : (
-        <Navigation/>
+        <Navigation
+        lineItemCount={this.state.cartLineItems}
+        cartOpen={this.state.cartOpen}
+        cartData={this.state.cart}/>
       )}
       <Waypoint
       topOffset={'-20%'}
@@ -185,25 +188,19 @@ class AllProducts extends Component {
       <Row noGutters className='header'>
         <h1>Shop Jewelry</h1>
       </Row>
-      <Row noGutters>
       <FilterBar
         showSearchBar={true}
         sortProducts={this.sortProducts}
         sortProductTypes={this.sortProductTypes}
         searchProducts={search} />
-      </Row>
 
-      <Row noGutters>
-        {this.state.products.length === 0 ? (
-          <div>Products Loading</div>
-        ) : (
+
           <ProductList
           addToCart={this.addToCart}
           products={this.state.sortedProducts.length === 0 ? this.state.products : this.state.sortedProducts}/>
-        )}
-      </Row>
+
       <Footer
-      homepage={true}
+      homepage={false}
       show={this.state.products.length > 0}/>
       </div>
     )

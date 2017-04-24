@@ -86,13 +86,16 @@ select.form-control {
 
 .collection-title {
   margin-top: 40vh;
-  text-align: center;
   font-family: $header-bold;
   color: white;
   font-size: 7vw;
   letter-spacing: 5px;
   margin-bottom: 20vh;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  h1 {
+    margin: 0 auto;
+  }
 }
 
 .collection-header {

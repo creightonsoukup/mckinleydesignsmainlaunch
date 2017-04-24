@@ -30,9 +30,10 @@ class Team extends Component {
         <h1 className="collection-title">{('Meet The Amazing Humans Behind the Madison Mckinley Team').toUpperCase()}</h1>
         <TeamList
         team={this.props.team[0]} />
-        <Footer
-        show={true}/>
       </Container>
+      <Footer
+      homepage={false}
+      show={true}/>
       </div>
     )
   }

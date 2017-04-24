@@ -36,7 +36,6 @@ class AllCollections extends Component {
     const video = 'https://s3-us-west-1.amazonaws.com/madison-mckinley/collection.mp4'
     return (
       <div className="all-collections animated fadeIn">
-        <div >
         <NavbarScroll
         lineItemCount={this.state.cartLineItems}
         cartOpen={this.state.cartOpen}
@@ -45,8 +44,8 @@ class AllCollections extends Component {
         <CollectionList
         collections={this.props.collectionContent}/>
         <Footer
+        homepage={true}
         show={true}/>
-        </div>
       </div>
     )
   }

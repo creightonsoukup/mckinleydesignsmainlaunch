@@ -359,8 +359,6 @@
 
   .banner-component {
     z-index: -1000;
-    height: auto;
-    width: 100vw;
     height: 100%;
     position: fixed;
     top: 0;
@@ -390,8 +388,7 @@
       right: auto;
       margin: auto;
       transform: translateX(-50%) translateY(-50%);
-      min-width: 100%;
-      min-height: 100%;
+      min-height: 100vh;
       max-width: none;
       height: auto;
       width: auto;

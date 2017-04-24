@@ -282,8 +282,10 @@ class SingleCollection extends Component {
     onLeave={this.navOnLeave}/>
       <BannerImage
         fileName={`${this.props.params.collection}.jpg`}/>
-      <Container fluid>
-        <h1 className="collection-title">{this.state.collection.toUpperCase()}</h1>
+      <div>
+        <Row noGutters className="collection-title">
+          <h1>{this.state.collection.toUpperCase()}</h1>
+        </Row>
         <CollectionHeader
         collectionContent={this.state.collectionContent} />
         <FilterBar
@@ -291,19 +293,13 @@ class SingleCollection extends Component {
         sortProducts={this.sortProducts}
         sortProductTypes={this.sortProductTypes}
         searchProducts={search} />
-        <div>
-        {this.state.products.length === 0 ? (
-          <div>Products Loading</div>
-        ) : (
-          <ProductList
+        <ProductList
           addToCart={this.addToCart}
           products={this.state.viewSortedProducts ? this.state.sortedProducts : this.state.products}/>
-        )}
-        </div>
         <Footer
-          homepage={true}
+          homepage={false}
           show={this.state.products.length > 0}/>
-      </Container>
+      </div>
     </div >
     )
   }
