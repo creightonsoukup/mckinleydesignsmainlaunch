@@ -228,6 +228,9 @@ class Customize extends Component {
             </div>
           </div>
         }
+        <Footer
+        homepage={false}
+        show={true}/>
       </div>
     )
   }

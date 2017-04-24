@@ -13,8 +13,6 @@ const CustomizeStart = ({start}) => {
     <Container fluid className='customize-start'>
       <h1 className="collection-title">{('Create Your Own').toUpperCase()}</h1>
       <CustomizeLoader start={start} />
-      <Footer
-      show={true}/>
     </Container>
     </div>
   )
