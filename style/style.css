@@ -1760,9 +1760,9 @@ body {
   z-index: 100; }
 
 .blog-frame {
-  min-height: 200vh; }
+  min-height: 12500px; }
   .blog-frame iframe {
-    height: 200vh;
+    min-height: 12500px;
     margin-top: 40vh; }
 
 /*# sourceMappingURL=style.css.map */

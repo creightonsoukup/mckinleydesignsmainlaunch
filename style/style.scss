@@ -94,9 +94,9 @@ body {
 }
 
 .blog-frame {
-  min-height: 200vh;
+  min-height: 12500px;
   iframe {
-    height: 200vh;
+    min-height: 12500px;
     margin-top: 40vh;
   }
 }
