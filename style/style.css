@@ -178,6 +178,10 @@ body {
     padding-top: 3vw;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); }
+  .banner1 .arrow {
+    bottom: 0;
+    right: 48%;
+    position: absolute; }
 
 .banner1-darken {
   background: url("https://s3-us-west-1.amazonaws.com/madison-mckinley/banner-images/homepage1-dark.jpg") center;
@@ -195,8 +199,7 @@ body {
   min-height: 50vh;
   box-shadow: 1px 1px 2px 0px rgba(170, 170, 170, 0.4), -1px -1px 2px 0px rgba(170, 170, 170, 0.4);
   position: relative;
-  border-bottom: 5px solid #B89F83;
-  border-top: 5px solid #B89F83; }
+  margin: 10px; }
   .banner2 .content {
     width: 40vw;
     height: 20vh;
@@ -228,7 +231,8 @@ body {
   background-size: cover;
   min-height: 50vh;
   box-shadow: 1px 1px 2px 0px rgba(170, 170, 170, 0.4), -1px -1px 2px 0px rgba(170, 170, 170, 0.4);
-  position: relative; }
+  position: relative;
+  margin: 10px; }
   .banner3 .content {
     height: 50vh;
     width: 75vw;
@@ -335,6 +339,9 @@ body {
       bottom: 0;
       right: 48%;
       position: absolute; }
+
+  .content {
+    visibility: visible; }
 
   .banner1-darken {
     background: url("https://s3-us-west-1.amazonaws.com/madison-mckinley/banner-images/homepage1-dark.jpg") center;
@@ -490,16 +497,19 @@ body {
       width: auto; } }
 iframe {
   width: 100%;
-  height: 600px; }
+  height: auto;
+  margin: 10px; }
 
 video {
   width: 100%;
   height: 100%;
-  border-bottom: 5px solid #B89F83; }
+  border-bottom: 5px solid #B89F83;
+  visibility: collapse; }
 
 .homepage-video {
   position: relative;
-  box-shadow: 1px 1px 6px 0px rgba(0, 0, 0, 0.2), -1px -1px 6px 0px rgba(0, 0, 0, 0.2); }
+  box-shadow: 1px 1px 6px 0px rgba(0, 0, 0, 0.2), -1px -1px 6px 0px rgba(0, 0, 0, 0.2);
+  opacity: 1; }
   .homepage-video .video-text {
     visibility: hidden;
     top: 0;
@@ -558,7 +568,8 @@ video {
   video {
     width: 100%;
     transform: translateY(1px);
-    border: none; }
+    border: none;
+    visibility: visible; }
 
   .homepage-video {
     margin: 5vw;
@@ -623,26 +634,55 @@ video {
     font-size: 4vw;
     text-align: center;
     text-wrap: normal;
-    padding-top: 5vh; }
+    padding-top: 15px; }
 
 .horizontal-slider {
   overflow: auto;
+  visibility: visible;
   margin: 5vh;
   margin-bottom: 0;
-  min-height: 45vh;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center; }
-  .horizontal-slider img {
-    width: 250px; }
   .horizontal-slider .product-quick-info {
     margin-right: 35px; }
 
 .slider {
   margin: 20px;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  visibility: collapse; }
 
+@media (min-width: 576px) {
+  .slider-text {
+    font-family: "Lulo Clean", "lulo_cleanone", serif;
+    color: #A33F23;
+    width: 100vw; }
+    .slider-text h2 {
+      font-size: 4vw;
+      text-align: center;
+      text-wrap: normal;
+      padding-top: 5vh; }
+
+  .horizontal-slider {
+    overflow: auto;
+    visibility: visible;
+    margin: 5vh;
+    margin-bottom: 0;
+    min-height: 55vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center; }
+    .horizontal-slider img {
+      width: 250px; }
+    .horizontal-slider .product-quick-info {
+      margin-right: 35px; }
+
+  .slider {
+    margin: 20px;
+    margin-bottom: 0;
+    visibility: visible; } }
 .filter-bar {
   background-color: white;
   padding-top: 5vh; }
@@ -805,7 +845,8 @@ select.form-control {
     font-size: 4vw; }
     .footer .links a {
       color: white;
-      padding: 5px; }
+      padding: 5px;
+      text-align: center; }
     .footer .links .social {
       display: flex;
       flex-direction: row;
@@ -823,13 +864,14 @@ select.form-control {
       color: white;
       padding-bottom: 2vh;
       font-size: 4vw;
-      line-height: 1.5; }
+      line-height: 1.5;
+      text-align: center; }
     .footer .email form input {
       margin-bottom: 2vh;
       background-color: rgba(255, 255, 255, 0);
       color: white;
       font-family: "Lulo Clean", "lulo_cleanone", serif;
-      font-size: 1.5vw; }
+      font-size: 12px; }
     .footer .email form input::placeholder {
       color: white; }
     .footer .email form .form-control {
@@ -841,6 +883,7 @@ select.form-control {
       font-family: "Lulo Clean", "lulo_cleanone", serif;
       border-radius: 0;
       border: none;
+      font-size: 12px;
       background-color: white; }
   .footer .footer-bar {
     display: flex;
@@ -870,7 +913,8 @@ select.form-control {
       color: white;
       font-size: 1.5vw; }
       .footer .links a {
-        color: white; }
+        color: white;
+        text-align: left; }
       .footer .links .social {
         display: flex;
         flex-direction: row;
@@ -890,7 +934,8 @@ select.form-control {
         color: white;
         padding-bottom: 2vh;
         font-size: 1.5vw;
-        line-height: 1.5; }
+        line-height: 1.5;
+        text-align: left; }
       .footer .email form input {
         margin-bottom: 2vh;
         background-color: rgba(255, 255, 255, 0);
@@ -959,14 +1004,14 @@ select.form-control {
   top: 0;
   right: 0;
   padding: 15px;
-  font-size: 30px; }
+  font-size: 24px; }
 .scroll-nav h1 {
   position: absolute;
   top: 0;
   left: 0;
   color: #A33F23;
   padding: 15px;
-  font-size: 8vw;
+  font-size: 24px;
   font-family: "Colonna MT", arial;
   letter-spacing: 2px;
   transition: font-size 1s ease;

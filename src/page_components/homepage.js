@@ -108,6 +108,7 @@ class Homepage extends Component {
         </div>
     )
     }
+    console.log(screen.width)
     return (
       <div className='homepage animated fadeIn'>
         { window.innerWidth < 576 || this.state.scrollNav ? (
@@ -134,12 +135,12 @@ class Homepage extends Component {
           <h4 className='arrow'><i className="fa fa-angle-down"></i></h4>
         </Row>
         <div className='content'>
-        { this.state.favorites.length > 0 &&
+        { this.state.favorites.length > 0 && window.innerWidth > 768 &&
           <ProductSlider
           addToCart={this.addToCart}
           products={this.state.favorites} />
         }
-        {this.state.playBrandVideo ? (
+        {this.state.playBrandVideo || window.innerWidth < 768 ?  (
           <Row noGutters>
             <iframe src="https://player.vimeo.com/video/209853714?autoplay=1&loop=1&autopause=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
           </Row>

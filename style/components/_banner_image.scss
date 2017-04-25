@@ -27,6 +27,11 @@
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
   }
+  .arrow {
+    bottom: 0;
+    right: 48%;
+    position: absolute;
+  }
 }
 
 .banner1-darken{
@@ -50,8 +55,7 @@
   min-height: 50vh;
   box-shadow: 1px 1px 2px 0px rgba(170,170,170,0.4), -1px -1px 2px 0px rgba(170,170,170,0.4);
   position: relative;
-  border-bottom: 5px solid $brown;
-  border-top: 5px solid $brown;
+  margin: 10px;
   .content {
     width: 40vw;
     height:20vh;
@@ -89,6 +93,7 @@
   min-height: 50vh;
   box-shadow: 1px 1px 2px 0px rgba(170,170,170,0.4), -1px -1px 2px 0px rgba(170,170,170,0.4);
   position: relative;
+  margin: 10px;
   .content {
     height: 50vh;
     width: 75vw;
@@ -218,6 +223,10 @@
       right: 48%;
       position: absolute;
     }
+  }
+
+  .content {
+    visibility: visible;
   }
 
   .banner1-darken{

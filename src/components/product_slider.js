@@ -42,7 +42,7 @@ export default class ProductSlider extends Component {
 
   render() {
     return (
-      <div>
+      <div className='slider'>
         <div className='slider-text'>
           <h2>{"Madison's Favorites"}</h2>
         </div>

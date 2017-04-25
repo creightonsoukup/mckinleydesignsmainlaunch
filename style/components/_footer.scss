@@ -15,6 +15,7 @@
     a {
       color: white;
       padding: 5px;
+      text-align: center;
     }
     .social {
       display: flex;
@@ -38,6 +39,7 @@
       padding-bottom: 2vh;
       font-size: 4vw;
       line-height: 1.5;
+      text-align: center;
     }
     form {
       input {
@@ -45,7 +47,7 @@
         background-color: rgba(255, 255, 255, 0);
         color: white;
         font-family: $header-text;
-        font-size: 1.5vw;
+        font-size: 12px;
       }
       input::placeholder {
         color: white;
@@ -61,6 +63,7 @@
         font-family: $header-text;
         border-radius: 0;
         border: none;
+        font-size: 12px;
         background-color: rgba(255, 255, 255, 1);
       }
     }
@@ -99,6 +102,7 @@
       font-size: 1.5vw;
       a {
         color: white;
+        text-align: left;
       }
       .social {
         display: flex;
@@ -125,6 +129,7 @@
         padding-bottom: 2vh;
         font-size: 1.5vw;
         line-height: 1.5;
+        text-align: left;
       }
       form {
         input {
