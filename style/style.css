@@ -1165,12 +1165,12 @@ select.form-control {
 
 .menu {
   z-index: 30000;
-  width: 70vw;
+  width: 80vw;
   height: 100vh;
   position: fixed;
   top: 0;
   padding-top: 55px;
-  left: 15vw;
+  left: 10vw;
   background-color: #B89F83;
   box-shadow: -1px 0 3px 0px rgba(0, 0, 0, 0.3), 1px 0 3px 0 rgba(0, 0, 0, 0.3);
   display: flex;
@@ -1179,9 +1179,9 @@ select.form-control {
   justify-content: center;
   font-family: "Lulo Clean", "lulo_cleanone", serif;
   color: white;
-  font-size: 1.5vw; }
+  font-size: 12px; }
   .menu h2 {
-    font-size: 2vw;
+    font-size: 16px;
     color: white; }
   .menu .close-menu {
     position: absolute;
@@ -1189,7 +1189,8 @@ select.form-control {
     top: 5%; }
   .menu h6 {
     display: inline-block;
-    font-size: 11px; }
+    font-size: 11px;
+    padding-left: 5px; }
   .menu .shop {
     padding-left: 10vw;
     padding-right: 10vw;
@@ -1197,13 +1198,13 @@ select.form-control {
     .menu .shop div {
       padding-bottom: 20px; }
   .menu i {
-    font-size: 3vw; }
+    font-size: 20px; }
   .menu a {
     width: 100%;
-    padding-bottom: 3vh;
+    padding-bottom: 5px;
     color: white;
     font-family: "Lulo Clean", "lulo_cleanone", serif;
-    font-size: 1.5vw;
+    font-size: 12px;
     transition: all .3s ease-in-out;
     text-decoration: none; }
   .menu img {
@@ -1211,14 +1212,10 @@ select.form-control {
     max-width: 15vw;
     padding-top: 5vh; }
   .menu .social i {
-    font-size: 3vw;
+    font-size: 20px;
     padding-left: 1vw;
     padding-right: 1vw;
     transition: all .3s ease-in-out; }
-  .menu .social i:hover {
-    font-size: 3.2vw; }
-  .menu a:hover {
-    font-size: 1.6vw; }
   .menu .close-menu {
     color: white;
     font-family: "Lulo Clean", "lulo_cleanone", serif;
@@ -1243,7 +1240,7 @@ select.form-control {
 
 .cart {
   z-index: 30000;
-  width: 70vw;
+  width: 90vw;
   height: 100vh;
   position: fixed;
   top: 0;
@@ -1262,12 +1259,12 @@ select.form-control {
     padding-bottom: 3vh; }
     .cart .cart-header h1 {
       color: white;
-      font-size: 2vw;
+      font-size: 16px;
       padding: 2px; }
     .cart .cart-header i {
       color: white;
       padding: 2px;
-      font-size: 2vw; }
+      font-size: 16px; }
   .cart .cart-body {
     background-color: white;
     margin-left: 5vw;
@@ -1300,10 +1297,10 @@ select.form-control {
     flex-direction: column;
     justify-content: space-around; }
     .cart .empty-cart h2 {
-      font-size: 2vw;
+      font-size: 14px;
       color: white; }
     .cart .empty-cart h3 {
-      font-size: 1.5vw;
+      font-size: 12px;
       color: white; }
     .cart .empty-cart a {
       text-decoration: none;
@@ -1325,27 +1322,215 @@ select.form-control {
   padding-top: 12px;
   font-family: "Lulo Clean", "lulo_cleanone", serif;
   color: white;
-  font-size: 1.5vw;
-  max-height: 40px; }
-
-.button-trans:hover {
-  background: white;
-  color: #B89F83; }
+  font-size: 12px;
+  max-height: 40px;
+  margin: 5px; }
 
 .cart-footer {
   margin-left: 5vw;
   margin-right: 5vw;
   margin-top: 5vh;
   display: flex;
-  justify-content: space-between; }
+  flex-direction: column;
+  justify-content: space-around; }
   .cart-footer .subtotal h3 {
     color: white;
     font-family: "Lulo Clean", "lulo_cleanone", serif;
     padding: 10px;
     padding-top: 12px;
-    font-size: 1.5vw;
+    font-size: 12px;
     text-align: right; }
 
+@media (min-width: 768px) {
+  .open {
+    width: 100%; }
+
+  .close {
+    width: 0%; }
+
+  .menu {
+    z-index: 30000;
+    width: 70vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    padding-top: 55px;
+    left: 15vw;
+    background-color: #B89F83;
+    box-shadow: -1px 0 3px 0px rgba(0, 0, 0, 0.3), 1px 0 3px 0 rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    font-family: "Lulo Clean", "lulo_cleanone", serif;
+    color: white;
+    font-size: 1.5vw; }
+    .menu h2 {
+      font-size: 2vw;
+      color: white; }
+    .menu .close-menu {
+      position: absolute;
+      left: 45%;
+      top: 5%; }
+    .menu h6 {
+      display: inline-block;
+      font-size: 11px; }
+    .menu .shop {
+      padding-left: 10vw;
+      padding-right: 10vw;
+      padding-top: 20px; }
+      .menu .shop div {
+        padding-bottom: 20px; }
+    .menu i {
+      font-size: 3vw; }
+    .menu a {
+      width: 100%;
+      padding-bottom: 3vh;
+      color: white;
+      font-family: "Lulo Clean", "lulo_cleanone", serif;
+      font-size: 1.5vw;
+      transition: all .3s ease-in-out;
+      text-decoration: none; }
+    .menu img {
+      height: auto;
+      max-width: 15vw;
+      padding-top: 5vh; }
+    .menu .social i {
+      font-size: 3vw;
+      padding-left: 1vw;
+      padding-right: 1vw;
+      transition: all .3s ease-in-out; }
+    .menu .social i:hover {
+      font-size: 3.2vw; }
+    .menu a:hover {
+      font-size: 1.6vw; }
+    .menu .close-menu {
+      color: white;
+      font-family: "Lulo Clean", "lulo_cleanone", serif;
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      padding-bottom: 6vh; }
+      .menu .close-menu i {
+        color: white;
+        padding-right: 1vw; }
+      .menu .close-menu p {
+        font-family: "Lulo Clean", "lulo_cleanone", serif; }
+
+  .menu-background {
+    width: 100vw;
+    height: 100vh;
+    z-index: 29999;
+    position: fixed;
+    background-color: rgba(229, 229, 229, 0.8);
+    top: 0;
+    left: 0; }
+
+  .cart {
+    z-index: 30000;
+    width: 70vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #B89F83;
+    font-family: "Open Sans", sans-serif;
+    letter-spacing: 2px;
+    box-shadow: -1px 0 5px 0px rgba(170, 170, 170, 0.5); }
+    .cart .cart-header {
+      display: flex;
+      margin-top: 10vh;
+      padding: 5vh;
+      justify-content: space-between;
+      width: 100%;
+      font-family: "Lulo Clean", "lulo_cleanone", serif;
+      padding-bottom: 3vh; }
+      .cart .cart-header h1 {
+        color: white;
+        font-size: 2vw;
+        padding: 2px; }
+      .cart .cart-header i {
+        color: white;
+        padding: 2px;
+        font-size: 2vw; }
+    .cart .cart-body {
+      background-color: white;
+      margin-left: 5vw;
+      margin-right: 5vw;
+      min-height: 60vh;
+      max-height: 60vh;
+      overflow: scroll;
+      box-shadow: -1px -1px 5px 0px rgba(170, 170, 170, 0.5), 1px 1px 5px 0px rgba(170, 170, 170, 0.5); }
+      .cart .cart-body input {
+        width: 50px;
+        height: 30px; }
+      .cart .cart-body button {
+        border: 0; }
+      .cart .cart-body .lineItem-info {
+        height: 100%;
+        display: flex;
+        flex-direction: column; }
+        .cart .cart-body .lineItem-info h2 {
+          padding-top: 1vh;
+          padding-bottom: 1vh; }
+        .cart .cart-body .lineItem-info h3 {
+          padding-top: 1vh;
+          padding-bottom: 1vh; }
+    .cart .empty-cart {
+      margin: 10vh;
+      font-family: "Lulo Clean", "lulo_cleanone", serif;
+      text-align: center;
+      min-height: 30vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around; }
+      .cart .empty-cart h2 {
+        font-size: 2vw;
+        color: white; }
+      .cart .empty-cart h3 {
+        font-size: 1.5vw;
+        color: white; }
+      .cart .empty-cart a {
+        text-decoration: none;
+        color: white; }
+
+  .cart-background {
+    width: 100vw;
+    height: 100vh;
+    z-index: 29000;
+    position: fixed;
+    background-color: rgba(170, 170, 170, 0.5);
+    top: 0;
+    left: 0; }
+
+  .button-trans {
+    background: transparent;
+    border: 2px solid white;
+    padding: 10px;
+    padding-top: 12px;
+    font-family: "Lulo Clean", "lulo_cleanone", serif;
+    color: white;
+    font-size: 1.5vw;
+    max-height: 40px; }
+
+  .button-trans:hover {
+    background: white;
+    color: #B89F83; }
+
+  .cart-footer {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+    .cart-footer .subtotal h3 {
+      color: white;
+      font-family: "Lulo Clean", "lulo_cleanone", serif;
+      padding: 10px;
+      padding-top: 12px;
+      font-size: 1.5vw;
+      text-align: right; } }
 .all-products {
   background-color: white; }
   .all-products .header {
