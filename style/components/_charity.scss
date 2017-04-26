@@ -1,20 +1,42 @@
 .charity {
   .charity-info {
     background-color: white;
-    width: 100vw;
     min-height: 40vh;
-    font-family: $header-text;
+    font-family: $body-text;
     text-align: center;
     padding-top: 5vh;
+    margin: 5px;
     h4 {
       line-height: 2;
-      font-size: 1vw;
+      font-size: 14px;
       padding-left: 5vw;
       padding-right: 5vw;
       padding-bottom: 3vh;
     }
   }
-  h1 {
-    margin-bottom: 10vh;
+}
+
+@media (min-width: 576px) {
+  .charity {
+    .charity-info {
+      background-color: white;
+      width: 100vw;
+      min-height: 40vh;
+      font-family: $header-text;
+      text-align: center;
+      padding-top: 5vh;
+      margin: 0;
+      h4 {
+        line-height: 2;
+        font-size: 1vw;
+        padding-left: 5vw;
+        padding-right: 5vw;
+        padding-bottom: 3vh;
+      }
+    }
+    h1 {
+      margin-bottom: 10vh;
+    }
   }
+
 }

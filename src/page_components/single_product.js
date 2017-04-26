@@ -93,8 +93,11 @@ class SingleProduct extends Component {
         lineItemCount={this.state.cartLineItems}
         cartOpen={this.state.cartOpen}
         cartData={this.state.cart} />
-        <Row className='single-product'>
+        <Row noGutters className='single-product'>
           <Col xs='12' sm='12' md='6' lg='6' xl='6'>
+            { window.innerWidth < 576 &&
+              <h1 className='mobile-title'>{this.state.product.title}</h1>
+            }
             <ProductGallery
             regular={this.state.imagesReg}
             gallery={this.state.imagesGallery}
@@ -112,6 +115,7 @@ class SingleProduct extends Component {
           </Col>
         </Row>
         <Footer
+        homepage={false}
         show={true} />
       </div>
 

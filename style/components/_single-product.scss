@@ -1,20 +1,18 @@
 .single-product {
-  padding-top: 70px;
-  min-height: 100vh;
+  padding-top: 10px;
   .product-gallery {
     display: flex;
-    padding: 5vh;
     padding-bottom: 0;
     flex-direction: row;
     align-items: center;
-    min-height: 70vh;
     i {
-      font-size: 3vw;
+      font-size: 16px;
       padding: 2vw;
       color: $brown;
+      visibility: collapse;
     }
     img {
-      width: 35vw;
+      width: 90vw;
     }
   }
   .thumbnails {
@@ -29,26 +27,25 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 90vh;
-    padding-top: 5vh;
-    padding-bottom: 5vh;
-    padding-right: 5vw;
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-family: $header-text;
     h2 {
       font-size: 20px;
       color: $brown;
+      visibility: collapse;
     }
     form {
-      max-width: 150px;
       font-size: 12px;
+      padding: 5px;
       h3 {
         padding-bottom: 10px;
       }
       select.form-control {
-        margin-bottom: 10px;
         border: 2px solid $brown;
         font-family: $header-text;
-        width: 150px;
+        width: 80%;
+        margin: 5px;
         border-radius: 3px;
         overflow: hidden;
         box-shadow: none;
@@ -65,33 +62,137 @@
     }
     h3 {
       font-size: 12px;
+      padding: 10px;
     }
     .add-to-cart-btn {
-      padding: 7px;
-      padding-top: 9px;
+      padding: 10px;
+      padding-top: 15px;
       border: 2px solid $brown;
       color: $brown;
       transition: background 1s ease, color 1s ease;
       font-size: 12px;
       text-align: center;
+      align-self: center;
       width: 200px;
-    }
-    .add-to-cart-btn:hover {
-      border: 2px solid $brown;
-      color: white;
-      background: $brown;
-
+      padding: 5px;
+      margin: 5px;
+      min-height: 30px;
     }
     p {
-      font-family: $header-text;
+      font-family: $body-text;
       line-height: 1.5;
-      font-size: 12px;
+      font-size: 16px;
       display: block;
-      padding-bottom: 10px;
+      margin: 10px;
     }
   }
 }
 
 .product-footer {
   visibility: collapse;
+}
+
+@media (min-width: 576px) {
+  .single-product {
+    padding-top: 70px;
+    min-height: 100vh;
+    .product-gallery {
+      display: flex;
+      padding: 5vh;
+      padding-bottom: 0;
+      flex-direction: row;
+      align-items: center;
+      min-height: 70vh;
+      i {
+        font-size: 3vw;
+        padding: 2vw;
+        color: $brown;
+      }
+      img {
+        width: 35vw;
+      }
+    }
+    .thumbnails {
+      display: flex;
+      justify-content: center;
+      img {
+        padding-left: 1vw;
+        padding-right: 1vw;
+      }
+    }
+    .product-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 90vh;
+      padding-bottom: 5vh;
+      padding-right: 5vw;
+      font-family: $header-text;
+      h2 {
+        font-size: 20px;
+        visibility: visible;
+        margin: 10px;
+        color: $brown;
+        padding-bottom: 10px;
+      }
+      form {
+        max-width: 150px;
+        font-size: 12px;
+        h3 {
+          padding-bottom: 10px;
+          font-size: 10px;
+        }
+        select.form-control {
+          margin-bottom: 10px;
+          border: 2px solid $brown;
+          font-family: $header-text;
+          width: 150px;
+          border-radius: 3px;
+          overflow: hidden;
+          box-shadow: none;
+          background-image: none;
+          padding: 5px 8px;
+          background: transparent;
+          -webkit-appearance: none;
+          color: $brown;
+          font-size: 12px;
+          select:focus {
+            outline: none;
+          }
+        }
+      }
+      h3 {
+        font-size: 12px;
+        padding-bottom: 10px;
+      }
+      .add-to-cart-btn {
+        padding: 7px;
+        padding-top: 9px;
+        border: 2px solid $brown;
+        color: $brown;
+        transition: background 1s ease, color 1s ease;
+        font-size: 12px;
+        text-align: center;
+        width: 200px;
+      }
+      .add-to-cart-btn:hover {
+        border: 2px solid $brown;
+        color: white;
+        background: $brown;
+
+      }
+      p {
+        font-family: $header-text;
+        line-height: 1.5;
+        font-size: 12px;
+        display: block;
+        padding-bottom: 10px;
+      }
+    }
+  }
+
+  .product-footer {
+    visibility: collapse;
+  }
+
 }

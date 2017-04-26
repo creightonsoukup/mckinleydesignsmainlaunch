@@ -1234,21 +1234,19 @@ select.form-control {
       .scroll-nav .nav-items .nav-links-left a i {
         font-size: 2vw; } }
 .single-product {
-  padding-top: 70px;
-  min-height: 100vh; }
+  padding-top: 10px; }
   .single-product .product-gallery {
     display: flex;
-    padding: 5vh;
     padding-bottom: 0;
     flex-direction: row;
-    align-items: center;
-    min-height: 70vh; }
+    align-items: center; }
     .single-product .product-gallery i {
-      font-size: 3vw;
+      font-size: 16px;
       padding: 2vw;
-      color: #B89F83; }
+      color: #B89F83;
+      visibility: collapse; }
     .single-product .product-gallery img {
-      width: 35vw; }
+      width: 90vw; }
   .single-product .thumbnails {
     display: flex;
     justify-content: center; }
@@ -1259,24 +1257,23 @@ select.form-control {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 90vh;
-    padding-top: 5vh;
-    padding-bottom: 5vh;
-    padding-right: 5vw;
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-family: "Lulo Clean", "lulo_cleanone", serif; }
     .single-product .product-info h2 {
       font-size: 20px;
-      color: #B89F83; }
+      color: #B89F83;
+      visibility: collapse; }
     .single-product .product-info form {
-      max-width: 150px;
-      font-size: 12px; }
+      font-size: 12px;
+      padding: 5px; }
       .single-product .product-info form h3 {
         padding-bottom: 10px; }
       .single-product .product-info form select.form-control {
-        margin-bottom: 10px;
         border: 2px solid #B89F83;
         font-family: "Lulo Clean", "lulo_cleanone", serif;
-        width: 150px;
+        width: 80%;
+        margin: 5px;
         border-radius: 3px;
         overflow: hidden;
         box-shadow: none;
@@ -1289,30 +1286,115 @@ select.form-control {
         .single-product .product-info form select.form-control select:focus {
           outline: none; }
     .single-product .product-info h3 {
-      font-size: 12px; }
+      font-size: 12px;
+      padding: 10px; }
     .single-product .product-info .add-to-cart-btn {
-      padding: 7px;
-      padding-top: 9px;
+      padding: 10px;
+      padding-top: 15px;
       border: 2px solid #B89F83;
       color: #B89F83;
       transition: background 1s ease, color 1s ease;
       font-size: 12px;
       text-align: center;
-      width: 200px; }
-    .single-product .product-info .add-to-cart-btn:hover {
-      border: 2px solid #B89F83;
-      color: white;
-      background: #B89F83; }
+      align-self: center;
+      width: 200px;
+      padding: 5px;
+      margin: 5px;
+      min-height: 30px; }
     .single-product .product-info p {
-      font-family: "Lulo Clean", "lulo_cleanone", serif;
+      font-family: "Open Sans", sans-serif;
       line-height: 1.5;
-      font-size: 12px;
+      font-size: 16px;
       display: block;
-      padding-bottom: 10px; }
+      margin: 10px; }
 
 .product-footer {
   visibility: collapse; }
 
+@media (min-width: 576px) {
+  .single-product {
+    padding-top: 70px;
+    min-height: 100vh; }
+    .single-product .product-gallery {
+      display: flex;
+      padding: 5vh;
+      padding-bottom: 0;
+      flex-direction: row;
+      align-items: center;
+      min-height: 70vh; }
+      .single-product .product-gallery i {
+        font-size: 3vw;
+        padding: 2vw;
+        color: #B89F83; }
+      .single-product .product-gallery img {
+        width: 35vw; }
+    .single-product .thumbnails {
+      display: flex;
+      justify-content: center; }
+      .single-product .thumbnails img {
+        padding-left: 1vw;
+        padding-right: 1vw; }
+    .single-product .product-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 90vh;
+      padding-bottom: 5vh;
+      padding-right: 5vw;
+      font-family: "Lulo Clean", "lulo_cleanone", serif; }
+      .single-product .product-info h2 {
+        font-size: 20px;
+        visibility: visible;
+        margin: 10px;
+        color: #B89F83;
+        padding-bottom: 10px; }
+      .single-product .product-info form {
+        max-width: 150px;
+        font-size: 12px; }
+        .single-product .product-info form h3 {
+          padding-bottom: 10px;
+          font-size: 10px; }
+        .single-product .product-info form select.form-control {
+          margin-bottom: 10px;
+          border: 2px solid #B89F83;
+          font-family: "Lulo Clean", "lulo_cleanone", serif;
+          width: 150px;
+          border-radius: 3px;
+          overflow: hidden;
+          box-shadow: none;
+          background-image: none;
+          padding: 5px 8px;
+          background: transparent;
+          -webkit-appearance: none;
+          color: #B89F83;
+          font-size: 12px; }
+          .single-product .product-info form select.form-control select:focus {
+            outline: none; }
+      .single-product .product-info h3 {
+        font-size: 12px;
+        padding-bottom: 10px; }
+      .single-product .product-info .add-to-cart-btn {
+        padding: 7px;
+        padding-top: 9px;
+        border: 2px solid #B89F83;
+        color: #B89F83;
+        transition: background 1s ease, color 1s ease;
+        font-size: 12px;
+        text-align: center;
+        width: 200px; }
+      .single-product .product-info .add-to-cart-btn:hover {
+        border: 2px solid #B89F83;
+        color: white;
+        background: #B89F83; }
+      .single-product .product-info p {
+        font-family: "Lulo Clean", "lulo_cleanone", serif;
+        line-height: 1.5;
+        font-size: 12px;
+        display: block;
+        padding-bottom: 10px; }
+
+  .product-footer {
+    visibility: collapse; } }
 .open {
   width: 100%; }
 
@@ -1945,20 +2027,35 @@ select.form-control {
 
 .charity .charity-info {
   background-color: white;
-  width: 100vw;
   min-height: 40vh;
-  font-family: "Lulo Clean", "lulo_cleanone", serif;
+  font-family: "Open Sans", sans-serif;
   text-align: center;
-  padding-top: 5vh; }
+  padding-top: 5vh;
+  margin: 5px; }
   .charity .charity-info h4 {
     line-height: 2;
-    font-size: 1vw;
+    font-size: 14px;
     padding-left: 5vw;
     padding-right: 5vw;
     padding-bottom: 3vh; }
-.charity h1 {
-  margin-bottom: 10vh; }
 
+@media (min-width: 576px) {
+  .charity .charity-info {
+    background-color: white;
+    width: 100vw;
+    min-height: 40vh;
+    font-family: "Lulo Clean", "lulo_cleanone", serif;
+    text-align: center;
+    padding-top: 5vh;
+    margin: 0; }
+    .charity .charity-info h4 {
+      line-height: 2;
+      font-size: 1vw;
+      padding-left: 5vw;
+      padding-right: 5vw;
+      padding-bottom: 3vh; }
+  .charity h1 {
+    margin-bottom: 10vh; } }
 .team h1 {
   font-size: 5vw;
   margin-bottom: 10vh; }
