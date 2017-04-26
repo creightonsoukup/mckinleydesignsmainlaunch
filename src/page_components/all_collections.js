@@ -40,7 +40,11 @@ class AllCollections extends Component {
         lineItemCount={this.state.cartLineItems}
         cartOpen={this.state.cartOpen}
         cartData={this.state.cart}/>
-        <SlimVideoPlayer loop={true} video={video}/>
+        { window.innerWidth < 576 ? (
+          <h1 className='title'>Collections</h1>
+        ) : (
+          <SlimVideoPlayer loop={true} video={video}/>
+        )}
         <CollectionList
         collections={this.props.collectionContent}/>
         <Footer

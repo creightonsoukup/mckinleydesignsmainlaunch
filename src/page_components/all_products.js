@@ -181,10 +181,12 @@ class AllProducts extends Component {
       topOffset={'-20%'}
       onEnter={this.navOnEnter}
       onLeave={this.navOnLeave}/>
-      <Row noGutters className='banner-component animated fadeInDown'>
-        <VideoPlayer
-        video={video} loop={true}/>
-      </Row>
+      { window.innerWidth > 576 &&
+        <Row noGutters className='banner-component animated fadeInDown'>
+          <VideoPlayer
+          video={video} loop={true}/>
+        </Row>
+      }
       <Row noGutters className='header'>
         <h1>Shop Jewelry</h1>
       </Row>

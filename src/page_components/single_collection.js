@@ -280,14 +280,22 @@ class SingleCollection extends Component {
     <Waypoint
     onEnter={this.navOnEnter}
     onLeave={this.navOnLeave}/>
+    { window.innerWidth > 576 &&
       <BannerImage
         fileName={`${this.props.params.collection}.jpg`}/>
+    }
       <div>
-        <Row noGutters className="collection-title">
-          <h1>{this.state.collection.toUpperCase()}</h1>
-        </Row>
-        <CollectionHeader
-        collectionContent={this.state.collectionContent} />
+        { window.innerWidth > 576 ? (
+          <div>
+          <Row noGutters className="collection-title">
+            <h1>{this.state.collection.toUpperCase()}</h1>
+          </Row>
+          <CollectionHeader
+          collectionContent={this.state.collectionContent} />
+          </div>
+        ) : (
+          <h1 className='mobile-title'>{this.state.collection.toUpperCase()}</h1>
+        )}
         <FilterBar
         showSearchBar={false}
         sortProducts={this.sortProducts}

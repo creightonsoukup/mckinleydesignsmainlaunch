@@ -1,8 +1,8 @@
 .all-products {
   background-color: white;
   .header {
-    font-size: 4vw;
-    margin-top: 80vh;
+    font-size: 20px;
+    margin-top: 70px;
     font-family: $header-text;
     text-align: center;
     background-color: white;
@@ -13,4 +13,24 @@
       padding-top: 35px;
     }
   }
+}
+
+@media (min-width: 768px) {
+  .all-products {
+    background-color: white;
+    .header {
+      font-size: 4vw;
+      margin-top: 80vh;
+      font-family: $header-text;
+      text-align: center;
+      background-color: white;
+      h1 {
+        margin: auto;
+        color: $red-brown;
+        background-color: white;
+        padding-top: 35px;
+      }
+    }
+  }
+
 }
