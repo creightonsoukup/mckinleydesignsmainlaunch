@@ -151,8 +151,8 @@ class Homepage extends Component {
                 <Waypoint
                 onEnter={this.showVideoAnimation}/>
                 <h2>Love Your Freedom</h2>
-                <h2>Live Your Moment</h2>
-                <h2>Own Your Vision</h2>
+                <h2>Own Your Moment</h2>
+                <h2>Live Your Vision</h2>
               </div>
               <div className="text-block-2">
                 <h2>Brand Video</h2>
