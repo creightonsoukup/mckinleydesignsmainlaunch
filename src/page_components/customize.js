@@ -12,6 +12,8 @@ import { Row, Container } from 'reactstrap'
 import async from 'async';
 import update from 'react-addons-update';
 import CustomizeSummary from '../components/customize-summary'
+import CustomizeLoader from '../components/customize_loader'
+
 
 class Customize extends Component {
   constructor(props) {
@@ -146,19 +148,25 @@ class Customize extends Component {
         { this.state.start &&
           <div className='start'>
           { window.innerWidth < 576 || this.state.scrollNav ? (
+            <div>
             <NavbarScroll
             lineItemCount={this.state.cartLineItems}
             cartOpen={this.state.cartOpen}
             cartData={this.state.cart}/>
+            <CustomizeLoader
+            start={this.showPendants} />
+            </div>
           ) : (
+            <div>
             <Navigation
             lineItemCount={this.state.cartLineItems}
             cartOpen={this.state.cartOpen}
             cartData={this.state.cart}/>
-          )}
             <CustomizeStart
             start={this.showPendants}/>
             </div>
+          )}
+          </div>
         }
         { this.state.showPendants &&
             <div>
@@ -229,7 +237,7 @@ class Customize extends Component {
           </div>
         }
         <Footer
-        homepage={false}
+        homepage={true}
         show={true}/>
       </div>
     )

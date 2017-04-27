@@ -35,7 +35,7 @@ export default class TeamList extends Component {
 
   render() {
     return (
-      <Row className='team-list'>
+      <Row noGutters className='team-list'>
         {this.props.team.map(this.renderTeam)}
       </Row>
     )

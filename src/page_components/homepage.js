@@ -141,7 +141,7 @@ class Homepage extends Component {
           products={this.state.favorites} />
         }
         {this.state.playBrandVideo || window.innerWidth < 768 ?  (
-          <Row noGutters>
+          <Row noGutters className='homepage-iframe'>
             <iframe src="https://player.vimeo.com/video/209853714?autoplay=1&loop=1&autopause=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
           </Row>
         ) : (

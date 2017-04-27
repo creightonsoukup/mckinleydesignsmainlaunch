@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import BannerImage from '../components/banner_image'
-import { Container } from 'reactstrap';
+import { Container, Row } from 'reactstrap';
 import Footer from '../components/footer'
 import Navbar from '../components/navbar'
 import CharityInfo from '../components/charity-info'
@@ -10,15 +10,15 @@ class Charity extends Component {
   render() {
     return (
       <div className='charity'>
-      { window.innerWidth > 576 ? (
+      { window.innerWidth > 786 ? (
         <div>
         <Navbar/>
         <BannerImage
             fileName={'charity.jpg'}/>
-        <Container fluid >
+        <Row noGutters >
               <h1 className="collection-title">{('Charity').toUpperCase()}</h1>
               <CharityInfo />
-        </Container>
+        </Row>
         </div>
       ) : (
         <div>

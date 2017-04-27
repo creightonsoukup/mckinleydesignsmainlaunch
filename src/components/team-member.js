@@ -4,7 +4,7 @@ import { Row, Col } from 'reactstrap'
 const TeamMember = (props) => {
   const handle = props.member.name.toLowerCase().split(' ').join('+')
   return (
-    <Row className='member'>
+    <Row noGuttters className='member'>
       <Col sm='12' md='6' lg='6' xl='6'>
         <img src={`https://s3-us-west-1.amazonaws.com/madison-mckinley/team/${handle}.jpg`}/>
       </Col>

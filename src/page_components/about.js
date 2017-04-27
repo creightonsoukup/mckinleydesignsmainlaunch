@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import {  fetchCart } from '../actions/index'
 import Navigation from '../components/navbar-scroll'
 import VideoPlayer from '../components/video_player'
+import { Row } from 'reactstrap';
 
 class About extends Component {
 
@@ -34,12 +35,12 @@ class About extends Component {
       lineItemCount={this.state.cartLineItems}
       cartOpen={this.state.cartOpen}
       cartData={this.state.cart}/>
-      {this.state.playBrandVideo ? (
-        <div>
+      {this.state.playBrandVideo || window.innerWidth < 786 ? (
+        <Row noGutters>
           <iframe src="https://player.vimeo.com/video/209853714?autoplay=1&loop=1&autopause=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-        </div>
+        </Row>
       ) : (
-        <div className="homepage-video" onClick={() => this.setState({playBrandVideo: true})}>
+        <Row noGutters className="homepage-video" onClick={() => this.setState({playBrandVideo: true})}>
           <div className="video-text" >
             <div className="text-block-2">
             <h2>Brand Video</h2>
@@ -51,14 +52,15 @@ class About extends Component {
           <div>
             <VideoPlayer loop={true} video={placeholderVideo} playVideo={this.playBrandVideo}/>
           </div>
-        </div>
+        </Row>
       )}
-      <div className="logo">
+      <Row noGutters className="logo">
         <img src={logo} />
-      </div>
-      <div className='about'>
-      </div>
+      </Row>
+      <Row noGutters className='about'>
+      </Row>
       <Footer
+      homepage={false}
       show={true}/>
       </div>
     )

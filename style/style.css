@@ -1246,7 +1246,8 @@ select.form-control {
       color: #B89F83;
       visibility: collapse; }
     .single-product .product-gallery img {
-      width: 90vw; }
+      width: 90vw;
+      padding-top: 10px; }
   .single-product .thumbnails {
     display: flex;
     justify-content: center; }
@@ -1803,14 +1804,16 @@ select.form-control {
   margin-top: 100px;
   font-family: "Lulo Clean", "lulo_cleanone", serif;
   line-height: 2;
-  font-size: 16px;
+  font-size: 12px;
   color: #B89F83;
   text-align: center;
-  padding-left: 20vw;
-  padding-right: 20vw; }
+  padding-left: 10px;
+  padding-right: 10px; }
 .customize .customize-intro {
   background-color: white;
-  min-height: 30vh; }
+  min-height: 500px; }
+  .customize .customize-intro .mobile-title {
+    padding-top: 100px; }
   .customize .customize-intro .text {
     display: flex;
     flex-direction: column;
@@ -1861,14 +1864,14 @@ select.form-control {
     margin: 5px; }
   .customize .cust-slider img {
     height: auto;
-    width: 25vw;
-    margin: 2vw; }
+    min-width: 200px;
+    margin: 0 auto; }
   .customize .cust-slider .slider-product-info {
     text-align: center;
     font-family: "Lulo Clean", "lulo_cleanone", serif; }
     .customize .cust-slider .slider-product-info h1 {
       color: #B89F83;
-      font-size: 1.2vw;
+      font-size: 16px;
       padding-bottom: 10px;
       line-height: 2; }
     .customize .cust-slider .slider-product-info h2 {
@@ -1914,17 +1917,12 @@ select.form-control {
     .customize .cust-slider .slider-product-info .slider-button {
       padding: 7px;
       border: 2px solid #B89F83;
-      font-size: 1vw;
+      font-size: 12px;
       color: #B89F83;
       width: 50%;
       margin: auto;
       margin-top: 10px;
-      margin-bottom: 10px;
-      opacity: 1;
-      visibility: visible; }
-    .customize .cust-slider .slider-product-info .slider-button:hover {
-      color: white;
-      background: #B89F83; }
+      margin-bottom: 10px; }
   .customize .cust-slider .slider-selected {
     border: 2px solid #B89F83; }
     .customize .cust-slider .slider-selected .slider-button {
@@ -1937,14 +1935,15 @@ select.form-control {
   margin-left: 5vw;
   text-align: center; }
   .customize-nav .custom-nav-btn {
-    margin: 0 auto;
-    padding: 7px;
-    padding-bottom: 15px;
+    margin: 10px auto;
+    padding: 15px;
     font-family: "Lulo Clean", "lulo_cleanone", serif;
     color: #B89F83;
-    font-size: 14px; }
+    font-size: 14px;
+    border: 2px solid #B89F83; }
   .customize-nav .btn-selected {
-    border-bottom: 2px solid #B89F83; }
+    background-color: #B89F83;
+    color: white; }
 
 .summary {
   font-family: "Open Sans", sans-serif;
@@ -1957,18 +1956,18 @@ select.form-control {
   .summary h1 {
     font-family: "Lulo Clean", "lulo_cleanone", serif;
     line-height: 2;
-    font-size: 16px;
+    font-size: 12px;
     color: #B89F83;
     text-align: center;
     padding-left: 20vw;
     padding-right: 20vw; }
   .summary th {
     border: none;
-    font-size: 20px; }
+    font-size: 12px; }
   .summary thead th {
     border-bottom: 1px solid #B89F83; }
   .summary tbody {
-    font-size: 16px;
+    font-size: 12px;
     border: none; }
   .summary td {
     border: none; }
@@ -1993,7 +1992,7 @@ select.form-control {
   padding-right: 5vw; }
   .summary-footer h3 {
     color: #B89F83;
-    font-size: 18px;
+    font-size: 12px;
     padding: 10px;
     padding-right: 50px;
     padding-top: 12px; }
@@ -2003,12 +2002,226 @@ select.form-control {
     color: #B89F83;
     font-size: 14px;
     max-height: 40px;
-    font-size: 18px;
-    padding: 10px; }
+    font-size: 10px;
+    padding: 8px; }
   .summary-footer .custom-add:hover {
     background: #B89F83;
     color: white; }
 
+@media (min-width: 576px) {
+  .customize .collection-title {
+    margin-bottom: 20vh; }
+  .customize .select-header {
+    margin-top: 100px;
+    font-family: "Lulo Clean", "lulo_cleanone", serif;
+    line-height: 2;
+    font-size: 16px;
+    color: #B89F83;
+    text-align: center;
+    padding-left: 20vw;
+    padding-right: 20vw; }
+  .customize .customize-intro {
+    background-color: white;
+    min-height: 30vh;
+    margin-top: 0; }
+    .customize .customize-intro .text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 5vh;
+      padding-right: 15vw;
+      padding-left: 15vw;
+      font-family: "Lulo Clean", "lulo_cleanone", serif;
+      line-height: 2;
+      font-size: 20px; }
+      .customize .customize-intro .text h3 {
+        color: #B89F83;
+        text-align: center; }
+    .customize .customize-intro .button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: "Lulo Clean", "lulo_cleanone", serif; }
+      .customize .customize-intro .button div {
+        border: 2px solid #B89F83;
+        padding: 20px;
+        font-size: 14px;
+        max-width: 300px;
+        line-height: 1.5;
+        color: #B89F83;
+        text-align: center; }
+      .customize .customize-intro .button div:hover {
+        background-color: #B89F83;
+        color: white; }
+  .customize .slider-text {
+    font-family: "Lulo Clean", "lulo_cleanone", serif;
+    color: #A33F23;
+    width: 100vw; }
+    .customize .slider-text h2 {
+      font-size: 4vw;
+      text-align: center;
+      text-wrap: normal;
+      padding-top: 5vh; }
+  .customize .cust-slider {
+    margin: 5vh;
+    min-height: 55vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center; }
+    .customize .cust-slider .slider-product {
+      margin: 5px; }
+    .customize .cust-slider img {
+      height: auto;
+      width: 25vw;
+      margin: 2vw; }
+    .customize .cust-slider .slider-product-info {
+      text-align: center;
+      font-family: "Lulo Clean", "lulo_cleanone", serif; }
+      .customize .cust-slider .slider-product-info h1 {
+        color: #B89F83;
+        font-size: 1.2vw;
+        padding-bottom: 10px;
+        line-height: 2; }
+      .customize .cust-slider .slider-product-info h2 {
+        color: #B89F83;
+        font-size: 12px;
+        padding-bottom: 20px; }
+      .customize .cust-slider .slider-product-info select.form-control {
+        margin-bottom: 10px;
+        border: 2px solid #B89F83;
+        font-family: "Lulo Clean", "lulo_cleanone", serif;
+        width: 100px;
+        border-radius: 3px;
+        overflow: hidden;
+        box-shadow: none;
+        background-image: none;
+        padding: 5px 8px;
+        background: transparent;
+        -webkit-appearance: none;
+        color: #B89F83;
+        font-size: 12px; }
+        .customize .cust-slider .slider-product-info select.form-control select:focus {
+          outline: none; }
+      .customize .cust-slider .slider-product-info .quantity {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 50px;
+        padding-right: 50px; }
+        .customize .cust-slider .slider-product-info .quantity h3 {
+          font-size: 12px;
+          padding-right: 20px;
+          color: #B89F83; }
+      .customize .cust-slider .slider-product-info .variants {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 50px;
+        padding-right: 50px; }
+        .customize .cust-slider .slider-product-info .variants h3 {
+          color: #B89F83;
+          font-size: 12px;
+          padding-right: 20px; }
+      .customize .cust-slider .slider-product-info .slider-button {
+        padding: 7px;
+        border: 2px solid #B89F83;
+        font-size: 1vw;
+        color: #B89F83;
+        width: 50%;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        opacity: 1;
+        visibility: visible; }
+      .customize .cust-slider .slider-product-info .slider-button:hover {
+        color: white;
+        background: #B89F83; }
+    .customize .cust-slider .slider-selected {
+      border: 2px solid #B89F83; }
+      .customize .cust-slider .slider-selected .slider-button {
+        color: white;
+        background: #B89F83; }
+
+  .customize-nav {
+    margin-top: 5vh;
+    margin-right: 5vw;
+    margin-left: 5vw;
+    text-align: center; }
+    .customize-nav .custom-nav-btn {
+      margin: 0 auto;
+      padding: 7px;
+      padding-bottom: 15px;
+      font-family: "Lulo Clean", "lulo_cleanone", serif;
+      color: #B89F83;
+      font-size: 14px;
+      border: none; }
+    .customize-nav .btn-selected {
+      border-bottom: 2px solid #B89F83; }
+
+  .summary {
+    font-family: "Open Sans", sans-serif;
+    margin: 5vw;
+    color: #B89F83;
+    border: 1px solid #B89F83;
+    padding: 25px;
+    letter-spacing: 2px;
+    margin-bottom: 0; }
+    .summary h1 {
+      font-family: "Lulo Clean", "lulo_cleanone", serif;
+      line-height: 2;
+      font-size: 16px;
+      color: #B89F83;
+      text-align: center;
+      padding-left: 20vw;
+      padding-right: 20vw; }
+    .summary th {
+      border: none;
+      font-size: 20px; }
+    .summary thead th {
+      border-bottom: 1px solid #B89F83; }
+    .summary tbody {
+      font-size: 16px;
+      border: none; }
+    .summary td {
+      border: none; }
+    .summary .lineItem-info {
+      height: 100%;
+      display: flex;
+      flex-direction: column; }
+      .summary .lineItem-info h2 {
+        padding-top: 1vh;
+        padding-bottom: 1vh; }
+      .summary .lineItem-info h3 {
+        padding-top: 1vh;
+        padding-bottom: 1vh; }
+
+  .summary-footer {
+    display: flex;
+    width: 100vw;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 20px;
+    font-family: "Lulo Clean", "lulo_cleanone", serif;
+    padding-right: 5vw; }
+    .summary-footer h3 {
+      color: #B89F83;
+      font-size: 18px;
+      padding: 10px;
+      padding-right: 50px;
+      padding-top: 12px; }
+    .summary-footer .custom-add {
+      background: transparent;
+      border: 2px solid #B89F83;
+      color: #B89F83;
+      font-size: 14px;
+      max-height: 40px;
+      font-size: 18px;
+      padding: 10px; }
+    .summary-footer .custom-add:hover {
+      background: #B89F83;
+      color: white; } }
 .special-order .special-order-info {
   background-color: white;
   width: 100vw;
@@ -2096,32 +2309,100 @@ select.form-control {
       justify-content: space-around; }
 
 .about {
-  min-height: 1666px;
+  min-height: 1230px;
   max-width: 100%;
   margin: 0 auto;
-  margin-top: 50px;
   background: url("https://s3-us-west-1.amazonaws.com/madison-mckinley/about/ABOUT-THE-BRAND-576.jpg") center center;
   background-size: contain;
   background-repeat: no-repeat; }
 
 .about-background {
-  background-color: #F9F4DC;
-  top: 0;
-  position: absolute; }
-  .about-background iframe {
+  color: #F4EACE;
+  background-color: #F9F4DC; }
+
+iframe {
+  margin-top: 70px; }
+
+.homepage-video {
+  margin: 10px;
+  margin-top: 70px;
+  margin-bottom: 0;
+  position: relative;
+  box-shadow: 1px 1px 6px 0px rgba(0, 0, 0, 0.2), -1px -1px 6px 0px rgba(0, 0, 0, 0.2); }
+  .homepage-video .video-text {
+    top: 0;
+    visibility: visible;
+    left: 0;
+    background-color: rgba(184, 159, 131, 0.5);
+    position: absolute;
+    height: 100%;
     width: 100%;
-    height: 600px; }
-  .about-background video {
-    width: 100%;
-    transform: translateY(1px);
-    border: none; }
-  .about-background .homepage-video {
-    margin: 5vw;
-    margin-top: 15vh;
-    margin-bottom: 5vh;
-    position: relative;
-    box-shadow: 1px 1px 6px 0px rgba(0, 0, 0, 0.2), -1px -1px 6px 0px rgba(0, 0, 0, 0.2); }
-    .about-background .homepage-video .video-text {
+    z-index: 4000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
+    .homepage-video .video-text .text-block-2 h2 {
+      text-align: center;
+      padding-bottom: 20px;
+      padding-top: 200px;
+      font-family: "Lulo Clean", "lulo_cleanone", serif;
+      color: #A33F23;
+      opacity: .8;
+      font-size: 8vw;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
+    .homepage-video .video-text .video-action {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      padding-bottom: 20px; }
+      .homepage-video .video-text .video-action h2 {
+        color: white;
+        font-family: "Lulo Clean", "lulo_cleanone", serif;
+        font-size: 2vw;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
+      .homepage-video .video-text .video-action span {
+        border: 2px solid #B89F83;
+        border-radius: 25px;
+        font-size: 1.5vw;
+        font-family: "Lulo Clean", "lulo_cleanone", serif;
+        color: white;
+        padding: 10px; }
+
+.logo {
+  width: 100vw; }
+  .logo img {
+    height: auto;
+    display: block;
+    margin: auto;
+    max-width: 90vw; }
+
+@media (min-width: 375px) {
+  .about {
+    min-height: 1500px; } }
+@media (min-width: 768px) {
+  .homepage-video {
+    margin: 30px;
+    margin-top: 90px; }
+
+  .about {
+    min-height: 1666px;
+    min-width: 576px;
+    background: url("https://s3-us-west-1.amazonaws.com/madison-mckinley/about/ABOUT-THE-BRAND-576.jpg") center center;
+    background-size: contain;
+    background-repeat: no-repeat; }
+
+  .about-background {
+    background-color: #F9F4DC;
+    top: 0;
+    position: absolute; }
+    .about-background iframe {
+      width: 100%;
+      height: 600px; }
+    .about-background video {
+      width: 100%;
+      transform: translateY(1px);
+      border: none; }
+    .about-background .video-text {
       top: 0;
       visibility: visible;
       left: 0;
@@ -2133,7 +2414,7 @@ select.form-control {
       display: flex;
       flex-direction: column;
       justify-content: space-between; }
-      .about-background .homepage-video .video-text .text-block-2 h2 {
+      .about-background .video-text .text-block-2 h2 {
         text-align: center;
         padding-bottom: 20px;
         padding-top: 200px;
@@ -2142,40 +2423,23 @@ select.form-control {
         opacity: .8;
         font-size: 8vw;
         text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
-      .about-background .homepage-video .video-text .video-action {
+      .about-background .video-text .video-action {
         display: flex;
         justify-content: center;
         align-items: baseline;
         padding-bottom: 20px; }
-        .about-background .homepage-video .video-text .video-action h2 {
+        .about-background .video-text .video-action h2 {
           color: white;
           font-family: "Lulo Clean", "lulo_cleanone", serif;
           font-size: 2vw;
           text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
-        .about-background .homepage-video .video-text .video-action span {
+        .about-background .video-text .video-action span {
           border: 2px solid #B89F83;
           border-radius: 25px;
           font-size: 1.5vw;
           font-family: "Lulo Clean", "lulo_cleanone", serif;
           color: white;
-          padding: 10px; }
-
-.logo {
-  width: 100vw;
-  padding-top: 50px; }
-  .logo img {
-    height: auto;
-    display: block;
-    margin: auto;
-    max-width: 90vw; }
-
-@media (min-width: 576px) {
-  .about {
-    min-height: 1666px;
-    min-width: 576px;
-    background: url("https://s3-us-west-1.amazonaws.com/madison-mckinley/about/ABOUT-THE-BRAND-576.jpg") center center;
-    background-size: contain;
-    background-repeat: no-repeat; } }
+          padding: 10px; } }
 @media (min-width: 768px) {
   .about {
     min-height: 2243px;
@@ -2267,5 +2531,8 @@ body {
   padding-top: 70px;
   font-size: 20px;
   font-family: "Lulo Clean", "lulo_cleanone", serif; }
+
+.homepage-iframe iframe {
+  margin-top: 10px; }
 
 /*# sourceMappingURL=style.css.map */

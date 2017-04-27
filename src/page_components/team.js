@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import BannerImage from '../components/banner_image'
-import { Container } from 'reactstrap';
+import { Container, Row } from 'reactstrap';
 import Footer from '../components/footer'
 import Navbar from '../components/navbar'
 import TeamList from '../components/team-list'
@@ -24,13 +24,29 @@ class Team extends Component {
       ) : (
         <Navbar/>
       )}
-      <BannerImage
-          fileName={'team.jpg'}/>
-      <Container fluid >
-        <h1 className="collection-title">{('Meet The Amazing Humans Behind the Madison Mckinley Team').toUpperCase()}</h1>
+
+      { window.innerWidth > 576 ? (
+        <div>
+        <BannerImage
+            fileName={'team.jpg'}/>
+        <Container fluid >
+        <Row>
+          <h1 className="collection-title">{('Meet The Amazing Humans Behind the Madison Mckinley Team').toUpperCase()}</h1>
+        </Row>
+          <TeamList
+          team={this.props.team[0]} />
+        </Container>
+        </div>
+      ) : (
+        <div>
+        <Row>
+        <h1 className='mobile-title'>{'Meet The Team'}</h1>
+        </Row>
         <TeamList
         team={this.props.team[0]} />
-      </Container>
+        </div>
+      )}
+
       <Footer
       homepage={false}
       show={true}/>

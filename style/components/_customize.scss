@@ -7,15 +7,18 @@
     margin-top: 100px;
     font-family: $header-text;
     line-height: 2;
-    font-size: 16px;
+    font-size: 12px;
     color: $brown;
     text-align: center;
-    padding-left: 20vw;
-    padding-right: 20vw;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   .customize-intro {
+    .mobile-title {
+      padding-top: 100px;
+    }
     background-color: white;
-    min-height: 30vh;
+    min-height: 500px;
     .text {
       display: flex;
       flex-direction: column;
@@ -77,15 +80,15 @@
     }
     img {
       height: auto;
-      width: 25vw;
-      margin: 2vw;
+      min-width: 200px;
+      margin: 0 auto;
     }
     .slider-product-info {
       text-align: center;
       font-family: $header-text;
       h1 {
         color: $brown;
-        font-size: 1.2vw;
+        font-size: 16px;
         padding-bottom: 10px;
         line-height: 2;
       }
@@ -139,18 +142,12 @@
       .slider-button {
         padding: 7px;
         border: 2px solid $brown;
-        font-size: 1vw;
+        font-size: 12px;
         color: $brown;
         width: 50%;
         margin: auto;
         margin-top: 10px;
         margin-bottom: 10px;
-        opacity: 1;
-        visibility: visible;
-      }
-      .slider-button:hover {
-        color: white;
-        background:$brown;
       }
     }
     .slider-selected {
@@ -171,15 +168,16 @@
   margin-left: 5vw;
   text-align: center;
   .custom-nav-btn {
-    margin: 0 auto;
-    padding: 7px;
-    padding-bottom: 15px;
+    margin: 10px auto;
+    padding: 15px;
     font-family: $header-text;
     color: $brown;
     font-size: 14px;
+    border: 2px solid $brown;
   }
   .btn-selected {
-    border-bottom: 2px solid $brown;
+    background-color: $brown;
+    color: white;
   }
 }
 
@@ -194,7 +192,7 @@
   h1 {
     font-family: $header-text;
     line-height: 2;
-    font-size: 16px;
+    font-size: 12px;
     color: $brown;
     text-align: center;
     padding-left: 20vw;
@@ -202,13 +200,13 @@
   }
   th {
     border: none;
-    font-size: 20px;
+    font-size: 12px;
   }
   thead th {
     border-bottom: 1px solid $brown;
   }
   tbody {
-    font-size: 16px;
+    font-size: 12px;
     border: none;
   }
   td {
@@ -238,7 +236,7 @@
   padding-right: 5vw;
   h3 {
     color: $brown;
-    font-size: 18px;
+    font-size: 12px;
     padding: 10px;
     padding-right: 50px;
     padding-top: 12px;
@@ -249,11 +247,276 @@
     color: $brown;
     font-size: 14px;
     max-height: 40px;
-    font-size: 18px;
-    padding: 10px;
+    font-size: 10px;
+    padding: 8px;
   }
   .custom-add:hover {
     background: $brown;
     color: white;
   }
+}
+
+@media (min-width: 576px) {
+  .customize {
+    .collection-title {
+      margin-bottom: 20vh;
+    }
+
+    .select-header {
+      margin-top: 100px;
+      font-family: $header-text;
+      line-height: 2;
+      font-size: 16px;
+      color: $brown;
+      text-align: center;
+      padding-left: 20vw;
+      padding-right: 20vw;
+    }
+    .customize-intro {
+      background-color: white;
+      min-height: 30vh;
+      margin-top: 0;
+      .text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 5vh;
+        padding-right: 15vw;
+        padding-left: 15vw;
+        font-family: $header-text;
+        line-height: 2;
+        font-size: 20px;
+        h3 {
+          color: $brown;
+          text-align: center;
+        }
+      }
+      .button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: $header-text;
+        div {
+          border: 2px solid $brown;
+          padding: 20px;
+          font-size: 14px;
+          max-width: 300px;
+          line-height: 1.5;
+          color: $brown;
+          text-align: center;
+        }
+        div:hover {
+          background-color: $brown;
+          color: white;
+        }
+      }
+    }
+    .slider-text {
+      font-family: $header-text;
+      color: $red-brown;
+      width: 100vw;
+
+      h2 {
+        font-size: 4vw;
+        text-align: center;
+        text-wrap: normal;
+        padding-top: 5vh;
+      }
+    }
+
+    .cust-slider {
+      margin: 5vh;
+      min-height: 55vh;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .slider-product {
+        margin: 5px;
+      }
+      img {
+        height: auto;
+        width: 25vw;
+        margin: 2vw;
+      }
+      .slider-product-info {
+        text-align: center;
+        font-family: $header-text;
+        h1 {
+          color: $brown;
+          font-size: 1.2vw;
+          padding-bottom: 10px;
+          line-height: 2;
+        }
+        h2 {
+          color: $brown;
+          font-size: 12px;
+          padding-bottom: 20px;
+        }
+        select.form-control {
+          margin-bottom: 10px;
+          border: 2px solid $brown;
+          font-family: $header-text;
+          width: 100px;
+          border-radius: 3px;
+          overflow: hidden;
+          box-shadow: none;
+          background-image: none;
+          padding: 5px 8px;
+          background: transparent;
+          -webkit-appearance: none;
+          color: $brown;
+          font-size: 12px;
+          select:focus {
+            outline: none;
+            }
+          }
+          .quantity {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 50px;
+            padding-right: 50px;
+            h3 {
+              font-size: 12px;
+              padding-right: 20px;
+              color: $brown;
+            }
+          }
+          .variants {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 50px;
+            padding-right: 50px;
+            h3 {
+              color: $brown;
+              font-size: 12px;
+              padding-right: 20px;
+            }
+          }
+        .slider-button {
+          padding: 7px;
+          border: 2px solid $brown;
+          font-size: 1vw;
+          color: $brown;
+          width: 50%;
+          margin: auto;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          opacity: 1;
+          visibility: visible;
+        }
+        .slider-button:hover {
+          color: white;
+          background:$brown;
+        }
+      }
+      .slider-selected {
+        border: 2px solid $brown;
+        .slider-button {
+          color: white;
+          background: $brown;
+        }
+      }
+    }
+
+
+  }
+
+  .customize-nav {
+    margin-top: 5vh;
+    margin-right: 5vw;
+    margin-left: 5vw;
+    text-align: center;
+    .custom-nav-btn {
+      margin: 0 auto;
+      padding: 7px;
+      padding-bottom: 15px;
+      font-family: $header-text;
+      color: $brown;
+      font-size: 14px;
+      border: none;
+    }
+    .btn-selected {
+      border-bottom: 2px solid $brown;
+    }
+  }
+
+  .summary  {
+    font-family: $body-text;
+    margin: 5vw;
+    color: $brown;
+    border: 1px solid $brown;
+    padding: 25px;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+    h1 {
+      font-family: $header-text;
+      line-height: 2;
+      font-size: 16px;
+      color: $brown;
+      text-align: center;
+      padding-left: 20vw;
+      padding-right: 20vw;
+    }
+    th {
+      border: none;
+      font-size: 20px;
+    }
+    thead th {
+      border-bottom: 1px solid $brown;
+    }
+    tbody {
+      font-size: 16px;
+      border: none;
+    }
+    td {
+      border: none;
+    }
+    .lineItem-info {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      h2  {
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+      }
+      h3 {
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+      }
+    }
+  }
+  .summary-footer {
+    display: flex;
+    width: 100vw;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 20px;
+    font-family: $header-text;
+    padding-right: 5vw;
+    h3 {
+      color: $brown;
+      font-size: 18px;
+      padding: 10px;
+      padding-right: 50px;
+      padding-top: 12px;
+    }
+    .custom-add {
+      background: rgba(0,0,0,0);
+      border: 2px solid $brown;
+      color: $brown;
+      font-size: 14px;
+      max-height: 40px;
+      font-size: 18px;
+      padding: 10px;
+    }
+    .custom-add:hover {
+      background: $brown;
+      color: white;
+    }
+  }
+
 }
