@@ -9,7 +9,7 @@ const CustomizeNav = (props, event) => {
           <div className='custom-nav-btn'
           value={'pendants'}
           onClick={props.showPendants}
-          >Choose Pendant</div>
+          >Pick Your Pendant</div>
           { props.pendants &&
             <div className='btn-selected'></div>
           }
@@ -18,7 +18,7 @@ const CustomizeNav = (props, event) => {
           <div className='custom-nav-btn'
             value={'chains'}
             onClick={props.showChains}
-          >Choose Chain</div>
+          >Choose Your Chain</div>
           { props.chains &&
             <div className='btn-selected'></div>
           }

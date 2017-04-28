@@ -26,7 +26,7 @@ export default class TeamList extends Component {
     const index = this.props.team.indexOf(member)
     const key = member.id
       return (
-        <Col key={key} sm='12' md='12' lg='12' xl='12'>
+        <Col key={key} xs='12' sm='12' md='12' lg='12' xl='12'>
           <TeamMember
           member={member} />
         </Col>

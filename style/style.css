@@ -2269,24 +2269,42 @@ select.form-control {
       padding-bottom: 3vh; }
   .charity h1 {
     margin-bottom: 10vh; } }
-.team h1 {
-  font-size: 5vw;
-  margin-bottom: 10vh; }
+.team .mobile-title {
+  margin: 0 auto; }
 .team img {
-  width: 30vw; }
+  width: 80%;
+  margin: 0 auto; }
 .team .team-list {
   background-color: white; }
 .team .member {
   padding: 5vh; }
   .team .member .content {
-    font-family: "Lulo Clean", "lulo_cleanone", serif;
-    font-size: 1vw;
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
     line-height: 1.5; }
     .team .member .content h2 {
-      font-size: 2vw; }
+      font-size: 12px; }
     .team .member .content h3 {
       padding-bottom: 1vh; }
 
+@media (min-width: 576px) {
+  .team h1 {
+    font-size: 5vw;
+    margin-bottom: 10vh; }
+  .team img {
+    width: 30vw; }
+  .team .team-list {
+    background-color: white; }
+  .team .member {
+    padding: 5vh; }
+    .team .member .content {
+      font-family: "Lulo Clean", "lulo_cleanone", serif;
+      font-size: 1vw;
+      line-height: 1.5; }
+      .team .member .content h2 {
+        font-size: 2vw; }
+      .team .member .content h3 {
+        padding-bottom: 1vh; } }
 .contact {
   background: url("https://s3-us-west-1.amazonaws.com/madison-mckinley/banner-images/contact.jpg") center center;
   background-repeat: no-repeat;

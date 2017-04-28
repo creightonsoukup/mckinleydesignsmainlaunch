@@ -1,10 +1,11 @@
 .team {
-  h1 {
-    font-size: 5vw;
-    margin-bottom: 10vh;
+  .mobile-title {
+    margin: 0 auto;
   }
+
   img {
-    width: 30vw;
+    width: 80%;
+    margin: 0 auto;
   }
   .team-list {
     background-color: white;
@@ -12,15 +13,45 @@
   .member {
     padding: 5vh;
     .content {
-      font-family: $header-text;
-      font-size: 1vw;
+      font-family: $body-text;
+      font-size: 12px;
       line-height: 1.5;
       h2 {
-        font-size: 2vw;
+        font-size: 12px;
       }
       h3 {
         padding-bottom: 1vh;
       }
     }
   }
+}
+
+@media (min-width: 576px) {
+  .team {
+    h1 {
+      font-size: 5vw;
+      margin-bottom: 10vh;
+    }
+    img {
+      width: 30vw;
+    }
+    .team-list {
+      background-color: white;
+    }
+    .member {
+      padding: 5vh;
+      .content {
+        font-family: $header-text;
+        font-size: 1vw;
+        line-height: 1.5;
+        h2 {
+          font-size: 2vw;
+        }
+        h3 {
+          padding-bottom: 1vh;
+        }
+      }
+    }
+  }
+
 }

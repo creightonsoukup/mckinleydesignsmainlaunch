@@ -48,7 +48,7 @@ class Team extends Component {
       )}
 
       <Footer
-      homepage={false}
+      homepage={true}
       show={true}/>
       </div>
     )

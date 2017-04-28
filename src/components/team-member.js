@@ -5,10 +5,10 @@ const TeamMember = (props) => {
   const handle = props.member.name.toLowerCase().split(' ').join('+')
   return (
     <Row noGuttters className='member'>
-      <Col sm='12' md='6' lg='6' xl='6'>
+      <Col xs='12' sm='12' md='6' lg='6' xl='6'>
         <img src={`https://s3-us-west-1.amazonaws.com/madison-mckinley/team/${handle}.jpg`}/>
       </Col>
-      <Col sm='12' md='6' lg='6' xl='6' className='content'>
+      <Col xs='12' sm='12' md='6' lg='6' xl='6' className='content'>
         <h2>{props.member.name}</h2>
         <h3>{props.member.title}</h3>
         <br/>
