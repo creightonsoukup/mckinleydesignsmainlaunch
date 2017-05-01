@@ -23,7 +23,7 @@ const Footer = (props) => {
               <Link href="https://www.pinterest.com/madkooldesigns"><i className="fa fa-twitter-box" aria-hidden="true"></i></Link>
               <Link href="https://www.facebook.com/madisonmckinleydesigns/"><i className="fa fa-facebook-box" aria-hidden="true"></i></Link>
               <Link href="https://www.instagram.com/madisonmckinleydesigns"><i className="fa fa-instagram" aria-hidden="true"></i></Link>
-              <Link href="https://www.instagram.com/madisonmckinleydesigns"><i className="fa fa-linkedin-box" aria-hidden="true"></i></Link>
+              <Link href="https://www.linkedin.com/company-beta/18003033/"><i className="fa fa-linkedin-box" aria-hidden="true"></i></Link>
             </div>
             <Link to="/privacy">Privacy Policies</Link>
             <Link to="/terms">Terms of Use</Link>

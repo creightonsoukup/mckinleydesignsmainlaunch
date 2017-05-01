@@ -791,7 +791,7 @@ select.form-control {
   letter-spacing: 5px;
   margin-bottom: 20vh;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
-  text-align: center; }
+  margin: 0 auto; }
   .collection-title h1 {
     margin: 0 auto; }
 
@@ -801,7 +801,6 @@ select.form-control {
   width: 100vw;
   padding: 5vw;
   padding-top: 3vw;
-  text-align: center;
   font-family: "Lulo Clean", "lulo_cleanone", serif; }
   .collection-header h2 {
     color: #A33F23;

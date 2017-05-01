@@ -17,7 +17,7 @@ class SpecialOrder extends Component {
         <Navbar/>
         <BannerImage
             fileName={'special-order.jpg'}/>
-        <Row fluid className='animated fadeIn'>
+        <Row noGutters className='animated fadeIn'>
               <h1 className="collection-title">{('Special Order').toUpperCase()}</h1>
               <SpecialOrderInfo />
         </Row>
@@ -30,7 +30,7 @@ class SpecialOrder extends Component {
         </div>
       )}
       <Footer
-      homepage={true}
+      homepage={false}
       show={true}/>
       </div>
     )
