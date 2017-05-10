@@ -192,7 +192,6 @@ body {
   -moz-background-size: cover;
   background-size: cover;
   min-height: 100vh;
-  max-height: 100vh;
   position: relative;
   display: block;
   transition: background 2s ease;
@@ -339,6 +338,158 @@ body {
     height: 100%;
     overflow: hidden; }
 
+@media only screen and (device-width: 768px) {
+  .banner1 {
+    background: url("https://s3-us-west-1.amazonaws.com/madison-mckinley/banner-images/homepage1.jpg") center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+    display: block;
+    transition: background 2s ease;
+    box-shadow: inset 0px -2px 10px 0px rgba(0, 0, 0, 0.4); }
+    .banner1 h2 {
+      text-align: center;
+      font-family: "Hind", sans-serif;
+      font-size: 15vw;
+      color: white;
+      padding-top: 50vh;
+      letter-spacing: 4px;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
+    .banner1 h4 {
+      text-align: center;
+      font-family: "Hind", sans-serif;
+      font-size: 8vw;
+      padding-top: 3vw;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); }
+    .banner1 .arrow {
+      bottom: 0;
+      right: 48%;
+      position: absolute; }
+
+  .banner1-darken {
+    background: url("https://s3-us-west-1.amazonaws.com/madison-mckinley/banner-images/homepage1-dark.jpg") center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    transition: background 1s ease;
+    transition-delay: .25s; }
+
+  .banner2 {
+    background: url("https://s3-us-west-1.amazonaws.com/madison-mckinley/banner-images/homepage2.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    min-height: 50vh;
+    box-shadow: 1px 1px 2px 0px rgba(170, 170, 170, 0.4), -1px -1px 2px 0px rgba(170, 170, 170, 0.4);
+    position: relative;
+    margin: 10px; }
+    .banner2 .content {
+      width: 40vw;
+      height: 20vh;
+      text-align: left;
+      padding-left: 5vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      top: 50%;
+      transform: translate(0, -50%);
+      position: absolute; }
+      .banner2 .content h2 {
+        font-family: "Hind", sans-serif;
+        font-size: 8vw;
+        color: #A33F23;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
+      .banner2 .content h3 {
+        font-family: "Hind", sans-serif;
+        font-size: 4vw;
+        color: white;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
+      .banner2 .content i {
+        padding-left: 10px; }
+
+  .banner3 {
+    background: url("https://s3-us-west-1.amazonaws.com/madison-mckinley/banner-images/homepage4.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    min-height: 50vh;
+    box-shadow: 1px 1px 2px 0px rgba(170, 170, 170, 0.4), -1px -1px 2px 0px rgba(170, 170, 170, 0.4);
+    position: relative;
+    margin: 10px; }
+    .banner3 .content {
+      height: 50vh;
+      width: 75vw;
+      display: flex;
+      flex-direction: column;
+      padding-left: 5vw;
+      top: 25%;
+      position: absolute; }
+      .banner3 .content h2 {
+        font-family: "Hind", sans-serif;
+        font-size: 8vw;
+        color: #A33F23;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
+      .banner3 .content h3 {
+        font-family: "Hind", sans-serif;
+        font-size: 5vw;
+        padding-top: 3vw;
+        color: white;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
+      .banner3 .content h4 {
+        font-family: "Hind", sans-serif;
+        font-size: 4vw;
+        padding-top: 3vw;
+        color: white;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); }
+      .banner3 .content i {
+        padding-left: 10px; }
+
+  .quote {
+    background: #B89F83;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    min-height: 50vh;
+    width: 100vw;
+    opacity: .8;
+    position: relative;
+    box-shadow: inset 0px 1px 6px 0px rgba(0, 0, 0, 0.2), inset 0px -1px 6px 0px rgba(0, 0, 0, 0.2); }
+
+  .quote-content {
+    margin: 5px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    font-family: "Lulo Clean", "lulo_cleanone", serif;
+    transform: translate(0, -50%); }
+    .quote-content h3 {
+      color: white;
+      font-size: 3.5vw;
+      line-height: 2; }
+    .quote-content h4 {
+      padding-top: 5%;
+      color: white;
+      font-size: 10px; }
+
+  .banner.parallax {
+    z-index: -1000; }
+
+  .banner-component {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    width: 100vw;
+    box-shadow: inset 0px -2px 10px 0px rgba(0, 0, 0, 0.4); }
+    .banner-component .banner-image {
+      display: inline-block;
+      margin: auto;
+      width: 100vw;
+      height: 100%;
+      overflow: hidden; } }
 @media (min-width: 768px) {
   .banner1 {
     background: url("https://s3-us-west-1.amazonaws.com/madison-mckinley/banner-images/homepage1.jpg") center;
