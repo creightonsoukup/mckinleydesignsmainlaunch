@@ -52,6 +52,7 @@ class Product extends Component {
   }
 
   render() {
+    console.log(this.state)
     const images = this.state.product.images
     const selectedVariant = this.state.product.selectedVariant
     const mainImage = this.state.product.selectedVariantImage
