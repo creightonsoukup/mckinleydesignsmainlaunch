@@ -189,6 +189,7 @@ body {
 .banner1 {
   background: url("https://s3-us-west-1.amazonaws.com/madison-mckinley/banner-images/homepage1.jpg") center;
   -webkit-background-size: cover;
+  -webkit-background-size: 100% auto;
   -moz-background-size: cover;
   background-size: cover;
   min-height: 100vh;
