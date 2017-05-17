@@ -19,6 +19,7 @@ class Cart extends Component {
     this.updateCart = this.updateCart.bind(this)
     this.deleteItem = this.deleteItem.bind(this)
     this.keepShopping = this.keepShopping.bind(this)
+    this.checkout = this.checkout.bind(this)
   }
 
   componentWillMount() {
@@ -27,6 +28,10 @@ class Cart extends Component {
 
   keepShopping() {
     this.context.router.push('/shop/all-products')
+  }
+
+  checkout() {
+    window.location.href = this.state.cart.checkoutUrl
   }
 
   updateCart(quantity, id) {
@@ -73,7 +78,7 @@ class Cart extends Component {
         )}
         <CartFooter
         keepShopping={this.keepShopping}
-        checkout={this.state.cart.checkoutUrl}
+        checkout={this.checkout}
         cart={this.state.cart}/>
       </div>
       </div>
