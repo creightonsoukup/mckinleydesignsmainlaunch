@@ -108,7 +108,6 @@ class Homepage extends Component {
         </div>
     )
     }
-    console.log(screen.width)
     return (
       <div className='homepage animated fadeIn'>
         { window.innerWidth < 576 || this.state.scrollNav ? (

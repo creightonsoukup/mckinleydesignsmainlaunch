@@ -2464,22 +2464,64 @@ select.form-control {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-  padding-top: 20vh;
+  padding-top: 10vh;
   font-family: "Lulo Clean", "lulo_cleanone", serif; }
-  .contact h1 {
+  .contact .sign-up h1 {
     color: white;
-    font-size: 3vw;
+    font-size: 20px;
     padding: 2vw; }
   .contact .contact-form {
-    width: 45vw;
+    width: 90vw;
     padding: 2vw;
     min-height: 50vh; }
     .contact .contact-form form {
-      height: 50vh;
+      height: 65vh;
       display: flex;
       flex-direction: column;
       justify-content: space-around; }
+      .contact .contact-form form input {
+        margin-bottom: 2vh;
+        background-color: rgba(255, 255, 255, 0);
+        color: white;
+        font-family: "Lulo Clean", "lulo_cleanone", serif;
+        font-size: 14px; }
+      .contact .contact-form form input::placeholder {
+        color: white; }
+      .contact .contact-form form textarea::placeholder {
+        color: white; }
+      .contact .contact-form form textarea {
+        margin-bottom: 2vh;
+        background-color: rgba(255, 255, 255, 0);
+        color: white;
+        font-family: "Lulo Clean", "lulo_cleanone", serif;
+        font-size: 14px;
+        height: 200px; }
+    .contact .contact-form .form-control {
+      color: white;
+      border: 2px solid white;
+      border-radius: 0; }
 
+@media (min-width: 768px) {
+  .contact {
+    background: url("https://s3-us-west-1.amazonaws.com/madison-mckinley/banner-images/contact.jpg") center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    padding-top: 20vh;
+    font-family: "Lulo Clean", "lulo_cleanone", serif; }
+    .contact h1 {
+      color: white;
+      font-size: 3vw;
+      padding: 2vw; }
+    .contact .contact-form {
+      width: 45vw;
+      padding: 2vw;
+      min-height: 50vh; }
+      .contact .contact-form form {
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around; } }
 .about {
   min-height: 1230px;
   max-width: 100%;

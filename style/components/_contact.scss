@@ -3,22 +3,77 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-  padding-top: 20vh;
+  padding-top: 10vh;
   font-family: $header-text;
-  h1 {
+  .sign-up h1 {
     color: white;
-    font-size: 3vw;
+    font-size: 20px;
     padding: 2vw;
   }
   .contact-form {
-    width: 45vw;
+    width: 90vw;
     padding: 2vw;
     min-height: 50vh;
     form {
-      height: 50vh;
+      height: 65vh;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
+      input {
+        margin-bottom: 2vh;
+        background-color: rgba(255, 255, 255, 0);
+        color: white;
+        font-family: $header-text;
+        font-size: 14px;
+      }
+      input::placeholder {
+        color: white;
+      }
+      textarea::placeholder {
+        color: white;
+      }
+      textarea {
+        margin-bottom: 2vh;
+        background-color: rgba(255, 255, 255, 0);
+        color: white;
+        font-family: $header-text;
+        font-size: 14px;
+        height: 200px;
+      }
+    }
+    .form-control {
+      color: white;
+      border: 2px solid white;
+      border-radius: 0;
     }
   }
+}
+
+
+@media (min-width: 768px) {
+  .contact {
+    background: url('https://s3-us-west-1.amazonaws.com/madison-mckinley/banner-images/contact.jpg') center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    padding-top: 20vh;
+    font-family: $header-text;
+    h1 {
+      color: white;
+      font-size: 3vw;
+      padding: 2vw;
+    }
+    .contact-form {
+      width: 45vw;
+      padding: 2vw;
+      min-height: 50vh;
+      form {
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+    }
+  }
+
 }
