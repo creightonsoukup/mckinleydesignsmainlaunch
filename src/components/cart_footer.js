@@ -10,9 +10,10 @@ const CartFooter = ({cart, checkout, keepShopping}) => {
         Keep Shopping
       </div>
       <a
-      href={checkout}
-      className='checkout button-trans'>
+      href={checkout}>
+      <div className='checkout button-trans'>
         Checkout
+      </div>
       </a>
       <div className='subtotal'>
         <h3>{`$${cart.subtotal}`}</h3>
