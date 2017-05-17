@@ -39,7 +39,6 @@ class LineItem extends Component {
   }
 
   render() {
-    console.log(this.props.lineItem)
     return (
       <tr>
         <td>
