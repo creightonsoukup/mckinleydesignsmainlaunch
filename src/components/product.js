@@ -27,7 +27,6 @@ class Product extends Component {
       galleryImageIdx: 0,
       product: this.props.product
     }
-
   }
 
 
