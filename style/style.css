@@ -347,7 +347,7 @@ body {
     -moz-background-size: cover;
     background-size: cover;
     min-height: 100vh;
-    max-height: 100vh;
+    max-width: 100vw;
     position: relative;
     display: block;
     transition: background-image 2s ease;
