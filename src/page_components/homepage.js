@@ -128,18 +128,18 @@ class Homepage extends Component {
         <Row
         noGutters
         onClick={() => {this.context.router.push('/shop/collections') }}
-        className={screen.width < 576 ? 'banner1' : this.state.banner1ClassNames.join(' ')}>
+        className={screen.innerWidth <= 768 ? 'banner1' : this.state.banner1ClassNames.join(' ')}>
           <h2>ITALIAN COWBOY COOL</h2>
           <h4>SHOP NOW <i className="fa fa-arrow-right" aria-hidden="true"></i></h4>
           <h4 className='arrow'><i className="fa fa-angle-down"></i></h4>
         </Row>
         <div className='content'>
-        { this.state.favorites.length > 0 && window.innerWidth > 768 &&
+        { this.state.favorites.length > 0 && window.innerWidth >= 768 &&
           <ProductSlider
           addToCart={this.addToCart}
           products={this.state.favorites} />
         }
-        {this.state.playBrandVideo || window.innerWidth < 768 ?  (
+        {this.state.playBrandVideo || window.innerWidth <= 768 ?  (
           <Row noGutters className='homepage-iframe'>
             <iframe src="https://player.vimeo.com/video/209853714?autoplay=1&loop=1&autopause=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
           </Row>
