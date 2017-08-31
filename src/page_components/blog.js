@@ -7,7 +7,6 @@ import { fetchBlogPosts } from '../actions/index'
 import CollectionList from '../components/collection_list'
 import NavbarScroll from '../components/navbar-scroll'
 import { Row } from 'reactstrap';
-import _$ from 'jquery';
 
 
 class Blog extends Component {
