@@ -36,6 +36,8 @@ class Product extends Component {
     const offset = this.props.index % 2 === 0 ? '0' : '6'
     const nextIdx = images.length - 1 === this.state.galleryImageIdx ? 0 : parseInt(this.state.galleryImageIdx) + 1
     const changeImage = () => {this.setState({galleryImageIdx: nextIdx })}
+    console.log(images)
+    console.log(product)
     return (
       <div>
         { images.length === this.state.product.images.length  &&

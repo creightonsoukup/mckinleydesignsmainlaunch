@@ -196,7 +196,7 @@ body {
   max-height: 100vh;
   position: relative;
   display: block;
-  transition: background 2s ease;
+  transition: background-image 2s ease;
   box-shadow: inset 0px -2px 10px 0px rgba(0, 0, 0, 0.4); }
   .banner1 h2 {
     text-align: center;
@@ -223,7 +223,7 @@ body {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
-  transition: background 1s ease;
+  transition: background-image 1s ease;
   transition-delay: .25s; }
 
 .banner2 {
@@ -340,7 +340,7 @@ body {
     height: 100%;
     overflow: hidden; }
 
-@media only screen and (device-width: 768px) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .banner1 {
     background: url("https://s3-us-west-1.amazonaws.com/madison-mckinley/banner-images/homepage1.jpg") center;
     -webkit-background-size: cover;
@@ -350,7 +350,7 @@ body {
     max-height: 100vh;
     position: relative;
     display: block;
-    transition: background 2s ease;
+    transition: background-image 2s ease;
     box-shadow: inset 0px -2px 10px 0px rgba(0, 0, 0, 0.4); }
     .banner1 h2 {
       text-align: center;
@@ -377,7 +377,7 @@ body {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
-    transition: background 1s ease;
+    transition: background-image 1s ease;
     transition-delay: .25s; }
 
   .banner2 {
@@ -503,7 +503,7 @@ body {
     min-width: 100%;
     position: relative;
     display: block;
-    transition: background 2s ease;
+    transition: background-image 2s ease;
     box-shadow: inset 0px -2px 10px 0px rgba(0, 0, 0, 0.4); }
     .banner1 h2 {
       text-align: center;
@@ -533,7 +533,7 @@ body {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
-    transition: background 1s ease;
+    transition: background-image 1s ease;
     transition-delay: .25s; }
 
   .banner2 {
