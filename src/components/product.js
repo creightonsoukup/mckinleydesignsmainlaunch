@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import async from 'async';
 
 import {
   Collapse,
@@ -23,46 +24,22 @@ class Product extends Component {
     super(props)
 
     this.state = {
-      selected: false,
-      galleryImageIdx: 0,
-      product: this.props.product
+      selected: false
     }
-  }
 
-
-  renderSelectedProduct(selectedVariant, sortedImages) {
-    const product = selectedVariant
-    const images = sortedImages
-    const offset = this.props.index % 2 === 0 ? '0' : '6'
-    const nextIdx = images.length - 1 === this.state.galleryImageIdx ? 0 : parseInt(this.state.galleryImageIdx) + 1
-    const changeImage = () => {this.setState({galleryImageIdx: nextIdx })}
-    console.log(images)
-    console.log(product)
-    return (
-      <div>
-        { images.length === this.state.product.images.length  &&
-          <ProductQuickView
-            addToCart={this.props.addToCart}
-            product={product}
-            changeImage={changeImage}
-            galleryImageSrc={images[this.state.galleryImageIdx].src}
-            offset={offset === '0'}/>
-        }
-      </div>
-    )
   }
 
   render() {
-    const images = this.state.product.images
-    const selectedVariant = this.state.product.selectedVariant
-    const mainImage = this.state.product.selectedVariantImage
-    const sortedImages = this.state.product.images.sort((a ,b) => a.position - b.position)
-    const selected = this.state.selected
+    console.log(this.props.product)
     const width = this.state.selected ? '12' : '6'
     return (
     <div xs='12' sm='12' md={width} lg={width}
     className='product'>
-        {this.renderSelectedProduct(selectedVariant, sortedImages)}
+      <ProductQuickView
+        addToCart={this.props.addToCart}
+        product={this.props.product.selectedVariant}
+        galleryImageSrc={this.props.product.selectedVariant.imageVariants[5].src}
+      />
     </div>
     )
   }
