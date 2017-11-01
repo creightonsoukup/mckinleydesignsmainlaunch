@@ -2518,6 +2518,61 @@ iframe {
       padding-top: 12px;
       font-size: 1.5vw;
       text-align: right; } }
+.starling {
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+  .starling img {
+    max-width: 80vw;
+    max-height: 70vh; }
+  .starling h2 {
+    font-family: "Lulo Clean", "lulo_cleanone", serif;
+    color: #A33F23;
+    font-size: 2vw;
+    text-align: center; }
+  .starling h3 {
+    font-family: "Lulo Clean", "lulo_cleanone", serif;
+    color: #A33F23;
+    font-size: 2vw;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    text-decoration: none; }
+
+.starling-info {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .starling-info img {
+    max-width: 80vw;
+    max-height: 70vh; }
+  .starling-info h2 {
+    font-family: "Lulo Clean", "lulo_cleanone", serif;
+    color: #A33F23;
+    font-size: 2vw;
+    text-align: center;
+    margin-top: 50px; }
+  .starling-info h3 {
+    font-family: "Lulo Clean", "lulo_cleanone", serif;
+    color: #A33F23;
+    font-size: 1.5vw;
+    text-align: center;
+    margin-top: 50px; }
+  .starling-info a {
+    text-decoration: none;
+    font-family: "Lulo Clean", "lulo_cleanone", serif;
+    color: #A33F23;
+    padding: 10px;
+    margin-bottom: 50px; }
+  .starling-info h4 {
+    font-family: "Lulo Clean", "lulo_cleanone", serif;
+    color: #A33F23;
+    text-align: center;
+    line-height: 2;
+    font-size: 1vw;
+    padding: 50px; }
+
 body {
   cursor: default; }
 

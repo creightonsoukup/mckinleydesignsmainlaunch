@@ -13,37 +13,34 @@ import {
   Col,
   Jumbotron,
   Button,
-  Form,
+  Form
 } from 'reactstrap';
 
-import ProductQuickView from './product_quickview'
+import ProductQuickView from './product_quickview';
 
 class Product extends Component {
-
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       selected: false
-    }
-
+    };
   }
 
   render() {
-    console.log(this.props.product)
-    const width = this.state.selected ? '12' : '6'
+    const width = this.state.selected ? '12' : '6';
     return (
-    <div xs='12' sm='12' md={width} lg={width}
-    className='product'>
-      <ProductQuickView
-        addToCart={this.props.addToCart}
-        product={this.props.product.selectedVariant}
-        galleryImageSrc={this.props.product.selectedVariant.imageVariants[5].src}
-      />
-    </div>
-    )
+      <div xs="12" sm="12" md={width} lg={width} className="product">
+        <ProductQuickView
+          addToCart={this.props.addToCart}
+          product={this.props.product.selectedVariant}
+          galleryImageSrc={
+            this.props.product.selectedVariant.imageVariants[5].src
+          }
+        />
+      </div>
+    );
   }
 }
 
-
-export default Product
+export default Product;
