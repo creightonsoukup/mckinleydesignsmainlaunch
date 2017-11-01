@@ -26,6 +26,7 @@ class Charity extends Component {
             <NavbarScroll />
             <h1 className="mobile-title">{'Charity'.toUpperCase()}</h1>
             <CharityInfo />
+            <StarlingInfo />
           </div>
         )}
         <Footer homepage={true} show={true} />
